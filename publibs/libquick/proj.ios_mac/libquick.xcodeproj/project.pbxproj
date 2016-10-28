@@ -1,0 +1,1255 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A24951F91D9A4FAE001E033F /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A24951F21D9A4FAE001E033F /* SBJSON.m */; };
+		A24951FA1D9A4FAE001E033F /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A24951F41D9A4FAE001E033F /* SBJsonBase.m */; };
+		A24951FB1D9A4FAE001E033F /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A24951F61D9A4FAE001E033F /* SBJsonParser.m */; };
+		A24951FC1D9A4FAE001E033F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = A24951F81D9A4FAE001E033F /* SBJsonWriter.m */; };
+		A249525D1D9A7616001E033F /* lua_cocos2dx_quick_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602B1D9A382800D69F39 /* lua_cocos2dx_quick_manual.cpp */; };
+		A249525E1D9A7616001E033F /* lua_cocos2dx_quick_manual.hpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602C1D9A382800D69F39 /* lua_cocos2dx_quick_manual.hpp */; };
+		A249525F1D9A7616001E033F /* LuaEventNode.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602E1D9A382800D69F39 /* LuaEventNode.h */; };
+		A24952601D9A7616001E033F /* LuaNodeManager.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60301D9A382800D69F39 /* LuaNodeManager.h */; };
+		A24952621D9A7616001E033F /* LuaTouchTargetNode.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60341D9A382800D69F39 /* LuaTouchTargetNode.h */; };
+		A24952631D9A7623001E033F /* lua_cocos2dx_quick_manual.hpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602C1D9A382800D69F39 /* lua_cocos2dx_quick_manual.hpp */; };
+		A24952641D9A7623001E033F /* LuaEventNode.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602E1D9A382800D69F39 /* LuaEventNode.h */; };
+		A24952651D9A7623001E033F /* LuaNodeManager.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60301D9A382800D69F39 /* LuaNodeManager.h */; };
+		A24952671D9A7623001E033F /* LuaTouchTargetNode.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60341D9A382800D69F39 /* LuaTouchTargetNode.h */; };
+		A27E5AE41DB5C6F000E2B142 /* LuaTouchEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27E5AE21DB5C6F000E2B142 /* LuaTouchEventManager.cpp */; };
+		A27E5AE51DB5C6F000E2B142 /* LuaTouchEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27E5AE21DB5C6F000E2B142 /* LuaTouchEventManager.cpp */; };
+		A2DE5D851D9A2B8800D69F39 /* fpconv.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D281D9A2B8700D69F39 /* fpconv.c */; };
+		A2DE5D861D9A2B8800D69F39 /* lua_cjson.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D2A1D9A2B8700D69F39 /* lua_cjson.c */; };
+		A2DE5D871D9A2B8800D69F39 /* strbuf.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D2C1D9A2B8700D69F39 /* strbuf.c */; };
+		A2DE5D881D9A2B8800D69F39 /* debugger.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D2F1D9A2B8700D69F39 /* debugger.c */; };
+		A2DE5D891D9A2B8800D69F39 /* lfs.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D331D9A2B8700D69F39 /* lfs.c */; };
+		A2DE5D8A1D9A2B8800D69F39 /* lpack.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D361D9A2B8700D69F39 /* lpack.c */; };
+		A2DE5D8B1D9A2B8800D69F39 /* lsqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D391D9A2B8700D69F39 /* lsqlite3.c */; };
+		A2DE5D8C1D9A2B8800D69F39 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D3B1D9A2B8700D69F39 /* sqlite3.c */; };
+		A2DE5D8D1D9A2B8800D69F39 /* lua_extensions_more.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D3D1D9A2B8700D69F39 /* lua_extensions_more.c */; };
+		A2DE5D8E1D9A2B8800D69F39 /* lua_zlib.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D401D9A2B8700D69F39 /* lua_zlib.c */; };
+		A2DE5F7C1D9A2E0300D69F39 /* HelperFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EA91D9A2E0300D69F39 /* HelperFunc.cpp */; };
+		A2DE5F7D1D9A2E0300D69F39 /* libbase64.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EAE1D9A2E0300D69F39 /* libbase64.c */; };
+		A2DE5F7E1D9A2E0300D69F39 /* CCCrypto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EB01D9A2E0300D69F39 /* CCCrypto.cpp */; };
+		A2DE5F7F1D9A2E0300D69F39 /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EB31D9A2E0300D69F39 /* md5.c */; };
+		A2DE5F801D9A2E0300D69F39 /* CCBlurFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EB91D9A2E0300D69F39 /* CCBlurFilter.cpp */; };
+		A2DE5F811D9A2E0300D69F39 /* CCBrightnessFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EBB1D9A2E0300D69F39 /* CCBrightnessFilter.cpp */; };
+		A2DE5F821D9A2E0300D69F39 /* CCContrastFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EBD1D9A2E0300D69F39 /* CCContrastFilter.cpp */; };
+		A2DE5F831D9A2E0300D69F39 /* CCCustomFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EBF1D9A2E0300D69F39 /* CCCustomFilter.cpp */; };
+		A2DE5F841D9A2E0300D69F39 /* CCDropShadowFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EC11D9A2E0300D69F39 /* CCDropShadowFilter.cpp */; };
+		A2DE5F851D9A2E0300D69F39 /* CCExposureFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EC31D9A2E0300D69F39 /* CCExposureFilter.cpp */; };
+		A2DE5F861D9A2E0300D69F39 /* CCFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EC51D9A2E0300D69F39 /* CCFilter.cpp */; };
+		A2DE5F871D9A2E0300D69F39 /* CCGammaFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EC71D9A2E0300D69F39 /* CCGammaFilter.cpp */; };
+		A2DE5F881D9A2E0300D69F39 /* CCGrayFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EC91D9A2E0300D69F39 /* CCGrayFilter.cpp */; };
+		A2DE5F891D9A2E0300D69F39 /* CCHazeFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ECB1D9A2E0300D69F39 /* CCHazeFilter.cpp */; };
+		A2DE5F8A1D9A2E0300D69F39 /* CCHueFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ECD1D9A2E0300D69F39 /* CCHueFilter.cpp */; };
+		A2DE5F8B1D9A2E0300D69F39 /* CCMaskFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ECF1D9A2E0300D69F39 /* CCMaskFilter.cpp */; };
+		A2DE5F8C1D9A2E0300D69F39 /* CCRGBFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ED11D9A2E0300D69F39 /* CCRGBFilter.cpp */; };
+		A2DE5F8D1D9A2E0300D69F39 /* CCSaturationFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ED31D9A2E0300D69F39 /* CCSaturationFilter.cpp */; };
+		A2DE5F8E1D9A2E0300D69F39 /* CCSepiaFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ED51D9A2E0300D69F39 /* CCSepiaFilter.cpp */; };
+		A2DE5F8F1D9A2E0300D69F39 /* CCSharpenFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ED71D9A2E0300D69F39 /* CCSharpenFilter.cpp */; };
+		A2DE5F901D9A2E0300D69F39 /* CCTestFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ED91D9A2E0300D69F39 /* CCTestFilter.cpp */; };
+		A2DE5F911D9A2E0300D69F39 /* CCFilteredSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EDC1D9A2E0300D69F39 /* CCFilteredSprite.cpp */; };
+		A2DE5F921D9A2E0300D69F39 /* ccFilterShaders.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EFC1D9A2E0300D69F39 /* ccFilterShaders.cpp */; };
+		A2DE5F931D9A2E0300D69F39 /* FilterShaders.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F141D9A2E0300D69F39 /* FilterShaders.cpp */; };
+		A2DE5F941D9A2E0300D69F39 /* cocos2dx_extra_ios_iap_luabinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F1C1D9A2E0300D69F39 /* cocos2dx_extra_ios_iap_luabinding.cpp */; };
+		A2DE5F951D9A2E0300D69F39 /* cocos2dx_extra_luabinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F1F1D9A2E0300D69F39 /* cocos2dx_extra_luabinding.cpp */; };
+		A2DE5F961D9A2E0300D69F39 /* HelperFunc_luabinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F221D9A2E0300D69F39 /* HelperFunc_luabinding.cpp */; };
+		A2DE5F971D9A2E0300D69F39 /* lua_cocos2dx_extension_filter_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F251D9A2E0300D69F39 /* lua_cocos2dx_extension_filter_auto.cpp */; };
+		A2DE5F981D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F271D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_auto.cpp */; };
+		A2DE5F991D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F291D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_manual.cpp */; };
+		A2DE5F9A1D9A2E0300D69F39 /* NVGDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F2D1D9A2E0300D69F39 /* NVGDrawNode.cpp */; };
+		A2DE5F9B1D9A2E0300D69F39 /* NVGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F2F1D9A2E0300D69F39 /* NVGNode.cpp */; };
+		A2DE5F9C1D9A2E0300D69F39 /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F331D9A2E0300D69F39 /* nanovg.c */; };
+		A2DE5F9D1D9A2E0300D69F39 /* CCHTTPRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F3D1D9A2E0300D69F39 /* CCHTTPRequest.cpp */; };
+		A2DE5F9E1D9A2E0300D69F39 /* CCNetwork.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F401D9A2E0300D69F39 /* CCNetwork.cpp */; };
+		A2DE5FA31D9A2E0300D69F39 /* CCCryptoIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F491D9A2E0300D69F39 /* CCCryptoIOS.mm */; };
+		A2DE5FA41D9A2E0300D69F39 /* CCNative.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F4A1D9A2E0300D69F39 /* CCNative.mm */; };
+		A2DE5FA51D9A2E0300D69F39 /* CCNativeIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F4C1D9A2E0300D69F39 /* CCNativeIOS.mm */; };
+		A2DE5FA61D9A2E0300D69F39 /* CCStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F4D1D9A2E0300D69F39 /* CCStore.mm */; };
+		A2DE5FA71D9A2E0300D69F39 /* CCStoreIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F4F1D9A2E0300D69F39 /* CCStoreIOS.mm */; };
+		A2DE5FA81D9A2E0300D69F39 /* CCStorePaymentTransactionWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F501D9A2E0300D69F39 /* CCStorePaymentTransactionWrapper.mm */; };
+		A2DE5FA91D9A2E0300D69F39 /* CCStoreReceiptVerifyRequestIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F521D9A2E0300D69F39 /* CCStoreReceiptVerifyRequestIOS.mm */; };
+		A2DE5FAE1D9A2E0300D69F39 /* OpenUDIDIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F5E1D9A2E0300D69F39 /* OpenUDIDIOS.m */; };
+		A2DE5FAF1D9A2E0300D69F39 /* CCNetworkIOSMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F601D9A2E0300D69F39 /* CCNetworkIOSMac.mm */; };
+		A2DE5FB01D9A2E0300D69F39 /* ReachabilityIOSMac.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F621D9A2E0300D69F39 /* ReachabilityIOSMac.m */; };
+		A2DE5FB11D9A2E0300D69F39 /* CCCryptoMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F641D9A2E0300D69F39 /* CCCryptoMac.mm */; };
+		A2DE5FB21D9A2E0300D69F39 /* CCNative.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F651D9A2E0300D69F39 /* CCNative.mm */; };
+		A2DE5FB31D9A2E0300D69F39 /* CCNativeMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F671D9A2E0300D69F39 /* CCNativeMac.mm */; };
+		A2DE5FB41D9A2E0300D69F39 /* OpenUDIDMac.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F6A1D9A2E0300D69F39 /* OpenUDIDMac.m */; };
+		A2DE5FBA1D9A2E0300D69F39 /* CCStorePaymentTransaction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F751D9A2E0300D69F39 /* CCStorePaymentTransaction.cpp */; };
+		A2DE5FBB1D9A2E0300D69F39 /* CCStoreProduct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F781D9A2E0300D69F39 /* CCStoreProduct.cpp */; };
+		A2DE5FD91D9A364C00D69F39 /* CCExposureFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EC31D9A2E0300D69F39 /* CCExposureFilter.cpp */; };
+		A2DE5FDB1D9A364C00D69F39 /* lua_cocos2dx_extension_nanovg_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F271D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_auto.cpp */; };
+		A2DE5FDC1D9A364C00D69F39 /* NVGDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F2D1D9A2E0300D69F39 /* NVGDrawNode.cpp */; };
+		A2DE5FDD1D9A364C00D69F39 /* CCDropShadowFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EC11D9A2E0300D69F39 /* CCDropShadowFilter.cpp */; };
+		A2DE5FDF1D9A364C00D69F39 /* CCContrastFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EBD1D9A2E0300D69F39 /* CCContrastFilter.cpp */; };
+		A2DE5FE11D9A364C00D69F39 /* libbase64.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EAE1D9A2E0300D69F39 /* libbase64.c */; };
+		A2DE5FE21D9A364C00D69F39 /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F331D9A2E0300D69F39 /* nanovg.c */; };
+		A2DE5FE41D9A364C00D69F39 /* CCHazeFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ECB1D9A2E0300D69F39 /* CCHazeFilter.cpp */; };
+		A2DE5FE51D9A364C00D69F39 /* CCGrayFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EC91D9A2E0300D69F39 /* CCGrayFilter.cpp */; };
+		A2DE5FE61D9A364C00D69F39 /* lua_extensions_more.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D3D1D9A2B8700D69F39 /* lua_extensions_more.c */; };
+		A2DE5FE71D9A364C00D69F39 /* CCRGBFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ED11D9A2E0300D69F39 /* CCRGBFilter.cpp */; };
+		A2DE5FE91D9A364C00D69F39 /* CCSaturationFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ED31D9A2E0300D69F39 /* CCSaturationFilter.cpp */; };
+		A2DE5FEA1D9A364C00D69F39 /* CCHTTPRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F3D1D9A2E0300D69F39 /* CCHTTPRequest.cpp */; };
+		A2DE5FEB1D9A364C00D69F39 /* HelperFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EA91D9A2E0300D69F39 /* HelperFunc.cpp */; };
+		A2DE5FF01D9A364C00D69F39 /* fpconv.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D281D9A2B8700D69F39 /* fpconv.c */; };
+		A2DE5FF11D9A364C00D69F39 /* NVGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F2F1D9A2E0300D69F39 /* NVGNode.cpp */; };
+		A2DE5FF21D9A364C00D69F39 /* CCSepiaFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ED51D9A2E0300D69F39 /* CCSepiaFilter.cpp */; };
+		A2DE5FF31D9A364C00D69F39 /* cocos2dx_extra_luabinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F1F1D9A2E0300D69F39 /* cocos2dx_extra_luabinding.cpp */; };
+		A2DE5FF41D9A364C00D69F39 /* debugger.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D2F1D9A2B8700D69F39 /* debugger.c */; };
+		A2DE5FF51D9A364C00D69F39 /* CCCrypto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EB01D9A2E0300D69F39 /* CCCrypto.cpp */; };
+		A2DE5FF61D9A364C00D69F39 /* CCCustomFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EBF1D9A2E0300D69F39 /* CCCustomFilter.cpp */; };
+		A2DE5FF71D9A364C00D69F39 /* CCNativeMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F671D9A2E0300D69F39 /* CCNativeMac.mm */; };
+		A2DE5FF81D9A364C00D69F39 /* ccFilterShaders.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EFC1D9A2E0300D69F39 /* ccFilterShaders.cpp */; };
+		A2DE5FF91D9A364C00D69F39 /* lfs.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D331D9A2B8700D69F39 /* lfs.c */; };
+		A2DE5FFA1D9A364C00D69F39 /* CCFilteredSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EDC1D9A2E0300D69F39 /* CCFilteredSprite.cpp */; };
+		A2DE5FFB1D9A364C00D69F39 /* lua_zlib.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D401D9A2B8700D69F39 /* lua_zlib.c */; };
+		A2DE5FFC1D9A364C00D69F39 /* CCNetwork.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F401D9A2E0300D69F39 /* CCNetwork.cpp */; };
+		A2DE5FFD1D9A364C00D69F39 /* CCGammaFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EC71D9A2E0300D69F39 /* CCGammaFilter.cpp */; };
+		A2DE5FFE1D9A364C00D69F39 /* lpack.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D361D9A2B8700D69F39 /* lpack.c */; };
+		A2DE60001D9A364C00D69F39 /* ReachabilityIOSMac.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F621D9A2E0300D69F39 /* ReachabilityIOSMac.m */; };
+		A2DE60021D9A364C00D69F39 /* CCBlurFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EB91D9A2E0300D69F39 /* CCBlurFilter.cpp */; };
+		A2DE60031D9A364C00D69F39 /* CCNative.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F651D9A2E0300D69F39 /* CCNative.mm */; };
+		A2DE60041D9A364C00D69F39 /* lua_cjson.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D2A1D9A2B8700D69F39 /* lua_cjson.c */; };
+		A2DE60051D9A364C00D69F39 /* FilterShaders.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F141D9A2E0300D69F39 /* FilterShaders.cpp */; };
+		A2DE60061D9A364C00D69F39 /* CCNetworkIOSMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F601D9A2E0300D69F39 /* CCNetworkIOSMac.mm */; };
+		A2DE60091D9A364C00D69F39 /* OpenUDIDMac.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F6A1D9A2E0300D69F39 /* OpenUDIDMac.m */; };
+		A2DE600A1D9A364C00D69F39 /* CCCryptoMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F641D9A2E0300D69F39 /* CCCryptoMac.mm */; };
+		A2DE600B1D9A364C00D69F39 /* HelperFunc_luabinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F221D9A2E0300D69F39 /* HelperFunc_luabinding.cpp */; };
+		A2DE600C1D9A364C00D69F39 /* CCMaskFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ECF1D9A2E0300D69F39 /* CCMaskFilter.cpp */; };
+		A2DE600D1D9A364C00D69F39 /* CCBrightnessFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EBB1D9A2E0300D69F39 /* CCBrightnessFilter.cpp */; };
+		A2DE600E1D9A364C00D69F39 /* CCHueFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ECD1D9A2E0300D69F39 /* CCHueFilter.cpp */; };
+		A2DE600F1D9A364C00D69F39 /* lua_cocos2dx_extension_nanovg_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F291D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_manual.cpp */; };
+		A2DE60101D9A364C00D69F39 /* lsqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D391D9A2B8700D69F39 /* lsqlite3.c */; };
+		A2DE60111D9A364C00D69F39 /* lua_cocos2dx_extension_filter_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F251D9A2E0300D69F39 /* lua_cocos2dx_extension_filter_auto.cpp */; };
+		A2DE60121D9A364C00D69F39 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D3B1D9A2B8700D69F39 /* sqlite3.c */; };
+		A2DE60141D9A364C00D69F39 /* strbuf.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D2C1D9A2B8700D69F39 /* strbuf.c */; };
+		A2DE60161D9A364C00D69F39 /* CCFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EC51D9A2E0300D69F39 /* CCFilter.cpp */; };
+		A2DE60171D9A364C00D69F39 /* CCSharpenFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ED71D9A2E0300D69F39 /* CCSharpenFilter.cpp */; };
+		A2DE60181D9A364C00D69F39 /* CCTestFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5ED91D9A2E0300D69F39 /* CCTestFilter.cpp */; };
+		A2DE60351D9A382800D69F39 /* lua_cocos2dx_quick_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602B1D9A382800D69F39 /* lua_cocos2dx_quick_manual.cpp */; };
+		A2DE60371D9A382800D69F39 /* LuaEventNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602D1D9A382800D69F39 /* LuaEventNode.cpp */; };
+		A2DE60381D9A382800D69F39 /* LuaEventNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602D1D9A382800D69F39 /* LuaEventNode.cpp */; };
+		A2DE60391D9A382800D69F39 /* LuaNodeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602F1D9A382800D69F39 /* LuaNodeManager.cpp */; };
+		A2DE603A1D9A382800D69F39 /* LuaNodeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602F1D9A382800D69F39 /* LuaNodeManager.cpp */; };
+		A2DE603D1D9A382800D69F39 /* LuaTouchTargetNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60331D9A382800D69F39 /* LuaTouchTargetNode.cpp */; };
+		A2DE603E1D9A382800D69F39 /* LuaTouchTargetNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60331D9A382800D69F39 /* LuaTouchTargetNode.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2DE5C401D9A2AF800D69F39 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2DE601A1D9A364C00D69F39 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A24951F11D9A4FAE001E033F /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		A24951F21D9A4FAE001E033F /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		A24951F31D9A4FAE001E033F /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		A24951F41D9A4FAE001E033F /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		A24951F51D9A4FAE001E033F /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		A24951F61D9A4FAE001E033F /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		A24951F71D9A4FAE001E033F /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		A24951F81D9A4FAE001E033F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		A27E5AE21DB5C6F000E2B142 /* LuaTouchEventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaTouchEventManager.cpp; sourceTree = "<group>"; };
+		A27E5AE31DB5C6F000E2B142 /* LuaTouchEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaTouchEventManager.h; sourceTree = "<group>"; };
+		A2DE5C421D9A2AF800D69F39 /* liblibquickios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibquickios.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2DE5D261D9A2B8700D69F39 /* Android.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Android.mk; sourceTree = "<group>"; };
+		A2DE5D281D9A2B8700D69F39 /* fpconv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fpconv.c; sourceTree = "<group>"; };
+		A2DE5D291D9A2B8700D69F39 /* fpconv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fpconv.h; sourceTree = "<group>"; };
+		A2DE5D2A1D9A2B8700D69F39 /* lua_cjson.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua_cjson.c; sourceTree = "<group>"; };
+		A2DE5D2B1D9A2B8700D69F39 /* lua_cjson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_cjson.h; sourceTree = "<group>"; };
+		A2DE5D2C1D9A2B8700D69F39 /* strbuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strbuf.c; sourceTree = "<group>"; };
+		A2DE5D2D1D9A2B8700D69F39 /* strbuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strbuf.h; sourceTree = "<group>"; };
+		A2DE5D2F1D9A2B8700D69F39 /* debugger.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = debugger.c; sourceTree = "<group>"; };
+		A2DE5D301D9A2B8700D69F39 /* debugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debugger.h; sourceTree = "<group>"; };
+		A2DE5D311D9A2B8700D69F39 /* ldt_debugger.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ldt_debugger.lua; sourceTree = "<group>"; };
+		A2DE5D331D9A2B8700D69F39 /* lfs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lfs.c; sourceTree = "<group>"; };
+		A2DE5D341D9A2B8700D69F39 /* lfs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lfs.h; sourceTree = "<group>"; };
+		A2DE5D361D9A2B8700D69F39 /* lpack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lpack.c; sourceTree = "<group>"; };
+		A2DE5D371D9A2B8700D69F39 /* lpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lpack.h; sourceTree = "<group>"; };
+		A2DE5D391D9A2B8700D69F39 /* lsqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lsqlite3.c; sourceTree = "<group>"; };
+		A2DE5D3A1D9A2B8700D69F39 /* lsqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lsqlite3.h; sourceTree = "<group>"; };
+		A2DE5D3B1D9A2B8700D69F39 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		A2DE5D3C1D9A2B8700D69F39 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		A2DE5D3D1D9A2B8700D69F39 /* lua_extensions_more.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua_extensions_more.c; sourceTree = "<group>"; };
+		A2DE5D3E1D9A2B8700D69F39 /* lua_extensions_more.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_extensions_more.h; sourceTree = "<group>"; };
+		A2DE5D401D9A2B8700D69F39 /* lua_zlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua_zlib.c; sourceTree = "<group>"; };
+		A2DE5D411D9A2B8700D69F39 /* lua_zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_zlib.h; sourceTree = "<group>"; };
+		A2DE5EA71D9A2E0300D69F39 /* Android.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Android.mk; sourceTree = "<group>"; };
+		A2DE5EA91D9A2E0300D69F39 /* HelperFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelperFunc.cpp; sourceTree = "<group>"; };
+		A2DE5EAA1D9A2E0300D69F39 /* HelperFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperFunc.h; sourceTree = "<group>"; };
+		A2DE5EAB1D9A2E0300D69F39 /* cocos2dx_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocos2dx_extra.h; sourceTree = "<group>"; };
+		A2DE5EAE1D9A2E0300D69F39 /* libbase64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libbase64.c; sourceTree = "<group>"; };
+		A2DE5EAF1D9A2E0300D69F39 /* libbase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libbase64.h; sourceTree = "<group>"; };
+		A2DE5EB01D9A2E0300D69F39 /* CCCrypto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCrypto.cpp; sourceTree = "<group>"; };
+		A2DE5EB11D9A2E0300D69F39 /* CCCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCrypto.h; sourceTree = "<group>"; };
+		A2DE5EB31D9A2E0300D69F39 /* md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = md5.c; sourceTree = "<group>"; };
+		A2DE5EB41D9A2E0300D69F39 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		A2DE5EB61D9A2E0300D69F39 /* Android.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Android.mk; sourceTree = "<group>"; };
+		A2DE5EB71D9A2E0300D69F39 /* cocos2dFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocos2dFilters.h; sourceTree = "<group>"; };
+		A2DE5EB91D9A2E0300D69F39 /* CCBlurFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCBlurFilter.cpp; sourceTree = "<group>"; };
+		A2DE5EBA1D9A2E0300D69F39 /* CCBlurFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBlurFilter.h; sourceTree = "<group>"; };
+		A2DE5EBB1D9A2E0300D69F39 /* CCBrightnessFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCBrightnessFilter.cpp; sourceTree = "<group>"; };
+		A2DE5EBC1D9A2E0300D69F39 /* CCBrightnessFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBrightnessFilter.h; sourceTree = "<group>"; };
+		A2DE5EBD1D9A2E0300D69F39 /* CCContrastFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCContrastFilter.cpp; sourceTree = "<group>"; };
+		A2DE5EBE1D9A2E0300D69F39 /* CCContrastFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCContrastFilter.h; sourceTree = "<group>"; };
+		A2DE5EBF1D9A2E0300D69F39 /* CCCustomFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCustomFilter.cpp; sourceTree = "<group>"; };
+		A2DE5EC01D9A2E0300D69F39 /* CCCustomFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCustomFilter.h; sourceTree = "<group>"; };
+		A2DE5EC11D9A2E0300D69F39 /* CCDropShadowFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCDropShadowFilter.cpp; sourceTree = "<group>"; };
+		A2DE5EC21D9A2E0300D69F39 /* CCDropShadowFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropShadowFilter.h; sourceTree = "<group>"; };
+		A2DE5EC31D9A2E0300D69F39 /* CCExposureFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCExposureFilter.cpp; sourceTree = "<group>"; };
+		A2DE5EC41D9A2E0300D69F39 /* CCExposureFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCExposureFilter.h; sourceTree = "<group>"; };
+		A2DE5EC51D9A2E0300D69F39 /* CCFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCFilter.cpp; sourceTree = "<group>"; };
+		A2DE5EC61D9A2E0300D69F39 /* CCFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFilter.h; sourceTree = "<group>"; };
+		A2DE5EC71D9A2E0300D69F39 /* CCGammaFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCGammaFilter.cpp; sourceTree = "<group>"; };
+		A2DE5EC81D9A2E0300D69F39 /* CCGammaFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGammaFilter.h; sourceTree = "<group>"; };
+		A2DE5EC91D9A2E0300D69F39 /* CCGrayFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCGrayFilter.cpp; sourceTree = "<group>"; };
+		A2DE5ECA1D9A2E0300D69F39 /* CCGrayFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGrayFilter.h; sourceTree = "<group>"; };
+		A2DE5ECB1D9A2E0300D69F39 /* CCHazeFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCHazeFilter.cpp; sourceTree = "<group>"; };
+		A2DE5ECC1D9A2E0300D69F39 /* CCHazeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHazeFilter.h; sourceTree = "<group>"; };
+		A2DE5ECD1D9A2E0300D69F39 /* CCHueFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCHueFilter.cpp; sourceTree = "<group>"; };
+		A2DE5ECE1D9A2E0300D69F39 /* CCHueFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHueFilter.h; sourceTree = "<group>"; };
+		A2DE5ECF1D9A2E0300D69F39 /* CCMaskFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCMaskFilter.cpp; sourceTree = "<group>"; };
+		A2DE5ED01D9A2E0300D69F39 /* CCMaskFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMaskFilter.h; sourceTree = "<group>"; };
+		A2DE5ED11D9A2E0300D69F39 /* CCRGBFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCRGBFilter.cpp; sourceTree = "<group>"; };
+		A2DE5ED21D9A2E0300D69F39 /* CCRGBFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRGBFilter.h; sourceTree = "<group>"; };
+		A2DE5ED31D9A2E0300D69F39 /* CCSaturationFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSaturationFilter.cpp; sourceTree = "<group>"; };
+		A2DE5ED41D9A2E0300D69F39 /* CCSaturationFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSaturationFilter.h; sourceTree = "<group>"; };
+		A2DE5ED51D9A2E0300D69F39 /* CCSepiaFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSepiaFilter.cpp; sourceTree = "<group>"; };
+		A2DE5ED61D9A2E0300D69F39 /* CCSepiaFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSepiaFilter.h; sourceTree = "<group>"; };
+		A2DE5ED71D9A2E0300D69F39 /* CCSharpenFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSharpenFilter.cpp; sourceTree = "<group>"; };
+		A2DE5ED81D9A2E0300D69F39 /* CCSharpenFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSharpenFilter.h; sourceTree = "<group>"; };
+		A2DE5ED91D9A2E0300D69F39 /* CCTestFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCTestFilter.cpp; sourceTree = "<group>"; };
+		A2DE5EDA1D9A2E0300D69F39 /* CCTestFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTestFilter.h; sourceTree = "<group>"; };
+		A2DE5EDC1D9A2E0300D69F39 /* CCFilteredSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCFilteredSprite.cpp; sourceTree = "<group>"; };
+		A2DE5EDD1D9A2E0300D69F39 /* CCFilteredSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFilteredSprite.h; sourceTree = "<group>"; };
+		A2DE5EDF1D9A2E0300D69F39 /* ccFilterShader_blur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_blur_frag.h; sourceTree = "<group>"; };
+		A2DE5EE01D9A2E0300D69F39 /* ccFilterShader_brightness_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_brightness_frag.h; sourceTree = "<group>"; };
+		A2DE5EE11D9A2E0300D69F39 /* ccFilterShader_colorramp_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_colorramp_frag.h; sourceTree = "<group>"; };
+		A2DE5EE21D9A2E0300D69F39 /* ccFilterShader_contrast_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_contrast_frag.h; sourceTree = "<group>"; };
+		A2DE5EE31D9A2E0300D69F39 /* ccFilterShader_drop_shadow_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_drop_shadow_frag.h; sourceTree = "<group>"; };
+		A2DE5EE41D9A2E0300D69F39 /* ccFilterShader_drop_shadow_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_drop_shadow_vert.h; sourceTree = "<group>"; };
+		A2DE5EE51D9A2E0300D69F39 /* ccFilterShader_emboss_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_emboss_frag.h; sourceTree = "<group>"; };
+		A2DE5EE61D9A2E0300D69F39 /* ccFilterShader_embossmov_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_embossmov_frag.h; sourceTree = "<group>"; };
+		A2DE5EE71D9A2E0300D69F39 /* ccFilterShader_exposure_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_exposure_frag.h; sourceTree = "<group>"; };
+		A2DE5EE81D9A2E0300D69F39 /* ccFilterShader_gamma_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_gamma_frag.h; sourceTree = "<group>"; };
+		A2DE5EE91D9A2E0300D69F39 /* ccFilterShader_gaussian_blur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_gaussian_blur_frag.h; sourceTree = "<group>"; };
+		A2DE5EEA1D9A2E0300D69F39 /* ccFilterShader_gaussian_hblur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_gaussian_hblur_frag.h; sourceTree = "<group>"; };
+		A2DE5EEB1D9A2E0300D69F39 /* ccFilterShader_gaussian_vblur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_gaussian_vblur_frag.h; sourceTree = "<group>"; };
+		A2DE5EEC1D9A2E0300D69F39 /* ccFilterShader_grass_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_grass_frag.h; sourceTree = "<group>"; };
+		A2DE5EED1D9A2E0300D69F39 /* ccFilterShader_gray_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_gray_frag.h; sourceTree = "<group>"; };
+		A2DE5EEE1D9A2E0300D69F39 /* ccFilterShader_haze_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_haze_frag.h; sourceTree = "<group>"; };
+		A2DE5EEF1D9A2E0300D69F39 /* ccFilterShader_hblur_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_hblur_vert.h; sourceTree = "<group>"; };
+		A2DE5EF01D9A2E0300D69F39 /* ccFilterShader_hue_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_hue_frag.h; sourceTree = "<group>"; };
+		A2DE5EF11D9A2E0300D69F39 /* ccFilterShader_motion_blur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_motion_blur_frag.h; sourceTree = "<group>"; };
+		A2DE5EF21D9A2E0300D69F39 /* ccFilterShader_motion_blur_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_motion_blur_vert.h; sourceTree = "<group>"; };
+		A2DE5EF31D9A2E0300D69F39 /* ccFilterShader_rgb_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_rgb_frag.h; sourceTree = "<group>"; };
+		A2DE5EF41D9A2E0300D69F39 /* ccFilterShader_saturation_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_saturation_frag.h; sourceTree = "<group>"; };
+		A2DE5EF51D9A2E0300D69F39 /* ccFilterShader_sepia_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_sepia_frag.h; sourceTree = "<group>"; };
+		A2DE5EF61D9A2E0300D69F39 /* ccFilterShader_sharpen_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_sharpen_frag.h; sourceTree = "<group>"; };
+		A2DE5EF71D9A2E0300D69F39 /* ccFilterShader_sharpen_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_sharpen_vert.h; sourceTree = "<group>"; };
+		A2DE5EF81D9A2E0300D69F39 /* ccFilterShader_test_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_test_frag.h; sourceTree = "<group>"; };
+		A2DE5EF91D9A2E0300D69F39 /* ccFilterShader_test_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_test_vert.h; sourceTree = "<group>"; };
+		A2DE5EFA1D9A2E0300D69F39 /* ccFilterShader_vblur_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_vblur_vert.h; sourceTree = "<group>"; };
+		A2DE5EFB1D9A2E0300D69F39 /* ccFilterShader_zoom_blur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_zoom_blur_frag.h; sourceTree = "<group>"; };
+		A2DE5EFC1D9A2E0300D69F39 /* ccFilterShaders.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ccFilterShaders.cpp; sourceTree = "<group>"; };
+		A2DE5EFD1D9A2E0300D69F39 /* ccFilterShaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShaders.h; sourceTree = "<group>"; };
+		A2DE5EFE1D9A2E0300D69F39 /* example_bloom.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_bloom.fsh; sourceTree = "<group>"; };
+		A2DE5EFF1D9A2E0300D69F39 /* example_Blur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_Blur.fsh; sourceTree = "<group>"; };
+		A2DE5F001D9A2E0300D69F39 /* example_celShading.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_celShading.fsh; sourceTree = "<group>"; };
+		A2DE5F011D9A2E0300D69F39 /* example_ColorBars.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_ColorBars.fsh; sourceTree = "<group>"; };
+		A2DE5F021D9A2E0300D69F39 /* example_ColorBars.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_ColorBars.vsh; sourceTree = "<group>"; };
+		A2DE5F031D9A2E0300D69F39 /* example_edgeDetection.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_edgeDetection.fsh; sourceTree = "<group>"; };
+		A2DE5F041D9A2E0300D69F39 /* example_Flower.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_Flower.fsh; sourceTree = "<group>"; };
+		A2DE5F051D9A2E0300D69F39 /* example_greyScale.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_greyScale.fsh; sourceTree = "<group>"; };
+		A2DE5F061D9A2E0300D69F39 /* example_Heart.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_Heart.fsh; sourceTree = "<group>"; };
+		A2DE5F071D9A2E0300D69F39 /* example_HorizontalColor.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_HorizontalColor.fsh; sourceTree = "<group>"; };
+		A2DE5F081D9A2E0300D69F39 /* example_Julia.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_Julia.fsh; sourceTree = "<group>"; };
+		A2DE5F091D9A2E0300D69F39 /* example_lensFlare.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_lensFlare.fsh; sourceTree = "<group>"; };
+		A2DE5F0A1D9A2E0300D69F39 /* example_Mandelbrot.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_Mandelbrot.fsh; sourceTree = "<group>"; };
+		A2DE5F0B1D9A2E0300D69F39 /* example_Monjori.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_Monjori.fsh; sourceTree = "<group>"; };
+		A2DE5F0C1D9A2E0300D69F39 /* example_MultiTexture.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_MultiTexture.fsh; sourceTree = "<group>"; };
+		A2DE5F0D1D9A2E0300D69F39 /* example_MultiTexture.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_MultiTexture.vsh; sourceTree = "<group>"; };
+		A2DE5F0E1D9A2E0300D69F39 /* example_Noisy.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_Noisy.fsh; sourceTree = "<group>"; };
+		A2DE5F0F1D9A2E0300D69F39 /* example_normal.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_normal.fsh; sourceTree = "<group>"; };
+		A2DE5F101D9A2E0300D69F39 /* example_outline.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_outline.fsh; sourceTree = "<group>"; };
+		A2DE5F111D9A2E0300D69F39 /* example_Plasma.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_Plasma.fsh; sourceTree = "<group>"; };
+		A2DE5F121D9A2E0300D69F39 /* example_sepia.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_sepia.fsh; sourceTree = "<group>"; };
+		A2DE5F131D9A2E0300D69F39 /* example_Twist.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = example_Twist.fsh; sourceTree = "<group>"; };
+		A2DE5F141D9A2E0300D69F39 /* FilterShaders.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilterShaders.cpp; sourceTree = "<group>"; };
+		A2DE5F151D9A2E0300D69F39 /* FilterShaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterShaders.h; sourceTree = "<group>"; };
+		A2DE5F161D9A2E0300D69F39 /* shadertoy_FireBall.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shadertoy_FireBall.fsh; sourceTree = "<group>"; };
+		A2DE5F171D9A2E0300D69F39 /* shadertoy_Glow.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shadertoy_Glow.fsh; sourceTree = "<group>"; };
+		A2DE5F181D9A2E0300D69F39 /* shadertoy_LensFlare.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shadertoy_LensFlare.fsh; sourceTree = "<group>"; };
+		A2DE5F1A1D9A2E0300D69F39 /* build.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = build.bat; sourceTree = "<group>"; };
+		A2DE5F1B1D9A2E0300D69F39 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		A2DE5F1C1D9A2E0300D69F39 /* cocos2dx_extra_ios_iap_luabinding.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cocos2dx_extra_ios_iap_luabinding.cpp; sourceTree = "<group>"; };
+		A2DE5F1D1D9A2E0300D69F39 /* cocos2dx_extra_ios_iap_luabinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocos2dx_extra_ios_iap_luabinding.h; sourceTree = "<group>"; };
+		A2DE5F1E1D9A2E0300D69F39 /* cocos2dx_extra_ios_iap_luabinding.tolua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cocos2dx_extra_ios_iap_luabinding.tolua; sourceTree = "<group>"; };
+		A2DE5F1F1D9A2E0300D69F39 /* cocos2dx_extra_luabinding.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cocos2dx_extra_luabinding.cpp; sourceTree = "<group>"; };
+		A2DE5F201D9A2E0300D69F39 /* cocos2dx_extra_luabinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocos2dx_extra_luabinding.h; sourceTree = "<group>"; };
+		A2DE5F211D9A2E0300D69F39 /* cocos2dx_extra_luabinding.tolua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cocos2dx_extra_luabinding.tolua; sourceTree = "<group>"; };
+		A2DE5F221D9A2E0300D69F39 /* HelperFunc_luabinding.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelperFunc_luabinding.cpp; sourceTree = "<group>"; };
+		A2DE5F231D9A2E0300D69F39 /* HelperFunc_luabinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperFunc_luabinding.h; sourceTree = "<group>"; };
+		A2DE5F241D9A2E0300D69F39 /* HelperFunc_luabinding.tolua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HelperFunc_luabinding.tolua; sourceTree = "<group>"; };
+		A2DE5F251D9A2E0300D69F39 /* lua_cocos2dx_extension_filter_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_cocos2dx_extension_filter_auto.cpp; sourceTree = "<group>"; };
+		A2DE5F261D9A2E0300D69F39 /* lua_cocos2dx_extension_filter_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_cocos2dx_extension_filter_auto.hpp; sourceTree = "<group>"; };
+		A2DE5F271D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_cocos2dx_extension_nanovg_auto.cpp; sourceTree = "<group>"; };
+		A2DE5F281D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_cocos2dx_extension_nanovg_auto.hpp; sourceTree = "<group>"; };
+		A2DE5F291D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_manual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_cocos2dx_extension_nanovg_manual.cpp; sourceTree = "<group>"; };
+		A2DE5F2A1D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_manual.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_cocos2dx_extension_nanovg_manual.hpp; sourceTree = "<group>"; };
+		A2DE5F2D1D9A2E0300D69F39 /* NVGDrawNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NVGDrawNode.cpp; sourceTree = "<group>"; };
+		A2DE5F2E1D9A2E0300D69F39 /* NVGDrawNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVGDrawNode.h; sourceTree = "<group>"; };
+		A2DE5F2F1D9A2E0300D69F39 /* NVGNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NVGNode.cpp; sourceTree = "<group>"; };
+		A2DE5F301D9A2E0300D69F39 /* NVGNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVGNode.h; sourceTree = "<group>"; };
+		A2DE5F321D9A2E0300D69F39 /* fontstash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fontstash.h; sourceTree = "<group>"; };
+		A2DE5F331D9A2E0300D69F39 /* nanovg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nanovg.c; sourceTree = "<group>"; };
+		A2DE5F341D9A2E0300D69F39 /* nanovg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanovg.h; sourceTree = "<group>"; };
+		A2DE5F351D9A2E0300D69F39 /* nanovg_gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanovg_gl.h; sourceTree = "<group>"; };
+		A2DE5F361D9A2E0300D69F39 /* nanovg_gl_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanovg_gl_utils.h; sourceTree = "<group>"; };
+		A2DE5F371D9A2E0300D69F39 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		A2DE5F381D9A2E0300D69F39 /* stb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
+		A2DE5F3A1D9A2E0300D69F39 /* CCAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAlertViewDelegate.h; sourceTree = "<group>"; };
+		A2DE5F3B1D9A2E0300D69F39 /* CCNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNative.h; sourceTree = "<group>"; };
+		A2DE5F3D1D9A2E0300D69F39 /* CCHTTPRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCHTTPRequest.cpp; sourceTree = "<group>"; };
+		A2DE5F3E1D9A2E0300D69F39 /* CCHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHTTPRequest.h; sourceTree = "<group>"; };
+		A2DE5F3F1D9A2E0300D69F39 /* CCHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		A2DE5F401D9A2E0300D69F39 /* CCNetwork.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCNetwork.cpp; sourceTree = "<group>"; };
+		A2DE5F411D9A2E0300D69F39 /* CCNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNetwork.h; sourceTree = "<group>"; };
+		A2DE5F491D9A2E0300D69F39 /* CCCryptoIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCCryptoIOS.mm; sourceTree = "<group>"; };
+		A2DE5F4A1D9A2E0300D69F39 /* CCNative.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCNative.mm; sourceTree = "<group>"; };
+		A2DE5F4B1D9A2E0300D69F39 /* CCNativeIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNativeIOS.h; sourceTree = "<group>"; };
+		A2DE5F4C1D9A2E0300D69F39 /* CCNativeIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCNativeIOS.mm; sourceTree = "<group>"; };
+		A2DE5F4D1D9A2E0300D69F39 /* CCStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCStore.mm; sourceTree = "<group>"; };
+		A2DE5F4E1D9A2E0300D69F39 /* CCStoreIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStoreIOS.h; sourceTree = "<group>"; };
+		A2DE5F4F1D9A2E0300D69F39 /* CCStoreIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCStoreIOS.mm; sourceTree = "<group>"; };
+		A2DE5F501D9A2E0300D69F39 /* CCStorePaymentTransactionWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCStorePaymentTransactionWrapper.mm; sourceTree = "<group>"; };
+		A2DE5F511D9A2E0300D69F39 /* CCStoreReceiptVerifyRequestIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStoreReceiptVerifyRequestIOS.h; sourceTree = "<group>"; };
+		A2DE5F521D9A2E0300D69F39 /* CCStoreReceiptVerifyRequestIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCStoreReceiptVerifyRequestIOS.mm; sourceTree = "<group>"; };
+		A2DE5F5D1D9A2E0300D69F39 /* OpenUDIDIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDIDIOS.h; sourceTree = "<group>"; };
+		A2DE5F5E1D9A2E0300D69F39 /* OpenUDIDIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDIDIOS.m; sourceTree = "<group>"; };
+		A2DE5F601D9A2E0300D69F39 /* CCNetworkIOSMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCNetworkIOSMac.mm; sourceTree = "<group>"; };
+		A2DE5F611D9A2E0300D69F39 /* ReachabilityIOSMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityIOSMac.h; sourceTree = "<group>"; };
+		A2DE5F621D9A2E0300D69F39 /* ReachabilityIOSMac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityIOSMac.m; sourceTree = "<group>"; };
+		A2DE5F641D9A2E0300D69F39 /* CCCryptoMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCCryptoMac.mm; sourceTree = "<group>"; };
+		A2DE5F651D9A2E0300D69F39 /* CCNative.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCNative.mm; sourceTree = "<group>"; };
+		A2DE5F661D9A2E0300D69F39 /* CCNativeMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNativeMac.h; sourceTree = "<group>"; };
+		A2DE5F671D9A2E0300D69F39 /* CCNativeMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCNativeMac.mm; sourceTree = "<group>"; };
+		A2DE5F691D9A2E0300D69F39 /* OpenUDIDMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDIDMac.h; sourceTree = "<group>"; };
+		A2DE5F6A1D9A2E0300D69F39 /* OpenUDIDMac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDIDMac.m; sourceTree = "<group>"; };
+		A2DE5F741D9A2E0300D69F39 /* CCStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStore.h; sourceTree = "<group>"; };
+		A2DE5F751D9A2E0300D69F39 /* CCStorePaymentTransaction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCStorePaymentTransaction.cpp; sourceTree = "<group>"; };
+		A2DE5F761D9A2E0300D69F39 /* CCStorePaymentTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStorePaymentTransaction.h; sourceTree = "<group>"; };
+		A2DE5F771D9A2E0300D69F39 /* CCStorePaymentTransactionWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStorePaymentTransactionWrapper.h; sourceTree = "<group>"; };
+		A2DE5F781D9A2E0300D69F39 /* CCStoreProduct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCStoreProduct.cpp; sourceTree = "<group>"; };
+		A2DE5F791D9A2E0300D69F39 /* CCStoreProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStoreProduct.h; sourceTree = "<group>"; };
+		A2DE5F7A1D9A2E0300D69F39 /* CCStoreProductsRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStoreProductsRequestDelegate.h; sourceTree = "<group>"; };
+		A2DE5F7B1D9A2E0300D69F39 /* CCStoreTransactionObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStoreTransactionObserver.h; sourceTree = "<group>"; };
+		A2DE601E1D9A364C00D69F39 /* libquickmac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libquickmac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2DE602B1D9A382800D69F39 /* lua_cocos2dx_quick_manual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_cocos2dx_quick_manual.cpp; sourceTree = "<group>"; };
+		A2DE602C1D9A382800D69F39 /* lua_cocos2dx_quick_manual.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_cocos2dx_quick_manual.hpp; sourceTree = "<group>"; };
+		A2DE602D1D9A382800D69F39 /* LuaEventNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaEventNode.cpp; sourceTree = "<group>"; };
+		A2DE602E1D9A382800D69F39 /* LuaEventNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaEventNode.h; sourceTree = "<group>"; };
+		A2DE602F1D9A382800D69F39 /* LuaNodeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaNodeManager.cpp; sourceTree = "<group>"; };
+		A2DE60301D9A382800D69F39 /* LuaNodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaNodeManager.h; sourceTree = "<group>"; };
+		A2DE60331D9A382800D69F39 /* LuaTouchTargetNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaTouchTargetNode.cpp; sourceTree = "<group>"; };
+		A2DE60341D9A382800D69F39 /* LuaTouchTargetNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaTouchTargetNode.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A2DE5C3F1D9A2AF800D69F39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2DE60191D9A364C00D69F39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A24951F01D9A4FAE001E033F /* json */ = {
+			isa = PBXGroup;
+			children = (
+				A24951F11D9A4FAE001E033F /* SBJSON.h */,
+				A24951F21D9A4FAE001E033F /* SBJSON.m */,
+				A24951F31D9A4FAE001E033F /* SBJsonBase.h */,
+				A24951F41D9A4FAE001E033F /* SBJsonBase.m */,
+				A24951F51D9A4FAE001E033F /* SBJsonParser.h */,
+				A24951F61D9A4FAE001E033F /* SBJsonParser.m */,
+				A24951F71D9A4FAE001E033F /* SBJsonWriter.h */,
+				A24951F81D9A4FAE001E033F /* SBJsonWriter.m */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		A2DE5C391D9A2AF800D69F39 = {
+			isa = PBXGroup;
+			children = (
+				A2DE5C4E1D9A2B8700D69F39 /* quick-src */,
+				A2DE5C431D9A2AF800D69F39 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A2DE5C431D9A2AF800D69F39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5C421D9A2AF800D69F39 /* liblibquickios.a */,
+				A2DE601E1D9A364C00D69F39 /* libquickmac.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2DE5C4E1D9A2B8700D69F39 /* quick-src */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE602A1D9A382800D69F39 /* node-ex */,
+				A2DE5EA61D9A2E0300D69F39 /* extra */,
+				A2DE5D251D9A2B8700D69F39 /* lua_extensions */,
+			);
+			name = "quick-src";
+			path = "../quick-src";
+			sourceTree = "<group>";
+		};
+		A2DE5D251D9A2B8700D69F39 /* lua_extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5D261D9A2B8700D69F39 /* Android.mk */,
+				A2DE5D271D9A2B8700D69F39 /* cjson */,
+				A2DE5D2E1D9A2B8700D69F39 /* debugger */,
+				A2DE5D321D9A2B8700D69F39 /* filesystem */,
+				A2DE5D351D9A2B8700D69F39 /* lpack */,
+				A2DE5D381D9A2B8700D69F39 /* lsqlite3 */,
+				A2DE5D3D1D9A2B8700D69F39 /* lua_extensions_more.c */,
+				A2DE5D3E1D9A2B8700D69F39 /* lua_extensions_more.h */,
+				A2DE5D3F1D9A2B8700D69F39 /* zlib */,
+			);
+			path = lua_extensions;
+			sourceTree = "<group>";
+		};
+		A2DE5D271D9A2B8700D69F39 /* cjson */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5D281D9A2B8700D69F39 /* fpconv.c */,
+				A2DE5D291D9A2B8700D69F39 /* fpconv.h */,
+				A2DE5D2A1D9A2B8700D69F39 /* lua_cjson.c */,
+				A2DE5D2B1D9A2B8700D69F39 /* lua_cjson.h */,
+				A2DE5D2C1D9A2B8700D69F39 /* strbuf.c */,
+				A2DE5D2D1D9A2B8700D69F39 /* strbuf.h */,
+			);
+			path = cjson;
+			sourceTree = "<group>";
+		};
+		A2DE5D2E1D9A2B8700D69F39 /* debugger */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5D2F1D9A2B8700D69F39 /* debugger.c */,
+				A2DE5D301D9A2B8700D69F39 /* debugger.h */,
+				A2DE5D311D9A2B8700D69F39 /* ldt_debugger.lua */,
+			);
+			path = debugger;
+			sourceTree = "<group>";
+		};
+		A2DE5D321D9A2B8700D69F39 /* filesystem */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5D331D9A2B8700D69F39 /* lfs.c */,
+				A2DE5D341D9A2B8700D69F39 /* lfs.h */,
+			);
+			path = filesystem;
+			sourceTree = "<group>";
+		};
+		A2DE5D351D9A2B8700D69F39 /* lpack */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5D361D9A2B8700D69F39 /* lpack.c */,
+				A2DE5D371D9A2B8700D69F39 /* lpack.h */,
+			);
+			path = lpack;
+			sourceTree = "<group>";
+		};
+		A2DE5D381D9A2B8700D69F39 /* lsqlite3 */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5D391D9A2B8700D69F39 /* lsqlite3.c */,
+				A2DE5D3A1D9A2B8700D69F39 /* lsqlite3.h */,
+				A2DE5D3B1D9A2B8700D69F39 /* sqlite3.c */,
+				A2DE5D3C1D9A2B8700D69F39 /* sqlite3.h */,
+			);
+			path = lsqlite3;
+			sourceTree = "<group>";
+		};
+		A2DE5D3F1D9A2B8700D69F39 /* zlib */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5D401D9A2B8700D69F39 /* lua_zlib.c */,
+				A2DE5D411D9A2B8700D69F39 /* lua_zlib.h */,
+			);
+			path = zlib;
+			sourceTree = "<group>";
+		};
+		A2DE5EA61D9A2E0300D69F39 /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5EA71D9A2E0300D69F39 /* Android.mk */,
+				A2DE5EA81D9A2E0300D69F39 /* apptools */,
+				A2DE5EAB1D9A2E0300D69F39 /* cocos2dx_extra.h */,
+				A2DE5EAC1D9A2E0300D69F39 /* crypto */,
+				A2DE5EB51D9A2E0300D69F39 /* filters */,
+				A2DE5F191D9A2E0300D69F39 /* luabinding */,
+				A2DE5F2B1D9A2E0300D69F39 /* nanovg */,
+				A2DE5F391D9A2E0300D69F39 /* native */,
+				A2DE5F3C1D9A2E0300D69F39 /* network */,
+				A2DE5F421D9A2E0300D69F39 /* platform */,
+				A2DE5F731D9A2E0300D69F39 /* store */,
+			);
+			path = extra;
+			sourceTree = "<group>";
+		};
+		A2DE5EA81D9A2E0300D69F39 /* apptools */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5EA91D9A2E0300D69F39 /* HelperFunc.cpp */,
+				A2DE5EAA1D9A2E0300D69F39 /* HelperFunc.h */,
+			);
+			path = apptools;
+			sourceTree = "<group>";
+		};
+		A2DE5EAC1D9A2E0300D69F39 /* crypto */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5EAD1D9A2E0300D69F39 /* base64 */,
+				A2DE5EB01D9A2E0300D69F39 /* CCCrypto.cpp */,
+				A2DE5EB11D9A2E0300D69F39 /* CCCrypto.h */,
+				A2DE5EB21D9A2E0300D69F39 /* md5 */,
+			);
+			path = crypto;
+			sourceTree = "<group>";
+		};
+		A2DE5EAD1D9A2E0300D69F39 /* base64 */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5EAE1D9A2E0300D69F39 /* libbase64.c */,
+				A2DE5EAF1D9A2E0300D69F39 /* libbase64.h */,
+			);
+			path = base64;
+			sourceTree = "<group>";
+		};
+		A2DE5EB21D9A2E0300D69F39 /* md5 */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5EB31D9A2E0300D69F39 /* md5.c */,
+				A2DE5EB41D9A2E0300D69F39 /* md5.h */,
+			);
+			path = md5;
+			sourceTree = "<group>";
+		};
+		A2DE5EB51D9A2E0300D69F39 /* filters */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5EB61D9A2E0300D69F39 /* Android.mk */,
+				A2DE5EB71D9A2E0300D69F39 /* cocos2dFilters.h */,
+				A2DE5EB81D9A2E0300D69F39 /* filters */,
+				A2DE5EDB1D9A2E0300D69F39 /* nodes */,
+				A2DE5EDE1D9A2E0300D69F39 /* shaders */,
+			);
+			path = filters;
+			sourceTree = "<group>";
+		};
+		A2DE5EB81D9A2E0300D69F39 /* filters */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5EB91D9A2E0300D69F39 /* CCBlurFilter.cpp */,
+				A2DE5EBA1D9A2E0300D69F39 /* CCBlurFilter.h */,
+				A2DE5EBB1D9A2E0300D69F39 /* CCBrightnessFilter.cpp */,
+				A2DE5EBC1D9A2E0300D69F39 /* CCBrightnessFilter.h */,
+				A2DE5EBD1D9A2E0300D69F39 /* CCContrastFilter.cpp */,
+				A2DE5EBE1D9A2E0300D69F39 /* CCContrastFilter.h */,
+				A2DE5EBF1D9A2E0300D69F39 /* CCCustomFilter.cpp */,
+				A2DE5EC01D9A2E0300D69F39 /* CCCustomFilter.h */,
+				A2DE5EC11D9A2E0300D69F39 /* CCDropShadowFilter.cpp */,
+				A2DE5EC21D9A2E0300D69F39 /* CCDropShadowFilter.h */,
+				A2DE5EC31D9A2E0300D69F39 /* CCExposureFilter.cpp */,
+				A2DE5EC41D9A2E0300D69F39 /* CCExposureFilter.h */,
+				A2DE5EC51D9A2E0300D69F39 /* CCFilter.cpp */,
+				A2DE5EC61D9A2E0300D69F39 /* CCFilter.h */,
+				A2DE5EC71D9A2E0300D69F39 /* CCGammaFilter.cpp */,
+				A2DE5EC81D9A2E0300D69F39 /* CCGammaFilter.h */,
+				A2DE5EC91D9A2E0300D69F39 /* CCGrayFilter.cpp */,
+				A2DE5ECA1D9A2E0300D69F39 /* CCGrayFilter.h */,
+				A2DE5ECB1D9A2E0300D69F39 /* CCHazeFilter.cpp */,
+				A2DE5ECC1D9A2E0300D69F39 /* CCHazeFilter.h */,
+				A2DE5ECD1D9A2E0300D69F39 /* CCHueFilter.cpp */,
+				A2DE5ECE1D9A2E0300D69F39 /* CCHueFilter.h */,
+				A2DE5ECF1D9A2E0300D69F39 /* CCMaskFilter.cpp */,
+				A2DE5ED01D9A2E0300D69F39 /* CCMaskFilter.h */,
+				A2DE5ED11D9A2E0300D69F39 /* CCRGBFilter.cpp */,
+				A2DE5ED21D9A2E0300D69F39 /* CCRGBFilter.h */,
+				A2DE5ED31D9A2E0300D69F39 /* CCSaturationFilter.cpp */,
+				A2DE5ED41D9A2E0300D69F39 /* CCSaturationFilter.h */,
+				A2DE5ED51D9A2E0300D69F39 /* CCSepiaFilter.cpp */,
+				A2DE5ED61D9A2E0300D69F39 /* CCSepiaFilter.h */,
+				A2DE5ED71D9A2E0300D69F39 /* CCSharpenFilter.cpp */,
+				A2DE5ED81D9A2E0300D69F39 /* CCSharpenFilter.h */,
+				A2DE5ED91D9A2E0300D69F39 /* CCTestFilter.cpp */,
+				A2DE5EDA1D9A2E0300D69F39 /* CCTestFilter.h */,
+			);
+			path = filters;
+			sourceTree = "<group>";
+		};
+		A2DE5EDB1D9A2E0300D69F39 /* nodes */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5EDC1D9A2E0300D69F39 /* CCFilteredSprite.cpp */,
+				A2DE5EDD1D9A2E0300D69F39 /* CCFilteredSprite.h */,
+			);
+			path = nodes;
+			sourceTree = "<group>";
+		};
+		A2DE5EDE1D9A2E0300D69F39 /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5EDF1D9A2E0300D69F39 /* ccFilterShader_blur_frag.h */,
+				A2DE5EE01D9A2E0300D69F39 /* ccFilterShader_brightness_frag.h */,
+				A2DE5EE11D9A2E0300D69F39 /* ccFilterShader_colorramp_frag.h */,
+				A2DE5EE21D9A2E0300D69F39 /* ccFilterShader_contrast_frag.h */,
+				A2DE5EE31D9A2E0300D69F39 /* ccFilterShader_drop_shadow_frag.h */,
+				A2DE5EE41D9A2E0300D69F39 /* ccFilterShader_drop_shadow_vert.h */,
+				A2DE5EE51D9A2E0300D69F39 /* ccFilterShader_emboss_frag.h */,
+				A2DE5EE61D9A2E0300D69F39 /* ccFilterShader_embossmov_frag.h */,
+				A2DE5EE71D9A2E0300D69F39 /* ccFilterShader_exposure_frag.h */,
+				A2DE5EE81D9A2E0300D69F39 /* ccFilterShader_gamma_frag.h */,
+				A2DE5EE91D9A2E0300D69F39 /* ccFilterShader_gaussian_blur_frag.h */,
+				A2DE5EEA1D9A2E0300D69F39 /* ccFilterShader_gaussian_hblur_frag.h */,
+				A2DE5EEB1D9A2E0300D69F39 /* ccFilterShader_gaussian_vblur_frag.h */,
+				A2DE5EEC1D9A2E0300D69F39 /* ccFilterShader_grass_frag.h */,
+				A2DE5EED1D9A2E0300D69F39 /* ccFilterShader_gray_frag.h */,
+				A2DE5EEE1D9A2E0300D69F39 /* ccFilterShader_haze_frag.h */,
+				A2DE5EEF1D9A2E0300D69F39 /* ccFilterShader_hblur_vert.h */,
+				A2DE5EF01D9A2E0300D69F39 /* ccFilterShader_hue_frag.h */,
+				A2DE5EF11D9A2E0300D69F39 /* ccFilterShader_motion_blur_frag.h */,
+				A2DE5EF21D9A2E0300D69F39 /* ccFilterShader_motion_blur_vert.h */,
+				A2DE5EF31D9A2E0300D69F39 /* ccFilterShader_rgb_frag.h */,
+				A2DE5EF41D9A2E0300D69F39 /* ccFilterShader_saturation_frag.h */,
+				A2DE5EF51D9A2E0300D69F39 /* ccFilterShader_sepia_frag.h */,
+				A2DE5EF61D9A2E0300D69F39 /* ccFilterShader_sharpen_frag.h */,
+				A2DE5EF71D9A2E0300D69F39 /* ccFilterShader_sharpen_vert.h */,
+				A2DE5EF81D9A2E0300D69F39 /* ccFilterShader_test_frag.h */,
+				A2DE5EF91D9A2E0300D69F39 /* ccFilterShader_test_vert.h */,
+				A2DE5EFA1D9A2E0300D69F39 /* ccFilterShader_vblur_vert.h */,
+				A2DE5EFB1D9A2E0300D69F39 /* ccFilterShader_zoom_blur_frag.h */,
+				A2DE5EFC1D9A2E0300D69F39 /* ccFilterShaders.cpp */,
+				A2DE5EFD1D9A2E0300D69F39 /* ccFilterShaders.h */,
+				A2DE5EFE1D9A2E0300D69F39 /* example_bloom.fsh */,
+				A2DE5EFF1D9A2E0300D69F39 /* example_Blur.fsh */,
+				A2DE5F001D9A2E0300D69F39 /* example_celShading.fsh */,
+				A2DE5F011D9A2E0300D69F39 /* example_ColorBars.fsh */,
+				A2DE5F021D9A2E0300D69F39 /* example_ColorBars.vsh */,
+				A2DE5F031D9A2E0300D69F39 /* example_edgeDetection.fsh */,
+				A2DE5F041D9A2E0300D69F39 /* example_Flower.fsh */,
+				A2DE5F051D9A2E0300D69F39 /* example_greyScale.fsh */,
+				A2DE5F061D9A2E0300D69F39 /* example_Heart.fsh */,
+				A2DE5F071D9A2E0300D69F39 /* example_HorizontalColor.fsh */,
+				A2DE5F081D9A2E0300D69F39 /* example_Julia.fsh */,
+				A2DE5F091D9A2E0300D69F39 /* example_lensFlare.fsh */,
+				A2DE5F0A1D9A2E0300D69F39 /* example_Mandelbrot.fsh */,
+				A2DE5F0B1D9A2E0300D69F39 /* example_Monjori.fsh */,
+				A2DE5F0C1D9A2E0300D69F39 /* example_MultiTexture.fsh */,
+				A2DE5F0D1D9A2E0300D69F39 /* example_MultiTexture.vsh */,
+				A2DE5F0E1D9A2E0300D69F39 /* example_Noisy.fsh */,
+				A2DE5F0F1D9A2E0300D69F39 /* example_normal.fsh */,
+				A2DE5F101D9A2E0300D69F39 /* example_outline.fsh */,
+				A2DE5F111D9A2E0300D69F39 /* example_Plasma.fsh */,
+				A2DE5F121D9A2E0300D69F39 /* example_sepia.fsh */,
+				A2DE5F131D9A2E0300D69F39 /* example_Twist.fsh */,
+				A2DE5F141D9A2E0300D69F39 /* FilterShaders.cpp */,
+				A2DE5F151D9A2E0300D69F39 /* FilterShaders.h */,
+				A2DE5F161D9A2E0300D69F39 /* shadertoy_FireBall.fsh */,
+				A2DE5F171D9A2E0300D69F39 /* shadertoy_Glow.fsh */,
+				A2DE5F181D9A2E0300D69F39 /* shadertoy_LensFlare.fsh */,
+			);
+			path = shaders;
+			sourceTree = "<group>";
+		};
+		A2DE5F191D9A2E0300D69F39 /* luabinding */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F1A1D9A2E0300D69F39 /* build.bat */,
+				A2DE5F1B1D9A2E0300D69F39 /* build.sh */,
+				A2DE5F1C1D9A2E0300D69F39 /* cocos2dx_extra_ios_iap_luabinding.cpp */,
+				A2DE5F1D1D9A2E0300D69F39 /* cocos2dx_extra_ios_iap_luabinding.h */,
+				A2DE5F1E1D9A2E0300D69F39 /* cocos2dx_extra_ios_iap_luabinding.tolua */,
+				A2DE5F1F1D9A2E0300D69F39 /* cocos2dx_extra_luabinding.cpp */,
+				A2DE5F201D9A2E0300D69F39 /* cocos2dx_extra_luabinding.h */,
+				A2DE5F211D9A2E0300D69F39 /* cocos2dx_extra_luabinding.tolua */,
+				A2DE5F221D9A2E0300D69F39 /* HelperFunc_luabinding.cpp */,
+				A2DE5F231D9A2E0300D69F39 /* HelperFunc_luabinding.h */,
+				A2DE5F241D9A2E0300D69F39 /* HelperFunc_luabinding.tolua */,
+				A2DE5F251D9A2E0300D69F39 /* lua_cocos2dx_extension_filter_auto.cpp */,
+				A2DE5F261D9A2E0300D69F39 /* lua_cocos2dx_extension_filter_auto.hpp */,
+				A2DE5F271D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_auto.cpp */,
+				A2DE5F281D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_auto.hpp */,
+				A2DE5F291D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_manual.cpp */,
+				A2DE5F2A1D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_manual.hpp */,
+			);
+			path = luabinding;
+			sourceTree = "<group>";
+		};
+		A2DE5F2B1D9A2E0300D69F39 /* nanovg */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F2C1D9A2E0300D69F39 /* nanonode */,
+				A2DE5F311D9A2E0300D69F39 /* nanovg */,
+			);
+			path = nanovg;
+			sourceTree = "<group>";
+		};
+		A2DE5F2C1D9A2E0300D69F39 /* nanonode */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F2D1D9A2E0300D69F39 /* NVGDrawNode.cpp */,
+				A2DE5F2E1D9A2E0300D69F39 /* NVGDrawNode.h */,
+				A2DE5F2F1D9A2E0300D69F39 /* NVGNode.cpp */,
+				A2DE5F301D9A2E0300D69F39 /* NVGNode.h */,
+			);
+			path = nanonode;
+			sourceTree = "<group>";
+		};
+		A2DE5F311D9A2E0300D69F39 /* nanovg */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F321D9A2E0300D69F39 /* fontstash.h */,
+				A2DE5F331D9A2E0300D69F39 /* nanovg.c */,
+				A2DE5F341D9A2E0300D69F39 /* nanovg.h */,
+				A2DE5F351D9A2E0300D69F39 /* nanovg_gl.h */,
+				A2DE5F361D9A2E0300D69F39 /* nanovg_gl_utils.h */,
+				A2DE5F371D9A2E0300D69F39 /* stb_image.h */,
+				A2DE5F381D9A2E0300D69F39 /* stb_truetype.h */,
+			);
+			path = nanovg;
+			sourceTree = "<group>";
+		};
+		A2DE5F391D9A2E0300D69F39 /* native */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F3A1D9A2E0300D69F39 /* CCAlertViewDelegate.h */,
+				A2DE5F3B1D9A2E0300D69F39 /* CCNative.h */,
+			);
+			path = native;
+			sourceTree = "<group>";
+		};
+		A2DE5F3C1D9A2E0300D69F39 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F3D1D9A2E0300D69F39 /* CCHTTPRequest.cpp */,
+				A2DE5F3E1D9A2E0300D69F39 /* CCHTTPRequest.h */,
+				A2DE5F3F1D9A2E0300D69F39 /* CCHTTPRequestDelegate.h */,
+				A2DE5F401D9A2E0300D69F39 /* CCNetwork.cpp */,
+				A2DE5F411D9A2E0300D69F39 /* CCNetwork.h */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		A2DE5F421D9A2E0300D69F39 /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F481D9A2E0300D69F39 /* ios */,
+				A2DE5F5F1D9A2E0300D69F39 /* ios_mac */,
+				A2DE5F631D9A2E0300D69F39 /* mac */,
+			);
+			path = platform;
+			sourceTree = "<group>";
+		};
+		A2DE5F481D9A2E0300D69F39 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A24951F01D9A4FAE001E033F /* json */,
+				A2DE5F491D9A2E0300D69F39 /* CCCryptoIOS.mm */,
+				A2DE5F4A1D9A2E0300D69F39 /* CCNative.mm */,
+				A2DE5F4B1D9A2E0300D69F39 /* CCNativeIOS.h */,
+				A2DE5F4C1D9A2E0300D69F39 /* CCNativeIOS.mm */,
+				A2DE5F4D1D9A2E0300D69F39 /* CCStore.mm */,
+				A2DE5F4E1D9A2E0300D69F39 /* CCStoreIOS.h */,
+				A2DE5F4F1D9A2E0300D69F39 /* CCStoreIOS.mm */,
+				A2DE5F501D9A2E0300D69F39 /* CCStorePaymentTransactionWrapper.mm */,
+				A2DE5F511D9A2E0300D69F39 /* CCStoreReceiptVerifyRequestIOS.h */,
+				A2DE5F521D9A2E0300D69F39 /* CCStoreReceiptVerifyRequestIOS.mm */,
+				A2DE5F5C1D9A2E0300D69F39 /* openudid */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		A2DE5F5C1D9A2E0300D69F39 /* openudid */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F5D1D9A2E0300D69F39 /* OpenUDIDIOS.h */,
+				A2DE5F5E1D9A2E0300D69F39 /* OpenUDIDIOS.m */,
+			);
+			path = openudid;
+			sourceTree = "<group>";
+		};
+		A2DE5F5F1D9A2E0300D69F39 /* ios_mac */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F601D9A2E0300D69F39 /* CCNetworkIOSMac.mm */,
+				A2DE5F611D9A2E0300D69F39 /* ReachabilityIOSMac.h */,
+				A2DE5F621D9A2E0300D69F39 /* ReachabilityIOSMac.m */,
+			);
+			path = ios_mac;
+			sourceTree = "<group>";
+		};
+		A2DE5F631D9A2E0300D69F39 /* mac */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F641D9A2E0300D69F39 /* CCCryptoMac.mm */,
+				A2DE5F651D9A2E0300D69F39 /* CCNative.mm */,
+				A2DE5F661D9A2E0300D69F39 /* CCNativeMac.h */,
+				A2DE5F671D9A2E0300D69F39 /* CCNativeMac.mm */,
+				A2DE5F681D9A2E0300D69F39 /* openudid */,
+			);
+			path = mac;
+			sourceTree = "<group>";
+		};
+		A2DE5F681D9A2E0300D69F39 /* openudid */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F691D9A2E0300D69F39 /* OpenUDIDMac.h */,
+				A2DE5F6A1D9A2E0300D69F39 /* OpenUDIDMac.m */,
+			);
+			path = openudid;
+			sourceTree = "<group>";
+		};
+		A2DE5F731D9A2E0300D69F39 /* store */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE5F741D9A2E0300D69F39 /* CCStore.h */,
+				A2DE5F751D9A2E0300D69F39 /* CCStorePaymentTransaction.cpp */,
+				A2DE5F761D9A2E0300D69F39 /* CCStorePaymentTransaction.h */,
+				A2DE5F771D9A2E0300D69F39 /* CCStorePaymentTransactionWrapper.h */,
+				A2DE5F781D9A2E0300D69F39 /* CCStoreProduct.cpp */,
+				A2DE5F791D9A2E0300D69F39 /* CCStoreProduct.h */,
+				A2DE5F7A1D9A2E0300D69F39 /* CCStoreProductsRequestDelegate.h */,
+				A2DE5F7B1D9A2E0300D69F39 /* CCStoreTransactionObserver.h */,
+			);
+			path = store;
+			sourceTree = "<group>";
+		};
+		A2DE602A1D9A382800D69F39 /* node-ex */ = {
+			isa = PBXGroup;
+			children = (
+				A27E5AE21DB5C6F000E2B142 /* LuaTouchEventManager.cpp */,
+				A27E5AE31DB5C6F000E2B142 /* LuaTouchEventManager.h */,
+				A2DE602B1D9A382800D69F39 /* lua_cocos2dx_quick_manual.cpp */,
+				A2DE602C1D9A382800D69F39 /* lua_cocos2dx_quick_manual.hpp */,
+				A2DE602D1D9A382800D69F39 /* LuaEventNode.cpp */,
+				A2DE602E1D9A382800D69F39 /* LuaEventNode.h */,
+				A2DE602F1D9A382800D69F39 /* LuaNodeManager.cpp */,
+				A2DE60301D9A382800D69F39 /* LuaNodeManager.h */,
+				A2DE60331D9A382800D69F39 /* LuaTouchTargetNode.cpp */,
+				A2DE60341D9A382800D69F39 /* LuaTouchTargetNode.h */,
+			);
+			path = "node-ex";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A2DE5C411D9A2AF800D69F39 /* libquickios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2DE5C4B1D9A2AF800D69F39 /* Build configuration list for PBXNativeTarget "libquickios" */;
+			buildPhases = (
+				A2DE5C3E1D9A2AF800D69F39 /* Sources */,
+				A2DE5C3F1D9A2AF800D69F39 /* Frameworks */,
+				A2DE5C401D9A2AF800D69F39 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libquickios;
+			productName = libquick;
+			productReference = A2DE5C421D9A2AF800D69F39 /* liblibquickios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A2DE5FD61D9A364C00D69F39 /* libquickmac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2DE601B1D9A364C00D69F39 /* Build configuration list for PBXNativeTarget "libquickmac" */;
+			buildPhases = (
+				A2DE5FD71D9A364C00D69F39 /* Sources */,
+				A2DE60191D9A364C00D69F39 /* Frameworks */,
+				A2DE601A1D9A364C00D69F39 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libquickmac;
+			productName = libquick;
+			productReference = A2DE601E1D9A364C00D69F39 /* libquickmac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A2DE5C3A1D9A2AF800D69F39 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = zyqiosexercise;
+				TargetAttributes = {
+					A2DE5C411D9A2AF800D69F39 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = A2DE5C3D1D9A2AF800D69F39 /* Build configuration list for PBXProject "libquick" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A2DE5C391D9A2AF800D69F39;
+			productRefGroup = A2DE5C431D9A2AF800D69F39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2DE5C411D9A2AF800D69F39 /* libquickios */,
+				A2DE5FD61D9A364C00D69F39 /* libquickmac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A2DE5C3E1D9A2AF800D69F39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24952631D9A7623001E033F /* lua_cocos2dx_quick_manual.hpp in Sources */,
+				A24952641D9A7623001E033F /* LuaEventNode.h in Sources */,
+				A24952651D9A7623001E033F /* LuaNodeManager.h in Sources */,
+				A24952671D9A7623001E033F /* LuaTouchTargetNode.h in Sources */,
+				A2DE5FAE1D9A2E0300D69F39 /* OpenUDIDIOS.m in Sources */,
+				A24951FA1D9A4FAE001E033F /* SBJsonBase.m in Sources */,
+				A2DE5F851D9A2E0300D69F39 /* CCExposureFilter.cpp in Sources */,
+				A2DE5F981D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_auto.cpp in Sources */,
+				A2DE5F9A1D9A2E0300D69F39 /* NVGDrawNode.cpp in Sources */,
+				A2DE5F841D9A2E0300D69F39 /* CCDropShadowFilter.cpp in Sources */,
+				A2DE5F7F1D9A2E0300D69F39 /* md5.c in Sources */,
+				A2DE5F821D9A2E0300D69F39 /* CCContrastFilter.cpp in Sources */,
+				A2DE5FA71D9A2E0300D69F39 /* CCStoreIOS.mm in Sources */,
+				A2DE5F7D1D9A2E0300D69F39 /* libbase64.c in Sources */,
+				A2DE5F9C1D9A2E0300D69F39 /* nanovg.c in Sources */,
+				A2DE5FA61D9A2E0300D69F39 /* CCStore.mm in Sources */,
+				A2DE5F891D9A2E0300D69F39 /* CCHazeFilter.cpp in Sources */,
+				A2DE5F881D9A2E0300D69F39 /* CCGrayFilter.cpp in Sources */,
+				A2DE5D8D1D9A2B8800D69F39 /* lua_extensions_more.c in Sources */,
+				A2DE5F8C1D9A2E0300D69F39 /* CCRGBFilter.cpp in Sources */,
+				A2DE60351D9A382800D69F39 /* lua_cocos2dx_quick_manual.cpp in Sources */,
+				A2DE5F8D1D9A2E0300D69F39 /* CCSaturationFilter.cpp in Sources */,
+				A2DE5F9D1D9A2E0300D69F39 /* CCHTTPRequest.cpp in Sources */,
+				A2DE5F7C1D9A2E0300D69F39 /* HelperFunc.cpp in Sources */,
+				A24951FC1D9A4FAE001E033F /* SBJsonWriter.m in Sources */,
+				A2DE5FA31D9A2E0300D69F39 /* CCCryptoIOS.mm in Sources */,
+				A2DE5F941D9A2E0300D69F39 /* cocos2dx_extra_ios_iap_luabinding.cpp in Sources */,
+				A2DE5FA51D9A2E0300D69F39 /* CCNativeIOS.mm in Sources */,
+				A2DE5D851D9A2B8800D69F39 /* fpconv.c in Sources */,
+				A2DE5F9B1D9A2E0300D69F39 /* NVGNode.cpp in Sources */,
+				A2DE5F8E1D9A2E0300D69F39 /* CCSepiaFilter.cpp in Sources */,
+				A2DE5F951D9A2E0300D69F39 /* cocos2dx_extra_luabinding.cpp in Sources */,
+				A2DE5D881D9A2B8800D69F39 /* debugger.c in Sources */,
+				A2DE5F7E1D9A2E0300D69F39 /* CCCrypto.cpp in Sources */,
+				A2DE5F831D9A2E0300D69F39 /* CCCustomFilter.cpp in Sources */,
+				A2DE5FB31D9A2E0300D69F39 /* CCNativeMac.mm in Sources */,
+				A2DE5F921D9A2E0300D69F39 /* ccFilterShaders.cpp in Sources */,
+				A2DE5D891D9A2B8800D69F39 /* lfs.c in Sources */,
+				A2DE5F911D9A2E0300D69F39 /* CCFilteredSprite.cpp in Sources */,
+				A2DE5D8E1D9A2B8800D69F39 /* lua_zlib.c in Sources */,
+				A2DE5F9E1D9A2E0300D69F39 /* CCNetwork.cpp in Sources */,
+				A2DE60371D9A382800D69F39 /* LuaEventNode.cpp in Sources */,
+				A2DE5F871D9A2E0300D69F39 /* CCGammaFilter.cpp in Sources */,
+				A2DE5D8A1D9A2B8800D69F39 /* lpack.c in Sources */,
+				A2DE5FA91D9A2E0300D69F39 /* CCStoreReceiptVerifyRequestIOS.mm in Sources */,
+				A27E5AE41DB5C6F000E2B142 /* LuaTouchEventManager.cpp in Sources */,
+				A2DE5FB01D9A2E0300D69F39 /* ReachabilityIOSMac.m in Sources */,
+				A2DE5F801D9A2E0300D69F39 /* CCBlurFilter.cpp in Sources */,
+				A2DE5FB21D9A2E0300D69F39 /* CCNative.mm in Sources */,
+				A2DE60391D9A382800D69F39 /* LuaNodeManager.cpp in Sources */,
+				A2DE5D861D9A2B8800D69F39 /* lua_cjson.c in Sources */,
+				A2DE5F931D9A2E0300D69F39 /* FilterShaders.cpp in Sources */,
+				A2DE5FAF1D9A2E0300D69F39 /* CCNetworkIOSMac.mm in Sources */,
+				A2DE5FBA1D9A2E0300D69F39 /* CCStorePaymentTransaction.cpp in Sources */,
+				A2DE5FBB1D9A2E0300D69F39 /* CCStoreProduct.cpp in Sources */,
+				A2DE5FB41D9A2E0300D69F39 /* OpenUDIDMac.m in Sources */,
+				A2DE5FB11D9A2E0300D69F39 /* CCCryptoMac.mm in Sources */,
+				A2DE5F961D9A2E0300D69F39 /* HelperFunc_luabinding.cpp in Sources */,
+				A2DE5F8B1D9A2E0300D69F39 /* CCMaskFilter.cpp in Sources */,
+				A2DE5F811D9A2E0300D69F39 /* CCBrightnessFilter.cpp in Sources */,
+				A2DE5F8A1D9A2E0300D69F39 /* CCHueFilter.cpp in Sources */,
+				A2DE603D1D9A382800D69F39 /* LuaTouchTargetNode.cpp in Sources */,
+				A2DE5F991D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_manual.cpp in Sources */,
+				A2DE5D8B1D9A2B8800D69F39 /* lsqlite3.c in Sources */,
+				A2DE5F971D9A2E0300D69F39 /* lua_cocos2dx_extension_filter_auto.cpp in Sources */,
+				A24951FB1D9A4FAE001E033F /* SBJsonParser.m in Sources */,
+				A2DE5D8C1D9A2B8800D69F39 /* sqlite3.c in Sources */,
+				A24951F91D9A4FAE001E033F /* SBJSON.m in Sources */,
+				A2DE5FA81D9A2E0300D69F39 /* CCStorePaymentTransactionWrapper.mm in Sources */,
+				A2DE5D871D9A2B8800D69F39 /* strbuf.c in Sources */,
+				A2DE5FA41D9A2E0300D69F39 /* CCNative.mm in Sources */,
+				A2DE5F861D9A2E0300D69F39 /* CCFilter.cpp in Sources */,
+				A2DE5F8F1D9A2E0300D69F39 /* CCSharpenFilter.cpp in Sources */,
+				A2DE5F901D9A2E0300D69F39 /* CCTestFilter.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2DE5FD71D9A364C00D69F39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A249525D1D9A7616001E033F /* lua_cocos2dx_quick_manual.cpp in Sources */,
+				A249525E1D9A7616001E033F /* lua_cocos2dx_quick_manual.hpp in Sources */,
+				A249525F1D9A7616001E033F /* LuaEventNode.h in Sources */,
+				A24952601D9A7616001E033F /* LuaNodeManager.h in Sources */,
+				A24952621D9A7616001E033F /* LuaTouchTargetNode.h in Sources */,
+				A2DE5FD91D9A364C00D69F39 /* CCExposureFilter.cpp in Sources */,
+				A2DE5FDB1D9A364C00D69F39 /* lua_cocos2dx_extension_nanovg_auto.cpp in Sources */,
+				A2DE5FDC1D9A364C00D69F39 /* NVGDrawNode.cpp in Sources */,
+				A2DE5FDD1D9A364C00D69F39 /* CCDropShadowFilter.cpp in Sources */,
+				A2DE5FDF1D9A364C00D69F39 /* CCContrastFilter.cpp in Sources */,
+				A2DE5FE11D9A364C00D69F39 /* libbase64.c in Sources */,
+				A2DE5FE21D9A364C00D69F39 /* nanovg.c in Sources */,
+				A2DE5FE41D9A364C00D69F39 /* CCHazeFilter.cpp in Sources */,
+				A2DE5FE51D9A364C00D69F39 /* CCGrayFilter.cpp in Sources */,
+				A2DE5FE61D9A364C00D69F39 /* lua_extensions_more.c in Sources */,
+				A2DE5FE71D9A364C00D69F39 /* CCRGBFilter.cpp in Sources */,
+				A2DE5FE91D9A364C00D69F39 /* CCSaturationFilter.cpp in Sources */,
+				A2DE5FEA1D9A364C00D69F39 /* CCHTTPRequest.cpp in Sources */,
+				A2DE5FEB1D9A364C00D69F39 /* HelperFunc.cpp in Sources */,
+				A2DE5FF01D9A364C00D69F39 /* fpconv.c in Sources */,
+				A2DE5FF11D9A364C00D69F39 /* NVGNode.cpp in Sources */,
+				A2DE5FF21D9A364C00D69F39 /* CCSepiaFilter.cpp in Sources */,
+				A2DE5FF31D9A364C00D69F39 /* cocos2dx_extra_luabinding.cpp in Sources */,
+				A2DE5FF41D9A364C00D69F39 /* debugger.c in Sources */,
+				A2DE5FF51D9A364C00D69F39 /* CCCrypto.cpp in Sources */,
+				A27E5AE51DB5C6F000E2B142 /* LuaTouchEventManager.cpp in Sources */,
+				A2DE5FF61D9A364C00D69F39 /* CCCustomFilter.cpp in Sources */,
+				A2DE5FF71D9A364C00D69F39 /* CCNativeMac.mm in Sources */,
+				A2DE5FF81D9A364C00D69F39 /* ccFilterShaders.cpp in Sources */,
+				A2DE5FF91D9A364C00D69F39 /* lfs.c in Sources */,
+				A2DE5FFA1D9A364C00D69F39 /* CCFilteredSprite.cpp in Sources */,
+				A2DE5FFB1D9A364C00D69F39 /* lua_zlib.c in Sources */,
+				A2DE5FFC1D9A364C00D69F39 /* CCNetwork.cpp in Sources */,
+				A2DE60381D9A382800D69F39 /* LuaEventNode.cpp in Sources */,
+				A2DE5FFD1D9A364C00D69F39 /* CCGammaFilter.cpp in Sources */,
+				A2DE5FFE1D9A364C00D69F39 /* lpack.c in Sources */,
+				A2DE60001D9A364C00D69F39 /* ReachabilityIOSMac.m in Sources */,
+				A2DE60021D9A364C00D69F39 /* CCBlurFilter.cpp in Sources */,
+				A2DE60031D9A364C00D69F39 /* CCNative.mm in Sources */,
+				A2DE603A1D9A382800D69F39 /* LuaNodeManager.cpp in Sources */,
+				A2DE60041D9A364C00D69F39 /* lua_cjson.c in Sources */,
+				A2DE60051D9A364C00D69F39 /* FilterShaders.cpp in Sources */,
+				A2DE60061D9A364C00D69F39 /* CCNetworkIOSMac.mm in Sources */,
+				A2DE60091D9A364C00D69F39 /* OpenUDIDMac.m in Sources */,
+				A2DE600A1D9A364C00D69F39 /* CCCryptoMac.mm in Sources */,
+				A2DE600B1D9A364C00D69F39 /* HelperFunc_luabinding.cpp in Sources */,
+				A2DE600C1D9A364C00D69F39 /* CCMaskFilter.cpp in Sources */,
+				A2DE600D1D9A364C00D69F39 /* CCBrightnessFilter.cpp in Sources */,
+				A2DE600E1D9A364C00D69F39 /* CCHueFilter.cpp in Sources */,
+				A2DE603E1D9A382800D69F39 /* LuaTouchTargetNode.cpp in Sources */,
+				A2DE600F1D9A364C00D69F39 /* lua_cocos2dx_extension_nanovg_manual.cpp in Sources */,
+				A2DE60101D9A364C00D69F39 /* lsqlite3.c in Sources */,
+				A2DE60111D9A364C00D69F39 /* lua_cocos2dx_extension_filter_auto.cpp in Sources */,
+				A2DE60121D9A364C00D69F39 /* sqlite3.c in Sources */,
+				A2DE60141D9A364C00D69F39 /* strbuf.c in Sources */,
+				A2DE60161D9A364C00D69F39 /* CCFilter.cpp in Sources */,
+				A2DE60171D9A364C00D69F39 /* CCSharpenFilter.cpp in Sources */,
+				A2DE60181D9A364C00D69F39 /* CCTestFilter.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A2DE5C491D9A2AF800D69F39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "CC_LUA_ENGINE_ENABLED=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.11;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../quick-src/extra $(SRCROOT)/../quick-src/lua_extensions $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/extensions $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external";
+			};
+			name = Debug;
+		};
+		A2DE5C4A1D9A2AF800D69F39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "CC_LUA_ENGINE_ENABLED=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx10.11;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../quick-src/extra $(SRCROOT)/../quick-src/lua_extensions $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/extensions $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A2DE5C4C1D9A2AF800D69F39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos9.2;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A2DE5C4D1D9A2AF800D69F39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos9.2;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A2DE601C1D9A364C00D69F39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = quickmac;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A2DE601D1D9A364C00D69F39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = quickmac;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A2DE5C3D1D9A2AF800D69F39 /* Build configuration list for PBXProject "libquick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2DE5C491D9A2AF800D69F39 /* Debug */,
+				A2DE5C4A1D9A2AF800D69F39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2DE5C4B1D9A2AF800D69F39 /* Build configuration list for PBXNativeTarget "libquickios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2DE5C4C1D9A2AF800D69F39 /* Debug */,
+				A2DE5C4D1D9A2AF800D69F39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2DE601B1D9A364C00D69F39 /* Build configuration list for PBXNativeTarget "libquickmac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2DE601C1D9A364C00D69F39 /* Debug */,
+				A2DE601D1D9A364C00D69F39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A2DE5C3A1D9A2AF800D69F39 /* Project object */;
+}
