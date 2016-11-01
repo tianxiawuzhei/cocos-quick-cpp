@@ -329,6 +329,9 @@ std::string getCurAppName(void)
     {
         FileUtils::getInstance()->addSearchPath(_project.getQuickCocos2dxRootPath() + "quick/");
     }
+    
+    // add quick root path for search libzq/*lua lib
+    FileUtils::getInstance()->addSearchPath(_project.getQuickCocos2dxRootPath());
 
     const string writablePath = _project.getWritableRealPath();
     if (writablePath.length())

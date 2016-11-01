@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A222FE871DC08CE8009F3A9A"
-               BuildableName = "liblibzq.a"
+               BuildableName = "libzq.a"
                BlueprintName = "libzq"
                ReferencedContainer = "container:libzq.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A222FE871DC08CE8009F3A9A"
-            BuildableName = "liblibzq.a"
+            BuildableName = "libzq.a"
             BlueprintName = "libzq"
             ReferencedContainer = "container:libzq.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A222FE871DC08CE8009F3A9A"
-            BuildableName = "liblibzq.a"
+            BuildableName = "libzq.a"
             BlueprintName = "libzq"
             ReferencedContainer = "container:libzq.xcodeproj">
          </BuildableReference>
