@@ -36,7 +36,7 @@ public:
     *  Creates binary data from a file.
     *  @return A data object.
     */
-   virtual Data getDataFromFile(const std::string& filename);
+   virtual cocos2d::Data getDataFromFile(const std::string& filename);
    
    /**
     *  Checks whether a file exists.

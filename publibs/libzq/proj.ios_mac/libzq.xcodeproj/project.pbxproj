@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		A239097F1DCCA0BB003DA6C3 /* ZQFileManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A239097D1DCCA0BB003DA6C3 /* ZQFileManage.cpp */; };
 		A23909801DCCA0BB003DA6C3 /* ZQFileManage.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A239097E1DCCA0BB003DA6C3 /* ZQFileManage.hpp */; };
+		A25FE1A41DD2CC3D00DB55E5 /* ZQJsonManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A25FE1A21DD2CC3D00DB55E5 /* ZQJsonManage.cpp */; };
+		A25FE1A51DD2CC3D00DB55E5 /* ZQJsonManage.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1A31DD2CC3D00DB55E5 /* ZQJsonManage.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A222FE881DC08CE8009F3A9A /* libzq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzq.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A239097D1DCCA0BB003DA6C3 /* ZQFileManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQFileManage.cpp; sourceTree = "<group>"; };
 		A239097E1DCCA0BB003DA6C3 /* ZQFileManage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZQFileManage.hpp; sourceTree = "<group>"; };
+		A25FE1A21DD2CC3D00DB55E5 /* ZQJsonManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQJsonManage.cpp; sourceTree = "<group>"; };
+		A25FE1A31DD2CC3D00DB55E5 /* ZQJsonManage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZQJsonManage.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,8 @@
 			children = (
 				A239097D1DCCA0BB003DA6C3 /* ZQFileManage.cpp */,
 				A239097E1DCCA0BB003DA6C3 /* ZQFileManage.hpp */,
+				A25FE1A21DD2CC3D00DB55E5 /* ZQJsonManage.cpp */,
+				A25FE1A31DD2CC3D00DB55E5 /* ZQJsonManage.hpp */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -77,6 +83,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25FE1A51DD2CC3D00DB55E5 /* ZQJsonManage.hpp in Headers */,
 				A23909801DCCA0BB003DA6C3 /* ZQFileManage.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A239097F1DCCA0BB003DA6C3 /* ZQFileManage.cpp in Sources */,
+				A25FE1A41DD2CC3D00DB55E5 /* ZQJsonManage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,11 +193,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
 			};
 			name = Debug;
 		};
@@ -227,10 +236,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
 			};
 			name = Release;
 		};

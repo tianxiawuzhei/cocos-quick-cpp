@@ -52,7 +52,7 @@ bool ZQFileManage::init()
 
 std::string ZQFileManage::getStringFromFile(const std::string &filename)
 {
-    return  _fileUtils->getStringFromFile(filename)
+    return  _fileUtils->getStringFromFile(filename);
 }
 
 Data ZQFileManage::getDataFromFile(const std::string &filename)
@@ -60,14 +60,14 @@ Data ZQFileManage::getDataFromFile(const std::string &filename)
     return _fileUtils->getDataFromFile(filename);
 }
 
-bool ZQFileManage::isFileExist(const std::string &filename)
+bool ZQFileManage::isFileExist(const std::string &filename) const
 {
    return _fileUtils->isFileExist(filename);
 }
 
-void ZQFileManage::addSearchPath(const std::string &path)
+void ZQFileManage::addSearchPath(const std::string &path, const bool front)
 {
-    _fileUtils->addSearchPath(path);
+    _fileUtils->addSearchPath(path, front);
 }
 
 std::string ZQFileManage::getWritablePath()
