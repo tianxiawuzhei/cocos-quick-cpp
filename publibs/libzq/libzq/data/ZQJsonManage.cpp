@@ -28,13 +28,13 @@ static void parseArray(const rapidjson::Value& json, cocos2d::ValueVector& array
         {
             cocos2d::ValueVector vect;
             parseArray(item, vect);
-            array.push_back(cocos2d::Value(std::move(vect)));
+            array.push_back(std::move(cocos2d::Value(std::move(vect))));
         }
         else if (item.IsObject())
         {
             cocos2d::ValueMap map;
             parseDict(item, map);
-            array.push_back(cocos2d::Value(std::move(map)));
+            array.push_back(std::move(cocos2d::Value(std::move(map))));
         }
         else if (item.IsString())
         {
@@ -75,13 +75,13 @@ static void parseDict(const rapidjson::Value& json, cocos2d::ValueMap& dict)
         {
             cocos2d::ValueVector vect;
             parseArray(value, vect);
-            dict[key] = cocos2d::Value(std::move(vect));
+            dict[key] = std::move(cocos2d::Value(std::move(vect)));
         }
         else if (value.IsObject())
         {
             cocos2d::ValueMap map;
             parseDict(value, map);
-            dict[key] = std::move(map);
+            dict[key] = std::move(cocos2d::Value(std::move(map)));
         }
         else if (value.IsString())
         {
