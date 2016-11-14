@@ -9,16 +9,34 @@
 /* Begin PBXBuildFile section */
 		A239097F1DCCA0BB003DA6C3 /* ZQFileManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A239097D1DCCA0BB003DA6C3 /* ZQFileManage.cpp */; };
 		A23909801DCCA0BB003DA6C3 /* ZQFileManage.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A239097E1DCCA0BB003DA6C3 /* ZQFileManage.hpp */; };
+		A25339FD1DD96E0E00E0D086 /* ZQLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A25339FB1DD96E0E00E0D086 /* ZQLogger.cpp */; };
+		A25339FE1DD96E0E00E0D086 /* ZQLogger.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25339FC1DD96E0E00E0D086 /* ZQLogger.hpp */; };
 		A25FE1A41DD2CC3D00DB55E5 /* ZQJsonManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A25FE1A21DD2CC3D00DB55E5 /* ZQJsonManage.cpp */; };
 		A25FE1A51DD2CC3D00DB55E5 /* ZQJsonManage.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1A31DD2CC3D00DB55E5 /* ZQJsonManage.hpp */; };
+		A25FE1AC1DD58D5400DB55E5 /* ZQPlistManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A25FE1AA1DD58D5400DB55E5 /* ZQPlistManage.cpp */; };
+		A25FE1AD1DD58D5400DB55E5 /* ZQPlistManage.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1AB1DD58D5400DB55E5 /* ZQPlistManage.hpp */; };
+		A25FE1B61DD5925100DB55E5 /* rapidxml.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1B21DD5925100DB55E5 /* rapidxml.hpp */; };
+		A25FE1B71DD5925100DB55E5 /* rapidxml_iterators.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1B31DD5925100DB55E5 /* rapidxml_iterators.hpp */; };
+		A25FE1B81DD5925100DB55E5 /* rapidxml_print.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1B41DD5925100DB55E5 /* rapidxml_print.hpp */; };
+		A25FE1B91DD5925100DB55E5 /* rapidxml_utils.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1B51DD5925100DB55E5 /* rapidxml_utils.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A222FE881DC08CE8009F3A9A /* libzq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzq.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A239097D1DCCA0BB003DA6C3 /* ZQFileManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQFileManage.cpp; sourceTree = "<group>"; };
 		A239097E1DCCA0BB003DA6C3 /* ZQFileManage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZQFileManage.hpp; sourceTree = "<group>"; };
+		A25339FB1DD96E0E00E0D086 /* ZQLogger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQLogger.cpp; sourceTree = "<group>"; };
+		A25339FC1DD96E0E00E0D086 /* ZQLogger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZQLogger.hpp; sourceTree = "<group>"; };
 		A25FE1A21DD2CC3D00DB55E5 /* ZQJsonManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQJsonManage.cpp; sourceTree = "<group>"; };
 		A25FE1A31DD2CC3D00DB55E5 /* ZQJsonManage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZQJsonManage.hpp; sourceTree = "<group>"; };
+		A25FE1AA1DD58D5400DB55E5 /* ZQPlistManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQPlistManage.cpp; sourceTree = "<group>"; };
+		A25FE1AB1DD58D5400DB55E5 /* ZQPlistManage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZQPlistManage.hpp; sourceTree = "<group>"; };
+		A25FE1B01DD5925100DB55E5 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		A25FE1B11DD5925100DB55E5 /* manual.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = manual.html; sourceTree = "<group>"; };
+		A25FE1B21DD5925100DB55E5 /* rapidxml.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml.hpp; sourceTree = "<group>"; };
+		A25FE1B31DD5925100DB55E5 /* rapidxml_iterators.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_iterators.hpp; sourceTree = "<group>"; };
+		A25FE1B41DD5925100DB55E5 /* rapidxml_print.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_print.hpp; sourceTree = "<group>"; };
+		A25FE1B51DD5925100DB55E5 /* rapidxml_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_utils.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +57,8 @@
 				A239097E1DCCA0BB003DA6C3 /* ZQFileManage.hpp */,
 				A25FE1A21DD2CC3D00DB55E5 /* ZQJsonManage.cpp */,
 				A25FE1A31DD2CC3D00DB55E5 /* ZQJsonManage.hpp */,
+				A25FE1AA1DD58D5400DB55E5 /* ZQPlistManage.cpp */,
+				A25FE1AB1DD58D5400DB55E5 /* ZQPlistManage.hpp */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -62,6 +82,9 @@
 		A222FEAC1DC0A0B9009F3A9A /* libzq */ = {
 			isa = PBXGroup;
 			children = (
+				A25339F31DD96B8200E0D086 /* platform */,
+				A25FE1BB1DD5C03900DB55E5 /* log */,
+				A25FE1AE1DD5925100DB55E5 /* libs */,
 				A221C3271DCA0FAF00F2F64B /* data */,
 				A222FEAD1DC0A0B9009F3A9A /* draw */,
 			);
@@ -76,6 +99,67 @@
 			path = draw;
 			sourceTree = "<group>";
 		};
+		A25339F31DD96B8200E0D086 /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				A25339F41DD96B8200E0D086 /* android */,
+				A25339F51DD96B8200E0D086 /* ios */,
+				A25339F61DD96B8200E0D086 /* mac */,
+			);
+			path = platform;
+			sourceTree = "<group>";
+		};
+		A25339F41DD96B8200E0D086 /* android */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = android;
+			sourceTree = "<group>";
+		};
+		A25339F51DD96B8200E0D086 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		A25339F61DD96B8200E0D086 /* mac */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mac;
+			sourceTree = "<group>";
+		};
+		A25FE1AE1DD5925100DB55E5 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				A25FE1AF1DD5925100DB55E5 /* rapidxml */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		A25FE1AF1DD5925100DB55E5 /* rapidxml */ = {
+			isa = PBXGroup;
+			children = (
+				A25FE1B01DD5925100DB55E5 /* license.txt */,
+				A25FE1B11DD5925100DB55E5 /* manual.html */,
+				A25FE1B21DD5925100DB55E5 /* rapidxml.hpp */,
+				A25FE1B31DD5925100DB55E5 /* rapidxml_iterators.hpp */,
+				A25FE1B41DD5925100DB55E5 /* rapidxml_print.hpp */,
+				A25FE1B51DD5925100DB55E5 /* rapidxml_utils.hpp */,
+			);
+			path = rapidxml;
+			sourceTree = "<group>";
+		};
+		A25FE1BB1DD5C03900DB55E5 /* log */ = {
+			isa = PBXGroup;
+			children = (
+				A25339FB1DD96E0E00E0D086 /* ZQLogger.cpp */,
+				A25339FC1DD96E0E00E0D086 /* ZQLogger.hpp */,
+			);
+			path = log;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -83,8 +167,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25FE1B71DD5925100DB55E5 /* rapidxml_iterators.hpp in Headers */,
 				A25FE1A51DD2CC3D00DB55E5 /* ZQJsonManage.hpp in Headers */,
+				A25FE1B91DD5925100DB55E5 /* rapidxml_utils.hpp in Headers */,
+				A25FE1AD1DD58D5400DB55E5 /* ZQPlistManage.hpp in Headers */,
 				A23909801DCCA0BB003DA6C3 /* ZQFileManage.hpp in Headers */,
+				A25339FE1DD96E0E00E0D086 /* ZQLogger.hpp in Headers */,
+				A25FE1B61DD5925100DB55E5 /* rapidxml.hpp in Headers */,
+				A25FE1B81DD5925100DB55E5 /* rapidxml_print.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25339FD1DD96E0E00E0D086 /* ZQLogger.cpp in Sources */,
 				A239097F1DCCA0BB003DA6C3 /* ZQFileManage.cpp in Sources */,
+				A25FE1AC1DD58D5400DB55E5 /* ZQPlistManage.cpp in Sources */,
 				A25FE1A41DD2CC3D00DB55E5 /* ZQJsonManage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +290,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
 			};
 			name = Debug;
 		};
@@ -240,7 +332,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
 			};
 			name = Release;
 		};

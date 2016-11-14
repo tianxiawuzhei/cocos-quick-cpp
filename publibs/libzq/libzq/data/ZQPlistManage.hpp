@@ -1,31 +1,30 @@
 //
-//  ZQJsonManage.hpp
+//  ZQPlistManage.hpp
 //  libzq
 //
-//  Created by staff on 16/11/9.
+//  Created by staff on 16/11/11.
 //  Copyright © 2016年 zyqiosexercise. All rights reserved.
 //
 
-#ifndef _ZQJSONMANAGE_HPP_
-#define _ZQJSONMANAGE_HPP_
+#ifndef _ZQPLISTMANAGE_HPP_
+#define _ZQPLISTMANAGE_HPP_
 
-#include <stdio.h>
 #include "cocos2d.h"
 
 namespace zq {
-    
-class ZQJsonManage
+
+class ZQPlistManage
 {
 public:
-    static ZQJsonManage* getInstance();
+    static ZQPlistManage* getInstance();
     
     static void destroyInstance();
     
-    ZQJsonManage() = default;
-    ~ZQJsonManage() = default;
+    ZQPlistManage() = default;
+    ~ZQPlistManage() = default;
     
     bool init();
-
+    
 public:
     /**
      *  Converts the contents of a file to a ValueMap.
@@ -33,13 +32,13 @@ public:
      *  @return ValueMap of the file contents.
      *  @note This method is used internally.
      */
-    virtual cocos2d::ValueMap getDictFromFile(const std::string& filename);
+    virtual cocos2d::ValueMap getDictFromFile(const std::string &filename);
     
     
     /** Converts the contents of a file to a ValueMap.
      *  This method is used internally.
      */
-    virtual cocos2d::ValueMap getDictFromText(const std::string& text);
+    virtual cocos2d::ValueMap getDictFromText(const std::string &text);
     
     
     /**
@@ -48,13 +47,13 @@ public:
      *  @return ValueMap of the file contents.
      *  @note This method is used internally.
      */
-    virtual cocos2d::ValueVector getArrayFromFile(const std::string& filename);
+    virtual cocos2d::ValueVector getArrayFromFile(const std::string &filename);
     
     
     /** Converts the contents of a file to a ValueVector.
      *  This method is used internally.
      */
-    virtual cocos2d::ValueVector getArrayFromText(const std::string& text);
+    virtual cocos2d::ValueVector getArrayFromText(const std::string &text);
     
     /**
      *  Converts the contents of a file to a ValueVector.
@@ -62,20 +61,19 @@ public:
      *  @return ValueMap of the file contents.
      *  @note This method is used internally.
      */
-    virtual cocos2d::Value getValueFromFile(const std::string& filename);
+    virtual cocos2d::Value getValueFromFile(const std::string &filename);
     
     
     /** Converts the contents of a file to a Value.
      *  This method is used internally.
      */
-    virtual cocos2d::Value getValueFromText(const std::string& text);
-    
+    virtual cocos2d::Value getValueFromText(const std::string &text);
     
 protected:
-    static ZQJsonManage* _instanceJsonManage;
-};
+    static ZQPlistManage* _instance;
     
+};
     
 }
 
-#endif /* _ZQJSONMANAGE_HPP_ */
+#endif /* _ZQPLISTMANAGE_HPP_ */

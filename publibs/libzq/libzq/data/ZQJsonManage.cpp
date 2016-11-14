@@ -106,6 +106,25 @@ static void parseDict(const rapidjson::Value& json, cocos2d::ValueMap& dict)
     }
 }
 
+ZQJsonManage* ZQJsonManage::_instanceJsonManage = nullptr;
+
+ZQJsonManage* ZQJsonManage::getInstance()
+{
+    if (_instanceJsonManage == nullptr)
+    {
+        _instanceJsonManage = new (std::nothrow) ZQJsonManage();
+        if(!_instanceJsonManage->init())
+        {
+            delete _instanceJsonManage;
+            _instanceJsonManage = nullptr;
+            CCLOG("ERROR: Could not init _instanceJsonManage");
+        }
+    }
+    
+    return _instanceJsonManage;
+}
+
+
 bool ZQJsonManage::init()
 {
     return true;
