@@ -75,3 +75,33 @@ std::string ZQFileManage::getWritablePath()
     return _fileUtils->getWritablePath();
 }
 
+std::string ZQFileManage::getFileExtension(const std::string &filePath) const
+{
+    return _fileUtils->getFileExtension(filePath);
+}
+
+bool ZQFileManage::createDirectory(const std::string &filePath)
+{
+    return _fileUtils->createDirectory(filePath);
+}
+
+bool ZQFileManage::removeDirectory(const std::string &filePath)
+{
+    return _fileUtils->removeDirectory(filePath);
+}
+
+bool ZQFileManage::removeFile(const std::string &filePath)
+{
+    return _fileUtils->removeFile(filePath);
+}
+
+bool ZQFileManage::renameFile(const std::string &oldfullpath, const std::string &newfullpath)
+{
+    return _fileUtils->renameFile(oldfullpath, newfullpath);
+}
+
+long ZQFileManage::getFileSize(const std::string &filepath)
+{
+    return _fileUtils->getFileSize(filepath);
+}
+
