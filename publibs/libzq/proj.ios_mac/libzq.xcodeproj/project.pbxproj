@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A22105741DDED8CC0075B8F5 /* ZQStringUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A22105721DDED8CC0075B8F5 /* ZQStringUtils.cpp */; };
+		A22105751DDED8CC0075B8F5 /* ZQStringUtils.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A22105731DDED8CC0075B8F5 /* ZQStringUtils.hpp */; };
 		A239097F1DCCA0BB003DA6C3 /* ZQFileManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A239097D1DCCA0BB003DA6C3 /* ZQFileManage.cpp */; };
 		A23909801DCCA0BB003DA6C3 /* ZQFileManage.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A239097E1DCCA0BB003DA6C3 /* ZQFileManage.hpp */; };
 		A25339FD1DD96E0E00E0D086 /* ZQLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A25339FB1DD96E0E00E0D086 /* ZQLogger.cpp */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A22105721DDED8CC0075B8F5 /* ZQStringUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQStringUtils.cpp; sourceTree = "<group>"; };
+		A22105731DDED8CC0075B8F5 /* ZQStringUtils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZQStringUtils.hpp; sourceTree = "<group>"; };
 		A222FE881DC08CE8009F3A9A /* libzq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzq.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A239097D1DCCA0BB003DA6C3 /* ZQFileManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQFileManage.cpp; sourceTree = "<group>"; };
 		A239097E1DCCA0BB003DA6C3 /* ZQFileManage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZQFileManage.hpp; sourceTree = "<group>"; };
@@ -50,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A221056D1DDED7760075B8F5 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A22105721DDED8CC0075B8F5 /* ZQStringUtils.cpp */,
+				A22105731DDED8CC0075B8F5 /* ZQStringUtils.hpp */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		A221C3271DCA0FAF00F2F64B /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +95,7 @@
 		A222FEAC1DC0A0B9009F3A9A /* libzq */ = {
 			isa = PBXGroup;
 			children = (
+				A221056D1DDED7760075B8F5 /* utils */,
 				A25339F31DD96B8200E0D086 /* platform */,
 				A25FE1BB1DD5C03900DB55E5 /* log */,
 				A25FE1AE1DD5925100DB55E5 /* libs */,
@@ -171,6 +185,7 @@
 				A25FE1A51DD2CC3D00DB55E5 /* ZQJsonManage.hpp in Headers */,
 				A25FE1B91DD5925100DB55E5 /* rapidxml_utils.hpp in Headers */,
 				A25FE1AD1DD58D5400DB55E5 /* ZQPlistManage.hpp in Headers */,
+				A22105751DDED8CC0075B8F5 /* ZQStringUtils.hpp in Headers */,
 				A23909801DCCA0BB003DA6C3 /* ZQFileManage.hpp in Headers */,
 				A25339FE1DD96E0E00E0D086 /* ZQLogger.hpp in Headers */,
 				A25FE1B61DD5925100DB55E5 /* rapidxml.hpp in Headers */,
@@ -237,6 +252,7 @@
 			files = (
 				A25339FD1DD96E0E00E0D086 /* ZQLogger.cpp in Sources */,
 				A239097F1DCCA0BB003DA6C3 /* ZQFileManage.cpp in Sources */,
+				A22105741DDED8CC0075B8F5 /* ZQStringUtils.cpp in Sources */,
 				A25FE1AC1DD58D5400DB55E5 /* ZQPlistManage.cpp in Sources */,
 				A25FE1A41DD2CC3D00DB55E5 /* ZQJsonManage.cpp in Sources */,
 			);
