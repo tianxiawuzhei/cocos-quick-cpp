@@ -7,3 +7,7 @@
 //
 
 #include "ZQLogger.hpp"
+
+using namespace zq;
+
+

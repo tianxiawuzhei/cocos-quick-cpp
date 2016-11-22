@@ -21,6 +21,8 @@
 		A25FE1B71DD5925100DB55E5 /* rapidxml_iterators.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1B31DD5925100DB55E5 /* rapidxml_iterators.hpp */; };
 		A25FE1B81DD5925100DB55E5 /* rapidxml_print.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1B41DD5925100DB55E5 /* rapidxml_print.hpp */; };
 		A25FE1B91DD5925100DB55E5 /* rapidxml_utils.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1B51DD5925100DB55E5 /* rapidxml_utils.hpp */; };
+		A26387691DE2FC6100A6D925 /* ZQDateUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26387671DE2FC6100A6D925 /* ZQDateUtils.cpp */; };
+		A263876A1DE2FC6100A6D925 /* ZQDateUtils.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A26387681DE2FC6100A6D925 /* ZQDateUtils.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,11 @@
 		A25FE1B31DD5925100DB55E5 /* rapidxml_iterators.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_iterators.hpp; sourceTree = "<group>"; };
 		A25FE1B41DD5925100DB55E5 /* rapidxml_print.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_print.hpp; sourceTree = "<group>"; };
 		A25FE1B51DD5925100DB55E5 /* rapidxml_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_utils.hpp; sourceTree = "<group>"; };
+		A26387241DE2E53D00A6D925 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		A26387251DE2E53D00A6D925 /* format.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = format.cc; sourceTree = "<group>"; };
+		A26387261DE2E53D00A6D925 /* format.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = format.h; sourceTree = "<group>"; };
+		A26387671DE2FC6100A6D925 /* ZQDateUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQDateUtils.cpp; sourceTree = "<group>"; };
+		A26387681DE2FC6100A6D925 /* ZQDateUtils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZQDateUtils.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +66,8 @@
 			children = (
 				A22105721DDED8CC0075B8F5 /* ZQStringUtils.cpp */,
 				A22105731DDED8CC0075B8F5 /* ZQStringUtils.hpp */,
+				A26387671DE2FC6100A6D925 /* ZQDateUtils.cpp */,
+				A26387681DE2FC6100A6D925 /* ZQDateUtils.hpp */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 		A25FE1AE1DD5925100DB55E5 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				A263868E1DE2E53D00A6D925 /* fmt-3.0.0 */,
 				A25FE1AF1DD5925100DB55E5 /* rapidxml */,
 			);
 			path = libs;
@@ -174,6 +184,24 @@
 			path = log;
 			sourceTree = "<group>";
 		};
+		A263868E1DE2E53D00A6D925 /* fmt-3.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				A26387231DE2E53D00A6D925 /* fmt */,
+			);
+			path = "fmt-3.0.0";
+			sourceTree = "<group>";
+		};
+		A26387231DE2E53D00A6D925 /* fmt */ = {
+			isa = PBXGroup;
+			children = (
+				A26387241DE2E53D00A6D925 /* CMakeLists.txt */,
+				A26387251DE2E53D00A6D925 /* format.cc */,
+				A26387261DE2E53D00A6D925 /* format.h */,
+			);
+			path = fmt;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -190,6 +218,7 @@
 				A25339FE1DD96E0E00E0D086 /* ZQLogger.hpp in Headers */,
 				A25FE1B61DD5925100DB55E5 /* rapidxml.hpp in Headers */,
 				A25FE1B81DD5925100DB55E5 /* rapidxml_print.hpp in Headers */,
+				A263876A1DE2FC6100A6D925 /* ZQDateUtils.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26387691DE2FC6100A6D925 /* ZQDateUtils.cpp in Sources */,
 				A25339FD1DD96E0E00E0D086 /* ZQLogger.cpp in Sources */,
 				A239097F1DCCA0BB003DA6C3 /* ZQFileManage.cpp in Sources */,
 				A22105741DDED8CC0075B8F5 /* ZQStringUtils.cpp in Sources */,
@@ -306,7 +336,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs/fmt-3.0.0 $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
 			};
 			name = Debug;
 		};
@@ -348,7 +378,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs/fmt-3.0.0 $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
 			};
 			name = Release;
 		};
