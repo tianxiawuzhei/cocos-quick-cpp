@@ -17,7 +17,8 @@ namespace zq {
     
 class StringUtils
 {
-public:
+    
+protected:
     StringUtils() = default;
     ~StringUtils() = default;
     
