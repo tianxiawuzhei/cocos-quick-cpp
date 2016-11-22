@@ -18,11 +18,10 @@ class ZQJsonManage
 {
 public:
     static ZQJsonManage* getInstance();
-    
-    static void destroyInstance();
-    
+
+protected:
     ZQJsonManage() = default;
-    ~ZQJsonManage() = default;
+    virtual ~ZQJsonManage() = default;
     
     bool init();
 
@@ -69,10 +68,7 @@ public:
      *  This method is used internally.
      */
     virtual cocos2d::Value getValueFromText(const std::string& text);
-    
-    
-protected:
-    static ZQJsonManage* _instanceJsonManage;
+
 };
     
     

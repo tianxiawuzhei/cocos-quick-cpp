@@ -18,10 +18,9 @@ class ZQPlistManage
 public:
     static ZQPlistManage* getInstance();
     
-    static void destroyInstance();
-    
+protected:
     ZQPlistManage() = default;
-    ~ZQPlistManage() = default;
+    virtual ~ZQPlistManage() = default;
     
     bool init();
     
@@ -68,9 +67,6 @@ public:
      *  This method is used internally.
      */
     virtual cocos2d::Value getValueFromText(const std::string &text);
-    
-protected:
-    static ZQPlistManage* _instance;
     
 };
     

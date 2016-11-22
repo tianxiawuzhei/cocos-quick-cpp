@@ -18,11 +18,10 @@ class ZQFileManage
 {
 public:
    static ZQFileManage* getInstance();
-   
-   static void destroyInstance();
-   
+    
+protected:
    ZQFileManage();
-   ~ZQFileManage();
+   virtual ~ZQFileManage();
    
    bool init();
    
@@ -110,9 +109,6 @@ public:
      */
     virtual long getFileSize(const std::string &filepath);
     
-protected:
-    static ZQFileManage* s_instanceZQFileManage;
-   
 private:
     cocos2d::FileUtils* _fileUtils;
 };

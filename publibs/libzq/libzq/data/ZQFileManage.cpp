@@ -12,22 +12,10 @@
 using namespace cocos2d;
 using namespace zq;
 
-ZQFileManage* ZQFileManage::s_instanceZQFileManage = nullptr;
-
 ZQFileManage* ZQFileManage::getInstance()
 {
-   if (s_instanceZQFileManage == nullptr)
-    {
-       s_instanceZQFileManage = new (std::nothrow) ZQFileManage();
-       if(!s_instanceZQFileManage->init())
-        {
-           delete s_instanceZQFileManage;
-           s_instanceZQFileManage = nullptr;
-           CCLOG("ERROR: Could not init s_instanceZQFileManage");
-        }
-    }
-   
-   return s_instanceZQFileManage;
+    static ZQFileManage instance;
+    return &instance;
 }
 
 ZQFileManage::ZQFileManage()

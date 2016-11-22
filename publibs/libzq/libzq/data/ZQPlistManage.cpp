@@ -103,25 +103,11 @@ namespace {
     }
 }
 
-
-ZQPlistManage* ZQPlistManage::_instance = nullptr;
-
 ZQPlistManage* ZQPlistManage::getInstance()
 {
-    if (_instance == nullptr)
-    {
-        _instance = new (std::nothrow) ZQPlistManage();
-        if(!_instance->init())
-        {
-            delete _instance;
-            _instance = nullptr;
-            CCLOG("ERROR: Could not init ZQPlistManage");
-        }
-    }
-    
-    return _instance;
+    static ZQPlistManage instance;
+    return &instance;
 }
-
 
 bool ZQPlistManage::init()
 {
