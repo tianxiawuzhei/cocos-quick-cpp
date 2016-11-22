@@ -20,22 +20,12 @@ ZQFileManage* ZQFileManage::getInstance()
 
 ZQFileManage::ZQFileManage()
 {
+    _fileUtils = cocos2d::FileUtils::getInstance();
 }
 
 ZQFileManage::~ZQFileManage()
 {
    
-}
-
-bool ZQFileManage::init()
-{
-   _fileUtils = cocos2d::FileUtils::getInstance();
-   if (_fileUtils)
-    {
-       return true;
-    }
-   
-    return false;
 }
 
 std::string ZQFileManage::getStringFromFile(const std::string &filename)

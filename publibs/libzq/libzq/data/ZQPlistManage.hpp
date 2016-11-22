@@ -21,9 +21,7 @@ public:
 protected:
     ZQPlistManage() = default;
     virtual ~ZQPlistManage() = default;
-    
-    bool init();
-    
+
 public:
     /**
      *  Converts the contents of a file to a ValueMap.

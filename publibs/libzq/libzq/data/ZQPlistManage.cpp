@@ -109,11 +109,6 @@ ZQPlistManage* ZQPlistManage::getInstance()
     return &instance;
 }
 
-bool ZQPlistManage::init()
-{
-    return true;
-}
-
 cocos2d::ValueMap ZQPlistManage::getDictFromFile(const std::string &filename)
 {
     cocos2d::Value val = this->getValueFromFile(filename);

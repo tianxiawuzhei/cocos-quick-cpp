@@ -22,8 +22,6 @@ public:
 protected:
     ZQJsonManage() = default;
     virtual ~ZQJsonManage() = default;
-    
-    bool init();
 
 public:
     /**

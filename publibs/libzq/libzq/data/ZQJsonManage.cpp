@@ -112,12 +112,6 @@ ZQJsonManage* ZQJsonManage::getInstance()
     return &instance;
 }
 
-
-bool ZQJsonManage::init()
-{
-    return true;
-}
-
 cocos2d::ValueMap ZQJsonManage::getDictFromFile(const std::string &filename)
 {
     cocos2d::Value val = this->getValueFromFile(filename);

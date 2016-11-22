@@ -23,8 +23,6 @@ protected:
    ZQFileManage();
    virtual ~ZQFileManage();
    
-   bool init();
-   
 public:
    /**
     *  Gets string from a file.
