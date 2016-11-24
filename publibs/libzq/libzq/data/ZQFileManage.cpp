@@ -28,6 +28,12 @@ ZQFileManage::~ZQFileManage()
    
 }
 
+void ZQFileManage::init()
+{
+    auto temp = ZQFileManage::tempDir();
+    
+}
+
 std::string ZQFileManage::getStringFromFile(const std::string &filename)
 {
     return  _fileUtils->getStringFromFile(filename);
@@ -81,5 +87,57 @@ bool ZQFileManage::renameFile(const std::string &oldfullpath, const std::string 
 long ZQFileManage::getFileSize(const std::string &filepath)
 {
     return _fileUtils->getFileSize(filepath);
+}
+
+std::string ZQFileManage::getFileBaseName(const std::string &filepath)
+{
+    std::size_t index = filepath.find_last_of("\\/");
+    std::string name = "";
+    if (index != std::string::npos)
+    {
+        name = filepath.substr(index+1);
+    }
+    else
+    {
+        name = filepath;
+    }
+    
+    return name;
+}
+
+std::string ZQFileManage::getDirPath(const std::string &filepath)
+{
+    std::string dir = "";
+    std::size_t index = filepath.find_last_of("/\\");
+    if (index != std::string::npos)
+    {
+        dir = filepath.substr(0, index) + "/";
+    }
+    
+    return dir;
+}
+
+std::string ZQFileManage::tempDir()
+{
+    auto write = _fileUtils->getWritablePath();
+    static std::string temp_path;
+    if (temp_path.empty())
+    {
+        temp_path = write + "_temp/";
+    }
+    
+    return temp_path;
+}
+
+std::string ZQFileManage::logDir()
+{
+    auto write = _fileUtils->getWritablePath();
+    static std::string log_path;
+    if (log_path.empty())
+    {
+        log_path = write + "_log/";
+    }
+    
+    return log_path;
 }
 

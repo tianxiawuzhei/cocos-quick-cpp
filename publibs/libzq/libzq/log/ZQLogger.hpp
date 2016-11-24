@@ -11,36 +11,52 @@
 
 #include <string>
 #include <mutex>
+#include "fmt/format.h"
 
 namespace zq {
     
 class ZQLogger
 {
 public:
-    ZQLogger* getInstance();
+    static ZQLogger* getInstance();
     
 protected:
-    ZQLogger() = default;
-    ~ZQLogger() = default;
+    ZQLogger();
+    virtual ~ZQLogger();
     
 public:
-    virtual bool init();
-    
-    virtual void error(std::string &message) = 0;
-    virtual void debug(std::string &message) = 0;
+    virtual void error(const std::string &message) = 0;
+    virtual void debug(const std::string &message) = 0;
     
 public:
     
     std::string filePath();
     
     void write(std::string &message);
-private:
+    
+    void rename(std::string &file);
+    
+protected:
     bool _debug;
+    
+private:
     FILE *_file;
     std::string _path;
     std::mutex _file_mutex;
 };
     
+}
+
+template <typename ...Args>
+inline void ZQLogD(const char *format, Args... args)
+{
+    zq::ZQLogger::getInstance()->debug(fmt::sprintf(format, args...));
+}
+
+template <typename ...Args>
+inline void ZQLogE(const char *format, Args... args)
+{
+    zq::ZQLogger::getInstance()->error(fmt::sprintf(format, args...));
 }
 
 #endif /* _ZQLOGGER_HPP_ */

@@ -10,6 +10,7 @@
 #define _ZQFileManage_hpp_
 
 #include <stdio.h>
+#include <string>
 #include "cocos2d.h"
 
 namespace zq {
@@ -17,23 +18,23 @@ namespace zq {
 class ZQFileManage
 {
 public:
-   static ZQFileManage* getInstance();
+    static ZQFileManage* getInstance();
     
 protected:
-   ZQFileManage();
-   virtual ~ZQFileManage();
-   
+    ZQFileManage();
+    virtual ~ZQFileManage();
+    void init();
 public:
    /**
     *  Gets string from a file.
     */
-   virtual std::string getStringFromFile(const std::string& filename);
+    virtual std::string getStringFromFile(const std::string& filename);
    
    /**
     *  Creates binary data from a file.
     *  @return A data object.
     */
-   virtual cocos2d::Data getDataFromFile(const std::string& filename);
+    virtual cocos2d::Data getDataFromFile(const std::string& filename);
    
    /**
     *  Checks whether a file exists.
@@ -42,7 +43,7 @@ public:
     *  @param filename The path of the file, it could be a relative or absolute path.
     *  @return True if the file exists, false if not.
     */
-   virtual bool isFileExist(const std::string& filename) const;
+    virtual bool isFileExist(const std::string& filename) const;
     
     /**
      * Add search path.
@@ -106,6 +107,14 @@ public:
      *  @return The file size.
      */
     virtual long getFileSize(const std::string &filepath);
+
+public:
+    virtual std::string getFileBaseName(const std::string &filepath);
+    virtual std::string getDirPath(const std::string &filepath);
+    
+public:
+    std::string logDir();
+    std::string tempDir();
     
 private:
     cocos2d::FileUtils* _fileUtils;

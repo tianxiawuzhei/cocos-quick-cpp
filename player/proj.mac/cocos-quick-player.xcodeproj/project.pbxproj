@@ -39,9 +39,10 @@
 		9FD01B2A19F8C6A3005E0C49 /* PlayerTaskServiceMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FD01B2219F8C6A3005E0C49 /* PlayerTaskServiceMac.mm */; };
 		9FD01B2D19F8C6BA005E0C49 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FD01B2C19F8C6BA005E0C49 /* AppController.mm */; };
 		A245842A1DC3395500DAF5FF /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24584101DC336D800DAF5FF /* libcocos2d Mac.a */; };
-		A245842B1DC3395C00DAF5FF /* liblibquickmac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A245841D1DC336E100DAF5FF /* liblibquickmac.a */; };
+		A245842B1DC3395C00DAF5FF /* libquickmac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A245841D1DC336E100DAF5FF /* libquickmac.a */; };
 		A245843B1DC33AA500DAF5FF /* libluacocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24584341DC33A8700DAF5FF /* libluacocos2d Mac.a */; };
 		A24952461D9A6443001E033F /* ProjectConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A24952441D9A6443001E033F /* ProjectConfig.cpp */; };
+		A2989A931DE6E0EE0073E4F0 /* liblibzqMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2989A861DE6DFAD0073E4F0 /* liblibzqMac.a */; };
 		C033B51D191B337200D06937 /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C033B51A191B337200D06937 /* VisibleRect.cpp */; };
 		C07828F818B4D72E00BD2287 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C07828F418B4D72E00BD2287 /* main.m */; };
 		F405C6C919ED14AA005AD31C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F405C6CB19ED14AA005AD31C /* MainMenu.xib */; };
@@ -131,6 +132,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 15C1C255198748D200A46ACC;
 			remoteInfo = "libluacocos2d Mac";
+		};
+		A2989A851DE6DFAD0073E4F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A245841E1DC336E800DAF5FF /* libzq.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A2989A831DE6DF790073E4F0;
+			remoteInfo = libzqMac;
+		};
+		A2989A941DE6E3CA0073E4F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A245841E1DC336E800DAF5FF /* libzq.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A2989A661DE6DF790073E4F0;
+			remoteInfo = libzqMac;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -222,8 +237,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2989A931DE6E0EE0073E4F0 /* liblibzqMac.a in Frameworks */,
 				A245843B1DC33AA500DAF5FF /* libluacocos2d Mac.a in Frameworks */,
-				A245842B1DC3395C00DAF5FF /* liblibquickmac.a in Frameworks */,
+				A245842B1DC3395C00DAF5FF /* libquickmac.a in Frameworks */,
 				A245842A1DC3395500DAF5FF /* libcocos2d Mac.a in Frameworks */,
 				9FD01B0D19F8C58C005E0C49 /* SystemConfiguration.framework in Frameworks */,
 				50D7C97017EBBEEC005D0B91 /* IOKit.framework in Frameworks */,
@@ -315,7 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				A245841B1DC336E100DAF5FF /* liblibquickios.a */,
-				A245841D1DC336E100DAF5FF /* liblibquickmac.a */,
+				A245841D1DC336E100DAF5FF /* libquickmac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,7 +339,8 @@
 		A245841F1DC336E800DAF5FF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A24584231DC336E800DAF5FF /* liblibzq.a */,
+				A24584231DC336E800DAF5FF /* libzq.a */,
+				A2989A861DE6DFAD0073E4F0 /* liblibzqMac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -434,6 +451,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A2989A951DE6E3CA0073E4F0 /* PBXTargetDependency */,
 				A245843A1DC33A9000DAF5FF /* PBXTargetDependency */,
 				A24584291DC3385800DAF5FF /* PBXTargetDependency */,
 				A24584271DC3385400DAF5FF /* PBXTargetDependency */,
@@ -515,17 +533,17 @@
 			remoteRef = A245841A1DC336E100DAF5FF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A245841D1DC336E100DAF5FF /* liblibquickmac.a */ = {
+		A245841D1DC336E100DAF5FF /* libquickmac.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = liblibquickmac.a;
+			path = libquickmac.a;
 			remoteRef = A245841C1DC336E100DAF5FF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A24584231DC336E800DAF5FF /* liblibzq.a */ = {
+		A24584231DC336E800DAF5FF /* libzq.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = liblibzq.a;
+			path = libzq.a;
 			remoteRef = A24584221DC336E800DAF5FF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -548,6 +566,13 @@
 			fileType = archive.ar;
 			path = "libluacocos2d tvOS.a";
 			remoteRef = A24584371DC33A8700DAF5FF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A2989A861DE6DFAD0073E4F0 /* liblibzqMac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibzqMac.a;
+			remoteRef = A2989A851DE6DFAD0073E4F0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -613,6 +638,11 @@
 			isa = PBXTargetDependency;
 			name = "libluacocos2d Mac";
 			targetProxy = A24584391DC33A9000DAF5FF /* PBXContainerItemProxy */;
+		};
+		A2989A951DE6E3CA0073E4F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libzqMac;
+			targetProxy = A2989A941DE6E3CA0073E4F0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -720,7 +750,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes $(SRCROOT)/../../publibs/cocos2dx/cocos $(SRCROOT)/../../publibs/cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../publibs/cocos2dx/cocos/base $(SRCROOT)/../../publibs/cocos2dx/cocos/physics $(SRCROOT)/../../publibs/cocos2dx/cocos/math/kazmath $(SRCROOT)/../../publibs/cocos2dx/cocos/2d $(SRCROOT)/../../publibs/cocos2dx/cocos/ui $(SRCROOT)/../../publibs/cocos2dx/cocos/network $(SRCROOT)/../../publibs/cocos2dx/cocos/audio/include $(SRCROOT)/../../publibs/cocos2dx/cocos/editor-support $(SRCROOT)/../../publibs/cocos2dx/extensions $(SRCROOT)/../../publibs/cocos2dx/external $(SRCROOT)/../../publibs/cocos2dx/external/chipmunk/include/chipmunk $(SRCROOT)/../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../publibs/cocos2dx/cocos/scripting/lua-bindings/auto $(SRCROOT)/../../publibs/cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../publibs/libquick/quick-src/extra $(SRCROOT)/../../publibs/libquick/quick-src";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes $(SRCROOT)/../../publibs/cocos2dx/cocos $(SRCROOT)/../../publibs/cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../publibs/cocos2dx/cocos/base $(SRCROOT)/../../publibs/cocos2dx/cocos/physics $(SRCROOT)/../../publibs/cocos2dx/cocos/math/kazmath $(SRCROOT)/../../publibs/cocos2dx/cocos/2d $(SRCROOT)/../../publibs/cocos2dx/cocos/ui $(SRCROOT)/../../publibs/cocos2dx/cocos/network $(SRCROOT)/../../publibs/cocos2dx/cocos/audio/include $(SRCROOT)/../../publibs/cocos2dx/cocos/editor-support $(SRCROOT)/../../publibs/cocos2dx/extensions $(SRCROOT)/../../publibs/cocos2dx/external $(SRCROOT)/../../publibs/cocos2dx/external/chipmunk/include/chipmunk $(SRCROOT)/../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../publibs/cocos2dx/cocos/scripting/lua-bindings/auto $(SRCROOT)/../../publibs/cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../publibs/libquick/quick-src/extra $(SRCROOT)/../../publibs/libquick/quick-src $(SRCROOT)/../../publibs/libzq/libzq $(SRCROOT)/../../publibs/libzq/libzq/libs";
 			};
 			name = Debug;
 		};
@@ -748,7 +778,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes $(SRCROOT)/../../publibs/cocos2dx/cocos $(SRCROOT)/../../publibs/cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../publibs/cocos2dx/cocos/base $(SRCROOT)/../../publibs/cocos2dx/cocos/physics $(SRCROOT)/../../publibs/cocos2dx/cocos/math/kazmath $(SRCROOT)/../../publibs/cocos2dx/cocos/2d $(SRCROOT)/../../publibs/cocos2dx/cocos/ui $(SRCROOT)/../../publibs/cocos2dx/cocos/network $(SRCROOT)/../../publibs/cocos2dx/cocos/audio/include $(SRCROOT)/../../publibs/cocos2dx/cocos/editor-support $(SRCROOT)/../../publibs/cocos2dx/extensions $(SRCROOT)/../../publibs/cocos2dx/external $(SRCROOT)/../../publibs/cocos2dx/external/chipmunk/include/chipmunk $(SRCROOT)/../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../publibs/cocos2dx/cocos/scripting/lua-bindings/auto $(SRCROOT)/../../publibs/cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../publibs/libquick/quick-src/extra $(SRCROOT)/../../publibs/libquick/quick-src";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes $(SRCROOT)/../../publibs/cocos2dx/cocos $(SRCROOT)/../../publibs/cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../publibs/cocos2dx/cocos/base $(SRCROOT)/../../publibs/cocos2dx/cocos/physics $(SRCROOT)/../../publibs/cocos2dx/cocos/math/kazmath $(SRCROOT)/../../publibs/cocos2dx/cocos/2d $(SRCROOT)/../../publibs/cocos2dx/cocos/ui $(SRCROOT)/../../publibs/cocos2dx/cocos/network $(SRCROOT)/../../publibs/cocos2dx/cocos/audio/include $(SRCROOT)/../../publibs/cocos2dx/cocos/editor-support $(SRCROOT)/../../publibs/cocos2dx/extensions $(SRCROOT)/../../publibs/cocos2dx/external $(SRCROOT)/../../publibs/cocos2dx/external/chipmunk/include/chipmunk $(SRCROOT)/../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../publibs/cocos2dx/cocos/scripting/lua-bindings/auto $(SRCROOT)/../../publibs/cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../publibs/libquick/quick-src/extra $(SRCROOT)/../../publibs/libquick/quick-src $(SRCROOT)/../../publibs/libzq/libzq $(SRCROOT)/../../publibs/libzq/libzq/libs";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
