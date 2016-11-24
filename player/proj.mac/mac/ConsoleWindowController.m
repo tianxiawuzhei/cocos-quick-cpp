@@ -44,11 +44,24 @@
     }
     traceCount++;
     NSFont *font = [NSFont fontWithName:@"Monaco" size:12.0];
-    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName];
+//    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName];
+    NSColor *txtColor = [NSColor blackColor];
+    if ([msg containsString:@"[ERROR]"]) {
+        txtColor = [NSColor redColor];
+    } else if ([msg containsString:@"[DEBUG]"]) {
+        txtColor = [NSColor blueColor];
+    }
+    
+    NSFont *txtFont = [NSFont fontWithName:@"Monaco" size:12.0];
+    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:txtFont,
+                          NSFontAttributeName, txtColor,
+                          NSForegroundColorAttributeName, nil];
+    
     NSAttributedString *string = [[NSAttributedString alloc] initWithString:msg attributes:attrsDictionary];
     NSNumber *len = [NSNumber numberWithUnsignedInteger:[string length]];
     [linesCount addObject:len];
 
+//    [textView setTextColor:[NSColor redColor]];
 	NSTextStorage *storage = [textView textStorage];
 	[storage beginEditing];
 	[storage appendAttributedString:string];
