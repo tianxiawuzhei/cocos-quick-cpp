@@ -6,8 +6,8 @@
 //  Copyright © 2016年 zyqiosexercise. All rights reserved.
 //
 
-#include "ZQPlistManage.hpp"
-#include "data/ZQFileManage.hpp"
+#include "ZQPlistManage.h"
+#include "data/ZQFileManage.h"
 #include "rapidxml/rapidxml.hpp"
 
 using namespace zq;

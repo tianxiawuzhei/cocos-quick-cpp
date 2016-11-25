@@ -6,7 +6,7 @@
 //  Copyright © 2016年 zyqiosexercise. All rights reserved.
 //
 
-#include "ZQFileManage.hpp"
+#include "ZQFileManage.h"
 #include <string>
 
 using namespace cocos2d;

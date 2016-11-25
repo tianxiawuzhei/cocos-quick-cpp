@@ -6,12 +6,12 @@
 //  Copyright © 2016年 zyqiosexercise. All rights reserved.
 //
 
-#include "ZQLogger.hpp"
-#include "utils/ZQDateUtils.hpp"
+#include "ZQLogger.h"
+#include "utils/ZQDateUtils.h"
 #include "platform/ios/ZQLoggerIOS.h"
 #include "platform/mac/ZQLoggerMac.h"
 #include "cocos2d.h"
-#include "data/ZQFileManage.hpp"
+#include "data/ZQFileManage.h"
 using namespace zq;
 
 ZQLogger* ZQLogger::getInstance()

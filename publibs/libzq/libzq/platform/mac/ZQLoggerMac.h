@@ -9,7 +9,7 @@
 #ifndef _ZQLOGGERMAC_HPP_
 #define _ZQLOGGERMAC_HPP_
 
-#include "log/ZQLogger.hpp"
+#include "log/ZQLogger.h"
 
 namespace zq {
     
