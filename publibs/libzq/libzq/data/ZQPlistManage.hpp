@@ -29,13 +29,13 @@ public:
      *  @return ValueMap of the file contents.
      *  @note This method is used internally.
      */
-    virtual cocos2d::ValueMap getDictFromFile(const std::string &filename);
+    cocos2d::ValueMap getDictFromFile(const std::string &filename);
     
     
     /** Converts the contents of a file to a ValueMap.
      *  This method is used internally.
      */
-    virtual cocos2d::ValueMap getDictFromText(const std::string &text);
+    cocos2d::ValueMap getDictFromText(const std::string &text);
     
     
     /**
@@ -44,13 +44,13 @@ public:
      *  @return ValueMap of the file contents.
      *  @note This method is used internally.
      */
-    virtual cocos2d::ValueVector getArrayFromFile(const std::string &filename);
+    cocos2d::ValueVector getArrayFromFile(const std::string &filename);
     
     
     /** Converts the contents of a file to a ValueVector.
      *  This method is used internally.
      */
-    virtual cocos2d::ValueVector getArrayFromText(const std::string &text);
+    cocos2d::ValueVector getArrayFromText(const std::string &text);
     
     /**
      *  Converts the contents of a file to a ValueVector.
@@ -58,13 +58,13 @@ public:
      *  @return ValueMap of the file contents.
      *  @note This method is used internally.
      */
-    virtual cocos2d::Value getValueFromFile(const std::string &filename);
+    cocos2d::Value getValueFromFile(const std::string &filename);
     
     
     /** Converts the contents of a file to a Value.
      *  This method is used internally.
      */
-    virtual cocos2d::Value getValueFromText(const std::string &text);
+    cocos2d::Value getValueFromText(const std::string &text);
     
 };
     

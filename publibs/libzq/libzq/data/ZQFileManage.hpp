@@ -109,8 +109,8 @@ public:
     virtual long getFileSize(const std::string &filepath);
 
 public:
-    virtual std::string getFileBaseName(const std::string &filepath);
-    virtual std::string getDirPath(const std::string &filepath);
+    std::string getFileBaseName(const std::string &filepath);
+    std::string getDirPath(const std::string &filepath);
     
 public:
     std::string logDir();
