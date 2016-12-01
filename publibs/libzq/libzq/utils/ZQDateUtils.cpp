@@ -7,9 +7,9 @@
 //
 
 #include "ZQDateUtils.h"
+#include "utils/ZQStringUtils.h"
 #include <ctime>
 #include <chrono>
-#include "fmt/format.h"
 #if defined(_WIN32)
 #include <Windows.h>
 #define localtime_r(t, tm) localtime_s(tm, t)
@@ -37,7 +37,7 @@ std::string DateUtils::date(std::string separator, bool utc)
     auto year = tm.tm_year + 1;
     auto month = tm.tm_mon + 1;
     auto day = tm.tm_mday;
-    return fmt::format("%d%s%02d%s%02d", year, separator.c_str(), month, separator.c_str(), day);
+    return StringUtils::format("%d%s%02d%s%02d", year, separator.c_str(), month, separator.c_str(), day);
 }
 
 std::string DateUtils::time(std::string separator, bool utc, bool microsecond)
@@ -62,11 +62,11 @@ std::string DateUtils::time(std::string separator, bool utc, bool microsecond)
     auto second = tm.tm_sec;
     if (microsecond)
     {
-        return fmt::format("%02d%s%02d%s%02d%s%06lld", hour, separator.c_str(), minute, separator.c_str(), second, separator.c_str(), micro);
+        return StringUtils::format("%02d%s%02d%s%02d%s%06lld", hour, separator.c_str(), minute, separator.c_str(), second, separator.c_str(), micro);
     }
     else
     {
-        return fmt::format("%02d%s%02d%s%02d", hour, separator.c_str(), minute, separator.c_str(), second);
+        return StringUtils::format("%02d%s%02d%s%02d", hour, separator.c_str(), minute, separator.c_str(), second);
     }
     
 }

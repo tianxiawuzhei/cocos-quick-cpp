@@ -12,6 +12,7 @@
 #include <string>
 #include <vector>
 #include <cctype>
+#include <algorithm>
 
 namespace zq {
     
@@ -23,6 +24,16 @@ protected:
     ~StringUtils() = default;
     
 public:
+    
+    static std::string format(const char *fmt)
+    {
+        // to improve performance, return fmt if no other params
+        return fmt;
+    }
+    
+    template <typename ...Args>
+    static std::string format(const char *fmt, Args... args);
+    
     static bool startsWith(const std::string &text, const std::string &start);
     static bool endsWith(const std::string &text, const std::string &end);
     

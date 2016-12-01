@@ -11,7 +11,7 @@
 
 #include <string>
 #include <mutex>
-#include "fmt/format.h"
+#include "utils/ZQStringUtils.h"
 
 namespace zq {
     
@@ -50,13 +50,13 @@ private:
 template <typename ...Args>
 inline void ZQLogD(const char *format, Args... args)
 {
-    zq::ZQLogger::getInstance()->debug(fmt::sprintf(format, args...));
+    zq::ZQLogger::getInstance()->debug(zq::StringUtils::format(format, args...));
 }
 
 template <typename ...Args>
 inline void ZQLogE(const char *format, Args... args)
 {
-    zq::ZQLogger::getInstance()->error(fmt::sprintf(format, args...));
+    zq::ZQLogger::getInstance()->error(zq::StringUtils::format(format, args...));
 }
 
 #endif /* _ZQLOGGER_HPP_ */

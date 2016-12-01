@@ -9,7 +9,9 @@
 
 #include "ZQImageManage.h"
 #include "data/ZQFileManage.h"
+#include "data/ZQPlistManage.h"
 #include "log/ZQLogger.h"
+
 
 using namespace zq;
 
@@ -58,4 +60,50 @@ cocos2d::SpriteFrame* ZQImageManage::loadImage(const std::string &path, const st
     
     auto size = texture->getContentSize();
     return cocos2d::SpriteFrame::createWithTexture(texture, cocos2d::Rect(0, 0, size.width, size.height));
+}
+
+cocos2d::SpriteFrame* ZQImageManage::loadFrame(const std::string &plist, const std::string &frame)
+{
+    auto spriteFrame = cocos2d::SpriteFrameCache::getInstance()->getSpriteFrameByName(frame);
+    if (spriteFrame)
+    {
+        return spriteFrame;
+    }
+    
+    auto dict = ZQPlistManage::getInstance()->getDictFromFile(plist);
+    if (dict.empty())
+    {
+        ZQLogE("loadFrame: load plist file fail: %s, %s", plist.c_str(), frame.c_str());
+        return nullptr;
+    }
+    
+    std::string texturePath("");
+    
+    if (dict.find("metadata") != dict.end())
+    {
+        cocos2d::ValueMap& metadataDict = dict["metadata"].asValueMap();
+        // try to read  texture file name from meta data
+        texturePath = metadataDict["realTextureFileName"].asString();
+    }
+    
+    if (texturePath.empty())
+    {
+        ZQLogE("loadFrame: plist file not find texture file: %s, %s", plist.c_str(), frame.c_str());
+        return nullptr;
+    }
+    
+    auto dir = ZQFileManage::getDirPath(plist);
+    auto frame = this->loadImage(dir + texturePath, texturePath);
+    
+    cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithDictionary(dict, frame->getTexture());
+    
+    spriteFrame = cocos2d::SpriteFrameCache::getInstance()->getSpriteFrameByName(frame);
+    if (!spriteFrame)
+    {
+        ZQLogE("loadFrame: load frame fail :  %s, %s", plist.c_str(), frame.c_str());
+        return nullptr;
+    }
+
+    return spriteFrame;
+    
 }

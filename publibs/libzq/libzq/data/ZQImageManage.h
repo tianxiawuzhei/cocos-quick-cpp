@@ -24,6 +24,7 @@ protected:
     
 public:
     cocos2d::SpriteFrame* loadImage(const std::string &path, const std::string &key = "");
+    cocos2d::SpriteFrame* loadFrame(const std::string &plist, const std::string &frame);
 };
     
 }
