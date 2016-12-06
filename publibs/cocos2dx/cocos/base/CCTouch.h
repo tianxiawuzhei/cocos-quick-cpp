@@ -112,11 +112,18 @@ public:
         _point.y   = y;
         _curForce = 0.0f;
         _maxForce = 0.0f;
+        
+        _prevTime = _nowTime;
+        _nowTime = Touch::getTimeInMilliseconds();
+
         if (!_startPointCaptured)
         {
             _startPoint = _point;
             _startPointCaptured = true;
             _prevPoint = _point;
+            
+            _startTime = _nowTime;
+            _prevTime = _nowTime;
         }
     }
 
@@ -136,11 +143,16 @@ public:
         _point.y   = y;
         _curForce = force;
         _maxForce = maxForce;
+        
+        _prevTime = _nowTime;
+        _nowTime = Touch::getTimeInMilliseconds();
         if (!_startPointCaptured)
         {
             _startPoint = _point;
             _startPointCaptured = true;
             _prevPoint = _point;
+            _startTime = _nowTime;
+            _prevTime = _nowTime;
         }
     }
     /** Get touch id.
@@ -164,6 +176,15 @@ public:
      */
     float getMaxForce() const;
 
+public:
+    //copy from ccUtils/getTimeInMilliseconds, Resolve header include circular dependencies
+    static long long getTimeInMilliseconds();
+    
+    long long getStartTime() const;
+    long long getPrevTime() const;
+    long long getNowTime() const;
+    long long getTimeOff() const;
+    long long getTimeInc() const;
 private:
     int _id;
     bool _startPointCaptured;
@@ -172,6 +193,12 @@ private:
     Vec2 _prevPoint;
     float _curForce;
     float _maxForce;
+
+private:
+    long long _startTime;
+    long long _prevTime;
+    long long _nowTime;
+    
 };
 
 // end of base group
