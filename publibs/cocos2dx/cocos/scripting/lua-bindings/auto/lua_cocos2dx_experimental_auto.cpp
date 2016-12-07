@@ -1,4 +1,4 @@
-#include "scripting/lua-bindings/auto/lua_cocos2dx_experimental_auto.hpp"
+#include "lua_cocos2dx_experimental_auto.hpp"
 #include "2d/CCFastTMXLayer.h"
 #include "2d/CCFastTMXTiledMap.h"
 #include "scripting/lua-bindings/manual/tolua_fix.h"

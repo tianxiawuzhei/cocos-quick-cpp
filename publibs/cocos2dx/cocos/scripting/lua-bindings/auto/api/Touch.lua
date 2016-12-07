@@ -5,6 +5,12 @@
 -- @parent_module cc
 
 --------------------------------
+-- 
+-- @function [parent=#Touch] getNowTime 
+-- @param self
+-- @return long long#long long ret (return value: long long)
+        
+--------------------------------
 --  Returns the previous touch location in screen coordinates. <br>
 -- return The previous touch location in screen coordinates.
 -- @function [parent=#Touch] getPreviousLocationInView 
@@ -17,6 +23,12 @@
 -- @function [parent=#Touch] getLocation 
 -- @param self
 -- @return vec2_table#vec2_table ret (return value: vec2_table)
+        
+--------------------------------
+-- 
+-- @function [parent=#Touch] getTimeInc 
+-- @param self
+-- @return long long#long long ret (return value: long long)
         
 --------------------------------
 --  Returns the delta of 2 current touches locations in screen coordinates.<br>
@@ -38,6 +50,12 @@
 -- @function [parent=#Touch] getCurrentForce 
 -- @param self
 -- @return float#float ret (return value: float)
+        
+--------------------------------
+-- 
+-- @function [parent=#Touch] getTimeOff 
+-- @param self
+-- @return long long#long long ret (return value: long long)
         
 --------------------------------
 --  Returns the start touch location in OpenGL coordinates.<br>
@@ -82,11 +100,29 @@
 -- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
+-- 
+-- @function [parent=#Touch] getPrevTime 
+-- @param self
+-- @return long long#long long ret (return value: long long)
+        
+--------------------------------
 --  Returns the previous touch location in OpenGL coordinates.<br>
 -- return The previous touch location in OpenGL coordinates.
 -- @function [parent=#Touch] getPreviousLocation 
 -- @param self
 -- @return vec2_table#vec2_table ret (return value: vec2_table)
+        
+--------------------------------
+-- 
+-- @function [parent=#Touch] getStartTime 
+-- @param self
+-- @return long long#long long ret (return value: long long)
+        
+--------------------------------
+-- 
+-- @function [parent=#Touch] getTimeInMilliseconds 
+-- @param self
+-- @return long long#long long ret (return value: long long)
         
 --------------------------------
 --  Constructor.<br>

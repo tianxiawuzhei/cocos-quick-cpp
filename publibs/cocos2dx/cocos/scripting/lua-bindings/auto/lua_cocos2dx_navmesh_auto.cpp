@@ -1,4 +1,4 @@
-#include "scripting/lua-bindings/auto/lua_cocos2dx_navmesh_auto.hpp"
+#include "lua_cocos2dx_navmesh_auto.hpp"
 #if CC_USE_NAVMESH
 #include "navmesh/CCNavMesh.h"
 #include "scripting/lua-bindings/manual/navmesh/lua_cocos2dx_navmesh_conversions.h"

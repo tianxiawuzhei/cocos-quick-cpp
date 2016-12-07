@@ -1205,6 +1205,7 @@
 				PRODUCT_NAME = quickmac;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../quick-src/extra $(SRCROOT)/../quick-src/lua_extensions $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/extensions $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../../../external/lua/luajit/include";
 			};
 			name = Debug;
 		};
@@ -1216,6 +1217,7 @@
 				PRODUCT_NAME = quickmac;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../quick-src/extra $(SRCROOT)/../quick-src/lua_extensions $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/extensions $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../../../external/lua/luajit/include";
 			};
 			name = Release;
 		};

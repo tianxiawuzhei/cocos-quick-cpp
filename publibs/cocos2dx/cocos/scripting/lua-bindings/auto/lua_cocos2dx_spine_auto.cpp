@@ -1,4 +1,4 @@
-#include "scripting/lua-bindings/auto/lua_cocos2dx_spine_auto.hpp"
+#include "lua_cocos2dx_spine_auto.hpp"
 #include "editor-support/spine/spine-cocos2dx.h"
 #include "scripting/lua-bindings/manual/tolua_fix.h"
 #include "scripting/lua-bindings/manual/LuaBasicConversions.h"

@@ -1,4 +1,4 @@
-#include "scripting/lua-bindings/auto/lua_cocos2dx_3d_auto.hpp"
+#include "lua_cocos2dx_3d_auto.hpp"
 #include "cocos2d.h"
 #include "3d/CCBundle3D.h"
 #include "scripting/lua-bindings/manual/tolua_fix.h"

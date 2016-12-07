@@ -1,4 +1,4 @@
-#include "scripting/lua-bindings/auto/lua_cocos2dx_studio_auto.hpp"
+#include "lua_cocos2dx_studio_auto.hpp"
 #include "editor-support/cocostudio/CocoStudio.h"
 #include "editor-support/cocostudio/CCComExtensionData.h"
 #include "scripting/lua-bindings/manual/cocostudio/lua-cocos-studio-conversions.h"

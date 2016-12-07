@@ -1,4 +1,4 @@
-#include "scripting/lua-bindings/auto/lua_cocos2dx_auto.hpp"
+#include "lua_cocos2dx_auto.hpp"
 #include "cocos2d.h"
 #include "2d/CCProtectedNode.h"
 #include "base/CCAsyncTaskPool.h"
@@ -1952,6 +1952,53 @@ int lua_register_cocos2dx_Texture2D(lua_State* tolua_S)
     return 1;
 }
 
+int lua_cocos2dx_Touch_getNowTime(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocos2d::Touch* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.Touch",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocos2d::Touch*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Touch_getNowTime'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getNowTime'", nullptr);
+            return 0;
+        }
+        long long ret = cobj->getNowTime();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Touch:getNowTime",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Touch_getNowTime'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_cocos2dx_Touch_getPreviousLocationInView(lua_State* tolua_S)
 {
     int argc = 0;
@@ -2042,6 +2089,53 @@ int lua_cocos2dx_Touch_getLocation(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Touch_getLocation'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_Touch_getTimeInc(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocos2d::Touch* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.Touch",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocos2d::Touch*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Touch_getTimeInc'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getTimeInc'", nullptr);
+            return 0;
+        }
+        long long ret = cobj->getTimeInc();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Touch:getTimeInc",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Touch_getTimeInc'.",&tolua_err);
 #endif
 
     return 0;
@@ -2183,6 +2277,53 @@ int lua_cocos2dx_Touch_getCurrentForce(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Touch_getCurrentForce'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_Touch_getTimeOff(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocos2d::Touch* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.Touch",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocos2d::Touch*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Touch_getTimeOff'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getTimeOff'", nullptr);
+            return 0;
+        }
+        long long ret = cobj->getTimeOff();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Touch:getTimeOff",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Touch_getTimeOff'.",&tolua_err);
 #endif
 
     return 0;
@@ -2454,6 +2595,53 @@ int lua_cocos2dx_Touch_getLocationInView(lua_State* tolua_S)
 
     return 0;
 }
+int lua_cocos2dx_Touch_getPrevTime(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocos2d::Touch* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.Touch",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocos2d::Touch*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Touch_getPrevTime'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getPrevTime'", nullptr);
+            return 0;
+        }
+        long long ret = cobj->getPrevTime();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Touch:getPrevTime",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Touch_getPrevTime'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_cocos2dx_Touch_getPreviousLocation(lua_State* tolua_S)
 {
     int argc = 0;
@@ -2499,6 +2687,87 @@ int lua_cocos2dx_Touch_getPreviousLocation(lua_State* tolua_S)
     tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Touch_getPreviousLocation'.",&tolua_err);
 #endif
 
+    return 0;
+}
+int lua_cocos2dx_Touch_getStartTime(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocos2d::Touch* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.Touch",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocos2d::Touch*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_Touch_getStartTime'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getStartTime'", nullptr);
+            return 0;
+        }
+        long long ret = cobj->getStartTime();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.Touch:getStartTime",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Touch_getStartTime'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_Touch_getTimeInMilliseconds(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"cc.Touch",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getTimeInMilliseconds'", nullptr);
+            return 0;
+        }
+        long long ret = cocos2d::Touch::getTimeInMilliseconds();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "cc.Touch:getTimeInMilliseconds",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Touch_getTimeInMilliseconds'.",&tolua_err);
+#endif
     return 0;
 }
 int lua_cocos2dx_Touch_constructor(lua_State* tolua_S)
@@ -2551,17 +2820,23 @@ int lua_register_cocos2dx_Touch(lua_State* tolua_S)
 
     tolua_beginmodule(tolua_S,"Touch");
         tolua_function(tolua_S,"new",lua_cocos2dx_Touch_constructor);
+        tolua_function(tolua_S,"getNowTime",lua_cocos2dx_Touch_getNowTime);
         tolua_function(tolua_S,"getPreviousLocationInView",lua_cocos2dx_Touch_getPreviousLocationInView);
         tolua_function(tolua_S,"getLocation",lua_cocos2dx_Touch_getLocation);
+        tolua_function(tolua_S,"getTimeInc",lua_cocos2dx_Touch_getTimeInc);
         tolua_function(tolua_S,"getDelta",lua_cocos2dx_Touch_getDelta);
         tolua_function(tolua_S,"getStartLocationInView",lua_cocos2dx_Touch_getStartLocationInView);
         tolua_function(tolua_S,"getCurrentForce",lua_cocos2dx_Touch_getCurrentForce);
+        tolua_function(tolua_S,"getTimeOff",lua_cocos2dx_Touch_getTimeOff);
         tolua_function(tolua_S,"getStartLocation",lua_cocos2dx_Touch_getStartLocation);
         tolua_function(tolua_S,"getId",lua_cocos2dx_Touch_getID);
         tolua_function(tolua_S,"setTouchInfo",lua_cocos2dx_Touch_setTouchInfo);
         tolua_function(tolua_S,"getMaxForce",lua_cocos2dx_Touch_getMaxForce);
         tolua_function(tolua_S,"getLocationInView",lua_cocos2dx_Touch_getLocationInView);
+        tolua_function(tolua_S,"getPrevTime",lua_cocos2dx_Touch_getPrevTime);
         tolua_function(tolua_S,"getPreviousLocation",lua_cocos2dx_Touch_getPreviousLocation);
+        tolua_function(tolua_S,"getStartTime",lua_cocos2dx_Touch_getStartTime);
+        tolua_function(tolua_S,"getTimeInMilliseconds", lua_cocos2dx_Touch_getTimeInMilliseconds);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(cocos2d::Touch).name();
     g_luaType[typeName] = "cc.Touch";
@@ -91919,6 +92194,59 @@ int lua_cocos2dx_SpriteFrameCache_addSpriteFrame(lua_State* tolua_S)
 
     return 0;
 }
+int lua_cocos2dx_SpriteFrameCache_addSpriteFramesWithDictionary(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocos2d::SpriteFrameCache* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.SpriteFrameCache",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocos2d::SpriteFrameCache*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_SpriteFrameCache_addSpriteFramesWithDictionary'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 2) 
+    {
+        cocos2d::ValueMap arg0;
+        cocos2d::Texture2D* arg1;
+
+        ok &= luaval_to_ccvaluemap(tolua_S, 2, &arg0, "cc.SpriteFrameCache:addSpriteFramesWithDictionary");
+
+        ok &= luaval_to_object<cocos2d::Texture2D>(tolua_S, 3, "cc.Texture2D",&arg1, "cc.SpriteFrameCache:addSpriteFramesWithDictionary");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_SpriteFrameCache_addSpriteFramesWithDictionary'", nullptr);
+            return 0;
+        }
+        cobj->addSpriteFramesWithDictionary(arg0, arg1);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.SpriteFrameCache:addSpriteFramesWithDictionary",argc, 2);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_SpriteFrameCache_addSpriteFramesWithDictionary'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_cocos2dx_SpriteFrameCache_addSpriteFramesWithFile(lua_State* tolua_S)
 {
     int argc = 0;
@@ -92518,6 +92846,7 @@ int lua_register_cocos2dx_SpriteFrameCache(lua_State* tolua_S)
         tolua_function(tolua_S,"reloadTexture",lua_cocos2dx_SpriteFrameCache_reloadTexture);
         tolua_function(tolua_S,"addSpriteFramesWithFileContent",lua_cocos2dx_SpriteFrameCache_addSpriteFramesWithFileContent);
         tolua_function(tolua_S,"addSpriteFrame",lua_cocos2dx_SpriteFrameCache_addSpriteFrame);
+        tolua_function(tolua_S,"addSpriteFramesWithDictionary",lua_cocos2dx_SpriteFrameCache_addSpriteFramesWithDictionary);
         tolua_function(tolua_S,"addSpriteFrames",lua_cocos2dx_SpriteFrameCache_addSpriteFramesWithFile);
         tolua_function(tolua_S,"getSpriteFrame",lua_cocos2dx_SpriteFrameCache_getSpriteFrameByName);
         tolua_function(tolua_S,"removeSpriteFramesFromFile",lua_cocos2dx_SpriteFrameCache_removeSpriteFramesFromFile);

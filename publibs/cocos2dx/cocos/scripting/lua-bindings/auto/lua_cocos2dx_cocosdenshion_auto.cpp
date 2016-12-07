@@ -1,4 +1,4 @@
-#include "scripting/lua-bindings/auto/lua_cocos2dx_cocosdenshion_auto.hpp"
+#include "lua_cocos2dx_cocosdenshion_auto.hpp"
 #include "audio/include/SimpleAudioEngine.h"
 #include "scripting/lua-bindings/manual/tolua_fix.h"
 #include "scripting/lua-bindings/manual/LuaBasicConversions.h"

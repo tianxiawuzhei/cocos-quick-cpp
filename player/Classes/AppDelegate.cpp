@@ -15,6 +15,8 @@
 #include "node-ex/lua_cocos2dx_quick_manual.hpp"
 #include "PlayerProtocol.h"
 
+#include "bindings/lua_zq_auto.hpp"
+
 using namespace CocosDenshion;
 
 USING_NS_CC;
@@ -34,6 +36,7 @@ static void quick_module_register(lua_State *L)
         register_all_cocos2dx_extension_nanovg(L);
         register_all_cocos2dx_extension_nanovg_manual(L);
         luaopen_HelperFunc_luabinding(L);
+        register_all_zq(L);
     }
     lua_pop(L, 1);
 }

@@ -1,4 +1,4 @@
-\#include "scripting/lua-bindings/auto/${out_file}.hpp"
+\#include "${out_file}.hpp"
 #if $macro_judgement
 $macro_judgement
 #end if

@@ -35,6 +35,14 @@
 -- @return SpriteFrameCache#SpriteFrameCache self (return value: cc.SpriteFrameCache)
         
 --------------------------------
+-- 
+-- @function [parent=#SpriteFrameCache] addSpriteFramesWithDictionary 
+-- @param self
+-- @param #map_table dictionary
+-- @param #cc.Texture2D texture
+-- @return SpriteFrameCache#SpriteFrameCache self (return value: cc.SpriteFrameCache)
+        
+--------------------------------
 -- @overload self, string, string         
 -- @overload self, string         
 -- @overload self, string, cc.Texture2D         
