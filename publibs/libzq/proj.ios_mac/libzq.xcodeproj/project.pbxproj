@@ -20,6 +20,10 @@
 		A26387711DE4640700A6D925 /* ZQLoggerIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = A263876F1DE4640700A6D925 /* ZQLoggerIOS.h */; };
 		A26387721DE4640700A6D925 /* ZQLoggerIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A26387701DE4640700A6D925 /* ZQLoggerIOS.mm */; };
 		A26387791DE4696400A6D925 /* ZQLoggerMac.h in Headers */ = {isa = PBXBuildFile; fileRef = A26387771DE4696400A6D925 /* ZQLoggerMac.h */; };
+		A27710261DF8020F0074C87D /* lua_zq_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27710241DF8020F0074C87D /* lua_zq_auto.cpp */; };
+		A27710271DF8020F0074C87D /* lua_zq_auto.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A27710251DF8020F0074C87D /* lua_zq_auto.hpp */; };
+		A27710281DF8022E0074C87D /* lua_zq_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27710241DF8020F0074C87D /* lua_zq_auto.cpp */; };
+		A277102F1DF82B3D0074C87D /* ZQImageManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2F1CC0D1DE8308000B7CB8D /* ZQImageManage.cpp */; };
 		A2989A691DE6DF790073E4F0 /* ZQDateUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26387671DE2FC6100A6D925 /* ZQDateUtils.cpp */; };
 		A2989A6B1DE6DF790073E4F0 /* ZQLoggerMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A26387781DE4696400A6D925 /* ZQLoggerMac.mm */; };
 		A2989A6C1DE6DF790073E4F0 /* ZQLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A25339FB1DD96E0E00E0D086 /* ZQLogger.cpp */; };
@@ -61,6 +65,14 @@
 		A26387701DE4640700A6D925 /* ZQLoggerIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZQLoggerIOS.mm; sourceTree = "<group>"; };
 		A26387771DE4696400A6D925 /* ZQLoggerMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQLoggerMac.h; sourceTree = "<group>"; };
 		A26387781DE4696400A6D925 /* ZQLoggerMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZQLoggerMac.mm; sourceTree = "<group>"; };
+		A277101E1DF8020F0074C87D /* lua_zq_auto_api.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lua_zq_auto_api.lua; sourceTree = "<group>"; };
+		A277101F1DF8020F0074C87D /* ZQFileManage.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZQFileManage.lua; sourceTree = "<group>"; };
+		A27710201DF8020F0074C87D /* ZQImageManage.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZQImageManage.lua; sourceTree = "<group>"; };
+		A27710211DF8020F0074C87D /* ZQJsonManage.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZQJsonManage.lua; sourceTree = "<group>"; };
+		A27710221DF8020F0074C87D /* ZQLogger.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZQLogger.lua; sourceTree = "<group>"; };
+		A27710231DF8020F0074C87D /* ZQPlistManage.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZQPlistManage.lua; sourceTree = "<group>"; };
+		A27710241DF8020F0074C87D /* lua_zq_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_zq_auto.cpp; sourceTree = "<group>"; };
+		A27710251DF8020F0074C87D /* lua_zq_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_zq_auto.hpp; sourceTree = "<group>"; };
 		A2989A831DE6DF790073E4F0 /* libzqMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzqMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F1CC0D1DE8308000B7CB8D /* ZQImageManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQImageManage.cpp; sourceTree = "<group>"; };
 		A2F1CC0E1DE8308000B7CB8D /* ZQImageManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQImageManage.h; sourceTree = "<group>"; };
@@ -120,6 +132,7 @@
 		A222FE7F1DC08CE8009F3A9A = {
 			isa = PBXGroup;
 			children = (
+				A277101C1DF8020F0074C87D /* bindings */,
 				A222FEAC1DC0A0B9009F3A9A /* libzq */,
 				A222FE891DC08CE8009F3A9A /* Products */,
 			);
@@ -221,6 +234,30 @@
 			path = log;
 			sourceTree = "<group>";
 		};
+		A277101C1DF8020F0074C87D /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				A277101D1DF8020F0074C87D /* api */,
+				A27710241DF8020F0074C87D /* lua_zq_auto.cpp */,
+				A27710251DF8020F0074C87D /* lua_zq_auto.hpp */,
+			);
+			name = bindings;
+			path = ../bindings;
+			sourceTree = "<group>";
+		};
+		A277101D1DF8020F0074C87D /* api */ = {
+			isa = PBXGroup;
+			children = (
+				A277101E1DF8020F0074C87D /* lua_zq_auto_api.lua */,
+				A277101F1DF8020F0074C87D /* ZQFileManage.lua */,
+				A27710201DF8020F0074C87D /* ZQImageManage.lua */,
+				A27710211DF8020F0074C87D /* ZQJsonManage.lua */,
+				A27710221DF8020F0074C87D /* ZQLogger.lua */,
+				A27710231DF8020F0074C87D /* ZQPlistManage.lua */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -239,6 +276,7 @@
 				A2F1CC191DE831BC00B7CB8D /* ZQDateUtils.h in Headers */,
 				A26387791DE4696400A6D925 /* ZQLoggerMac.h in Headers */,
 				A25FE1B61DD5925100DB55E5 /* rapidxml.hpp in Headers */,
+				A27710271DF8020F0074C87D /* lua_zq_auto.hpp in Headers */,
 				A25FE1B81DD5925100DB55E5 /* rapidxml_print.hpp in Headers */,
 				A2F1CC151DE8314F00B7CB8D /* ZQJsonManage.h in Headers */,
 			);
@@ -333,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A26387691DE2FC6100A6D925 /* ZQDateUtils.cpp in Sources */,
+				A27710261DF8020F0074C87D /* lua_zq_auto.cpp in Sources */,
 				A26387721DE4640700A6D925 /* ZQLoggerIOS.mm in Sources */,
 				A2F1CC0F1DE8308000B7CB8D /* ZQImageManage.cpp in Sources */,
 				A25339FD1DD96E0E00E0D086 /* ZQLogger.cpp in Sources */,
@@ -347,6 +386,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A277102F1DF82B3D0074C87D /* ZQImageManage.cpp in Sources */,
+				A27710281DF8022E0074C87D /* lua_zq_auto.cpp in Sources */,
 				A2989A691DE6DF790073E4F0 /* ZQDateUtils.cpp in Sources */,
 				A2989A6B1DE6DF790073E4F0 /* ZQLoggerMac.mm in Sources */,
 				A2989A6C1DE6DF790073E4F0 /* ZQLogger.cpp in Sources */,
@@ -400,12 +441,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include";
 			};
 			name = Debug;
 		};
@@ -444,11 +486,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include";
 			};
 			name = Release;
 		};

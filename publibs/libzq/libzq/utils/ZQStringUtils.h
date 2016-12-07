@@ -13,6 +13,7 @@
 #include <vector>
 #include <cctype>
 #include <algorithm>
+#include <functional>
 
 namespace zq {
     
@@ -32,8 +33,22 @@ public:
     }
     
     template <typename ...Args>
-    static std::string format(const char *fmt, Args... args);
-    
+    static std::string format(const char *fmt, Args... args)
+    {
+        auto size = ::snprintf(nullptr, 0, fmt, args...);
+        if (size <= 0)
+            return "";
+        
+        std::string ret(++size, '\0');
+        
+        size = ::snprintf(&ret[0], static_cast<std::size_t>(size), fmt, args...);
+        if (size <= 0)  // re-check
+            return "";
+        
+        ret.resize(static_cast<std::size_t>(size));
+        return ret;
+    }
+
     static bool startsWith(const std::string &text, const std::string &start);
     static bool endsWith(const std::string &text, const std::string &end);
     

@@ -61,14 +61,6 @@
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
--- Creates binary data from a file.<br>
--- return A data object.
--- @function [parent=#ZQFileManage] getDataFromFile 
--- @param self
--- @param #string filename
--- @return Data#Data ret (return value: cc.Data)
-        
---------------------------------
 -- 
 -- @function [parent=#ZQFileManage] logDir 
 -- @param self

@@ -23,7 +23,7 @@ ZQImageManage* ZQImageManage::getInstance()
 
 cocos2d::SpriteFrame* ZQImageManage::loadImage(const std::string &path, const std::string &key)
 {
-    const std::string &cache_key = key.empty() ? image : key;
+    const std::string &cache_key = key.empty() ? path : key;
     auto texture = cocos2d::Director::getInstance()->getTextureCache()->getTextureForKey(cache_key);
     if (!texture)
     {
@@ -34,11 +34,11 @@ cocos2d::SpriteFrame* ZQImageManage::loadImage(const std::string &path, const st
             return nullptr;
         }
         
-        auto image = new (std::nothrow) Image();
+        auto image = new (std::nothrow) cocos2d::Image();
         if (!image)
             return nullptr;
         
-        bool bOk = image->initWithImageData(data.getBytes, data.getSize());
+        bool bOk = image->initWithImageData(data.getBytes(), data.getSize());
         if (!bOk)
         {
             ZQLogE("loadImage: Load image from buffer error");
@@ -93,9 +93,9 @@ cocos2d::SpriteFrame* ZQImageManage::loadFrame(const std::string &plist, const s
     }
     
     auto dir = ZQFileManage::getDirPath(plist);
-    auto frame = this->loadImage(dir + texturePath, texturePath);
+    auto imageFrame = this->loadImage(dir + texturePath, texturePath);
     
-    cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithDictionary(dict, frame->getTexture());
+    cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithDictionary(dict, imageFrame->getTexture());
     
     spriteFrame = cocos2d::SpriteFrameCache::getInstance()->getSpriteFrameByName(frame);
     if (!spriteFrame)

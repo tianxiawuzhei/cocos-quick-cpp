@@ -16,7 +16,7 @@ namespace zq {
 class ZQImageManage
 {
 public:
-    ZQImageManage* getInstance();
+    static ZQImageManage* getInstance();
     
 protected:
     ZQImageManage() = default;
