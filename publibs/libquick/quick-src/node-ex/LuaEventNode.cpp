@@ -505,6 +505,9 @@ int LuaEventNode::executeScriptTouchHandler(int nEventType, Touch *pTouch, int p
     const Point prev = Director::getInstance()->convertToGL(pTouch->getPreviousLocationInView());
     event["prevX"] = LuaValue::floatValue(prev.x);
     event["prevY"] = LuaValue::floatValue(prev.y);
+    const Point start = pTouch->getStartLocation();
+    event["startX"] = LuaValue::floatValue(start.x);
+    event["startY"] = LuaValue::floatValue(start.y);
     event["startTime"] = LuaValue::intValue(static_cast<int>(pTouch->getStartTime()));
     event["prevTime"] = LuaValue::intValue(static_cast<int>(pTouch->getPrevTime()));
     event["nowTime"] = LuaValue::intValue(static_cast<int>(pTouch->getNowTime()));
