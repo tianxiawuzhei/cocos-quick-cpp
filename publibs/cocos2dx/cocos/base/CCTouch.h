@@ -115,8 +115,6 @@ public:
         
         _prevTime = _nowTime;
         _nowTime = Touch::getTimeInSeconds();
-        CCLOG("_prevTime : %lf", _prevTime);
-        CCLOG("_nowTime : %lf", _nowTime);
         if (!_startPointCaptured)
         {
             _startPoint = _point;
