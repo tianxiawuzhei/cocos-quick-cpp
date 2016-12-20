@@ -1985,7 +1985,7 @@ int lua_cocos2dx_Touch_getNowTime(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getNowTime'", nullptr);
             return 0;
         }
-        long long ret = cobj->getNowTime();
+        double ret = cobj->getNowTime();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -2126,7 +2126,7 @@ int lua_cocos2dx_Touch_getTimeInc(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getTimeInc'", nullptr);
             return 0;
         }
-        long long ret = cobj->getTimeInc();
+        double ret = cobj->getTimeInc();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -2314,7 +2314,7 @@ int lua_cocos2dx_Touch_getTimeOff(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getTimeOff'", nullptr);
             return 0;
         }
-        long long ret = cobj->getTimeOff();
+        double ret = cobj->getTimeOff();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -2628,7 +2628,7 @@ int lua_cocos2dx_Touch_getPrevTime(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getPrevTime'", nullptr);
             return 0;
         }
-        long long ret = cobj->getPrevTime();
+        double ret = cobj->getPrevTime();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -2722,7 +2722,7 @@ int lua_cocos2dx_Touch_getStartTime(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getStartTime'", nullptr);
             return 0;
         }
-        long long ret = cobj->getStartTime();
+        double ret = cobj->getStartTime();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -2736,7 +2736,7 @@ int lua_cocos2dx_Touch_getStartTime(lua_State* tolua_S)
 
     return 0;
 }
-int lua_cocos2dx_Touch_getTimeInMilliseconds(lua_State* tolua_S)
+int lua_cocos2dx_Touch_getTimeInSeconds(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -2755,18 +2755,18 @@ int lua_cocos2dx_Touch_getTimeInMilliseconds(lua_State* tolua_S)
     {
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getTimeInMilliseconds'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_Touch_getTimeInSeconds'", nullptr);
             return 0;
         }
-        long long ret = cocos2d::Touch::getTimeInMilliseconds();
+        double ret = cocos2d::Touch::getTimeInSeconds();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "cc.Touch:getTimeInMilliseconds",argc, 0);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "cc.Touch:getTimeInSeconds",argc, 0);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Touch_getTimeInMilliseconds'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_Touch_getTimeInSeconds'.",&tolua_err);
 #endif
     return 0;
 }
@@ -2836,7 +2836,7 @@ int lua_register_cocos2dx_Touch(lua_State* tolua_S)
         tolua_function(tolua_S,"getPrevTime",lua_cocos2dx_Touch_getPrevTime);
         tolua_function(tolua_S,"getPreviousLocation",lua_cocos2dx_Touch_getPreviousLocation);
         tolua_function(tolua_S,"getStartTime",lua_cocos2dx_Touch_getStartTime);
-        tolua_function(tolua_S,"getTimeInMilliseconds", lua_cocos2dx_Touch_getTimeInMilliseconds);
+        tolua_function(tolua_S,"getTimeInSeconds", lua_cocos2dx_Touch_getTimeInSeconds);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(cocos2d::Touch).name();
     g_luaType[typeName] = "cc.Touch";

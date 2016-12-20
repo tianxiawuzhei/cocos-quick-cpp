@@ -14,13 +14,14 @@ namespace zq {
 
 class DateUtils
 {
-public:
-    DateUtils() = delete;
-    virtual ~DateUtils() = delete;
+protected:
+    DateUtils() = default;
+    virtual ~DateUtils() = default;
     
 public:
     static std::string date(std::string separator = "-", bool utc = false);
     static std::string time(std::string separator = ":", bool utc = false, bool microsecond = false);
+    static double getMilliseconds();
     
 };
     

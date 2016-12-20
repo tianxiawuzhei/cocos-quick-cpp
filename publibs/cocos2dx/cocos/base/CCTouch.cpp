@@ -82,36 +82,37 @@ float Touch::getMaxForce() const
     return _maxForce;
 }
 
-long long Touch::getStartTime() const
+double Touch::getStartTime() const
 {
     return this->_startTime;
 }
 
-long long Touch::getPrevTime() const
+double Touch::getPrevTime() const
 {
     return this->_prevTime;
 }
 
-long long Touch::getNowTime() const
+double Touch::getNowTime() const
 {
     return this->_nowTime;
 }
 
-long long Touch::getTimeOff() const
+double Touch::getTimeOff() const
 {
     return this->_nowTime - this->_startTime;
 }
 
-long long Touch::getTimeInc() const
+double Touch::getTimeInc() const
 {
     return this->_nowTime - this->_prevTime;
 }
 
-long long Touch::getTimeInMilliseconds()
+double Touch::getTimeInSeconds()
 {
     struct timeval tv;
     gettimeofday (&tv, nullptr);
-    return tv.tv_sec * 1000 + tv.tv_usec / 1000;
+    return (double)tv.tv_sec + (double)tv.tv_usec/1000000;
+//    return (double)tv.tv_sec*1000 + (double)tv.tv_usec*0.001;
 }
 
 NS_CC_END

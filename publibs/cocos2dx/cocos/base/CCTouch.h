@@ -114,8 +114,9 @@ public:
         _maxForce = 0.0f;
         
         _prevTime = _nowTime;
-        _nowTime = Touch::getTimeInMilliseconds();
-
+        _nowTime = Touch::getTimeInSeconds();
+        CCLOG("_prevTime : %lf", _prevTime);
+        CCLOG("_nowTime : %lf", _nowTime);
         if (!_startPointCaptured)
         {
             _startPoint = _point;
@@ -145,7 +146,7 @@ public:
         _maxForce = maxForce;
         
         _prevTime = _nowTime;
-        _nowTime = Touch::getTimeInMilliseconds();
+        _nowTime = Touch::getTimeInSeconds();
         if (!_startPointCaptured)
         {
             _startPoint = _point;
@@ -177,14 +178,14 @@ public:
     float getMaxForce() const;
 
 public:
-    //copy from ccUtils/getTimeInMilliseconds, Resolve header include circular dependencies
-    static long long getTimeInMilliseconds();
+    //copy from ccUtils/getTimeInSeconds, Resolve header include circular dependencies
+    static double getTimeInSeconds();
     
-    long long getStartTime() const;
-    long long getPrevTime() const;
-    long long getNowTime() const;
-    long long getTimeOff() const;
-    long long getTimeInc() const;
+    double getStartTime() const;
+    double getPrevTime() const;
+    double getNowTime() const;
+    double getTimeOff() const;
+    double getTimeInc() const;
 private:
     int _id;
     bool _startPointCaptured;
@@ -195,9 +196,9 @@ private:
     float _maxForce;
 
 private:
-    long long _startTime;
-    long long _prevTime;
-    long long _nowTime;
+    double _startTime;
+    double _prevTime;
+    double _nowTime;
     
 };
 

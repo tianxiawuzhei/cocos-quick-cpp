@@ -2,6 +2,11 @@
 -- @module zq
 
 --------------------------------------------------------
+-- the zq DateUtils
+-- @field [parent=#zq] DateUtils#DateUtils DateUtils preloaded module
+
+
+--------------------------------------------------------
 -- the zq ZQLogger
 -- @field [parent=#zq] ZQLogger#ZQLogger ZQLogger preloaded module
 

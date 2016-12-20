@@ -8,6 +8,7 @@
 
 #include "ZQDateUtils.h"
 #include "utils/ZQStringUtils.h"
+#include <sys/time.h>
 #include <ctime>
 #include <chrono>
 #if defined(_WIN32)
@@ -69,4 +70,12 @@ std::string DateUtils::time(std::string separator, bool utc, bool microsecond)
         return StringUtils::format("%02d%s%02d%s%02d", hour, separator.c_str(), minute, separator.c_str(), second);
     }
     
+}
+
+double DateUtils::getMilliseconds()
+{
+    struct timeval tv;
+    gettimeofday(&tv, nullptr);
+    
+    return (double)tv.tv_sec*1000 + (double)tv.tv_usec*0.001;
 }

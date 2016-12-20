@@ -508,10 +508,10 @@ int LuaEventNode::executeScriptTouchHandler(int nEventType, Touch *pTouch, int p
     const Point start = pTouch->getStartLocation();
     event["startX"] = LuaValue::floatValue(start.x);
     event["startY"] = LuaValue::floatValue(start.y);
-    event["startTime"] = LuaValue::intValue(static_cast<int>(pTouch->getStartTime()));
-    event["prevTime"] = LuaValue::intValue(static_cast<int>(pTouch->getPrevTime()));
-    event["nowTime"] = LuaValue::intValue(static_cast<int>(pTouch->getNowTime()));
-    event["offTime"] = LuaValue::intValue(static_cast<int>(pTouch->getTimeOff()));
+    event["startTime"] = LuaValue::doubleValue(pTouch->getStartTime());
+    event["prevTime"] = LuaValue::doubleValue(pTouch->getPrevTime());
+    event["nowTime"] = LuaValue::doubleValue(pTouch->getNowTime());
+    event["offTime"] = LuaValue::doubleValue(pTouch->getTimeOff());
     
     return callNodeEventDispatcher(stack, event);
 }

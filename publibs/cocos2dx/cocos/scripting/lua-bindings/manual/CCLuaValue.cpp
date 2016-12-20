@@ -44,6 +44,14 @@ const LuaValue LuaValue::floatValue(const float floatValue)
     return value;
 }
 
+const LuaValue LuaValue::doubleValue(const double doubleValue)
+{
+    LuaValue value;
+    value._type = LuaValueTypeDouble;
+    value._field.doubleVaule = doubleValue;
+    return value;
+}
+
 const LuaValue LuaValue::booleanValue(const bool booleanValue)
 {
     LuaValue value;

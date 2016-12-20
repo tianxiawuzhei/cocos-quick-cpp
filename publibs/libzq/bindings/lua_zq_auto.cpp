@@ -3,6 +3,60 @@
 #include "scripting/lua-bindings/manual/tolua_fix.h"
 #include "scripting/lua-bindings/manual/LuaBasicConversions.h"
 
+int lua_zq_DateUtils_getMilliseconds(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.DateUtils",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_DateUtils_getMilliseconds'", nullptr);
+            return 0;
+        }
+        double ret = zq::DateUtils::getMilliseconds();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.DateUtils:getMilliseconds",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_DateUtils_getMilliseconds'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua_zq_DateUtils_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (DateUtils)");
+    return 0;
+}
+
+int lua_register_zq_DateUtils(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"zq.DateUtils");
+    tolua_cclass(tolua_S,"DateUtils","zq.DateUtils","",nullptr);
+
+    tolua_beginmodule(tolua_S,"DateUtils");
+        tolua_function(tolua_S,"getMilliseconds", lua_zq_DateUtils_getMilliseconds);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(zq::DateUtils).name();
+    g_luaType[typeName] = "zq.DateUtils";
+    g_typeCast["DateUtils"] = "zq.DateUtils";
+    return 1;
+}
+
 int lua_zq_ZQLogger_debug(lua_State* tolua_S)
 {
     int argc = 0;
@@ -1962,11 +2016,12 @@ TOLUA_API int register_all_zq(lua_State* tolua_S)
 	tolua_module(tolua_S,"zq",0);
 	tolua_beginmodule(tolua_S,"zq");
 
-	lua_register_zq_ZQFileManage(tolua_S);
-	lua_register_zq_ZQJsonManage(tolua_S);
-	lua_register_zq_ZQPlistManage(tolua_S);
+	lua_register_zq_DateUtils(tolua_S);
 	lua_register_zq_ZQImageManage(tolua_S);
 	lua_register_zq_ZQLogger(tolua_S);
+	lua_register_zq_ZQJsonManage(tolua_S);
+	lua_register_zq_ZQFileManage(tolua_S);
+	lua_register_zq_ZQPlistManage(tolua_S);
 
 	tolua_endmodule(tolua_S);
 	return 1;

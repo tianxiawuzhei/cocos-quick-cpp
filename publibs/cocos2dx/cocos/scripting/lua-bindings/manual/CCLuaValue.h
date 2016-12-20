@@ -64,6 +64,7 @@ typedef LuaValueArray::const_iterator     LuaValueArrayIterator;
 typedef enum {
     LuaValueTypeInt,
     LuaValueTypeFloat,
+    LuaValueTypeDouble,
     LuaValueTypeBoolean,
     LuaValueTypeString,
     LuaValueTypeDict,
@@ -76,6 +77,7 @@ typedef enum {
 typedef union {
     int                 intValue;
     float               floatValue;
+    double              doubleVaule;
     bool                booleanValue;
     std::string*        stringValue;
     LuaValueDict*     dictValue;
@@ -110,6 +112,14 @@ public:
      * @return a LuaValue object.
      */
     static const LuaValue floatValue(const float floatValue);
+    
+    /**
+     * Construct a LuaValue object by a double value.
+     *
+     * @param doubleValue a double value.
+     * @return a LuaValue object.
+     */
+    static const LuaValue doubleValue(const double doubleValue);
     
     /**
      * Construct a LuaValue object by a boolean value.
@@ -230,6 +240,15 @@ public:
      */
     float floatValue(void) const {
         return _field.floatValue;
+    }
+    
+    /**
+     * Get the double value of LuaValue object.
+     *
+     * @return the double value.
+     */
+    double doubleValue(void) const {
+        return _field.doubleVaule;
     }
     
     /**

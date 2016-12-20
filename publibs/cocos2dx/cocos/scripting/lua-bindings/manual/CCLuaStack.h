@@ -164,6 +164,14 @@ public:
     virtual void pushFloat(float floatValue);
     
     /**
+     * Pushes a double number with value doubleValue onto the stack.
+     *
+     * @param doubleValue a double number.
+     */
+    virtual void pushDouble(double doubleValue);
+
+    
+    /**
      * Pushes a long number with value longValue onto the stack.
      * 
      * @param longValue a long number.

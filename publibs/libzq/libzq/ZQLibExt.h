@@ -5,12 +5,12 @@
  * @date: 16/11/25
  * @Description:
  *
- /***********************************************/
+ ***********************************************/
 
 #ifndef __ZQLIBEXT_H__
 #define __ZQLIBEXT_H__
 
-//#include "utils/ZQDateUtils.h"
+#include "utils/ZQDateUtils.h"
 //#include "utils/ZQStringUtils.h"
 
 #include "log/ZQLogger.h"
