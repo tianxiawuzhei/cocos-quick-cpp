@@ -20,4 +20,6 @@
 #include "data/ZQPlistManage.h"
 #include "data/ZQImageManage.h"
 
+#include "draw/ZQCustomAction.h"
+
 #endif /* __ZQLIBEXT_H__ */

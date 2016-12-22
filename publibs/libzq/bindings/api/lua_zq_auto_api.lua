@@ -31,4 +31,9 @@
 -- @field [parent=#zq] ZQImageManage#ZQImageManage ZQImageManage preloaded module
 
 
+--------------------------------------------------------
+-- the zq ZQCustomAction
+-- @field [parent=#zq] ZQCustomAction#ZQCustomAction ZQCustomAction preloaded module
+
+
 return nil

@@ -1,0 +1,13 @@
+
+$#include "draw/ZQCustomAction.h"
+
+$using namespace std;
+$using namespace cocos2d;
+$using namespace zq;
+
+class ZQCustomAction : public cc.ActionInterval
+{
+public:
+    void registerScriptListener(LUA_FUNCTION listener);
+    void unregisterScriptListener();
+};
