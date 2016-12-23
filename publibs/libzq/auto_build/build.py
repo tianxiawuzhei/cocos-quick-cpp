@@ -164,7 +164,6 @@ def main():
         print '---------------------------------'
         print 'Generating lua bindings succeeds.'
         print '---------------------------------'
-
     except Exception as e:
         if e.__class__.__name__ == 'CmdError':
             print '---------------------------------'
