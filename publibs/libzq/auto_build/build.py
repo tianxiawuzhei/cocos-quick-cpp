@@ -146,7 +146,7 @@ def main():
 
     try:
 
-        tolua_root = '%s/build' % project_root
+        tolua_root = '%s/auto_build' % project_root
         output_dir = '%s/bindings' % project_root
 
         cmd_args = {
