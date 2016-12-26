@@ -26,6 +26,9 @@
 		A26BAF5F1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A26BAF5D1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.h */; };
 		A26BAF601E10CAD100D3972B /* zq_custom_action_tolua_luabinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26BAF5C1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.cpp */; };
 		A26BAF611E10CAD500D3972B /* lua_zq_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26BAF571E10C63600D3972B /* lua_zq_auto.cpp */; };
+		A26BAF641E10EAF500D3972B /* zq_sprite_draw_tolua_manual.h in Headers */ = {isa = PBXBuildFile; fileRef = A26BAF621E10EAF500D3972B /* zq_sprite_draw_tolua_manual.h */; };
+		A26BAF651E10EAF500D3972B /* zq_sprite_draw_tolua_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26BAF631E10EAF500D3972B /* zq_sprite_draw_tolua_manual.cpp */; };
+		A26BAF661E110A1100D3972B /* zq_sprite_draw_tolua_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26BAF631E10EAF500D3972B /* zq_sprite_draw_tolua_manual.cpp */; };
 		A26CF98A1E0BA10E0026F5CB /* ZQCustomAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26CF9881E0BA10E0026F5CB /* ZQCustomAction.cpp */; };
 		A26CF98B1E0BA10E0026F5CB /* ZQCustomAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26CF9881E0BA10E0026F5CB /* ZQCustomAction.cpp */; };
 		A26CF98C1E0BA10E0026F5CB /* ZQCustomAction.h in Headers */ = {isa = PBXBuildFile; fileRef = A26CF9891E0BA10E0026F5CB /* ZQCustomAction.h */; };
@@ -84,6 +87,8 @@
 		A26BAF581E10C63600D3972B /* lua_zq_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_zq_auto.hpp; sourceTree = "<group>"; };
 		A26BAF5C1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zq_custom_action_tolua_luabinding.cpp; sourceTree = "<group>"; };
 		A26BAF5D1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zq_custom_action_tolua_luabinding.h; sourceTree = "<group>"; };
+		A26BAF621E10EAF500D3972B /* zq_sprite_draw_tolua_manual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zq_sprite_draw_tolua_manual.h; sourceTree = "<group>"; };
+		A26BAF631E10EAF500D3972B /* zq_sprite_draw_tolua_manual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zq_sprite_draw_tolua_manual.cpp; sourceTree = "<group>"; };
 		A26CF9881E0BA10E0026F5CB /* ZQCustomAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQCustomAction.cpp; sourceTree = "<group>"; };
 		A26CF9891E0BA10E0026F5CB /* ZQCustomAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQCustomAction.h; sourceTree = "<group>"; };
 		A2989A831DE6DF790073E4F0 /* libzqMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzqMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +284,8 @@
 		A26BAF5B1E10C6A600D3972B /* tolua_buildings */ = {
 			isa = PBXGroup;
 			children = (
+				A26BAF621E10EAF500D3972B /* zq_sprite_draw_tolua_manual.h */,
+				A26BAF631E10EAF500D3972B /* zq_sprite_draw_tolua_manual.cpp */,
 				A26BAF5C1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.cpp */,
 				A26BAF5D1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.h */,
 			);
@@ -301,6 +308,7 @@
 				A2F1CC141DE8314F00B7CB8D /* ZQFileManage.h in Headers */,
 				A2F1CC161DE8314F00B7CB8D /* ZQPlistManage.h in Headers */,
 				A26387711DE4640700A6D925 /* ZQLoggerIOS.h in Headers */,
+				A26BAF641E10EAF500D3972B /* zq_sprite_draw_tolua_manual.h in Headers */,
 				A26BAF5A1E10C63600D3972B /* lua_zq_auto.hpp in Headers */,
 				A2F1CC1A1DE831BC00B7CB8D /* ZQStringUtils.h in Headers */,
 				A26CF98C1E0BA10E0026F5CB /* ZQCustomAction.h in Headers */,
@@ -412,6 +420,7 @@
 				A22105741DDED8CC0075B8F5 /* ZQStringUtils.cpp in Sources */,
 				A25FE1AC1DD58D5400DB55E5 /* ZQPlistManage.cpp in Sources */,
 				A25FE1A41DD2CC3D00DB55E5 /* ZQJsonManage.cpp in Sources */,
+				A26BAF651E10EAF500D3972B /* zq_sprite_draw_tolua_manual.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26BAF661E110A1100D3972B /* zq_sprite_draw_tolua_manual.cpp in Sources */,
 				A26BAF611E10CAD500D3972B /* lua_zq_auto.cpp in Sources */,
 				A26BAF601E10CAD100D3972B /* zq_custom_action_tolua_luabinding.cpp in Sources */,
 				A277102F1DF82B3D0074C87D /* ZQImageManage.cpp in Sources */,

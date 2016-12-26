@@ -17,6 +17,7 @@
 
 #include "auto_buildings/lua_zq_auto.hpp"
 #include "tolua_buildings/zq_custom_action_tolua_luabinding.h"
+#include "tolua_buildings/zq_sprite_draw_tolua_manual.h"
 
 using namespace CocosDenshion;
 
@@ -39,6 +40,7 @@ static void quick_module_register(lua_State *L)
         luaopen_HelperFunc_luabinding(L);
         register_all_zq(L);
         luaopen_zq_custom_action_tolua_luabinding(L);
+        luaopen_zq_sprite_draw_tolua_manual(L);
     }
     lua_pop(L, 1);
 }

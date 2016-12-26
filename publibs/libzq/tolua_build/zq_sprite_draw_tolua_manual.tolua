@@ -1,0 +1,12 @@
+
+$#include "2d/CCSprite.h"
+
+$using namespace std;
+$using namespace cocos2d;
+
+class Sprite : public Node, public TextureProtocol
+{
+public:
+    void registerDrawScriptHandler(LUA_FUNCTION listener);
+    void unregisterDrawScriptHandler();
+};

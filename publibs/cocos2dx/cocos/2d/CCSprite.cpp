@@ -316,6 +316,9 @@ Sprite::Sprite(void)
 , _texture(nullptr)
 , _spriteFrame(nullptr)
 , _insideBounds(true)
+#if CC_ENABLE_SCRIPT_BINDING
+, _drawScriptHandler(0)
+#endif
 {
 #if CC_SPRITE_DEBUG_DRAW
     _debugDrawNode = DrawNode::create();
@@ -327,6 +330,15 @@ Sprite::~Sprite()
 {
     CC_SAFE_RELEASE(_spriteFrame);
     CC_SAFE_RELEASE(_texture);
+    
+#if CC_ENABLE_SCRIPT_BINDING
+    if (this->_drawScriptHandler)
+    {
+        ScriptEngineManager::getInstance()->getScriptEngine()->removeScriptHandler(this->_drawScriptHandler);
+        this->_drawScriptHandler = 0;
+    }
+#endif
+
 }
 
 /*
@@ -650,6 +662,13 @@ void Sprite::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
         return;
     }
     
+    // before
+    if (this->_command_draw_beg.func)
+    {
+        this->_command_draw_beg.init(_globalZOrder, transform, flags);
+        renderer->addCommand(&this->_command_draw_beg);
+    }
+    
 #if CC_USE_CULLING
     // Don't do calculate the culling if the transform was not updated
     auto visitingCamera = Camera::getVisitingCamera();
@@ -689,6 +708,13 @@ void Sprite::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
             _debugDrawNode->drawLine(Vec2(from.x, from.y), Vec2(to.x,to.y), Color4F::WHITE);
         }
 #endif //CC_SPRITE_DEBUG_DRAW
+    }
+    
+    // after
+    if (this->_command_draw_end.func)
+    {
+        this->_command_draw_end.init(_globalZOrder, transform, flags);
+        renderer->addCommand(&this->_command_draw_end);
     }
 }
 
@@ -1191,6 +1217,38 @@ PolygonInfo& Sprite::getPolygonInfo()
 void Sprite::setPolygonInfo(const PolygonInfo& info)
 {
     _polyInfo = info;
+}
+
+void Sprite::setDrawBeg(std::function<void()> func)
+{
+    this->_command_draw_beg.func = func;
+}
+
+void Sprite::setDrawEnd(std::function<void()> func)
+{
+    this->_command_draw_end.func = func;
+}
+
+void Sprite::registerDrawScriptHandler(int handler)
+{
+#if CC_ENABLE_SCRIPT_BINDING
+    if (this->_drawScriptHandler)
+    {
+        return;
+    }
+    this->_updateScriptHandler = handler;
+#endif
+}
+
+void Sprite::unregisterDrawScriptHandler()
+{
+#if CC_ENABLE_SCRIPT_BINDING
+    if (this->_drawScriptHandler)
+    {
+        ScriptEngineManager::getInstance()->getScriptEngine()->removeScriptHandler(this->_drawScriptHandler);
+        this->_drawScriptHandler = 0;
+    }
+#endif
 }
 
 NS_CC_END

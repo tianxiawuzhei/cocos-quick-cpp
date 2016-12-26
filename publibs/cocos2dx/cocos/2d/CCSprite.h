@@ -579,7 +579,19 @@ CC_CONSTRUCTOR_ACCESS :
      * @lua     init
      */
     virtual bool initWithFile(const std::string& filename, const Rect& rect);
-    
+
+    //zq extend
+public:
+    void setDrawBeg(std::function<void()> func);
+    void setDrawEnd(std::function<void()> func);
+    void registerDrawScriptHandler(int handler);
+    void unregisterDrawScriptHandler();
+protected:
+#if CC_ENABLE_SCRIPT_BINDING
+    int _drawScriptHandler;
+#endif
+    cocos2d::CustomCommand _command_draw_beg;
+    cocos2d::CustomCommand _command_draw_end;
 protected:
 
     void updateColor() override;
