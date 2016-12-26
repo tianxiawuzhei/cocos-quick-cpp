@@ -1,9 +1,9 @@
 /*
-** Lua binding: zq_quick_tolua_luabinding
-** Generated automatically by tolua++-1.0.92 on Thu Dec 22 19:12:37 2016.
+** Lua binding: zq_custom_action_tolua_luabinding
+** Generated automatically by tolua++-1.0.92 on Mon Dec 26 11:31:26 2016.
 */
 
-#include "zq_quick_tolua_luabinding.h"
+#include "zq_custom_action_tolua_luabinding.h"
 #include "CCLuaEngine.h"
 
 using namespace cocos2d;
@@ -25,8 +25,8 @@ static void tolua_reg_types (lua_State* tolua_S)
 }
 
 /* method: registerScriptListener of class  ZQCustomAction */
-#ifndef TOLUA_DISABLE_tolua_zq_quick_tolua_luabinding_ZQCustomAction_registerScriptListener00
-static int tolua_zq_quick_tolua_luabinding_ZQCustomAction_registerScriptListener00(lua_State* tolua_S)
+#ifndef TOLUA_DISABLE_tolua_zq_custom_action_tolua_luabinding_ZQCustomAction_registerScriptListener00
+static int tolua_zq_custom_action_tolua_luabinding_ZQCustomAction_registerScriptListener00(lua_State* tolua_S)
 {
 #if COCOS2D_DEBUG >= 1
  tolua_Error tolua_err;
@@ -58,8 +58,8 @@ static int tolua_zq_quick_tolua_luabinding_ZQCustomAction_registerScriptListener
 #endif //#ifndef TOLUA_DISABLE
 
 /* method: unregisterScriptListener of class  ZQCustomAction */
-#ifndef TOLUA_DISABLE_tolua_zq_quick_tolua_luabinding_ZQCustomAction_unregisterScriptListener00
-static int tolua_zq_quick_tolua_luabinding_ZQCustomAction_unregisterScriptListener00(lua_State* tolua_S)
+#ifndef TOLUA_DISABLE_tolua_zq_custom_action_tolua_luabinding_ZQCustomAction_unregisterScriptListener00
+static int tolua_zq_custom_action_tolua_luabinding_ZQCustomAction_unregisterScriptListener00(lua_State* tolua_S)
 {
 #if COCOS2D_DEBUG >= 1
  tolua_Error tolua_err;
@@ -89,24 +89,24 @@ static int tolua_zq_quick_tolua_luabinding_ZQCustomAction_unregisterScriptListen
 #endif //#ifndef TOLUA_DISABLE
 
 /* Open function */
-TOLUA_API int tolua_zq_quick_tolua_luabinding_open (lua_State* tolua_S)
+TOLUA_API int tolua_zq_custom_action_tolua_luabinding_open (lua_State* tolua_S)
 {
-    lua_pushstring(tolua_S, "zq.ZQCustomAction");
-    lua_rawget(tolua_S, LUA_REGISTRYINDEX);
+    lua_pushstring(tolua_S,"zq.ZQCustomAction");
+    lua_rawget(tolua_S,LUA_REGISTRYINDEX);
     if (lua_istable(tolua_S,-1))
     {
-        tolua_function(tolua_S,"registerScriptListener",tolua_zq_quick_tolua_luabinding_ZQCustomAction_registerScriptListener00);
-        tolua_function(tolua_S,"unregisterScriptListener",tolua_zq_quick_tolua_luabinding_ZQCustomAction_unregisterScriptListener00);
+        tolua_function(tolua_S,"registerScriptListener",tolua_zq_custom_action_tolua_luabinding_ZQCustomAction_registerScriptListener00);
+        tolua_function(tolua_S,"unregisterScriptListener",tolua_zq_custom_action_tolua_luabinding_ZQCustomAction_unregisterScriptListener00);
     }
     lua_pop(tolua_S, 1);
-
+    
  return 1;
 }
 
 
 #if defined(LUA_VERSION_NUM) && LUA_VERSION_NUM >= 501
- TOLUA_API int luaopen_zq_quick_tolua_luabinding (lua_State* tolua_S) {
- return tolua_zq_quick_tolua_luabinding_open(tolua_S);
+ TOLUA_API int luaopen_zq_custom_action_tolua_luabinding (lua_State* tolua_S) {
+ return tolua_zq_custom_action_tolua_luabinding_open(tolua_S);
 };
 #endif
 

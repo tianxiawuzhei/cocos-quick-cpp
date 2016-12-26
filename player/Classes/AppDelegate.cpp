@@ -15,8 +15,8 @@
 #include "node-ex/lua_cocos2dx_quick_manual.hpp"
 #include "PlayerProtocol.h"
 
-#include "bindings/lua_zq_auto.hpp"
-#include "bindingtolua/zq_quick_tolua_luabinding.h"
+#include "auto_buildings/lua_zq_auto.hpp"
+#include "tolua_buildings/zq_custom_action_tolua_luabinding.h"
 
 using namespace CocosDenshion;
 
@@ -38,7 +38,7 @@ static void quick_module_register(lua_State *L)
         register_all_cocos2dx_extension_nanovg_manual(L);
         luaopen_HelperFunc_luabinding(L);
         register_all_zq(L);
-        luaopen_zq_quick_tolua_luabinding(L);
+        luaopen_zq_custom_action_tolua_luabinding(L);
     }
     lua_pop(L, 1);
 }

@@ -147,7 +147,7 @@ def main():
     try:
 
         tolua_root = '%s/auto_build' % project_root
-        output_dir = '%s/bindings' % project_root
+        output_dir = '%s/auto_buildings' % project_root
 
         cmd_args = {
             'zq.ini': ('zq', 'lua_zq_auto')
