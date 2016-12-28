@@ -71,7 +71,7 @@
                                          NSForegroundColorAttributeName, nil];
         
         NSAttributedString *string = [[NSAttributedString alloc] initWithString:item attributes:attrsDictionary];
-        NSNumber *len = [NSNumber numberWithUnsignedInteger:1];
+        NSNumber *len = [NSNumber numberWithUnsignedInteger:[string length]];
         [linesCount addObject:len];
         
         //    [textView setTextColor:[NSColor redColor]];
@@ -147,6 +147,7 @@
 {
     NSTextStorage *storage = [textView textStorage];
     [storage setAttributedString:[[[NSAttributedString alloc] initWithString:@""] autorelease]];
+    [linesCount removeAllObjects];
 }
 
 - (IBAction)onScrollChange:(id)sender
