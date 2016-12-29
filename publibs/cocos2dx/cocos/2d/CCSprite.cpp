@@ -544,7 +544,7 @@ void Sprite::setTextureCoords(Rect rect)
             std::swap(left, right);
         }
 
-        if(_flippedY)
+        if(_flippedY)          
         {
             std::swap(top, bottom);
         }
@@ -662,13 +662,6 @@ void Sprite::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
         return;
     }
     
-    // before
-    if (this->_command_draw_beg.func)
-    {
-        this->_command_draw_beg.init(_globalZOrder, transform, flags);
-        renderer->addCommand(&this->_command_draw_beg);
-    }
-    
 #if CC_USE_CULLING
     // Don't do calculate the culling if the transform was not updated
     auto visitingCamera = Camera::getVisitingCamera();
@@ -684,6 +677,18 @@ void Sprite::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
     if(_insideBounds)
 #endif
     {
+        _command_draw_group.init(_globalZOrder);
+        renderer->addCommand(&_command_draw_group);
+        
+        renderer->pushGroup(_command_draw_group.getRenderQueueID());
+        
+        // before
+        if (this->_command_draw_beg.func)
+        {
+            this->_command_draw_beg.init(_globalZOrder, transform, flags);
+            renderer->addCommand(&this->_command_draw_beg);
+        }
+        
         _trianglesCommand.init(_globalZOrder, _texture->getName(), getGLProgramState(), _blendFunc, _polyInfo.triangles, transform, flags);
         renderer->addCommand(&_trianglesCommand);
         
@@ -708,14 +713,17 @@ void Sprite::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
             _debugDrawNode->drawLine(Vec2(from.x, from.y), Vec2(to.x,to.y), Color4F::WHITE);
         }
 #endif //CC_SPRITE_DEBUG_DRAW
+        
+        // after
+        if (this->_command_draw_end.func)
+        {
+            this->_command_draw_end.init(_globalZOrder, transform, flags);
+            renderer->addCommand(&this->_command_draw_end);
+        }
+        
+        renderer->popGroup();
     }
     
-    // after
-    if (this->_command_draw_end.func)
-    {
-        this->_command_draw_end.init(_globalZOrder, transform, flags);
-        renderer->addCommand(&this->_command_draw_end);
-    }
 }
 
 // MARK: visit, draw, transform

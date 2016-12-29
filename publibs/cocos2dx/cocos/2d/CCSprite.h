@@ -35,6 +35,7 @@ THE SOFTWARE.
 #include "renderer/CCTextureAtlas.h"
 #include "renderer/CCTrianglesCommand.h"
 #include "renderer/CCCustomCommand.h"
+#include "renderer/CCGroupCommand.h"
 #include "2d/CCAutoPolygon.h"
 
 NS_CC_BEGIN
@@ -590,6 +591,7 @@ protected:
 #if CC_ENABLE_SCRIPT_BINDING
     int _drawScriptHandler;
 #endif
+    cocos2d::GroupCommand  _command_draw_group;
     cocos2d::CustomCommand _command_draw_beg;
     cocos2d::CustomCommand _command_draw_end;
 protected:
