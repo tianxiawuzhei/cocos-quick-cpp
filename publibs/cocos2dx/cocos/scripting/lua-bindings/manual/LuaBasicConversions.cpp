@@ -3396,3 +3396,55 @@ void node_to_luaval(lua_State* L, const char* type, cocos2d::Node* node)
 {
     object_to_luaval<cocos2d::Node>(L, type, node);
 }
+
+void tex2f_to_luaval(lua_State* L, const cocos2d::Tex2F& inValue)
+{
+    if (nullptr == L)
+        return;
+    
+    lua_newtable(L);                                     /* L: table */
+    
+    lua_pushstring(L, "u");                      /* L: table key */
+    lua_pushnumber(L, (lua_Number) inValue.u);   /* L: table key value*/
+    lua_rawset(L, -3);                                   /* table[key] = value, L: table */
+    lua_pushstring(L, "v");                      /* L: table key */
+    lua_pushnumber(L, (lua_Number) inValue.v);   /* L: table key value*/
+    lua_rawset(L, -3);
+}
+
+void v3f_c4b_t2f_to_luaval(lua_State* L, const cocos2d::V3F_C4B_T2F& inValue)
+{
+    if (nullptr == L)
+        return;
+    
+    lua_newtable(L);                                    /* L: table */
+    lua_pushstring(L, "vertices");                             /* L: table key */
+    vec3_to_luaval(L, inValue.vertices);               /* L: table key value*/
+    lua_rawset(L, -3);                                  /* table[key] = value, L: table */
+    lua_pushstring(L, "colors");                             /* L: table key */
+    color4b_to_luaval(L, inValue.colors);              /* L: table key value*/
+    lua_rawset(L, -3);
+    lua_pushstring(L, "texCoords");                             /* L: table key */
+    tex2f_to_luaval(L, inValue.texCoords);              /* L: table key value*/
+    lua_rawset(L, -3);
+}
+
+void v3f_c4b_t2f_quad_to_luaval(lua_State* L, const cocos2d::V3F_C4B_T2F_Quad& inValue)
+{
+    if (nullptr == L)
+        return;
+    
+    lua_newtable(L);                                    /* L: table */
+    lua_pushstring(L, "tl");                             /* L: table key */
+    v3f_c4b_t2f_to_luaval(L, inValue.tl);               /* L: table key value*/
+    lua_rawset(L, -3);                                  /* table[key] = value, L: table */
+    lua_pushstring(L, "bl");                             /* L: table key */
+    v3f_c4b_t2f_to_luaval(L, inValue.bl);               /* L: table key value*/
+    lua_rawset(L, -3);
+    lua_pushstring(L, "tr");                             /* L: table key */
+    v3f_c4b_t2f_to_luaval(L, inValue.tr);               /* L: table key value*/
+    lua_rawset(L, -3);
+    lua_pushstring(L, "br");                             /* L: table key */
+    v3f_c4b_t2f_to_luaval(L, inValue.br);               /* L: table key value*/
+    lua_rawset(L, -3);
+}

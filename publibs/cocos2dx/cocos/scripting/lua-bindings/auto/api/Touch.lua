@@ -8,7 +8,7 @@
 -- 
 -- @function [parent=#Touch] getNowTime 
 -- @param self
--- @return float#float ret (return value: float)
+-- @return double#double ret (return value: double)
         
 --------------------------------
 --  Returns the previous touch location in screen coordinates. <br>
@@ -28,7 +28,7 @@
 -- 
 -- @function [parent=#Touch] getTimeInc 
 -- @param self
--- @return float#float ret (return value: float)
+-- @return double#double ret (return value: double)
         
 --------------------------------
 --  Returns the delta of 2 current touches locations in screen coordinates.<br>
@@ -55,7 +55,7 @@
 -- 
 -- @function [parent=#Touch] getTimeOff 
 -- @param self
--- @return float#float ret (return value: float)
+-- @return double#double ret (return value: double)
         
 --------------------------------
 --  Returns the start touch location in OpenGL coordinates.<br>
@@ -103,7 +103,7 @@
 -- 
 -- @function [parent=#Touch] getPrevTime 
 -- @param self
--- @return float#float ret (return value: float)
+-- @return double#double ret (return value: double)
         
 --------------------------------
 --  Returns the previous touch location in OpenGL coordinates.<br>
@@ -116,13 +116,13 @@
 -- 
 -- @function [parent=#Touch] getStartTime 
 -- @param self
--- @return float#float ret (return value: float)
+-- @return double#double ret (return value: double)
         
 --------------------------------
 -- 
 -- @function [parent=#Touch] getTimeInSeconds 
 -- @param self
--- @return float#float ret (return value: float)
+-- @return double#double ret (return value: double)
         
 --------------------------------
 --  Constructor.<br>

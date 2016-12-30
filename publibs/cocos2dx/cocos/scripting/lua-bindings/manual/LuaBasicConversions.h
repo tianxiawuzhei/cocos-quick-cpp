@@ -1299,6 +1299,35 @@ void std_map_string_string_to_luaval(lua_State* L, const std::map<std::string, s
 CC_LUA_DLL extern bool luaval_to_node(lua_State* L, int lo, const char* type, cocos2d::Node** node);
 CC_LUA_DLL extern void node_to_luaval(lua_State* L, const char* type, cocos2d::Node* node);
 
+/**
+ * zq extend
+ * Push a table converted from a cocos2d::V3F_C4B_T2F_Quad object into the Lua stack.
+ * The format of table as follows: {tl=V3F_C4B_T2F, bl=V3F_C4B_T2F, tr=V3F_C4B_T2F, br=V3F_C4B_T2F}
+ *
+ * @param L the current lua_State.
+ * @param inValue a cocos2d::V3F_C4B_T2F_Quad object.
+ */
+void v3f_c4b_t2f_quad_to_luaval(lua_State* L, const cocos2d::V3F_C4B_T2F_Quad& inValue);
+
+/**
+ * zq extend
+ * Push a table converted from a cocos2d::V3F_C4B_T2F object into the Lua stack.
+ * The format of table as follows: {vertices=Vec3, texCoords=Color4B, colors=Tex2F}
+ *
+ * @param L the current lua_State.
+ * @param inValue a cocos2d::V3F_C4B_T2F object.
+ */
+void v3f_c4b_t2f_to_luaval(lua_State* L, const cocos2d::V3F_C4B_T2F& inValue);
+
+/**
+ * zq extend
+ * Push a table converted from a cocos2d::Tex2F object into the Lua stack.
+ * The format of table as follows: {u=u, v=v}
+ *
+ * @param L the current lua_State.
+ * @param inValue a cocos2d::Tex2F object.
+ */
+void tex2f_to_luaval(lua_State* L, const cocos2d::Tex2F& inValue);
 // end group
 /// @}
 #endif //__COCOS2DX_SCRIPTING_LUA_COCOS2DXSUPPORT_LUABAISCCONVERSIONS_H__

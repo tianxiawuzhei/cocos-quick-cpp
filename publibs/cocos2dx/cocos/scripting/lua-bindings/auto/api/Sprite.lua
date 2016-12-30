@@ -43,6 +43,26 @@
 -- @return Sprite#Sprite self (return value: cc.Sprite)
         
 --------------------------------
+-- 
+-- @function [parent=#Sprite] unregisterDrawScriptHandler 
+-- @param self
+-- @return Sprite#Sprite self (return value: cc.Sprite)
+        
+--------------------------------
+-- 
+-- @function [parent=#Sprite] registerDrawScriptHandler 
+-- @param self
+-- @param #int handler
+-- @return Sprite#Sprite self (return value: cc.Sprite)
+        
+--------------------------------
+-- 
+-- @function [parent=#Sprite] setDrawEnd 
+-- @param self
+-- @param #function func
+-- @return Sprite#Sprite self (return value: cc.Sprite)
+        
+--------------------------------
 -- / @}
 -- @function [parent=#Sprite] getResourceType 
 -- @param self
@@ -78,6 +98,13 @@
 -- @function [parent=#Sprite] removeAllChildrenWithCleanup 
 -- @param self
 -- @param #bool cleanup
+-- @return Sprite#Sprite self (return value: cc.Sprite)
+        
+--------------------------------
+-- 
+-- @function [parent=#Sprite] setDrawBeg 
+-- @param self
+-- @param #function func
 -- @return Sprite#Sprite self (return value: cc.Sprite)
         
 --------------------------------
@@ -255,6 +282,14 @@
 -- @function [parent=#Sprite] isFlippedY 
 -- @param self
 -- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- Returns the quad (tex coords, vertex coords and color) information.<br>
+-- js  NA<br>
+-- lua NA
+-- @function [parent=#Sprite] getQuad 
+-- @param self
+-- @return V3F_C4B_T2F_Quad#V3F_C4B_T2F_Quad ret (return value: cc.V3F_C4B_T2F_Quad)
         
 --------------------------------
 -- Sets the vertex rect.<br>

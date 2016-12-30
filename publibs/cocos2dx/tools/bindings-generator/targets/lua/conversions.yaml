@@ -138,6 +138,7 @@ conversions:
     "TexParams": "texParams_to_luaval(tolua_S, ${in_value})"
     "NavMeshAgentParam": "navmeshagentparam_to_luaval(tolua_S, ${in_value})"
     "OffMeshLinkData": "offmeshlinkdata_to_luaval(tolua_S, ${in_value})"
+    "V3F_C4B_T2F_Quad": "v3f_c4b_t2f_quad_to_luaval(tolua_S, ${in_value})"
 
     object: "object_to_luaval<${ntype.replace(\"*\", \"\").replace(\"const \", \"\")}>(tolua_S, \"${scriptname}\",(${ntype.replace(\"const \", \"\")})${in_value})"
 
