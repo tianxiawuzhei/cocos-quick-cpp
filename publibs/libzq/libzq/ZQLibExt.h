@@ -22,4 +22,6 @@
 
 #include "draw/ZQCustomAction.h"
 
+#include "draw/ZQTextUtil.h"
+
 #endif /* __ZQLIBEXT_H__ */

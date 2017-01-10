@@ -2152,6 +2152,399 @@ int lua_register_zq_ZQCustomAction(lua_State* tolua_S)
     g_typeCast["ZQCustomAction"] = "zq.ZQCustomAction";
     return 1;
 }
+
+int lua_zq_ZQTextUtil_standardFontName(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQTextUtil* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextUtil",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQTextUtil*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextUtil_standardFontName'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextUtil_standardFontName'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->standardFontName();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextUtil:standardFontName",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextUtil_standardFontName'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQTextUtil_widthByFont(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQTextUtil* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextUtil",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQTextUtil*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextUtil_widthByFont'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 3) 
+    {
+        std::string arg0;
+        std::string arg1;
+        double arg2;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQTextUtil:widthByFont");
+
+        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQTextUtil:widthByFont");
+
+        ok &= luaval_to_number(tolua_S, 4,&arg2, "zq.ZQTextUtil:widthByFont");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextUtil_widthByFont'", nullptr);
+            return 0;
+        }
+        double ret = cobj->widthByFont(arg0, arg1, arg2);
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextUtil:widthByFont",argc, 3);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextUtil_widthByFont'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQTextUtil_sizeByFont(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQTextUtil* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextUtil",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQTextUtil*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextUtil_sizeByFont'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 3) 
+    {
+        std::string arg0;
+        std::string arg1;
+        double arg2;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQTextUtil:sizeByFont");
+
+        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQTextUtil:sizeByFont");
+
+        ok &= luaval_to_number(tolua_S, 4,&arg2, "zq.ZQTextUtil:sizeByFont");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextUtil_sizeByFont'", nullptr);
+            return 0;
+        }
+        cocos2d::Size ret = cobj->sizeByFont(arg0, arg1, arg2);
+        size_to_luaval(tolua_S, ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextUtil:sizeByFont",argc, 3);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextUtil_sizeByFont'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQTextUtil_renderByArray(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQTextUtil* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextUtil",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQTextUtil*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextUtil_renderByArray'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 4) 
+    {
+        cocos2d::Sprite* arg0;
+        cocos2d::ValueVector arg1;
+        int arg2;
+        int arg3;
+
+        ok &= luaval_to_object<cocos2d::Sprite>(tolua_S, 2, "cc.Sprite",&arg0, "zq.ZQTextUtil:renderByArray");
+
+        ok &= luaval_to_ccvaluevector(tolua_S, 3, &arg1, "zq.ZQTextUtil:renderByArray");
+
+        ok &= luaval_to_int32(tolua_S, 4,(int *)&arg2, "zq.ZQTextUtil:renderByArray");
+
+        ok &= luaval_to_int32(tolua_S, 5,(int *)&arg3, "zq.ZQTextUtil:renderByArray");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextUtil_renderByArray'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->renderByArray(arg0, arg1, arg2, arg3);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextUtil:renderByArray",argc, 4);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextUtil_renderByArray'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQTextUtil_heigthByFont(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQTextUtil* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextUtil",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQTextUtil*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextUtil_heigthByFont'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 3) 
+    {
+        std::string arg0;
+        std::string arg1;
+        double arg2;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQTextUtil:heigthByFont");
+
+        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQTextUtil:heigthByFont");
+
+        ok &= luaval_to_number(tolua_S, 4,&arg2, "zq.ZQTextUtil:heigthByFont");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextUtil_heigthByFont'", nullptr);
+            return 0;
+        }
+        double ret = cobj->heigthByFont(arg0, arg1, arg2);
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextUtil:heigthByFont",argc, 3);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextUtil_heigthByFont'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQTextUtil_renderByString(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQTextUtil* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextUtil",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQTextUtil*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextUtil_renderByString'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 4) 
+    {
+        cocos2d::Sprite* arg0;
+        std::string arg1;
+        int arg2;
+        int arg3;
+
+        ok &= luaval_to_object<cocos2d::Sprite>(tolua_S, 2, "cc.Sprite",&arg0, "zq.ZQTextUtil:renderByString");
+
+        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQTextUtil:renderByString");
+
+        ok &= luaval_to_int32(tolua_S, 4,(int *)&arg2, "zq.ZQTextUtil:renderByString");
+
+        ok &= luaval_to_int32(tolua_S, 5,(int *)&arg3, "zq.ZQTextUtil:renderByString");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextUtil_renderByString'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->renderByString(arg0, arg1, arg2, arg3);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextUtil:renderByString",argc, 4);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextUtil_renderByString'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQTextUtil_getInstance(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQTextUtil",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextUtil_getInstance'", nullptr);
+            return 0;
+        }
+        zq::ZQTextUtil* ret = zq::ZQTextUtil::getInstance();
+        object_to_luaval<zq::ZQTextUtil>(tolua_S, "zq.ZQTextUtil",(zq::ZQTextUtil*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQTextUtil:getInstance",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextUtil_getInstance'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua_zq_ZQTextUtil_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (ZQTextUtil)");
+    return 0;
+}
+
+int lua_register_zq_ZQTextUtil(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"zq.ZQTextUtil");
+    tolua_cclass(tolua_S,"ZQTextUtil","zq.ZQTextUtil","",nullptr);
+
+    tolua_beginmodule(tolua_S,"ZQTextUtil");
+        tolua_function(tolua_S,"standardFontName",lua_zq_ZQTextUtil_standardFontName);
+        tolua_function(tolua_S,"widthByFont",lua_zq_ZQTextUtil_widthByFont);
+        tolua_function(tolua_S,"sizeByFont",lua_zq_ZQTextUtil_sizeByFont);
+        tolua_function(tolua_S,"renderByArray",lua_zq_ZQTextUtil_renderByArray);
+        tolua_function(tolua_S,"heigthByFont",lua_zq_ZQTextUtil_heigthByFont);
+        tolua_function(tolua_S,"renderByString",lua_zq_ZQTextUtil_renderByString);
+        tolua_function(tolua_S,"getInstance", lua_zq_ZQTextUtil_getInstance);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(zq::ZQTextUtil).name();
+    g_luaType[typeName] = "zq.ZQTextUtil";
+    g_typeCast["ZQTextUtil"] = "zq.ZQTextUtil";
+    return 1;
+}
 TOLUA_API int register_all_zq(lua_State* tolua_S)
 {
 	tolua_open(tolua_S);
@@ -2162,6 +2555,7 @@ TOLUA_API int register_all_zq(lua_State* tolua_S)
 	lua_register_zq_DateUtils(tolua_S);
 	lua_register_zq_ZQImageManage(tolua_S);
 	lua_register_zq_ZQLogger(tolua_S);
+	lua_register_zq_ZQTextUtil(tolua_S);
 	lua_register_zq_ZQCustomAction(tolua_S);
 	lua_register_zq_ZQJsonManage(tolua_S);
 	lua_register_zq_ZQFileManage(tolua_S);

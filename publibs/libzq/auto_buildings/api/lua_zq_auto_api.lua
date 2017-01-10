@@ -36,4 +36,9 @@
 -- @field [parent=#zq] ZQCustomAction#ZQCustomAction ZQCustomAction preloaded module
 
 
+--------------------------------------------------------
+-- the zq ZQTextUtil
+-- @field [parent=#zq] ZQTextUtil#ZQTextUtil ZQTextUtil preloaded module
+
+
 return nil
