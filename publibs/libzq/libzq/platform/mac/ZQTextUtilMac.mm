@@ -83,11 +83,12 @@ bool ZQTextUtilMac::renderByArray(cocos2d::Sprite *sprite, const cocos2d::ValueV
         return false;
     }
     
+    [NSGraphicsContext setCurrentContext:[NSGraphicsContext graphicsContextWithCGContext:context flipped:true]];
     // 翻转坐标系统（文本原来是倒的要翻转下）
-//    CGContextSetTextMatrix(context, CGAffineTransformIdentity);
-//    CGContextTranslateCTM(context, 0, FinalHigh);
-//    CGContextScaleCTM(context, 1.0, -1.0);
-//    
+    CGContextSetTextMatrix(context, CGAffineTransformIdentity);
+    CGContextTranslateCTM(context, 0, FinalHigh);
+    CGContextScaleCTM(context, 1.0, -1.0);
+//
     // 抗锯齿
     CGContextSetShouldAntialias(context, true);
     CGContextSetAllowsAntialiasing(context, true);
@@ -160,12 +161,12 @@ bool ZQTextUtilMac::renderByArray(cocos2d::Sprite *sprite, const cocos2d::ValueV
 //            CGContextSetTextDrawingMode(context, kCGTextFill);
 //            CGContextSetRGBFillColor(context, clr_fore.r / 255.0, clr_fore.g / 255.0, clr_fore.b / 255.0, 1.0);
 //            [str drawAtPoint:CGPointMake(x, y) withFont:ft];
-            CTLineRef line = CTLineCreateWithAttributedString((CFAttributedStringRef)stringWithAttributes);
-//            CGPoint pos = CGPointMake(x, y);
-            CGContextSetTextPosition(context, x, y);
-            CTLineDraw(line, context);
-            CFRelease(line);
-//            [stringWithAttributes drawAtPoint: pos];
+//            CTLineRef line = CTLineCreateWithAttributedString((CFAttributedStringRef)stringWithAttributes);
+            CGPoint pos = CGPointMake(x, y);
+//            CGContextSetTextPosition(context, x, y);
+//            CTLineDraw(line, context);
+//            CFRelease(line);
+            [stringWithAttributes drawAtPoint: pos];
             // 下划线
             if (under)
             {
