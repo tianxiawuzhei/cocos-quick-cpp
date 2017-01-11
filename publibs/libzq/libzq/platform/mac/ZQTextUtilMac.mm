@@ -20,7 +20,7 @@ ZQTextUtilMac* ZQTextUtilMac::getInstance()
 
 std::string ZQTextUtilMac::standardFontName()
 {
-    return [[[NSFont boldSystemFontOfSize:23] fontName] UTF8String];
+    return [[[NSFont systemFontOfSize:23] fontName] UTF8String];
 }
 
 cocos2d::Size ZQTextUtilMac::sizeByFont(const std::string &text, const std::string &font_name, float font_size)
@@ -88,7 +88,7 @@ bool ZQTextUtilMac::renderByArray(cocos2d::Sprite *sprite, const cocos2d::ValueV
     CGContextSetTextMatrix(context, CGAffineTransformIdentity);
     CGContextTranslateCTM(context, 0, FinalHigh);
     CGContextScaleCTM(context, 1.0, -1.0);
-//
+
     // 抗锯齿
     CGContextSetShouldAntialias(context, true);
     CGContextSetAllowsAntialiasing(context, true);
@@ -131,48 +131,40 @@ bool ZQTextUtilMac::renderByArray(cocos2d::Sprite *sprite, const cocos2d::ValueV
             NSColor* strokeColor = [NSColor colorWithDeviceRed:clr_stroke.r/255.0 green:clr_stroke.g/255.0 blue:clr_stroke.b/255.0 alpha:1.0];
             
             
-            // attribute
-            NSDictionary* attriDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                 foregroundColor,NSForegroundColorAttributeName,
-                                                 ft, NSFontAttributeName,
-                                                 nil];
             
-            if (stroke_w > 0) {
-                [attriDict setValue:strokeColor forKey:NSStrokeColorAttributeName];
-                [attriDict setValue:[NSNumber numberWithFloat:stroke_w]  forKey:NSStrokeWidthAttributeName];
+            CGPoint pos = CGPointMake(x, y);
+            
+            if (stroke_w > 0)
+            {
+                NSMutableDictionary* attriDict1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                                  foregroundColor,NSForegroundColorAttributeName,
+                                                  ft, NSFontAttributeName,
+                                                   strokeColor, NSStrokeColorAttributeName,
+                                                   [NSNumber numberWithFloat:-stroke_w],
+                                                   NSStrokeWidthAttributeName,
+                                                  nil];
+                NSAttributedString *stringWithAttributes1 =[[[NSAttributedString alloc] initWithString:str
+                                                                                           attributes:attriDict1] autorelease];
+                [stringWithAttributes1 drawAtPoint: pos];
             }
-            
+        
+            // attribute
+            NSMutableDictionary* attriDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                              foregroundColor,NSForegroundColorAttributeName,
+                                              ft, NSFontAttributeName,
+                                              nil];
+
             NSAttributedString *stringWithAttributes =[[[NSAttributedString alloc] initWithString:str
                                                                                        attributes:attriDict] autorelease];
-            
-            
-//            if (stroke_w > 0)
-//            {
-//                CGContextSetLineWidth(context, stroke_w);
-//                CGContextSetLineJoin(context, kCGLineJoinRound);
-//                CGContextSetRGBFillColor(context, clr_stroke.r / 255.0, clr_stroke.g / 255.0, clr_stroke.b / 255.0, clr_stroke.a / 255.0);
-//                CGContextSetRGBStrokeColor(context, clr_stroke.r / 255.0, clr_stroke.g / 255.0, clr_stroke.b / 255.0, clr_stroke.a / 255.0);
-//                CGContextSetTextDrawingMode(context, kCGTextStroke);
-//                
-//                [str drawAtPoint:CGPointMake(x, y + 1) withFont:ft];
-//            }
-            
-            // 填充
-//            CGContextSetTextDrawingMode(context, kCGTextFill);
-//            CGContextSetRGBFillColor(context, clr_fore.r / 255.0, clr_fore.g / 255.0, clr_fore.b / 255.0, 1.0);
-//            [str drawAtPoint:CGPointMake(x, y) withFont:ft];
-//            CTLineRef line = CTLineCreateWithAttributedString((CFAttributedStringRef)stringWithAttributes);
-            CGPoint pos = CGPointMake(x, y);
-//            CGContextSetTextPosition(context, x, y);
-//            CTLineDraw(line, context);
-//            CFRelease(line);
             [stringWithAttributes drawAtPoint: pos];
+            
+            
             // 下划线
             if (under)
             {
                 CGContextBeginPath(context);
                 CGContextSetRGBStrokeColor(context, clr_fore.r / 255.0, clr_fore.g / 255.0, clr_fore.b / 255.0, 1.0);
-                CGContextSetLineWidth(context, 1.3);
+                CGContextSetLineWidth(context, 1.0);
                 CGContextMoveToPoint(context, x, y + h - 1.0);
                 CGContextAddLineToPoint(context, x + w, y + h - 1.0);
                 CGContextStrokePath(context);
