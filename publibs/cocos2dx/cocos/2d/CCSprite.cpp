@@ -319,6 +319,7 @@ Sprite::Sprite(void)
 #if CC_ENABLE_SCRIPT_BINDING
 , _drawScriptHandler(0)
 #endif
+, _tex_scale(1.0)
 {
 #if CC_SPRITE_DEBUG_DRAW
     _debugDrawNode = DrawNode::create();
@@ -474,7 +475,8 @@ void Sprite::setTextureRect(const Rect& rect, bool rotated, const Size& untrimme
 // override this method to generate "double scale" sprites
 void Sprite::setVertexRect(const Rect& rect)
 {
-    _rect = rect;
+    auto scale = 1.0 / this->_tex_scale;
+    _rect = cocos2d::Rect(rect.origin.x * scale, rect.origin.y * scale, rect.size.width * scale, rect.size.height * scale);
 }
 
 void Sprite::setTextureCoords(Rect rect)
@@ -1257,6 +1259,11 @@ void Sprite::unregisterDrawScriptHandler()
         this->_drawScriptHandler = 0;
     }
 #endif
+}
+
+void Sprite::setTextureScale(float scale)
+{
+    this->_tex_scale = scale;
 }
 
 NS_CC_END

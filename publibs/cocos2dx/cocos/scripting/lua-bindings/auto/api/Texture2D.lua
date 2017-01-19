@@ -148,6 +148,13 @@
 -- @return int#int ret (return value: int)
         
 --------------------------------
+-- 
+-- @function [parent=#Texture2D] setPremultipliedAlpha 
+-- @param self
+-- @param #bool has
+-- @return Texture2D#Texture2D self (return value: cc.Texture2D)
+        
+--------------------------------
 --  Set a shader program to the texture.<br>
 -- It's used by drawAtPoint and drawInRect
 -- @function [parent=#Texture2D] setGLProgram 

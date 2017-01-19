@@ -587,6 +587,8 @@ public:
     void setDrawEnd(std::function<void()> func);
     void registerDrawScriptHandler(int handler);
     void unregisterDrawScriptHandler();
+    
+    void setTextureScale(float scale);
 protected:
 #if CC_ENABLE_SCRIPT_BINDING
     int _drawScriptHandler;
@@ -594,6 +596,8 @@ protected:
     cocos2d::GroupCommand  _command_draw_group;
     cocos2d::CustomCommand _command_draw_beg;
     cocos2d::CustomCommand _command_draw_end;
+    
+    float _tex_scale;
 protected:
 
     void updateColor() override;

@@ -142,6 +142,13 @@
 -- @return long#long ret (return value: long)
         
 --------------------------------
+-- 
+-- @function [parent=#Sprite] setTextureScale 
+-- @param self
+-- @param #float scale
+-- @return Sprite#Sprite self (return value: cc.Sprite)
+        
+--------------------------------
 -- Sets the batch node to sprite.<br>
 -- warning This method is not recommended for game developers. Sample code for using batch node<br>
 -- code<br>
