@@ -23,5 +23,6 @@
 #include "draw/ZQCustomAction.h"
 
 #include "draw/ZQTextUtil.h"
+#include "draw/ZQTextBox.h"
 
 #endif /* __ZQLIBEXT_H__ */
