@@ -41,4 +41,14 @@
 -- @field [parent=#zq] ZQTextUtil#ZQTextUtil ZQTextUtil preloaded module
 
 
+--------------------------------------------------------
+-- the zq ZQTextBox
+-- @field [parent=#zq] ZQTextBox#ZQTextBox ZQTextBox preloaded module
+
+
+--------------------------------------------------------
+-- the zq ZQTextArea
+-- @field [parent=#zq] ZQTextArea#ZQTextArea ZQTextArea preloaded module
+
+
 return nil

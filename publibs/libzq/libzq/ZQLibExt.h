@@ -24,5 +24,6 @@
 
 #include "draw/ZQTextUtil.h"
 #include "draw/ZQTextBox.h"
+#include "draw/ZQTextArea.h"
 
 #endif /* __ZQLIBEXT_H__ */

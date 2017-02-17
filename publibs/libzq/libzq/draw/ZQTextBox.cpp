@@ -21,7 +21,7 @@ ZQTextBox* ZQTextBox::create(const cocos2d::Size &size)
     return node;
 }
 
-ZQTextBox::ZQTextBox():_maxLength(0)
+ZQTextBox::ZQTextBox():_maxLength(-1)
 {
     this->setCascadeOpacityEnabled(true);
 }
@@ -34,13 +34,6 @@ void ZQTextBox::setMaxLength(int length)
 int ZQTextBox::maxLength()
 {
     return this->_maxLength;
-}
-
-static cocos2d::Rect getRect(cocos2d::Node * pNode)
-{
-    cocos2d::Size contentSize = pNode->getContentSize();
-    cocos2d::Rect rect = cocos2d::Rect(0, 0, contentSize.width, contentSize.height);
-    return RectApplyTransform(rect, pNode->getNodeToWorldTransform());
 }
 
 void ZQTextBox::setPosition(const cocos2d::Vec2 &position)

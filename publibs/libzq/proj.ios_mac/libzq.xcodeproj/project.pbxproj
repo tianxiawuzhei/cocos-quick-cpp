@@ -12,8 +12,6 @@
 		A25339FD1DD96E0E00E0D086 /* ZQLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A25339FB1DD96E0E00E0D086 /* ZQLogger.cpp */; };
 		A25ADC441E517D7300E181F9 /* ZQTextBoxMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A25ADC421E517D7300E181F9 /* ZQTextBoxMac.mm */; };
 		A25ADC451E517D7300E181F9 /* ZQTextBoxMac.h in Headers */ = {isa = PBXBuildFile; fileRef = A25ADC431E517D7300E181F9 /* ZQTextBoxMac.h */; };
-		A25ADC491E52F3F600E181F9 /* ZQTextBoxDelegateMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A25ADC471E52F3F600E181F9 /* ZQTextBoxDelegateMac.mm */; };
-		A25ADC4B1E52F45700E181F9 /* ZQTextBoxDelegateMac.h in Headers */ = {isa = PBXBuildFile; fileRef = A25ADC4A1E52F45700E181F9 /* ZQTextBoxDelegateMac.h */; };
 		A25ADC4D1E544D9C00E181F9 /* ZQTextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A28866BD1E320F0E00A33402 /* ZQTextBox.cpp */; };
 		A25FE1A41DD2CC3D00DB55E5 /* ZQJsonManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A25FE1A21DD2CC3D00DB55E5 /* ZQJsonManage.cpp */; };
 		A25FE1AC1DD58D5400DB55E5 /* ZQPlistManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A25FE1AA1DD58D5400DB55E5 /* ZQPlistManage.cpp */; };
@@ -62,6 +60,13 @@
 		A2989A7A1DE6DF790073E4F0 /* ZQLoggerMac.h in Headers */ = {isa = PBXBuildFile; fileRef = A26387771DE4696400A6D925 /* ZQLoggerMac.h */; };
 		A2989A7C1DE6DF790073E4F0 /* rapidxml.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1B21DD5925100DB55E5 /* rapidxml.hpp */; };
 		A2989A7E1DE6DF790073E4F0 /* rapidxml_print.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A25FE1B41DD5925100DB55E5 /* rapidxml_print.hpp */; };
+		A2CEFDDC1E55C0BF00934B41 /* ZQTextArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2CEFDD91E55C0BF00934B41 /* ZQTextArea.cpp */; };
+		A2CEFDDD1E55C0BF00934B41 /* ZQTextArea.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */; };
+		A2CEFDDE1E55C0BF00934B41 /* ZQTextArea.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */; };
+		A2CEFDDF1E55C5B300934B41 /* ZQTextArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2CEFDD91E55C0BF00934B41 /* ZQTextArea.cpp */; };
+		A2CEFDE21E55CEDB00934B41 /* ZQTextAreaMac.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDE01E55CEDB00934B41 /* ZQTextAreaMac.h */; };
+		A2CEFDE31E55CEDB00934B41 /* ZQTextAreaMac.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDE01E55CEDB00934B41 /* ZQTextAreaMac.h */; };
+		A2CEFDE51E55CEDB00934B41 /* ZQTextAreaMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2CEFDE11E55CEDB00934B41 /* ZQTextAreaMac.mm */; };
 		A2F1CC0F1DE8308000B7CB8D /* ZQImageManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2F1CC0D1DE8308000B7CB8D /* ZQImageManage.cpp */; };
 		A2F1CC101DE8308000B7CB8D /* ZQImageManage.h in Headers */ = {isa = PBXBuildFile; fileRef = A2F1CC0E1DE8308000B7CB8D /* ZQImageManage.h */; };
 		A2F1CC141DE8314F00B7CB8D /* ZQFileManage.h in Headers */ = {isa = PBXBuildFile; fileRef = A2F1CC111DE8314F00B7CB8D /* ZQFileManage.h */; };
@@ -79,8 +84,6 @@
 		A25339FB1DD96E0E00E0D086 /* ZQLogger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQLogger.cpp; sourceTree = "<group>"; };
 		A25ADC421E517D7300E181F9 /* ZQTextBoxMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZQTextBoxMac.mm; sourceTree = "<group>"; };
 		A25ADC431E517D7300E181F9 /* ZQTextBoxMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextBoxMac.h; sourceTree = "<group>"; };
-		A25ADC471E52F3F600E181F9 /* ZQTextBoxDelegateMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZQTextBoxDelegateMac.mm; sourceTree = "<group>"; };
-		A25ADC4A1E52F45700E181F9 /* ZQTextBoxDelegateMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextBoxDelegateMac.h; sourceTree = "<group>"; };
 		A25FE1A21DD2CC3D00DB55E5 /* ZQJsonManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQJsonManage.cpp; sourceTree = "<group>"; };
 		A25FE1AA1DD58D5400DB55E5 /* ZQPlistManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQPlistManage.cpp; sourceTree = "<group>"; };
 		A25FE1B01DD5925100DB55E5 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
@@ -117,6 +120,10 @@
 		A28866BD1E320F0E00A33402 /* ZQTextBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQTextBox.cpp; sourceTree = "<group>"; };
 		A28866BE1E320F0E00A33402 /* ZQTextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextBox.h; sourceTree = "<group>"; };
 		A2989A831DE6DF790073E4F0 /* libzqMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzqMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2CEFDD91E55C0BF00934B41 /* ZQTextArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQTextArea.cpp; sourceTree = "<group>"; };
+		A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextArea.h; sourceTree = "<group>"; };
+		A2CEFDE01E55CEDB00934B41 /* ZQTextAreaMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextAreaMac.h; sourceTree = "<group>"; };
+		A2CEFDE11E55CEDB00934B41 /* ZQTextAreaMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZQTextAreaMac.mm; sourceTree = "<group>"; };
 		A2F1CC0D1DE8308000B7CB8D /* ZQImageManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQImageManage.cpp; sourceTree = "<group>"; };
 		A2F1CC0E1DE8308000B7CB8D /* ZQImageManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQImageManage.h; sourceTree = "<group>"; };
 		A2F1CC111DE8314F00B7CB8D /* ZQFileManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQFileManage.h; sourceTree = "<group>"; };
@@ -215,6 +222,8 @@
 				A284866D1E1DEBF200E39265 /* ZQTextUtil.h */,
 				A28866BD1E320F0E00A33402 /* ZQTextBox.cpp */,
 				A28866BE1E320F0E00A33402 /* ZQTextBox.h */,
+				A2CEFDD91E55C0BF00934B41 /* ZQTextArea.cpp */,
+				A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */,
 			);
 			path = draw;
 			sourceTree = "<group>";
@@ -248,8 +257,8 @@
 		A25339F61DD96B8200E0D086 /* mac */ = {
 			isa = PBXGroup;
 			children = (
-				A25ADC4A1E52F45700E181F9 /* ZQTextBoxDelegateMac.h */,
-				A25ADC471E52F3F600E181F9 /* ZQTextBoxDelegateMac.mm */,
+				A2CEFDE01E55CEDB00934B41 /* ZQTextAreaMac.h */,
+				A2CEFDE11E55CEDB00934B41 /* ZQTextAreaMac.mm */,
 				A26387771DE4696400A6D925 /* ZQLoggerMac.h */,
 				A26387781DE4696400A6D925 /* ZQLoggerMac.mm */,
 				A28486721E1DF6A700E39265 /* ZQTextUtilMac.mm */,
@@ -339,6 +348,7 @@
 				A2F1CC1C1DE8322900B7CB8D /* ZQLogger.h in Headers */,
 				A25FE1B91DD5925100DB55E5 /* rapidxml_utils.hpp in Headers */,
 				A26BAF5F1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.h in Headers */,
+				A2CEFDDD1E55C0BF00934B41 /* ZQTextArea.h in Headers */,
 				A2F1CC101DE8308000B7CB8D /* ZQImageManage.h in Headers */,
 				A2F1CC141DE8314F00B7CB8D /* ZQFileManage.h in Headers */,
 				A28486701E1DEBF200E39265 /* ZQTextUtil.h in Headers */,
@@ -349,6 +359,7 @@
 				A2F1CC1A1DE831BC00B7CB8D /* ZQStringUtils.h in Headers */,
 				A26CF98C1E0BA10E0026F5CB /* ZQCustomAction.h in Headers */,
 				A28486761E1DF6A700E39265 /* ZQTextUtilMac.h in Headers */,
+				A2CEFDE21E55CEDB00934B41 /* ZQTextAreaMac.h in Headers */,
 				A2F1CC191DE831BC00B7CB8D /* ZQDateUtils.h in Headers */,
 				A26387791DE4696400A6D925 /* ZQLoggerMac.h in Headers */,
 				A25FE1B61DD5925100DB55E5 /* rapidxml.hpp in Headers */,
@@ -366,10 +377,11 @@
 				A28486711E1DEBF200E39265 /* ZQTextUtil.h in Headers */,
 				A2989A731DE6DF790073E4F0 /* rapidxml_iterators.hpp in Headers */,
 				A2989A751DE6DF790073E4F0 /* rapidxml_utils.hpp in Headers */,
+				A2CEFDE31E55CEDB00934B41 /* ZQTextAreaMac.h in Headers */,
 				A25ADC451E517D7300E181F9 /* ZQTextBoxMac.h in Headers */,
-				A25ADC4B1E52F45700E181F9 /* ZQTextBoxDelegateMac.h in Headers */,
 				A2989A781DE6DF790073E4F0 /* ZQLoggerIOS.h in Headers */,
 				A2989A7A1DE6DF790073E4F0 /* ZQLoggerMac.h in Headers */,
+				A2CEFDDE1E55C0BF00934B41 /* ZQTextArea.h in Headers */,
 				A26CF98D1E0BA10E0026F5CB /* ZQCustomAction.h in Headers */,
 				A2989A7C1DE6DF790073E4F0 /* rapidxml.hpp in Headers */,
 				A28866C21E320F0E00A33402 /* ZQTextBox.h in Headers */,
@@ -452,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2CEFDDF1E55C5B300934B41 /* ZQTextArea.cpp in Sources */,
 				A26387691DE2FC6100A6D925 /* ZQDateUtils.cpp in Sources */,
 				A26387721DE4640700A6D925 /* ZQLoggerIOS.mm in Sources */,
 				A26BAF591E10C63600D3972B /* lua_zq_auto.cpp in Sources */,
@@ -472,14 +485,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2CEFDDC1E55C0BF00934B41 /* ZQTextArea.cpp in Sources */,
 				A25ADC4D1E544D9C00E181F9 /* ZQTextBox.cpp in Sources */,
 				A28486791E1E187100E39265 /* ZQTextUtilMac.mm in Sources */,
 				A28486781E1E186000E39265 /* ZQPlistManage.h in Sources */,
 				A26BAF661E110A1100D3972B /* zq_sprite_draw_tolua_manual.cpp in Sources */,
 				A26BAF611E10CAD500D3972B /* lua_zq_auto.cpp in Sources */,
 				A26BAF601E10CAD100D3972B /* zq_custom_action_tolua_luabinding.cpp in Sources */,
+				A2CEFDE51E55CEDB00934B41 /* ZQTextAreaMac.mm in Sources */,
 				A277102F1DF82B3D0074C87D /* ZQImageManage.cpp in Sources */,
-				A25ADC491E52F3F600E181F9 /* ZQTextBoxDelegateMac.mm in Sources */,
 				A2989A691DE6DF790073E4F0 /* ZQDateUtils.cpp in Sources */,
 				A26CF98B1E0BA10E0026F5CB /* ZQCustomAction.cpp in Sources */,
 				A2989A6B1DE6DF790073E4F0 /* ZQLoggerMac.mm in Sources */,
