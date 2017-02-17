@@ -24,22 +24,14 @@ namespace zq
         virtual ~ZQTextBox() = default;
         
     public:
-        virtual void setFont(const std::string &font_name, float font_size) = 0;
-        
+        virtual void setFont(const std::string &font_name, float font_size);
+        virtual void setFontSize(float font_size);
+        virtual void setFontColor(const cocos2d::Color3B &color) = 0;
         virtual void setString(const std::string &text) = 0;
         
-        virtual void setFontSize(float font_size) = 0;
-        
-        virtual void setFontColor(const cocos2d::Color3B &color) = 0;
-        
-        /**
-         * Set the font color of the placeholder text when the edit box is empty.
-         */
+        virtual void setPlaceholderFont(const std::string &font_name, float font_size);
+        virtual void setPlaceholderFontSize(float font_size);
         virtual void setPlaceholderFontColor(const cocos2d::Color4B &color) = 0;
-        
-        /**
-         * Set a text in the edit box that acts as a placeholder when an
-         */
         virtual void setPlaceHolder(const std::string &text) = 0;
         
         virtual void setKeyboardDefault()   = 0;
@@ -79,10 +71,16 @@ namespace zq
         virtual void keyboardWillShow(cocos2d::IMEKeyboardNotificationInfo& info){}
         
         virtual void keyboardWillHide(cocos2d::IMEKeyboardNotificationInfo& info){}
+      
+    protected:
+        std::string _fontName;
+        std::string _placeholderFontName;
+        
+        float _fontSize;
+        float _placeholderFontSize;
     protected:
         int _maxLength;
         float _adjustHeight;
-        
     };
 }
 

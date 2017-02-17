@@ -14,6 +14,8 @@ using namespace zq;
 
 ZQTextArea::ZQTextArea()
 :_maxLength(-1)
+,_fontSize(-1)
+,_placeholderFontSize(-1)
 {
     this->setCascadeOpacityEnabled(true);
 }
@@ -37,6 +39,28 @@ void ZQTextArea::setMaxLength(int length)
 int ZQTextArea::maxLength()
 {
     return this->_maxLength;
+}
+
+void ZQTextArea::setFont(const std::string &font_name, float font_size)
+{
+    this->_fontName = font_name;
+    this->_fontSize = font_size;
+}
+
+void ZQTextArea::setFontSize(float font_size)
+{
+    this->setFont(_fontName, font_size);
+}
+
+void ZQTextArea::setPlaceholderFont(const std::string &font_name, float font_size)
+{
+    this->_placeholderFontName = font_name;
+    this->_placeholderFontSize = font_size;
+}
+
+void ZQTextArea::setPlaceholderFontSize(float font_size)
+{
+    this->setPlaceholderFont(_placeholderFontName, font_size);
 }
 
 void ZQTextArea::setPosition(const cocos2d::Vec2 &position)

@@ -168,7 +168,9 @@ ZQTextAreaMac* ZQTextAreaMac::create()
 
 void ZQTextAreaMac::setFont(const std::string &font_name, float font_size)
 {
-    NSFont* font = constructFont(font_name.c_str(), font_size, [(NSTextField*)this->_view frame]);
+    ZQTextArea::setFont(font_name, font_size);
+    auto fontSize = font_size*this->getNodeToWorldAffineTransform().a;
+    NSFont* font = constructFont(font_name.c_str(), fontSize, [(NSTextField*)this->_view frame]);
     [(CCUIMultilineTextField*)this->_view ccui_setFont:font];
 }
 
@@ -189,6 +191,14 @@ void ZQTextAreaMac::setFontColor(const cocos2d::Color3B &color)
                                                             green:color.g / 255.0
                                                              blue:color.b / 255.0
                                                             alpha:1.0]];
+}
+
+void ZQTextAreaMac::setPlaceholderFont(const std::string &font_name, float font_size)
+{
+    ZQTextArea::setPlaceholderFont(font_name, font_size);
+    auto fontSize = font_size*this->getNodeToWorldAffineTransform().a;
+    NSFont* font = constructFont(font_name.c_str(), fontSize, [(NSTextField*)this->_view frame]);
+    [(CCUIMultilineTextField*)this->_view ccui_setPlaceholderFont:font];
 }
 
 void ZQTextAreaMac::setPlaceholderFontColor(const cocos2d::Color4B &color)

@@ -2881,7 +2881,7 @@ int lua_zq_ZQTextBox_setKeyboardEmail(lua_State* tolua_S)
 
     return 0;
 }
-int lua_zq_ZQTextBox_setPosition(lua_State* tolua_S)
+int lua_zq_ZQTextBox_setContentSize(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQTextBox* cobj = nullptr;
@@ -2901,7 +2901,7 @@ int lua_zq_ZQTextBox_setPosition(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextBox_setPosition'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextBox_setContentSize'", nullptr);
         return 0;
     }
 #endif
@@ -2909,24 +2909,24 @@ int lua_zq_ZQTextBox_setPosition(lua_State* tolua_S)
     argc = lua_gettop(tolua_S)-1;
     if (argc == 1) 
     {
-        cocos2d::Vec2 arg0;
+        cocos2d::Size arg0;
 
-        ok &= luaval_to_vec2(tolua_S, 2, &arg0, "zq.ZQTextBox:setPosition");
+        ok &= luaval_to_size(tolua_S, 2, &arg0, "zq.ZQTextBox:setContentSize");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextBox_setPosition'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextBox_setContentSize'", nullptr);
             return 0;
         }
-        cobj->setPosition(arg0);
+        cobj->setContentSize(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextBox:setPosition",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextBox:setContentSize",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextBox_setPosition'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextBox_setContentSize'.",&tolua_err);
 #endif
 
     return 0;
@@ -3024,6 +3024,56 @@ int lua_zq_ZQTextBox_openKeyboard(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextBox_openKeyboard'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQTextBox_setPlaceholderFontSize(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQTextBox* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextBox",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQTextBox*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextBox_setPlaceholderFontSize'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        double arg0;
+
+        ok &= luaval_to_number(tolua_S, 2,&arg0, "zq.ZQTextBox:setPlaceholderFontSize");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextBox_setPlaceholderFontSize'", nullptr);
+            return 0;
+        }
+        cobj->setPlaceholderFontSize(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextBox:setPlaceholderFontSize",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextBox_setPlaceholderFontSize'.",&tolua_err);
 #endif
 
     return 0;
@@ -3518,6 +3568,59 @@ int lua_zq_ZQTextBox_setAlignmentLeft(lua_State* tolua_S)
 
     return 0;
 }
+int lua_zq_ZQTextBox_setPlaceholderFont(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQTextBox* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextBox",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQTextBox*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextBox_setPlaceholderFont'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 2) 
+    {
+        std::string arg0;
+        double arg1;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQTextBox:setPlaceholderFont");
+
+        ok &= luaval_to_number(tolua_S, 3,&arg1, "zq.ZQTextBox:setPlaceholderFont");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextBox_setPlaceholderFont'", nullptr);
+            return 0;
+        }
+        cobj->setPlaceholderFont(arg0, arg1);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextBox:setPlaceholderFont",argc, 2);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextBox_setPlaceholderFont'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_zq_ZQTextBox_setFontSize(lua_State* tolua_S)
 {
     int argc = 0;
@@ -3618,7 +3721,7 @@ int lua_zq_ZQTextBox_setPlaceHolder(lua_State* tolua_S)
 
     return 0;
 }
-int lua_zq_ZQTextBox_setContentSize(lua_State* tolua_S)
+int lua_zq_ZQTextBox_setPosition(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQTextBox* cobj = nullptr;
@@ -3638,7 +3741,7 @@ int lua_zq_ZQTextBox_setContentSize(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextBox_setContentSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextBox_setPosition'", nullptr);
         return 0;
     }
 #endif
@@ -3646,24 +3749,24 @@ int lua_zq_ZQTextBox_setContentSize(lua_State* tolua_S)
     argc = lua_gettop(tolua_S)-1;
     if (argc == 1) 
     {
-        cocos2d::Size arg0;
+        cocos2d::Vec2 arg0;
 
-        ok &= luaval_to_size(tolua_S, 2, &arg0, "zq.ZQTextBox:setContentSize");
+        ok &= luaval_to_vec2(tolua_S, 2, &arg0, "zq.ZQTextBox:setPosition");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextBox_setContentSize'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextBox_setPosition'", nullptr);
             return 0;
         }
-        cobj->setContentSize(arg0);
+        cobj->setPosition(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextBox:setContentSize",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextBox:setPosition",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextBox_setContentSize'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextBox_setPosition'.",&tolua_err);
 #endif
 
     return 0;
@@ -3967,9 +4070,10 @@ int lua_register_zq_ZQTextBox(lua_State* tolua_S)
         tolua_function(tolua_S,"focus",lua_zq_ZQTextBox_focus);
         tolua_function(tolua_S,"setScale",lua_zq_ZQTextBox_setScale);
         tolua_function(tolua_S,"setKeyboardEmail",lua_zq_ZQTextBox_setKeyboardEmail);
-        tolua_function(tolua_S,"setPosition",lua_zq_ZQTextBox_setPosition);
+        tolua_function(tolua_S,"setContentSize",lua_zq_ZQTextBox_setContentSize);
         tolua_function(tolua_S,"setString",lua_zq_ZQTextBox_setString);
         tolua_function(tolua_S,"openKeyboard",lua_zq_ZQTextBox_openKeyboard);
+        tolua_function(tolua_S,"setPlaceholderFontSize",lua_zq_ZQTextBox_setPlaceholderFontSize);
         tolua_function(tolua_S,"keyboardWillShow",lua_zq_ZQTextBox_keyboardWillShow);
         tolua_function(tolua_S,"setPlaceholderFontColor",lua_zq_ZQTextBox_setPlaceholderFontColor);
         tolua_function(tolua_S,"setFontColor",lua_zq_ZQTextBox_setFontColor);
@@ -3980,9 +4084,10 @@ int lua_register_zq_ZQTextBox(lua_State* tolua_S)
         tolua_function(tolua_S,"update",lua_zq_ZQTextBox_update);
         tolua_function(tolua_S,"setAlignmentCenter",lua_zq_ZQTextBox_setAlignmentCenter);
         tolua_function(tolua_S,"setAlignmentLeft",lua_zq_ZQTextBox_setAlignmentLeft);
+        tolua_function(tolua_S,"setPlaceholderFont",lua_zq_ZQTextBox_setPlaceholderFont);
         tolua_function(tolua_S,"setFontSize",lua_zq_ZQTextBox_setFontSize);
         tolua_function(tolua_S,"setPlaceHolder",lua_zq_ZQTextBox_setPlaceHolder);
-        tolua_function(tolua_S,"setContentSize",lua_zq_ZQTextBox_setContentSize);
+        tolua_function(tolua_S,"setPosition",lua_zq_ZQTextBox_setPosition);
         tolua_function(tolua_S,"setKeyboardDefault",lua_zq_ZQTextBox_setKeyboardDefault);
         tolua_function(tolua_S,"setKeyboardNumber",lua_zq_ZQTextBox_setKeyboardNumber);
         tolua_function(tolua_S,"setMaxLength",lua_zq_ZQTextBox_setMaxLength);
@@ -4331,7 +4436,7 @@ int lua_zq_ZQTextArea_setKeyboardEmail(lua_State* tolua_S)
 
     return 0;
 }
-int lua_zq_ZQTextArea_setPosition(lua_State* tolua_S)
+int lua_zq_ZQTextArea_setContentSize(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQTextArea* cobj = nullptr;
@@ -4351,7 +4456,7 @@ int lua_zq_ZQTextArea_setPosition(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextArea_setPosition'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextArea_setContentSize'", nullptr);
         return 0;
     }
 #endif
@@ -4359,24 +4464,24 @@ int lua_zq_ZQTextArea_setPosition(lua_State* tolua_S)
     argc = lua_gettop(tolua_S)-1;
     if (argc == 1) 
     {
-        cocos2d::Vec2 arg0;
+        cocos2d::Size arg0;
 
-        ok &= luaval_to_vec2(tolua_S, 2, &arg0, "zq.ZQTextArea:setPosition");
+        ok &= luaval_to_size(tolua_S, 2, &arg0, "zq.ZQTextArea:setContentSize");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextArea_setPosition'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextArea_setContentSize'", nullptr);
             return 0;
         }
-        cobj->setPosition(arg0);
+        cobj->setContentSize(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextArea:setPosition",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextArea:setContentSize",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextArea_setPosition'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextArea_setContentSize'.",&tolua_err);
 #endif
 
     return 0;
@@ -4474,6 +4579,56 @@ int lua_zq_ZQTextArea_openKeyboard(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextArea_openKeyboard'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQTextArea_setPlaceholderFontSize(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQTextArea* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextArea",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQTextArea*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextArea_setPlaceholderFontSize'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        double arg0;
+
+        ok &= luaval_to_number(tolua_S, 2,&arg0, "zq.ZQTextArea:setPlaceholderFontSize");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextArea_setPlaceholderFontSize'", nullptr);
+            return 0;
+        }
+        cobj->setPlaceholderFontSize(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextArea:setPlaceholderFontSize",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextArea_setPlaceholderFontSize'.",&tolua_err);
 #endif
 
     return 0;
@@ -4968,6 +5123,59 @@ int lua_zq_ZQTextArea_setAlignmentLeft(lua_State* tolua_S)
 
     return 0;
 }
+int lua_zq_ZQTextArea_setPlaceholderFont(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQTextArea* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextArea",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQTextArea*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextArea_setPlaceholderFont'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 2) 
+    {
+        std::string arg0;
+        double arg1;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQTextArea:setPlaceholderFont");
+
+        ok &= luaval_to_number(tolua_S, 3,&arg1, "zq.ZQTextArea:setPlaceholderFont");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextArea_setPlaceholderFont'", nullptr);
+            return 0;
+        }
+        cobj->setPlaceholderFont(arg0, arg1);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextArea:setPlaceholderFont",argc, 2);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextArea_setPlaceholderFont'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_zq_ZQTextArea_setFontSize(lua_State* tolua_S)
 {
     int argc = 0;
@@ -5068,7 +5276,7 @@ int lua_zq_ZQTextArea_setPlaceHolder(lua_State* tolua_S)
 
     return 0;
 }
-int lua_zq_ZQTextArea_setContentSize(lua_State* tolua_S)
+int lua_zq_ZQTextArea_setPosition(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQTextArea* cobj = nullptr;
@@ -5088,7 +5296,7 @@ int lua_zq_ZQTextArea_setContentSize(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextArea_setContentSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextArea_setPosition'", nullptr);
         return 0;
     }
 #endif
@@ -5096,24 +5304,24 @@ int lua_zq_ZQTextArea_setContentSize(lua_State* tolua_S)
     argc = lua_gettop(tolua_S)-1;
     if (argc == 1) 
     {
-        cocos2d::Size arg0;
+        cocos2d::Vec2 arg0;
 
-        ok &= luaval_to_size(tolua_S, 2, &arg0, "zq.ZQTextArea:setContentSize");
+        ok &= luaval_to_vec2(tolua_S, 2, &arg0, "zq.ZQTextArea:setPosition");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextArea_setContentSize'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextArea_setPosition'", nullptr);
             return 0;
         }
-        cobj->setContentSize(arg0);
+        cobj->setPosition(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextArea:setContentSize",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextArea:setPosition",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextArea_setContentSize'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextArea_setPosition'.",&tolua_err);
 #endif
 
     return 0;
@@ -5417,9 +5625,10 @@ int lua_register_zq_ZQTextArea(lua_State* tolua_S)
         tolua_function(tolua_S,"focus",lua_zq_ZQTextArea_focus);
         tolua_function(tolua_S,"setScale",lua_zq_ZQTextArea_setScale);
         tolua_function(tolua_S,"setKeyboardEmail",lua_zq_ZQTextArea_setKeyboardEmail);
-        tolua_function(tolua_S,"setPosition",lua_zq_ZQTextArea_setPosition);
+        tolua_function(tolua_S,"setContentSize",lua_zq_ZQTextArea_setContentSize);
         tolua_function(tolua_S,"setString",lua_zq_ZQTextArea_setString);
         tolua_function(tolua_S,"openKeyboard",lua_zq_ZQTextArea_openKeyboard);
+        tolua_function(tolua_S,"setPlaceholderFontSize",lua_zq_ZQTextArea_setPlaceholderFontSize);
         tolua_function(tolua_S,"keyboardWillShow",lua_zq_ZQTextArea_keyboardWillShow);
         tolua_function(tolua_S,"setPlaceholderFontColor",lua_zq_ZQTextArea_setPlaceholderFontColor);
         tolua_function(tolua_S,"setFontColor",lua_zq_ZQTextArea_setFontColor);
@@ -5430,9 +5639,10 @@ int lua_register_zq_ZQTextArea(lua_State* tolua_S)
         tolua_function(tolua_S,"update",lua_zq_ZQTextArea_update);
         tolua_function(tolua_S,"setAlignmentCenter",lua_zq_ZQTextArea_setAlignmentCenter);
         tolua_function(tolua_S,"setAlignmentLeft",lua_zq_ZQTextArea_setAlignmentLeft);
+        tolua_function(tolua_S,"setPlaceholderFont",lua_zq_ZQTextArea_setPlaceholderFont);
         tolua_function(tolua_S,"setFontSize",lua_zq_ZQTextArea_setFontSize);
         tolua_function(tolua_S,"setPlaceHolder",lua_zq_ZQTextArea_setPlaceHolder);
-        tolua_function(tolua_S,"setContentSize",lua_zq_ZQTextArea_setContentSize);
+        tolua_function(tolua_S,"setPosition",lua_zq_ZQTextArea_setPosition);
         tolua_function(tolua_S,"setKeyboardDefault",lua_zq_ZQTextArea_setKeyboardDefault);
         tolua_function(tolua_S,"setKeyboardNumber",lua_zq_ZQTextArea_setKeyboardNumber);
         tolua_function(tolua_S,"setMaxLength",lua_zq_ZQTextArea_setMaxLength);

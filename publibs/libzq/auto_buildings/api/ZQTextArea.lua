@@ -50,9 +50,9 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQTextArea] setPosition 
+-- @function [parent=#ZQTextArea] setContentSize 
 -- @param self
--- @param #vec2_table position
+-- @param #size_table contentSize
 -- @return ZQTextArea#ZQTextArea self (return value: zq.ZQTextArea)
         
 --------------------------------
@@ -70,13 +70,20 @@
         
 --------------------------------
 -- 
+-- @function [parent=#ZQTextArea] setPlaceholderFontSize 
+-- @param self
+-- @param #float font_size
+-- @return ZQTextArea#ZQTextArea self (return value: zq.ZQTextArea)
+        
+--------------------------------
+-- 
 -- @function [parent=#ZQTextArea] keyboardWillShow 
 -- @param self
 -- @param #cc.IMEKeyboardNotificationInfo info
 -- @return ZQTextArea#ZQTextArea self (return value: zq.ZQTextArea)
         
 --------------------------------
--- Set the font color of the placeholder text when the edit box is empty.
+-- 
 -- @function [parent=#ZQTextArea] setPlaceholderFontColor 
 -- @param self
 -- @param #color4b_table color
@@ -136,13 +143,21 @@
         
 --------------------------------
 -- 
+-- @function [parent=#ZQTextArea] setPlaceholderFont 
+-- @param self
+-- @param #string font_name
+-- @param #float font_size
+-- @return ZQTextArea#ZQTextArea self (return value: zq.ZQTextArea)
+        
+--------------------------------
+-- 
 -- @function [parent=#ZQTextArea] setFontSize 
 -- @param self
 -- @param #float font_size
 -- @return ZQTextArea#ZQTextArea self (return value: zq.ZQTextArea)
         
 --------------------------------
--- Set a text in the edit box that acts as a placeholder when an
+-- 
 -- @function [parent=#ZQTextArea] setPlaceHolder 
 -- @param self
 -- @param #string text
@@ -150,9 +165,9 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQTextArea] setContentSize 
+-- @function [parent=#ZQTextArea] setPosition 
 -- @param self
--- @param #size_table contentSize
+-- @param #vec2_table position
 -- @return ZQTextArea#ZQTextArea self (return value: zq.ZQTextArea)
         
 --------------------------------

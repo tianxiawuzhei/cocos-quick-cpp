@@ -21,7 +21,10 @@ ZQTextBox* ZQTextBox::create(const cocos2d::Size &size)
     return node;
 }
 
-ZQTextBox::ZQTextBox():_maxLength(-1)
+ZQTextBox::ZQTextBox()
+:_maxLength(-1)
+,_fontSize(-1)
+,_placeholderFontSize(-1)
 {
     this->setCascadeOpacityEnabled(true);
 }
@@ -34,6 +37,28 @@ void ZQTextBox::setMaxLength(int length)
 int ZQTextBox::maxLength()
 {
     return this->_maxLength;
+}
+
+void ZQTextBox::setFont(const std::string &font_name, float font_size)
+{
+    this->_fontName = font_name;
+    this->_fontSize = font_size;
+}
+
+void ZQTextBox::setFontSize(float font_size)
+{
+    this->setFont(_fontName, font_size);
+}
+
+void ZQTextBox::setPlaceholderFont(const std::string &font_name, float font_size)
+{
+    this->_placeholderFontName = font_name;
+    this->_placeholderFontSize = font_size;
+}
+
+void ZQTextBox::setPlaceholderFontSize(float font_size)
+{
+    this->setPlaceholderFont(_placeholderFontName, font_size);
 }
 
 void ZQTextBox::setPosition(const cocos2d::Vec2 &position)

@@ -50,9 +50,9 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQTextBox] setPosition 
+-- @function [parent=#ZQTextBox] setContentSize 
 -- @param self
--- @param #vec2_table position
+-- @param #size_table contentSize
 -- @return ZQTextBox#ZQTextBox self (return value: zq.ZQTextBox)
         
 --------------------------------
@@ -70,13 +70,20 @@
         
 --------------------------------
 -- 
+-- @function [parent=#ZQTextBox] setPlaceholderFontSize 
+-- @param self
+-- @param #float font_size
+-- @return ZQTextBox#ZQTextBox self (return value: zq.ZQTextBox)
+        
+--------------------------------
+-- 
 -- @function [parent=#ZQTextBox] keyboardWillShow 
 -- @param self
 -- @param #cc.IMEKeyboardNotificationInfo info
 -- @return ZQTextBox#ZQTextBox self (return value: zq.ZQTextBox)
         
 --------------------------------
--- Set the font color of the placeholder text when the edit box is empty.
+-- 
 -- @function [parent=#ZQTextBox] setPlaceholderFontColor 
 -- @param self
 -- @param #color4b_table color
@@ -136,13 +143,21 @@
         
 --------------------------------
 -- 
+-- @function [parent=#ZQTextBox] setPlaceholderFont 
+-- @param self
+-- @param #string font_name
+-- @param #float font_size
+-- @return ZQTextBox#ZQTextBox self (return value: zq.ZQTextBox)
+        
+--------------------------------
+-- 
 -- @function [parent=#ZQTextBox] setFontSize 
 -- @param self
 -- @param #float font_size
 -- @return ZQTextBox#ZQTextBox self (return value: zq.ZQTextBox)
         
 --------------------------------
--- Set a text in the edit box that acts as a placeholder when an
+-- 
 -- @function [parent=#ZQTextBox] setPlaceHolder 
 -- @param self
 -- @param #string text
@@ -150,9 +165,9 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQTextBox] setContentSize 
+-- @function [parent=#ZQTextBox] setPosition 
 -- @param self
--- @param #size_table contentSize
+-- @param #vec2_table position
 -- @return ZQTextBox#ZQTextBox self (return value: zq.ZQTextBox)
         
 --------------------------------

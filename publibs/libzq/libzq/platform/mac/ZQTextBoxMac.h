@@ -25,15 +25,11 @@ namespace zq
         
     public:
         virtual void setFont(const std::string &font_name, float font_size);
-        
+        virtual void setFontColor(const cocos2d::Color3B &color);
         virtual void setString(const std::string &text);
         
-        virtual void setFontSize(float font_size);
-        
-        virtual void setFontColor(const cocos2d::Color3B &color);
-        
+        virtual void setPlaceholderFont(const std::string &font_name, float font_size);
         virtual void setPlaceholderFontColor(const cocos2d::Color4B &color);
-        
         virtual void setPlaceHolder(const std::string &text);
         
         virtual void setKeyboardDefault() {}
@@ -65,7 +61,6 @@ namespace zq
     private:
         void* _view;
         void* _view_delegate;
-        float _font_size;
     
     };
 }
