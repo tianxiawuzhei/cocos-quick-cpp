@@ -67,6 +67,11 @@
 		A2CEFDE21E55CEDB00934B41 /* ZQTextAreaMac.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDE01E55CEDB00934B41 /* ZQTextAreaMac.h */; };
 		A2CEFDE31E55CEDB00934B41 /* ZQTextAreaMac.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDE01E55CEDB00934B41 /* ZQTextAreaMac.h */; };
 		A2CEFDE51E55CEDB00934B41 /* ZQTextAreaMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2CEFDE11E55CEDB00934B41 /* ZQTextAreaMac.mm */; };
+		A2CEFDE91E56E20D00934B41 /* ZQDeviceInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2CEFDE71E56E20D00934B41 /* ZQDeviceInfo.cpp */; };
+		A2CEFDEA1E56E20D00934B41 /* ZQDeviceInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2CEFDE71E56E20D00934B41 /* ZQDeviceInfo.cpp */; };
+		A2CEFDEB1E56E20D00934B41 /* ZQDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDE81E56E20D00934B41 /* ZQDeviceInfo.h */; };
+		A2CEFDEC1E56E20D00934B41 /* ZQDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDE81E56E20D00934B41 /* ZQDeviceInfo.h */; };
+		A2CEFDF11E571D7800934B41 /* ZQDeviceInfoMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2CEFDEF1E571D7800934B41 /* ZQDeviceInfoMac.mm */; };
 		A2F1CC0F1DE8308000B7CB8D /* ZQImageManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2F1CC0D1DE8308000B7CB8D /* ZQImageManage.cpp */; };
 		A2F1CC101DE8308000B7CB8D /* ZQImageManage.h in Headers */ = {isa = PBXBuildFile; fileRef = A2F1CC0E1DE8308000B7CB8D /* ZQImageManage.h */; };
 		A2F1CC141DE8314F00B7CB8D /* ZQFileManage.h in Headers */ = {isa = PBXBuildFile; fileRef = A2F1CC111DE8314F00B7CB8D /* ZQFileManage.h */; };
@@ -124,6 +129,10 @@
 		A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextArea.h; sourceTree = "<group>"; };
 		A2CEFDE01E55CEDB00934B41 /* ZQTextAreaMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextAreaMac.h; sourceTree = "<group>"; };
 		A2CEFDE11E55CEDB00934B41 /* ZQTextAreaMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZQTextAreaMac.mm; sourceTree = "<group>"; };
+		A2CEFDE71E56E20D00934B41 /* ZQDeviceInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQDeviceInfo.cpp; sourceTree = "<group>"; };
+		A2CEFDE81E56E20D00934B41 /* ZQDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQDeviceInfo.h; sourceTree = "<group>"; };
+		A2CEFDEE1E571D0000934B41 /* ZQDeviceInfoMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZQDeviceInfoMac.h; sourceTree = "<group>"; };
+		A2CEFDEF1E571D7800934B41 /* ZQDeviceInfoMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZQDeviceInfoMac.mm; sourceTree = "<group>"; };
 		A2F1CC0D1DE8308000B7CB8D /* ZQImageManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQImageManage.cpp; sourceTree = "<group>"; };
 		A2F1CC0E1DE8308000B7CB8D /* ZQImageManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQImageManage.h; sourceTree = "<group>"; };
 		A2F1CC111DE8314F00B7CB8D /* ZQFileManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQFileManage.h; sourceTree = "<group>"; };
@@ -201,6 +210,7 @@
 		A222FEAC1DC0A0B9009F3A9A /* libzq */ = {
 			isa = PBXGroup;
 			children = (
+				A2CEFDE61E56E1F600934B41 /* tool */,
 				A221056D1DDED7760075B8F5 /* utils */,
 				A25339F31DD96B8200E0D086 /* platform */,
 				A25FE1BB1DD5C03900DB55E5 /* log */,
@@ -257,6 +267,7 @@
 		A25339F61DD96B8200E0D086 /* mac */ = {
 			isa = PBXGroup;
 			children = (
+				A2CEFDEF1E571D7800934B41 /* ZQDeviceInfoMac.mm */,
 				A2CEFDE01E55CEDB00934B41 /* ZQTextAreaMac.h */,
 				A2CEFDE11E55CEDB00934B41 /* ZQTextAreaMac.mm */,
 				A26387771DE4696400A6D925 /* ZQLoggerMac.h */,
@@ -265,6 +276,7 @@
 				A28486731E1DF6A700E39265 /* ZQTextUtilMac.h */,
 				A25ADC421E517D7300E181F9 /* ZQTextBoxMac.mm */,
 				A25ADC431E517D7300E181F9 /* ZQTextBoxMac.h */,
+				A2CEFDEE1E571D0000934B41 /* ZQDeviceInfoMac.h */,
 			);
 			path = mac;
 			sourceTree = "<group>";
@@ -337,6 +349,15 @@
 			path = ../tolua_buildings;
 			sourceTree = "<group>";
 		};
+		A2CEFDE61E56E1F600934B41 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				A2CEFDE71E56E20D00934B41 /* ZQDeviceInfo.cpp */,
+				A2CEFDE81E56E20D00934B41 /* ZQDeviceInfo.h */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -351,6 +372,7 @@
 				A2CEFDDD1E55C0BF00934B41 /* ZQTextArea.h in Headers */,
 				A2F1CC101DE8308000B7CB8D /* ZQImageManage.h in Headers */,
 				A2F1CC141DE8314F00B7CB8D /* ZQFileManage.h in Headers */,
+				A2CEFDEB1E56E20D00934B41 /* ZQDeviceInfo.h in Headers */,
 				A28486701E1DEBF200E39265 /* ZQTextUtil.h in Headers */,
 				A2F1CC161DE8314F00B7CB8D /* ZQPlistManage.h in Headers */,
 				A26387711DE4640700A6D925 /* ZQLoggerIOS.h in Headers */,
@@ -374,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A28486771E1DF6A700E39265 /* ZQTextUtilMac.h in Headers */,
+				A2CEFDEC1E56E20D00934B41 /* ZQDeviceInfo.h in Headers */,
 				A28486711E1DEBF200E39265 /* ZQTextUtil.h in Headers */,
 				A2989A731DE6DF790073E4F0 /* rapidxml_iterators.hpp in Headers */,
 				A2989A751DE6DF790073E4F0 /* rapidxml_utils.hpp in Headers */,
@@ -469,6 +492,7 @@
 				A26387721DE4640700A6D925 /* ZQLoggerIOS.mm in Sources */,
 				A26BAF591E10C63600D3972B /* lua_zq_auto.cpp in Sources */,
 				A26BAF5E1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.cpp in Sources */,
+				A2CEFDE91E56E20D00934B41 /* ZQDeviceInfo.cpp in Sources */,
 				A26CF98A1E0BA10E0026F5CB /* ZQCustomAction.cpp in Sources */,
 				A2F1CC0F1DE8308000B7CB8D /* ZQImageManage.cpp in Sources */,
 				A25339FD1DD96E0E00E0D086 /* ZQLogger.cpp in Sources */,
@@ -485,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2CEFDEA1E56E20D00934B41 /* ZQDeviceInfo.cpp in Sources */,
 				A2CEFDDC1E55C0BF00934B41 /* ZQTextArea.cpp in Sources */,
 				A25ADC4D1E544D9C00E181F9 /* ZQTextBox.cpp in Sources */,
 				A28486791E1E187100E39265 /* ZQTextUtilMac.mm in Sources */,
@@ -499,6 +524,7 @@
 				A2989A6B1DE6DF790073E4F0 /* ZQLoggerMac.mm in Sources */,
 				A2989A6C1DE6DF790073E4F0 /* ZQLogger.cpp in Sources */,
 				A25ADC441E517D7300E181F9 /* ZQTextBoxMac.mm in Sources */,
+				A2CEFDF11E571D7800934B41 /* ZQDeviceInfoMac.mm in Sources */,
 				A2989A6D1DE6DF790073E4F0 /* ZQFileManage.cpp in Sources */,
 				A2989A6E1DE6DF790073E4F0 /* ZQStringUtils.cpp in Sources */,
 				A284866F1E1DEBF200E39265 /* ZQTextUtil.cpp in Sources */,
