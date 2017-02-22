@@ -51,4 +51,14 @@
 -- @field [parent=#zq] ZQTextArea#ZQTextArea ZQTextArea preloaded module
 
 
+--------------------------------------------------------
+-- the zq ZQScriptHandler
+-- @field [parent=#zq] ZQScriptHandler#ZQScriptHandler ZQScriptHandler preloaded module
+
+
+--------------------------------------------------------
+-- the zq ZQAppEvent
+-- @field [parent=#zq] ZQAppEvent#ZQAppEvent ZQAppEvent preloaded module
+
+
 return nil

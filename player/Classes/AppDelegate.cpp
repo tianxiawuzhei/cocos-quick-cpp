@@ -18,6 +18,9 @@
 #include "auto_buildings/lua_zq_auto.hpp"
 #include "tolua_buildings/zq_custom_action_tolua_luabinding.h"
 #include "tolua_buildings/zq_sprite_draw_tolua_manual.h"
+#include "tolua_buildings/zq_scriptHandler_tolua_luabinding.h"
+
+#include "core/ZQAppEvent.h"
 
 using namespace CocosDenshion;
 
@@ -41,6 +44,7 @@ static void quick_module_register(lua_State *L)
         register_all_zq(L);
         luaopen_zq_custom_action_tolua_luabinding(L);
         luaopen_zq_sprite_draw_tolua_manual(L);
+        luaopen_zq_scriptHandler_tolua_luabinding(L);
     }
     lua_pop(L, 1);
 }
@@ -104,6 +108,9 @@ void AppDelegate::applicationDidEnterBackground()
     Director::getInstance()->stopAnimation();
 
     SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+    
+    zq::ZQAppEvent::getInstance()->applicationDidEnterBackground();
+    
 }
 
 // this function will be called when the app is active again
@@ -112,6 +119,8 @@ void AppDelegate::applicationWillEnterForeground()
     Director::getInstance()->startAnimation();
 
     SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+    
+    zq::ZQAppEvent::getInstance()->applicationWillEnterForeground();
 }
 
 

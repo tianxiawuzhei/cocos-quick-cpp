@@ -5655,6 +5655,403 @@ int lua_register_zq_ZQTextArea(lua_State* tolua_S)
     g_typeCast["ZQTextArea"] = "zq.ZQTextArea";
     return 1;
 }
+
+int lua_zq_ZQScriptHandler_valid(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQScriptHandler* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQScriptHandler",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQScriptHandler*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQScriptHandler_valid'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQScriptHandler_valid'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->valid();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQScriptHandler:valid",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQScriptHandler_valid'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQScriptHandler_constructor(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQScriptHandler* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQScriptHandler_constructor'", nullptr);
+            return 0;
+        }
+        cobj = new zq::ZQScriptHandler();
+        tolua_pushusertype(tolua_S,(void*)cobj,"zq.ZQScriptHandler");
+        tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQScriptHandler:ZQScriptHandler",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQScriptHandler_constructor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+
+static int lua_zq_ZQScriptHandler_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (ZQScriptHandler)");
+    return 0;
+}
+
+int lua_register_zq_ZQScriptHandler(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"zq.ZQScriptHandler");
+    tolua_cclass(tolua_S,"ZQScriptHandler","zq.ZQScriptHandler","",nullptr);
+
+    tolua_beginmodule(tolua_S,"ZQScriptHandler");
+        tolua_function(tolua_S,"new",lua_zq_ZQScriptHandler_constructor);
+        tolua_function(tolua_S,"valid",lua_zq_ZQScriptHandler_valid);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(zq::ZQScriptHandler).name();
+    g_luaType[typeName] = "zq.ZQScriptHandler";
+    g_typeCast["ZQScriptHandler"] = "zq.ZQScriptHandler";
+    return 1;
+}
+
+int lua_zq_ZQAppEvent_androidShouldReset(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQAppEvent* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQAppEvent",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQAppEvent*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQAppEvent_androidShouldReset'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQAppEvent_androidShouldReset'", nullptr);
+            return 0;
+        }
+        cobj->androidShouldReset();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQAppEvent:androidShouldReset",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQAppEvent_androidShouldReset'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQAppEvent_applicationDidEnterBackground(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQAppEvent* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQAppEvent",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQAppEvent*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQAppEvent_applicationDidEnterBackground'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQAppEvent_applicationDidEnterBackground'", nullptr);
+            return 0;
+        }
+        cobj->applicationDidEnterBackground();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQAppEvent:applicationDidEnterBackground",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQAppEvent_applicationDidEnterBackground'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQAppEvent_applicationWillEnterForeground(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQAppEvent* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQAppEvent",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQAppEvent*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQAppEvent_applicationWillEnterForeground'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQAppEvent_applicationWillEnterForeground'", nullptr);
+            return 0;
+        }
+        cobj->applicationWillEnterForeground();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQAppEvent:applicationWillEnterForeground",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQAppEvent_applicationWillEnterForeground'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQAppEvent_applicationDidFinishLaunching(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQAppEvent* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQAppEvent",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQAppEvent*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQAppEvent_applicationDidFinishLaunching'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQAppEvent_applicationDidFinishLaunching'", nullptr);
+            return 0;
+        }
+        cobj->applicationDidFinishLaunching();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQAppEvent:applicationDidFinishLaunching",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQAppEvent_applicationDidFinishLaunching'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQAppEvent_applicationDidReceiveMemoryWarning(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQAppEvent* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQAppEvent",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQAppEvent*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQAppEvent_applicationDidReceiveMemoryWarning'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQAppEvent_applicationDidReceiveMemoryWarning'", nullptr);
+            return 0;
+        }
+        cobj->applicationDidReceiveMemoryWarning();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQAppEvent:applicationDidReceiveMemoryWarning",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQAppEvent_applicationDidReceiveMemoryWarning'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQAppEvent_getInstance(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQAppEvent",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQAppEvent_getInstance'", nullptr);
+            return 0;
+        }
+        zq::ZQAppEvent* ret = zq::ZQAppEvent::getInstance();
+        object_to_luaval<zq::ZQAppEvent>(tolua_S, "zq.ZQAppEvent",(zq::ZQAppEvent*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQAppEvent:getInstance",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQAppEvent_getInstance'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua_zq_ZQAppEvent_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (ZQAppEvent)");
+    return 0;
+}
+
+int lua_register_zq_ZQAppEvent(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"zq.ZQAppEvent");
+    tolua_cclass(tolua_S,"ZQAppEvent","zq.ZQAppEvent","zq.ZQScriptHandler",nullptr);
+
+    tolua_beginmodule(tolua_S,"ZQAppEvent");
+        tolua_function(tolua_S,"androidShouldReset",lua_zq_ZQAppEvent_androidShouldReset);
+        tolua_function(tolua_S,"applicationDidEnterBackground",lua_zq_ZQAppEvent_applicationDidEnterBackground);
+        tolua_function(tolua_S,"applicationWillEnterForeground",lua_zq_ZQAppEvent_applicationWillEnterForeground);
+        tolua_function(tolua_S,"applicationDidFinishLaunching",lua_zq_ZQAppEvent_applicationDidFinishLaunching);
+        tolua_function(tolua_S,"applicationDidReceiveMemoryWarning",lua_zq_ZQAppEvent_applicationDidReceiveMemoryWarning);
+        tolua_function(tolua_S,"getInstance", lua_zq_ZQAppEvent_getInstance);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(zq::ZQAppEvent).name();
+    g_luaType[typeName] = "zq.ZQAppEvent";
+    g_typeCast["ZQAppEvent"] = "zq.ZQAppEvent";
+    return 1;
+}
 TOLUA_API int register_all_zq(lua_State* tolua_S)
 {
 	tolua_open(tolua_S);
@@ -5669,6 +6066,8 @@ TOLUA_API int register_all_zq(lua_State* tolua_S)
 	lua_register_zq_ZQTextUtil(tolua_S);
 	lua_register_zq_ZQCustomAction(tolua_S);
 	lua_register_zq_ZQTextArea(tolua_S);
+	lua_register_zq_ZQScriptHandler(tolua_S);
+	lua_register_zq_ZQAppEvent(tolua_S);
 	lua_register_zq_ZQJsonManage(tolua_S);
 	lua_register_zq_ZQFileManage(tolua_S);
 	lua_register_zq_ZQPlistManage(tolua_S);

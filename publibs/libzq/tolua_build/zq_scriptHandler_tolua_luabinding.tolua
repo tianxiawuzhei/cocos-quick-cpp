@@ -1,0 +1,13 @@
+
+$#include "core/ZQScriptHandler.h"
+
+$using namespace std;
+$using namespace cocos2d;
+$using namespace zq;
+
+class ZQScriptHandler
+{
+public:
+    void registerScriptListener(LUA_FUNCTION listener);
+    void unregisterScriptListener();
+};
