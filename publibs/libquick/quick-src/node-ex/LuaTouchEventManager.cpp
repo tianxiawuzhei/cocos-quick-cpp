@@ -327,11 +327,12 @@ void LuaTouchEventManager::cleanup(void)
     _nodePriorityMap.clear();
     _touchableNodes.clear();
     _touchingTargets.clear();
-//    if (_touchListener) {
-//        _eventDispatcher->removeEventListener(_touchListener);
-//        _touchListener = nullptr;
-//    }
+    if (_touchListener) {
+        _eventDispatcher->removeEventListener(_touchListener);
+        _touchListener = nullptr;
+    }
     _running = false;
+    m_touchDispatchingEnabled = false;
 }
 
 void LuaTouchEventManager::sortAllTouchableNodes(Vector<LuaEventNode*>& nodes)

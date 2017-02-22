@@ -146,6 +146,15 @@ void StartupCall::startup()
     
     const ProjectConfig &project = _app->_project;
     
+    // set framework path
+    if (!project.isLoadPrecompiledFramework())
+    {
+        FileUtils::getInstance()->addSearchPath(project.getQuickCocos2dxRootPath() + "quick/");
+    }
+    
+    // add quick root path for search libzq/*lua lib
+    FileUtils::getInstance()->addSearchPath(project.getQuickCocos2dxRootPath());
+    
     // set search path
     string path = FileUtils::getInstance()->fullPathForFilename(project.getScriptFileRealPath().c_str());
     size_t pos;

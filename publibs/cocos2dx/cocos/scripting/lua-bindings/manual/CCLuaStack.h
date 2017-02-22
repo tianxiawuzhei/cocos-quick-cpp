@@ -344,6 +344,8 @@ public:
      */
     int luaLoadChunksFromZIP(lua_State *L);
     
+public:
+    bool init(void);
 protected:
     LuaStack(void)
     : _state(nullptr)
@@ -356,7 +358,6 @@ protected:
     {
     }
     
-    bool init(void);
     bool initWithLuaState(lua_State *L);
     
     lua_State *_state;

@@ -32,6 +32,7 @@
 #include "scripting/lua-bindings/manual/extension/lua_cocos2dx_extension_manual.h"
 #include "scripting/lua-bindings/manual/cocostudio/lua_cocos2dx_coco_studio_manual.hpp"
 #include "scripting/lua-bindings/manual/ui/lua_cocos2dx_ui_manual.hpp"
+#include "../../../../../libquick/quick-src/node-ex/LuaTouchEventManager.h"
 
 #if _MSC_VER > 1800
 #pragma comment(lib,"lua51-2015.lib")
@@ -209,6 +210,26 @@ int LuaEngine::sendEvent(ScriptEvent* evt)
 {
     if (NULL == evt)
         return 0;
+    
+    if (evt->type == kRestartGame)
+    {
+//        CC_SAFE_RELEASE(_stack);
+//
+        auto stack = this->getLuaStack();
+        auto lua_State = stack->getLuaState();
+        if (nullptr != lua_State)
+        {
+            lua_close(lua_State);
+        }
+        stack->init();
+        
+//        this->init();
+//        this->_stack->clean();
+        CCLOG("kRestartGame");
+        LuaTouchEventManager::getInstance()->destroyInstance();
+        Application::getInstance()->applicationDidFinishLaunching();
+        return 0;
+    }
     
     switch (evt->type)
     {
