@@ -54,6 +54,7 @@ void ZQScriptHandler::emit(const std::string &func_name, const cocos2d::LuaValue
     if (!this->_listener)
     {
         ZQLogE("ZQScriptHandler: listener is null func_name : %s ", func_name.c_str());
+        return;
     }
     
     cocos2d::LuaValueDict dict;
