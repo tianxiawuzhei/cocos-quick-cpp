@@ -6052,6 +6052,252 @@ int lua_register_zq_ZQAppEvent(lua_State* tolua_S)
     g_typeCast["ZQAppEvent"] = "zq.ZQAppEvent";
     return 1;
 }
+
+int lua_zq_ZQAppCenter_isRestart(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQAppCenter* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQAppCenter",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQAppCenter*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQAppCenter_isRestart'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQAppCenter_isRestart'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->isRestart();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQAppCenter:isRestart",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQAppCenter_isRestart'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQAppCenter_start(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQAppCenter* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQAppCenter",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQAppCenter*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQAppCenter_start'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQAppCenter_start'", nullptr);
+            return 0;
+        }
+        cobj->start();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQAppCenter:start",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQAppCenter_start'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQAppCenter_restart(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQAppCenter* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQAppCenter",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQAppCenter*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQAppCenter_restart'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQAppCenter_restart'", nullptr);
+            return 0;
+        }
+        cobj->restart();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQAppCenter:restart",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQAppCenter_restart'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQAppCenter_quit(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQAppCenter* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQAppCenter",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQAppCenter*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQAppCenter_quit'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQAppCenter_quit'", nullptr);
+            return 0;
+        }
+        cobj->quit();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQAppCenter:quit",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQAppCenter_quit'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQAppCenter_getInstance(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQAppCenter",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQAppCenter_getInstance'", nullptr);
+            return 0;
+        }
+        zq::ZQAppCenter* ret = zq::ZQAppCenter::getInstance();
+        object_to_luaval<zq::ZQAppCenter>(tolua_S, "zq.ZQAppCenter",(zq::ZQAppCenter*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQAppCenter:getInstance",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQAppCenter_getInstance'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua_zq_ZQAppCenter_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (ZQAppCenter)");
+    return 0;
+}
+
+int lua_register_zq_ZQAppCenter(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"zq.ZQAppCenter");
+    tolua_cclass(tolua_S,"ZQAppCenter","zq.ZQAppCenter","",nullptr);
+
+    tolua_beginmodule(tolua_S,"ZQAppCenter");
+        tolua_function(tolua_S,"isRestart",lua_zq_ZQAppCenter_isRestart);
+        tolua_function(tolua_S,"start",lua_zq_ZQAppCenter_start);
+        tolua_function(tolua_S,"restart",lua_zq_ZQAppCenter_restart);
+        tolua_function(tolua_S,"quit",lua_zq_ZQAppCenter_quit);
+        tolua_function(tolua_S,"getInstance", lua_zq_ZQAppCenter_getInstance);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(zq::ZQAppCenter).name();
+    g_luaType[typeName] = "zq.ZQAppCenter";
+    g_typeCast["ZQAppCenter"] = "zq.ZQAppCenter";
+    return 1;
+}
 TOLUA_API int register_all_zq(lua_State* tolua_S)
 {
 	tolua_open(tolua_S);
@@ -6060,6 +6306,7 @@ TOLUA_API int register_all_zq(lua_State* tolua_S)
 	tolua_beginmodule(tolua_S,"zq");
 
 	lua_register_zq_DateUtils(tolua_S);
+	lua_register_zq_ZQAppCenter(tolua_S);
 	lua_register_zq_ZQImageManage(tolua_S);
 	lua_register_zq_ZQLogger(tolua_S);
 	lua_register_zq_ZQTextBox(tolua_S);

@@ -61,4 +61,9 @@
 -- @field [parent=#zq] ZQAppEvent#ZQAppEvent ZQAppEvent preloaded module
 
 
+--------------------------------------------------------
+-- the zq ZQAppCenter
+-- @field [parent=#zq] ZQAppCenter#ZQAppCenter ZQAppCenter preloaded module
+
+
 return nil

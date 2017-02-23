@@ -21,6 +21,8 @@
 #include "tolua_buildings/zq_scriptHandler_tolua_luabinding.h"
 
 #include "core/ZQAppEvent.h"
+#include "core/ZQAppCenter.h"
+#include "launch/ZQLaunchScene.h"
 
 using namespace CocosDenshion;
 
@@ -191,8 +193,12 @@ void StartupCall::startup()
     CCLOG("------------------------------------------------");
     CCLOG("LOAD LUA FILE: %s", path.c_str());
     CCLOG("------------------------------------------------");
-    engine->executeScriptFile(path.c_str());
+//    engine->executeScriptFile(path.c_str());
     
+    zq::ZQAppCenter::getInstance()->_script_file = path;
+    
+    auto scene = zq::ZQLaunchScene::create();
+    cocos2d::Director::getInstance()->runWithScene(scene);
     // track start event
     trackLaunchEvent();
 }

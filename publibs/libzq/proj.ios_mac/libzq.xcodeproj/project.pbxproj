@@ -72,6 +72,18 @@
 		A29A52131E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A29A52101E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.cpp */; };
 		A29A52141E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A52111E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.h */; };
 		A29A52151E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A52111E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.h */; };
+		A29A52181E5DB0D10073A9C0 /* ZQAppCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A29A52161E5DB0D10073A9C0 /* ZQAppCenter.cpp */; };
+		A29A52191E5DB0D10073A9C0 /* ZQAppCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A29A52161E5DB0D10073A9C0 /* ZQAppCenter.cpp */; };
+		A29A521A1E5DB0D10073A9C0 /* ZQAppCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A52171E5DB0D10073A9C0 /* ZQAppCenter.h */; };
+		A29A521B1E5DB0D10073A9C0 /* ZQAppCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A52171E5DB0D10073A9C0 /* ZQAppCenter.h */; };
+		A29A521F1E5DB7260073A9C0 /* ZQRunLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A29A521D1E5DB7260073A9C0 /* ZQRunLoop.cpp */; };
+		A29A52201E5DB7260073A9C0 /* ZQRunLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A29A521D1E5DB7260073A9C0 /* ZQRunLoop.cpp */; };
+		A29A52211E5DB7260073A9C0 /* ZQRunLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A521E1E5DB7260073A9C0 /* ZQRunLoop.h */; };
+		A29A52221E5DB7260073A9C0 /* ZQRunLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A521E1E5DB7260073A9C0 /* ZQRunLoop.h */; };
+		A29A52261E5EBC000073A9C0 /* ZQLaunchScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A29A52241E5EBC000073A9C0 /* ZQLaunchScene.cpp */; };
+		A29A52271E5EBC000073A9C0 /* ZQLaunchScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A29A52241E5EBC000073A9C0 /* ZQLaunchScene.cpp */; };
+		A29A52281E5EBC000073A9C0 /* ZQLaunchScene.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A52251E5EBC000073A9C0 /* ZQLaunchScene.h */; };
+		A29A52291E5EBC000073A9C0 /* ZQLaunchScene.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A52251E5EBC000073A9C0 /* ZQLaunchScene.h */; };
 		A2CEFDDC1E55C0BF00934B41 /* ZQTextArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2CEFDD91E55C0BF00934B41 /* ZQTextArea.cpp */; };
 		A2CEFDDD1E55C0BF00934B41 /* ZQTextArea.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */; };
 		A2CEFDDE1E55C0BF00934B41 /* ZQTextArea.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */; };
@@ -143,6 +155,12 @@
 		A29A52051E5D2F190073A9C0 /* ZQAppEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQAppEvent.h; sourceTree = "<group>"; };
 		A29A52101E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zq_scriptHandler_tolua_luabinding.cpp; sourceTree = "<group>"; };
 		A29A52111E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zq_scriptHandler_tolua_luabinding.h; sourceTree = "<group>"; };
+		A29A52161E5DB0D10073A9C0 /* ZQAppCenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQAppCenter.cpp; sourceTree = "<group>"; };
+		A29A52171E5DB0D10073A9C0 /* ZQAppCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQAppCenter.h; sourceTree = "<group>"; };
+		A29A521D1E5DB7260073A9C0 /* ZQRunLoop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQRunLoop.cpp; sourceTree = "<group>"; };
+		A29A521E1E5DB7260073A9C0 /* ZQRunLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQRunLoop.h; sourceTree = "<group>"; };
+		A29A52241E5EBC000073A9C0 /* ZQLaunchScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQLaunchScene.cpp; sourceTree = "<group>"; };
+		A29A52251E5EBC000073A9C0 /* ZQLaunchScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQLaunchScene.h; sourceTree = "<group>"; };
 		A2CEFDD91E55C0BF00934B41 /* ZQTextArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQTextArea.cpp; sourceTree = "<group>"; };
 		A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextArea.h; sourceTree = "<group>"; };
 		A2CEFDE01E55CEDB00934B41 /* ZQTextAreaMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextAreaMac.h; sourceTree = "<group>"; };
@@ -228,6 +246,7 @@
 		A222FEAC1DC0A0B9009F3A9A /* libzq */ = {
 			isa = PBXGroup;
 			children = (
+				A29A52231E5EBBAF0073A9C0 /* launch */,
 				A29A51F71E5C5D5B0073A9C0 /* core */,
 				A2CEFDE61E56E1F600934B41 /* tool */,
 				A221056D1DDED7760075B8F5 /* utils */,
@@ -377,8 +396,21 @@
 				A29A51FF1E5C5E470073A9C0 /* ZQScriptHandler.h */,
 				A29A52041E5D2F190073A9C0 /* ZQAppEvent.cpp */,
 				A29A52051E5D2F190073A9C0 /* ZQAppEvent.h */,
+				A29A52161E5DB0D10073A9C0 /* ZQAppCenter.cpp */,
+				A29A52171E5DB0D10073A9C0 /* ZQAppCenter.h */,
+				A29A521D1E5DB7260073A9C0 /* ZQRunLoop.cpp */,
+				A29A521E1E5DB7260073A9C0 /* ZQRunLoop.h */,
 			);
 			path = core;
+			sourceTree = "<group>";
+		};
+		A29A52231E5EBBAF0073A9C0 /* launch */ = {
+			isa = PBXGroup;
+			children = (
+				A29A52241E5EBC000073A9C0 /* ZQLaunchScene.cpp */,
+				A29A52251E5EBC000073A9C0 /* ZQLaunchScene.h */,
+			);
+			path = launch;
 			sourceTree = "<group>";
 		};
 		A2CEFDE61E56E1F600934B41 /* tool */ = {
@@ -398,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A25FE1B71DD5925100DB55E5 /* rapidxml_iterators.hpp in Headers */,
+				A29A521A1E5DB0D10073A9C0 /* ZQAppCenter.h in Headers */,
 				A2F1CC1C1DE8322900B7CB8D /* ZQLogger.h in Headers */,
 				A25FE1B91DD5925100DB55E5 /* rapidxml_utils.hpp in Headers */,
 				A26BAF5F1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.h in Headers */,
@@ -416,9 +449,11 @@
 				A26CF98C1E0BA10E0026F5CB /* ZQCustomAction.h in Headers */,
 				A28486761E1DF6A700E39265 /* ZQTextUtilMac.h in Headers */,
 				A29A52081E5D2F190073A9C0 /* ZQAppEvent.h in Headers */,
+				A29A52281E5EBC000073A9C0 /* ZQLaunchScene.h in Headers */,
 				A2CEFDE21E55CEDB00934B41 /* ZQTextAreaMac.h in Headers */,
 				A2F1CC191DE831BC00B7CB8D /* ZQDateUtils.h in Headers */,
 				A26387791DE4696400A6D925 /* ZQLoggerMac.h in Headers */,
+				A29A52211E5DB7260073A9C0 /* ZQRunLoop.h in Headers */,
 				A25FE1B61DD5925100DB55E5 /* rapidxml.hpp in Headers */,
 				A25FE1B81DD5925100DB55E5 /* rapidxml_print.hpp in Headers */,
 				A28866C11E320F0E00A33402 /* ZQTextBox.h in Headers */,
@@ -431,15 +466,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29A52091E5D2F190073A9C0 /* ZQAppEvent.h in Headers */,
+				A29A52291E5EBC000073A9C0 /* ZQLaunchScene.h in Headers */,
 				A28486771E1DF6A700E39265 /* ZQTextUtilMac.h in Headers */,
 				A29A52151E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.h in Headers */,
 				A2CEFDEC1E56E20D00934B41 /* ZQDeviceInfo.h in Headers */,
+				A29A52221E5DB7260073A9C0 /* ZQRunLoop.h in Headers */,
 				A28486711E1DEBF200E39265 /* ZQTextUtil.h in Headers */,
 				A2989A731DE6DF790073E4F0 /* rapidxml_iterators.hpp in Headers */,
 				A2989A751DE6DF790073E4F0 /* rapidxml_utils.hpp in Headers */,
 				A29A52031E5C5E470073A9C0 /* ZQScriptHandler.h in Headers */,
 				A2CEFDE31E55CEDB00934B41 /* ZQTextAreaMac.h in Headers */,
 				A25ADC451E517D7300E181F9 /* ZQTextBoxMac.h in Headers */,
+				A29A521B1E5DB0D10073A9C0 /* ZQAppCenter.h in Headers */,
 				A2989A781DE6DF790073E4F0 /* ZQLoggerIOS.h in Headers */,
 				A2989A7A1DE6DF790073E4F0 /* ZQLoggerMac.h in Headers */,
 				A2CEFDDE1E55C0BF00934B41 /* ZQTextArea.h in Headers */,
@@ -525,12 +563,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29A521F1E5DB7260073A9C0 /* ZQRunLoop.cpp in Sources */,
 				A2CEFDDF1E55C5B300934B41 /* ZQTextArea.cpp in Sources */,
 				A29A52121E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.cpp in Sources */,
 				A26387691DE2FC6100A6D925 /* ZQDateUtils.cpp in Sources */,
 				A29A52001E5C5E470073A9C0 /* ZQScriptHandler.cpp in Sources */,
 				A26387721DE4640700A6D925 /* ZQLoggerIOS.mm in Sources */,
 				A26BAF591E10C63600D3972B /* lua_zq_auto.cpp in Sources */,
+				A29A52181E5DB0D10073A9C0 /* ZQAppCenter.cpp in Sources */,
 				A26BAF5E1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.cpp in Sources */,
 				A29A52061E5D2F190073A9C0 /* ZQAppEvent.cpp in Sources */,
 				A2CEFDE91E56E20D00934B41 /* ZQDeviceInfo.cpp in Sources */,
@@ -542,6 +582,7 @@
 				A25FE1AC1DD58D5400DB55E5 /* ZQPlistManage.cpp in Sources */,
 				A284866E1E1DEBF200E39265 /* ZQTextUtil.cpp in Sources */,
 				A25FE1A41DD2CC3D00DB55E5 /* ZQJsonManage.cpp in Sources */,
+				A29A52261E5EBC000073A9C0 /* ZQLaunchScene.cpp in Sources */,
 				A26BAF651E10EAF500D3972B /* zq_sprite_draw_tolua_manual.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,8 +600,10 @@
 				A26BAF661E110A1100D3972B /* zq_sprite_draw_tolua_manual.cpp in Sources */,
 				A26BAF611E10CAD500D3972B /* lua_zq_auto.cpp in Sources */,
 				A26BAF601E10CAD100D3972B /* zq_custom_action_tolua_luabinding.cpp in Sources */,
+				A29A52191E5DB0D10073A9C0 /* ZQAppCenter.cpp in Sources */,
 				A2CEFDE51E55CEDB00934B41 /* ZQTextAreaMac.mm in Sources */,
 				A277102F1DF82B3D0074C87D /* ZQImageManage.cpp in Sources */,
+				A29A52201E5DB7260073A9C0 /* ZQRunLoop.cpp in Sources */,
 				A2989A691DE6DF790073E4F0 /* ZQDateUtils.cpp in Sources */,
 				A26CF98B1E0BA10E0026F5CB /* ZQCustomAction.cpp in Sources */,
 				A2989A6B1DE6DF790073E4F0 /* ZQLoggerMac.mm in Sources */,
@@ -573,6 +616,7 @@
 				A29A52011E5C5E470073A9C0 /* ZQScriptHandler.cpp in Sources */,
 				A284866F1E1DEBF200E39265 /* ZQTextUtil.cpp in Sources */,
 				A2989A6F1DE6DF790073E4F0 /* ZQPlistManage.cpp in Sources */,
+				A29A52271E5EBC000073A9C0 /* ZQLaunchScene.cpp in Sources */,
 				A2989A701DE6DF790073E4F0 /* ZQJsonManage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

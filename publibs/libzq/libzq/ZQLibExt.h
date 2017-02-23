@@ -28,5 +28,6 @@
 
 #include "core/ZQScriptHandler.h"
 #include "core/ZQAppEvent.h"
+#include "core/ZQAppCenter.h"
 
 #endif /* __ZQLIBEXT_H__ */
