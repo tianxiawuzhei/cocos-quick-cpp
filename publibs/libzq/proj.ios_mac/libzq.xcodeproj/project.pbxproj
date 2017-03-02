@@ -84,6 +84,10 @@
 		A29A52271E5EBC000073A9C0 /* ZQLaunchScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A29A52241E5EBC000073A9C0 /* ZQLaunchScene.cpp */; };
 		A29A52281E5EBC000073A9C0 /* ZQLaunchScene.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A52251E5EBC000073A9C0 /* ZQLaunchScene.h */; };
 		A29A52291E5EBC000073A9C0 /* ZQLaunchScene.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A52251E5EBC000073A9C0 /* ZQLaunchScene.h */; };
+		A29A522D1E5FE1430073A9C0 /* ZQHTTPService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A29A522B1E5FE1430073A9C0 /* ZQHTTPService.cpp */; };
+		A29A522F1E5FE1430073A9C0 /* ZQHTTPService.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A522C1E5FE1430073A9C0 /* ZQHTTPService.h */; };
+		A29A52301E5FE1430073A9C0 /* ZQHTTPService.h in Headers */ = {isa = PBXBuildFile; fileRef = A29A522C1E5FE1430073A9C0 /* ZQHTTPService.h */; };
+		A29A52311E6011CD0073A9C0 /* ZQHTTPService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A29A522B1E5FE1430073A9C0 /* ZQHTTPService.cpp */; };
 		A2CEFDDC1E55C0BF00934B41 /* ZQTextArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2CEFDD91E55C0BF00934B41 /* ZQTextArea.cpp */; };
 		A2CEFDDD1E55C0BF00934B41 /* ZQTextArea.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */; };
 		A2CEFDDE1E55C0BF00934B41 /* ZQTextArea.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */; };
@@ -161,6 +165,8 @@
 		A29A521E1E5DB7260073A9C0 /* ZQRunLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQRunLoop.h; sourceTree = "<group>"; };
 		A29A52241E5EBC000073A9C0 /* ZQLaunchScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQLaunchScene.cpp; sourceTree = "<group>"; };
 		A29A52251E5EBC000073A9C0 /* ZQLaunchScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQLaunchScene.h; sourceTree = "<group>"; };
+		A29A522B1E5FE1430073A9C0 /* ZQHTTPService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQHTTPService.cpp; sourceTree = "<group>"; };
+		A29A522C1E5FE1430073A9C0 /* ZQHTTPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQHTTPService.h; sourceTree = "<group>"; };
 		A2CEFDD91E55C0BF00934B41 /* ZQTextArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQTextArea.cpp; sourceTree = "<group>"; };
 		A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextArea.h; sourceTree = "<group>"; };
 		A2CEFDE01E55CEDB00934B41 /* ZQTextAreaMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextAreaMac.h; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 		A222FEAC1DC0A0B9009F3A9A /* libzq */ = {
 			isa = PBXGroup;
 			children = (
+				A29A522A1E5FE1080073A9C0 /* net */,
 				A29A52231E5EBBAF0073A9C0 /* launch */,
 				A29A51F71E5C5D5B0073A9C0 /* core */,
 				A2CEFDE61E56E1F600934B41 /* tool */,
@@ -413,6 +420,15 @@
 			path = launch;
 			sourceTree = "<group>";
 		};
+		A29A522A1E5FE1080073A9C0 /* net */ = {
+			isa = PBXGroup;
+			children = (
+				A29A522B1E5FE1430073A9C0 /* ZQHTTPService.cpp */,
+				A29A522C1E5FE1430073A9C0 /* ZQHTTPService.h */,
+			);
+			path = net;
+			sourceTree = "<group>";
+		};
 		A2CEFDE61E56E1F600934B41 /* tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +458,7 @@
 				A28486701E1DEBF200E39265 /* ZQTextUtil.h in Headers */,
 				A2F1CC161DE8314F00B7CB8D /* ZQPlistManage.h in Headers */,
 				A26387711DE4640700A6D925 /* ZQLoggerIOS.h in Headers */,
+				A29A522F1E5FE1430073A9C0 /* ZQHTTPService.h in Headers */,
 				A29A52141E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.h in Headers */,
 				A26BAF641E10EAF500D3972B /* zq_sprite_draw_tolua_manual.h in Headers */,
 				A26BAF5A1E10C63600D3972B /* lua_zq_auto.hpp in Headers */,
@@ -472,6 +489,7 @@
 				A2CEFDEC1E56E20D00934B41 /* ZQDeviceInfo.h in Headers */,
 				A29A52221E5DB7260073A9C0 /* ZQRunLoop.h in Headers */,
 				A28486711E1DEBF200E39265 /* ZQTextUtil.h in Headers */,
+				A29A52301E5FE1430073A9C0 /* ZQHTTPService.h in Headers */,
 				A2989A731DE6DF790073E4F0 /* rapidxml_iterators.hpp in Headers */,
 				A2989A751DE6DF790073E4F0 /* rapidxml_utils.hpp in Headers */,
 				A29A52031E5C5E470073A9C0 /* ZQScriptHandler.h in Headers */,
@@ -552,8 +570,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A222FE871DC08CE8009F3A9A /* libzqIOS */,
 				A2989A661DE6DF790073E4F0 /* libzqMac */,
+				A222FE871DC08CE8009F3A9A /* libzqIOS */,
 			);
 		};
 /* End PBXProject section */
@@ -583,6 +601,7 @@
 				A284866E1E1DEBF200E39265 /* ZQTextUtil.cpp in Sources */,
 				A25FE1A41DD2CC3D00DB55E5 /* ZQJsonManage.cpp in Sources */,
 				A29A52261E5EBC000073A9C0 /* ZQLaunchScene.cpp in Sources */,
+				A29A522D1E5FE1430073A9C0 /* ZQHTTPService.cpp in Sources */,
 				A26BAF651E10EAF500D3972B /* zq_sprite_draw_tolua_manual.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29A52311E6011CD0073A9C0 /* ZQHTTPService.cpp in Sources */,
 				A2CEFDEA1E56E20D00934B41 /* ZQDeviceInfo.cpp in Sources */,
 				A29A52071E5D2F190073A9C0 /* ZQAppEvent.cpp in Sources */,
 				A2CEFDDC1E55C0BF00934B41 /* ZQTextArea.cpp in Sources */,
@@ -726,6 +746,7 @@
 				PRODUCT_MODULE_NAME = zqIOS;
 				PRODUCT_NAME = zqIOS;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external/curl/include/mac";
 			};
 			name = Debug;
 		};
@@ -737,6 +758,7 @@
 				PRODUCT_MODULE_NAME = zqIOS;
 				PRODUCT_NAME = zqIOS;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external/curl/include/mac";
 			};
 			name = Release;
 		};
@@ -746,6 +768,7 @@
 				EXECUTABLE_PREFIX = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external/curl/include/mac";
 			};
 			name = Debug;
 		};
@@ -755,6 +778,7 @@
 				EXECUTABLE_PREFIX = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external/curl/include/mac";
 			};
 			name = Release;
 		};

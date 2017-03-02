@@ -8,6 +8,7 @@
 
 #include "ZQFileManage.h"
 #include <string>
+#include <stdio.h>
 
 using namespace cocos2d;
 using namespace zq;
@@ -87,6 +88,28 @@ bool ZQFileManage::renameFile(const std::string &oldfullpath, const std::string 
 long ZQFileManage::getFileSize(const std::string &filepath)
 {
     return _fileUtils->getFileSize(filepath);
+}
+
+bool ZQFileManage::appendFile(const std::string &path, const uint8_t *data, uint32_t size)
+{
+    FILE* file = fopen(path.c_str(), "ab");
+    if (!file)
+    {
+        return false;
+    }
+    
+    if (fwrite(data, 1, size, file) != size)
+    {
+        fclose(file);
+        this->removeFile(path);
+        return false;
+    }
+    else
+    {
+        fclose(file);
+    }
+    
+    return true;
 }
 
 std::string ZQFileManage::getFileBaseName(const std::string &filepath)

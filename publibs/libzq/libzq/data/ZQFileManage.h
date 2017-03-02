@@ -107,6 +107,8 @@ public:
      *  @return The file size.
      */
     virtual long getFileSize(const std::string &filepath);
+    
+    bool appendFile(const std::string &path, const uint8_t *data, uint32_t size);
 
 public:
     static std::string getFileBaseName(const std::string &filepath);
