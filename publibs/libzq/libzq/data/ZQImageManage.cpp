@@ -21,7 +21,7 @@ ZQImageManage* ZQImageManage::getInstance()
     return &instance;
 }
 
-cocos2d::SpriteFrame* ZQImageManage::loadImage(const std::string &path, const std::string &key)
+cocos2d::SpriteFrame* ZQImageManage::load_image(const std::string &path, const std::string &key)
 {
     const std::string &cache_key = key.empty() ? path : key;
     auto texture = cocos2d::Director::getInstance()->getTextureCache()->getTextureForKey(cache_key);
@@ -62,7 +62,7 @@ cocos2d::SpriteFrame* ZQImageManage::loadImage(const std::string &path, const st
     return cocos2d::SpriteFrame::createWithTexture(texture, cocos2d::Rect(0, 0, size.width, size.height));
 }
 
-cocos2d::SpriteFrame* ZQImageManage::loadFrame(const std::string &plist, const std::string &frame)
+cocos2d::SpriteFrame* ZQImageManage::load_frame(const std::string &plist, const std::string &frame)
 {
     auto spriteFrame = cocos2d::SpriteFrameCache::getInstance()->getSpriteFrameByName(frame);
     if (spriteFrame)
@@ -70,7 +70,7 @@ cocos2d::SpriteFrame* ZQImageManage::loadFrame(const std::string &plist, const s
         return spriteFrame;
     }
     
-    auto dict = ZQPlistManage::getInstance()->getDictFromFile(plist);
+    auto dict = ZQPlistManage::getInstance()->load_dict(plist);
     if (dict.empty())
     {
         ZQLogE("loadFrame: load plist file fail: %s, %s", plist.c_str(), frame.c_str());
@@ -92,8 +92,8 @@ cocos2d::SpriteFrame* ZQImageManage::loadFrame(const std::string &plist, const s
         return nullptr;
     }
     
-    auto dir = ZQFileManage::getDirPath(plist);
-    auto imageFrame = this->loadImage(dir + texturePath, texturePath);
+    auto dir = ZQFileManage::dirname_of_path(plist, true);
+    auto imageFrame = this->load_image(dir + texturePath, texturePath);
     
     cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithDictionary(dict, imageFrame->getTexture());
     
@@ -107,3 +107,11 @@ cocos2d::SpriteFrame* ZQImageManage::loadFrame(const std::string &plist, const s
     return spriteFrame;
     
 }
+
+
+bool ZQImageManage::exist(const std::string &plist, const std::string &frame)
+{
+    return true;
+}
+
+

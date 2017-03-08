@@ -14,6 +14,15 @@
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
+-- 
+-- @function [parent=#ZQFileManage] appendFile 
+-- @param self
+-- @param #string path
+-- @param #unsigned char data
+-- @param #unsigned int size
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
 -- Renames a file under the given directory.<br>
 -- param oldfullpath  The current fullpath of the file. Includes path and name.<br>
 -- param newfullpath  The new fullpath of the file. Includes path and name.<br>
@@ -108,16 +117,26 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQFileManage] getFileBaseName 
+-- @function [parent=#ZQFileManage] dirname_of_path 
 -- @param self
--- @param #string filepath
+-- @param #string path
+-- @param #bool with_slash
 -- @return string#string ret (return value: string)
         
 --------------------------------
 -- 
--- @function [parent=#ZQFileManage] getDirPath 
+-- @function [parent=#ZQFileManage] basename_of_path 
 -- @param self
--- @param #string filepath
+-- @param #string path
+-- @param #bool with_ext
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] extname_of_path 
+-- @param self
+-- @param #string path
+-- @param #bool with_dot
 -- @return string#string ret (return value: string)
         
 --------------------------------

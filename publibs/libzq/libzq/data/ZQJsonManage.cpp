@@ -112,9 +112,9 @@ ZQJsonManage* ZQJsonManage::getInstance()
     return &instance;
 }
 
-cocos2d::ValueMap ZQJsonManage::getDictFromFile(const std::string &filename)
+const cocos2d::ValueMap& ZQJsonManage::load_dict(const std::string &filename)
 {
-    cocos2d::Value val = this->getValueFromFile(filename);
+    const cocos2d::Value &val = this->read_file(filename);
     if (val.getType() == cocos2d::Value::Type::MAP)
     {
         return val.asValueMap();
@@ -125,9 +125,9 @@ cocos2d::ValueMap ZQJsonManage::getDictFromFile(const std::string &filename)
     }
 }
 
-cocos2d::ValueMap ZQJsonManage::getDictFromText(const std::string &text)
+cocos2d::ValueMap ZQJsonManage::text_dict(const std::string &text)
 {
-    cocos2d::Value val = this->getValueFromText(text);
+    cocos2d::Value val = this->read_text(text);
     if (val.getType() == cocos2d::Value::Type::MAP)
     {
         return val.asValueMap();
@@ -138,9 +138,9 @@ cocos2d::ValueMap ZQJsonManage::getDictFromText(const std::string &text)
     }
 }
 
-cocos2d::ValueVector ZQJsonManage::getArrayFromFile(const std::string &filename)
+const cocos2d::ValueVector& ZQJsonManage::load_array(const std::string &filename)
 {
-    cocos2d::Value val = this->getValueFromFile(filename);
+    const cocos2d::Value &val = this->read_file(filename);
     if (val.getType() == cocos2d::Value::Type::VECTOR)
     {
         return val.asValueVector();
@@ -151,9 +151,9 @@ cocos2d::ValueVector ZQJsonManage::getArrayFromFile(const std::string &filename)
     }
 }
 
-cocos2d::ValueVector ZQJsonManage::getArrayFromText(const std::string &text)
+cocos2d::ValueVector ZQJsonManage::text_array(const std::string &text)
 {
-    cocos2d::Value val = this->getValueFromText(text);
+    cocos2d::Value val = this->read_text(text);
     if (val.getType() == cocos2d::Value::Type::VECTOR)
     {
         return val.asValueVector();
@@ -164,13 +164,48 @@ cocos2d::ValueVector ZQJsonManage::getArrayFromText(const std::string &text)
     }
 }
 
-cocos2d::Value ZQJsonManage::getValueFromFile(const std::string &filename)
+bool ZQJsonManage::exist(const std::string &filename)
 {
-    const std::string text = ZQFileManage::getInstance()->getStringFromFile(filename);
-    return getValueFromText(text);
+    return this->_cache.find(filename) != this->_cache.end();
 }
 
-cocos2d::Value ZQJsonManage::getValueFromText(const std::string &text)
+bool ZQJsonManage::cache(const std::string &filename)
+{
+    return !this->read_file(filename).isNull();
+}
+
+void ZQJsonManage::clear(const std::string &filename)
+{
+    if (!filename.empty())
+    {
+        auto it = this->_cache.find(filename);
+        if (it != this->_cache.end())
+            this->_cache.erase(it);
+    }
+    else
+    {
+        this->_cache.clear();
+    }
+}
+
+const cocos2d::Value& ZQJsonManage::read_file(const std::string &filename)
+{
+    if (this->_cache.find(filename) != this->_cache.end())
+        return this->_cache[filename];
+    
+    auto text = ZQFileManage::getInstance()->getStringFromFile(filename);
+    
+    auto data = this->read_text(text);
+    if (!data.isNull())
+    {
+        this->_cache[filename] = data;
+        return this->_cache[filename];
+    }
+    
+    return cocos2d::Value::Null;
+}
+
+cocos2d::Value ZQJsonManage::read_text(const std::string &text)
 {
     if (text.empty())
     {

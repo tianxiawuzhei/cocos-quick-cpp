@@ -112,32 +112,66 @@ bool ZQFileManage::appendFile(const std::string &path, const uint8_t *data, uint
     return true;
 }
 
-std::string ZQFileManage::getFileBaseName(const std::string &filepath)
-{
-    std::size_t index = filepath.find_last_of("\\/");
-    std::string name = "";
-    if (index != std::string::npos)
-    {
-        name = filepath.substr(index+1);
-    }
-    else
-    {
-        name = filepath;
-    }
-    
-    return name;
-}
-
-std::string ZQFileManage::getDirPath(const std::string &filepath)
+std::string ZQFileManage::dirname_of_path(const std::string &path, bool with_slash)
 {
     std::string dir = "";
-    std::size_t index = filepath.find_last_of("/\\");
+    std::size_t index = path.find_last_of("/\\");
     if (index != std::string::npos)
     {
-        dir = filepath.substr(0, index) + "/";
+        dir = path.substr(0, index);
     }
     
+    if (!dir.empty())
+    {
+        if (with_slash)
+            return dir + "/";
+    }
+        
     return dir;
+}
+
+std::string ZQFileManage::extname_of_path(const std::string &path, bool with_dot)
+{
+    std::string file_ext;
+    size_t dot_pos = path.find_last_of('.');
+    size_t last_separator_pos = path.find_last_of("/\\");
+    if (dot_pos != std::string::npos)
+    {
+        if (last_separator_pos != std::string::npos)
+        {
+            if (dot_pos < last_separator_pos)
+            {
+                return "";
+            }
+        }
+        
+        file_ext = path.substr(dot_pos);
+        std::transform(file_ext.begin(), file_ext.end(), file_ext.begin(), ::tolower);
+    }
+    
+    return "";
+}
+
+std::string ZQFileManage::basename_of_path(const std::string &path, bool with_ext)
+{
+    std::string basename = "";
+    size_t last_separator_pos = path.find_last_of("\\/");
+    if (std::string::npos != last_separator_pos)
+    {
+        basename = path.substr(last_separator_pos+1);
+    }
+    
+    if (!with_ext)
+    {
+        size_t dot_pos = basename.rfind('.');
+        if (std::string::npos != dot_pos)
+        {
+            basename = basename.substr(0, dot_pos);
+        }
+
+    }
+    
+    return basename;
 }
 
 std::string ZQFileManage::tempDir()

@@ -109,9 +109,9 @@ ZQPlistManage* ZQPlistManage::getInstance()
     return &instance;
 }
 
-cocos2d::ValueMap ZQPlistManage::getDictFromFile(const std::string &filename)
+const cocos2d::ValueMap& ZQPlistManage::load_dict(const std::string &filename)
 {
-    cocos2d::Value val = this->getValueFromFile(filename);
+    const auto &val = this->read_file(filename);
     if (val.getType() == cocos2d::Value::Type::MAP)
     {
         return val.asValueMap();
@@ -122,9 +122,9 @@ cocos2d::ValueMap ZQPlistManage::getDictFromFile(const std::string &filename)
     }
 }
 
-cocos2d::ValueMap ZQPlistManage::getDictFromText(const std::string &text)
+cocos2d::ValueMap ZQPlistManage::text_dict(const std::string &text)
 {
-    cocos2d::Value val = this->getValueFromText(text);
+    cocos2d::Value val = this->read_text(text);
     if (val.getType() == cocos2d::Value::Type::MAP)
     {
         return val.asValueMap();
@@ -135,9 +135,9 @@ cocos2d::ValueMap ZQPlistManage::getDictFromText(const std::string &text)
     }
 }
 
-cocos2d::ValueVector ZQPlistManage::getArrayFromFile(const std::string &filename)
+const cocos2d::ValueVector& ZQPlistManage::load_array(const std::string &filename)
 {
-    cocos2d::Value val = this->getValueFromFile(filename);
+    const cocos2d::Value &val = this->read_file(filename);
     if (val.getType() == cocos2d::Value::Type::VECTOR)
     {
         return val.asValueVector();
@@ -148,9 +148,9 @@ cocos2d::ValueVector ZQPlistManage::getArrayFromFile(const std::string &filename
     }
 }
 
-cocos2d::ValueVector ZQPlistManage::getArrayFromText(const std::string &text)
+cocos2d::ValueVector ZQPlistManage::text_array(const std::string &text)
 {
-    cocos2d::Value val = this->getValueFromText(text);
+    cocos2d::Value val = this->read_text(text);
     if (val.getType() == cocos2d::Value::Type::VECTOR)
     {
         return val.asValueVector();
@@ -161,13 +161,57 @@ cocos2d::ValueVector ZQPlistManage::getArrayFromText(const std::string &text)
     }
 }
 
-cocos2d::Value ZQPlistManage::getValueFromFile(const std::string &filename)
+bool ZQPlistManage::exist(const std::string &filename)
 {
-    const std::string text = ZQFileManage::getInstance()->getStringFromFile(filename);
-    return getValueFromText(text);
+    return this->_cache.find(filename) != this->_cache.end();
 }
 
-cocos2d::Value ZQPlistManage::getValueFromText(const std::string &text)
+bool ZQPlistManage::cache(const std::string &filename)
+{
+    return !this->read_file(filename).isNull();
+}
+
+void ZQPlistManage::clear(const std::string &filename)
+{
+    if (!filename.empty())
+    {
+        auto it = this->_cache.find(filename);
+        if (it != this->_cache.end())
+            this->_cache.erase(it);
+    }
+    else
+    {
+        this->_cache.clear();
+    }
+    
+}
+
+void ZQPlistManage::alias(const cocos2d::Value &plist, const std::string &key)
+{
+    this->_cache[key] = plist;
+}
+
+const cocos2d::Value& ZQPlistManage::read_file(const std::string &filename)
+{
+    if (this->_cache.find(filename) != this->_cache.end())
+    {
+        return this->_cache[filename];
+    }
+    
+    auto text = ZQFileManage::getInstance()->getStringFromFile(filename);
+   
+    auto data = this->read_text(text);
+    
+    if (!data.isNull())
+    {
+        this->_cache[filename] = std::move(data);
+        return this->_cache[filename];
+    }
+    
+    return cocos2d::Value::Null;
+}
+
+cocos2d::Value ZQPlistManage::read_text(const std::string &text)
 {
     if (text.empty())
     {

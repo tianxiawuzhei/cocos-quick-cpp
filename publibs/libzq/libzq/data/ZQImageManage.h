@@ -5,7 +5,7 @@
 * @date: 16/11/25
 * @Description:
 *
-/***********************************************/
+***********************************************/
 
 #ifndef __ZQImageManage_H__
 #define __ZQImageManage_H__
@@ -23,8 +23,12 @@ protected:
     virtual ~ZQImageManage() = default;
     
 public:
-    cocos2d::SpriteFrame* loadImage(const std::string &path, const std::string &key = "");
-    cocos2d::SpriteFrame* loadFrame(const std::string &plist, const std::string &frame);
+    cocos2d::SpriteFrame* load_image(const std::string &path, const std::string &key = "");
+    cocos2d::SpriteFrame* load_frame(const std::string &plist, const std::string &frame);
+    
+    
+public:
+    bool exist(const std::string &plist, const std::string &frame);
 };
     
 }

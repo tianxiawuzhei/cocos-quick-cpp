@@ -111,8 +111,9 @@ public:
     bool appendFile(const std::string &path, const uint8_t *data, uint32_t size);
 
 public:
-    static std::string getFileBaseName(const std::string &filepath);
-    static std::string getDirPath(const std::string &filepath);
+    static std::string dirname_of_path(const std::string &path, bool with_slash = false);
+    static std::string extname_of_path(const std::string &path, bool with_dot = true);
+    static std::string basename_of_path(const std::string &path, bool with_ext = true);
     
 public:
     std::string logDir();

@@ -4,29 +4,52 @@
 -- @parent_module zq
 
 --------------------------------
+-- 
+-- @function [parent=#ZQJsonManage] clear 
+-- @param self
+-- @return ZQJsonManage#ZQJsonManage self (return value: zq.ZQJsonManage)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQJsonManage] cache 
+-- @param self
+-- @param #string filename
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
 -- Converts the contents of a file to a ValueVector.<br>
 -- param filename The filename of the file to gets content.<br>
 -- return ValueMap of the file contents.<br>
 -- note This method is used internally.
--- @function [parent=#ZQJsonManage] getValueFromFile 
+-- @function [parent=#ZQJsonManage] load_array 
 -- @param self
 -- @param #string filename
--- @return Value#Value ret (return value: cc.Value)
+-- @return array_table#array_table ret (return value: array_table)
         
 --------------------------------
 --  Converts the contents of a file to a ValueMap.<br>
 -- This method is used internally.
--- @function [parent=#ZQJsonManage] getDictFromText 
+-- @function [parent=#ZQJsonManage] text_dict 
 -- @param self
 -- @param #string text
 -- @return map_table#map_table ret (return value: map_table)
+        
+--------------------------------
+-- Converts the contents of a file to a ValueVector.<br>
+-- param filename The filename of the file to gets content.<br>
+-- return ValueMap of the file contents.<br>
+-- note This method is used internally.
+-- @function [parent=#ZQJsonManage] exist 
+-- @param self
+-- @param #string filename
+-- @return bool#bool ret (return value: bool)
         
 --------------------------------
 -- Converts the contents of a file to a ValueMap.<br>
 -- param filename The filename of the file to gets content.<br>
 -- return ValueMap of the file contents.<br>
 -- note This method is used internally.
--- @function [parent=#ZQJsonManage] getDictFromFile 
+-- @function [parent=#ZQJsonManage] load_dict 
 -- @param self
 -- @param #string filename
 -- @return map_table#map_table ret (return value: map_table)
@@ -34,28 +57,10 @@
 --------------------------------
 --  Converts the contents of a file to a ValueVector.<br>
 -- This method is used internally.
--- @function [parent=#ZQJsonManage] getArrayFromText 
+-- @function [parent=#ZQJsonManage] text_array 
 -- @param self
 -- @param #string text
 -- @return array_table#array_table ret (return value: array_table)
-        
---------------------------------
--- Converts the contents of a file to a ValueVector.<br>
--- param filename The filename of the file to gets content.<br>
--- return ValueMap of the file contents.<br>
--- note This method is used internally.
--- @function [parent=#ZQJsonManage] getArrayFromFile 
--- @param self
--- @param #string filename
--- @return array_table#array_table ret (return value: array_table)
-        
---------------------------------
---  Converts the contents of a file to a Value.<br>
--- This method is used internally.
--- @function [parent=#ZQJsonManage] getValueFromText 
--- @param self
--- @param #string text
--- @return Value#Value ret (return value: cc.Value)
         
 --------------------------------
 -- 

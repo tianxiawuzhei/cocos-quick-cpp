@@ -5,7 +5,7 @@
 
 --------------------------------
 -- 
--- @function [parent=#ZQImageManage] loadImage 
+-- @function [parent=#ZQImageManage] load_image 
 -- @param self
 -- @param #string path
 -- @param #string key
@@ -13,7 +13,15 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQImageManage] loadFrame 
+-- @function [parent=#ZQImageManage] exist 
+-- @param self
+-- @param #string plist
+-- @param #string frame
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQImageManage] load_frame 
 -- @param self
 -- @param #string plist
 -- @param #string frame

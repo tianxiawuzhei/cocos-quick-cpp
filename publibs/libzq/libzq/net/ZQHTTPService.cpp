@@ -336,12 +336,12 @@ std::string HTTPTask::toText() const
 
 cocos2d::ValueMap HTTPTask::toDict() const
 {
-    return ZQJsonManage::getInstance()->getDictFromText(this->toText());
+    return ZQJsonManage::getInstance()->text_dict(this->toText());
 }
 
 cocos2d::ValueVector HTTPTask::toArray() const
 {
-    return ZQJsonManage::getInstance()->getArrayFromText(this->toText());
+    return ZQJsonManage::getInstance()->text_array(this->toText());
 }
 
 int HTTPTask::status() const
@@ -483,7 +483,7 @@ void HTTPTask::setUrl(const std::string &url)
 void HTTPTask::setLoc(const std::string &loc)
 {
     this->_loc = loc;
-    this->_tmp = ZQFileManage::getInstance()->tempDir() + ZQFileManage::getFileBaseName(loc);
+    this->_tmp = ZQFileManage::getInstance()->tempDir() + ZQFileManage::basename_of_path(loc);
 }
 
 void HTTPTask::setMD5(const std::string &md5)

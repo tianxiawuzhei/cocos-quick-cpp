@@ -351,7 +351,7 @@ public:
     void addOwnerOutletName(std::string name);
     void addOwnerOutletNode(cocos2d::Node *node);
 
-private:
+protected:
     void cleanUpNodeGraph(cocos2d::Node *pNode);
     bool readSequences();
     CCBKeyframe* readKeyframe(PropertyType type);
@@ -369,7 +369,7 @@ private:
     
     friend class NodeLoader;
 
-private:
+protected:
     std::shared_ptr<cocos2d::Data> _data;
     unsigned char *_bytes;
     int _currentByte;

@@ -413,6 +413,63 @@ int lua_zq_ZQFileManage_isFileExist(lua_State* tolua_S)
 
     return 0;
 }
+int lua_zq_ZQFileManage_appendFile(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQFileManage* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQFileManage*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQFileManage_appendFile'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 3) 
+    {
+        std::string arg0;
+        const unsigned char* arg1;
+        unsigned int arg2;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:appendFile");
+
+        #pragma warning NO CONVERSION TO NATIVE FOR unsigned char*
+		ok = false;
+
+        ok &= luaval_to_uint32(tolua_S, 4,&arg2, "zq.ZQFileManage:appendFile");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_appendFile'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->appendFile(arg0, arg1, arg2);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQFileManage:appendFile",argc, 3);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_appendFile'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_zq_ZQFileManage_renameFile(lua_State* tolua_S)
 {
     int argc = 0;
@@ -974,7 +1031,7 @@ int lua_zq_ZQFileManage_getWritablePath(lua_State* tolua_S)
 
     return 0;
 }
-int lua_zq_ZQFileManage_getFileBaseName(lua_State* tolua_S)
+int lua_zq_ZQFileManage_dirname_of_path(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -992,25 +1049,40 @@ int lua_zq_ZQFileManage_getFileBaseName(lua_State* tolua_S)
     if (argc == 1)
     {
         std::string arg0;
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:getFileBaseName");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:dirname_of_path");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_getFileBaseName'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_dirname_of_path'", nullptr);
             return 0;
         }
-        std::string ret = zq::ZQFileManage::getFileBaseName(arg0);
+        std::string ret = zq::ZQFileManage::dirname_of_path(arg0);
         tolua_pushcppstring(tolua_S,ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:getFileBaseName",argc, 1);
+    if (argc == 2)
+    {
+        std::string arg0;
+        bool arg1;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:dirname_of_path");
+        ok &= luaval_to_boolean(tolua_S, 3,&arg1, "zq.ZQFileManage:dirname_of_path");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_dirname_of_path'", nullptr);
+            return 0;
+        }
+        std::string ret = zq::ZQFileManage::dirname_of_path(arg0, arg1);
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:dirname_of_path",argc, 1);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_getFileBaseName'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_dirname_of_path'.",&tolua_err);
 #endif
     return 0;
 }
-int lua_zq_ZQFileManage_getDirPath(lua_State* tolua_S)
+int lua_zq_ZQFileManage_basename_of_path(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -1028,21 +1100,87 @@ int lua_zq_ZQFileManage_getDirPath(lua_State* tolua_S)
     if (argc == 1)
     {
         std::string arg0;
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:getDirPath");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:basename_of_path");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_getDirPath'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_basename_of_path'", nullptr);
             return 0;
         }
-        std::string ret = zq::ZQFileManage::getDirPath(arg0);
+        std::string ret = zq::ZQFileManage::basename_of_path(arg0);
         tolua_pushcppstring(tolua_S,ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:getDirPath",argc, 1);
+    if (argc == 2)
+    {
+        std::string arg0;
+        bool arg1;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:basename_of_path");
+        ok &= luaval_to_boolean(tolua_S, 3,&arg1, "zq.ZQFileManage:basename_of_path");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_basename_of_path'", nullptr);
+            return 0;
+        }
+        std::string ret = zq::ZQFileManage::basename_of_path(arg0, arg1);
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:basename_of_path",argc, 1);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_getDirPath'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_basename_of_path'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_extname_of_path(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:extname_of_path");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_extname_of_path'", nullptr);
+            return 0;
+        }
+        std::string ret = zq::ZQFileManage::extname_of_path(arg0);
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    if (argc == 2)
+    {
+        std::string arg0;
+        bool arg1;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:extname_of_path");
+        ok &= luaval_to_boolean(tolua_S, 3,&arg1, "zq.ZQFileManage:extname_of_path");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_extname_of_path'", nullptr);
+            return 0;
+        }
+        std::string ret = zq::ZQFileManage::extname_of_path(arg0, arg1);
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:extname_of_path",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_extname_of_path'.",&tolua_err);
 #endif
     return 0;
 }
@@ -1093,6 +1231,7 @@ int lua_register_zq_ZQFileManage(lua_State* tolua_S)
 
     tolua_beginmodule(tolua_S,"ZQFileManage");
         tolua_function(tolua_S,"isFileExist",lua_zq_ZQFileManage_isFileExist);
+        tolua_function(tolua_S,"appendFile",lua_zq_ZQFileManage_appendFile);
         tolua_function(tolua_S,"renameFile",lua_zq_ZQFileManage_renameFile);
         tolua_function(tolua_S,"getStringFromFile",lua_zq_ZQFileManage_getStringFromFile);
         tolua_function(tolua_S,"getFileExtension",lua_zq_ZQFileManage_getFileExtension);
@@ -1104,8 +1243,9 @@ int lua_register_zq_ZQFileManage(lua_State* tolua_S)
         tolua_function(tolua_S,"addSearchPath",lua_zq_ZQFileManage_addSearchPath);
         tolua_function(tolua_S,"createDirectory",lua_zq_ZQFileManage_createDirectory);
         tolua_function(tolua_S,"getWritablePath",lua_zq_ZQFileManage_getWritablePath);
-        tolua_function(tolua_S,"getFileBaseName", lua_zq_ZQFileManage_getFileBaseName);
-        tolua_function(tolua_S,"getDirPath", lua_zq_ZQFileManage_getDirPath);
+        tolua_function(tolua_S,"dirname_of_path", lua_zq_ZQFileManage_dirname_of_path);
+        tolua_function(tolua_S,"basename_of_path", lua_zq_ZQFileManage_basename_of_path);
+        tolua_function(tolua_S,"extname_of_path", lua_zq_ZQFileManage_extname_of_path);
         tolua_function(tolua_S,"getInstance", lua_zq_ZQFileManage_getInstance);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(zq::ZQFileManage).name();
@@ -1114,7 +1254,7 @@ int lua_register_zq_ZQFileManage(lua_State* tolua_S)
     return 1;
 }
 
-int lua_zq_ZQJsonManage_getValueFromFile(lua_State* tolua_S)
+int lua_zq_ZQJsonManage_clear(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQJsonManage* cobj = nullptr;
@@ -1134,37 +1274,48 @@ int lua_zq_ZQJsonManage_getValueFromFile(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_getValueFromFile'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_clear'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_clear'", nullptr);
+            return 0;
+        }
+        cobj->clear();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
     if (argc == 1) 
     {
         std::string arg0;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:getValueFromFile");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:clear");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_getValueFromFile'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_clear'", nullptr);
             return 0;
         }
-        cocos2d::Value ret = cobj->getValueFromFile(arg0);
-        ccvalue_to_luaval(tolua_S, ret);
+        cobj->clear(arg0);
+        lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:getValueFromFile",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:clear",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_getValueFromFile'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_clear'.",&tolua_err);
 #endif
 
     return 0;
 }
-int lua_zq_ZQJsonManage_getDictFromText(lua_State* tolua_S)
+int lua_zq_ZQJsonManage_cache(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQJsonManage* cobj = nullptr;
@@ -1184,7 +1335,7 @@ int lua_zq_ZQJsonManage_getDictFromText(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_getDictFromText'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_cache'", nullptr);
         return 0;
     }
 #endif
@@ -1194,27 +1345,27 @@ int lua_zq_ZQJsonManage_getDictFromText(lua_State* tolua_S)
     {
         std::string arg0;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:getDictFromText");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:cache");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_getDictFromText'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_cache'", nullptr);
             return 0;
         }
-        cocos2d::ValueMap ret = cobj->getDictFromText(arg0);
-        ccvaluemap_to_luaval(tolua_S, ret);
+        bool ret = cobj->cache(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:getDictFromText",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:cache",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_getDictFromText'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_cache'.",&tolua_err);
 #endif
 
     return 0;
 }
-int lua_zq_ZQJsonManage_getDictFromFile(lua_State* tolua_S)
+int lua_zq_ZQJsonManage_load_array(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQJsonManage* cobj = nullptr;
@@ -1234,7 +1385,7 @@ int lua_zq_ZQJsonManage_getDictFromFile(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_getDictFromFile'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_load_array'", nullptr);
         return 0;
     }
 #endif
@@ -1244,77 +1395,27 @@ int lua_zq_ZQJsonManage_getDictFromFile(lua_State* tolua_S)
     {
         std::string arg0;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:getDictFromFile");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:load_array");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_getDictFromFile'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_load_array'", nullptr);
             return 0;
         }
-        cocos2d::ValueMap ret = cobj->getDictFromFile(arg0);
-        ccvaluemap_to_luaval(tolua_S, ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:getDictFromFile",argc, 1);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_getDictFromFile'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_zq_ZQJsonManage_getArrayFromText(lua_State* tolua_S)
-{
-    int argc = 0;
-    zq::ZQJsonManage* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"zq.ZQJsonManage",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (zq::ZQJsonManage*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_getArrayFromText'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
-    {
-        std::string arg0;
-
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:getArrayFromText");
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_getArrayFromText'", nullptr);
-            return 0;
-        }
-        cocos2d::ValueVector ret = cobj->getArrayFromText(arg0);
+        const cocos2d::ValueVector& ret = cobj->load_array(arg0);
         ccvaluevector_to_luaval(tolua_S, ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:getArrayFromText",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:load_array",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_getArrayFromText'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_load_array'.",&tolua_err);
 #endif
 
     return 0;
 }
-int lua_zq_ZQJsonManage_getArrayFromFile(lua_State* tolua_S)
+int lua_zq_ZQJsonManage_text_dict(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQJsonManage* cobj = nullptr;
@@ -1334,7 +1435,7 @@ int lua_zq_ZQJsonManage_getArrayFromFile(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_getArrayFromFile'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_text_dict'", nullptr);
         return 0;
     }
 #endif
@@ -1344,72 +1445,172 @@ int lua_zq_ZQJsonManage_getArrayFromFile(lua_State* tolua_S)
     {
         std::string arg0;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:getArrayFromFile");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:text_dict");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_getArrayFromFile'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_text_dict'", nullptr);
             return 0;
         }
-        cocos2d::ValueVector ret = cobj->getArrayFromFile(arg0);
+        cocos2d::ValueMap ret = cobj->text_dict(arg0);
+        ccvaluemap_to_luaval(tolua_S, ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:text_dict",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_text_dict'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQJsonManage_exist(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQJsonManage* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQJsonManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQJsonManage*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_exist'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:exist");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_exist'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->exist(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:exist",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_exist'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQJsonManage_load_dict(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQJsonManage* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQJsonManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQJsonManage*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_load_dict'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:load_dict");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_load_dict'", nullptr);
+            return 0;
+        }
+        const cocos2d::ValueMap& ret = cobj->load_dict(arg0);
+        ccvaluemap_to_luaval(tolua_S, ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:load_dict",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_load_dict'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQJsonManage_text_array(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQJsonManage* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQJsonManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQJsonManage*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_text_array'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:text_array");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_text_array'", nullptr);
+            return 0;
+        }
+        cocos2d::ValueVector ret = cobj->text_array(arg0);
         ccvaluevector_to_luaval(tolua_S, ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:getArrayFromFile",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:text_array",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_getArrayFromFile'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_zq_ZQJsonManage_getValueFromText(lua_State* tolua_S)
-{
-    int argc = 0;
-    zq::ZQJsonManage* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"zq.ZQJsonManage",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (zq::ZQJsonManage*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQJsonManage_getValueFromText'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
-    {
-        std::string arg0;
-
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQJsonManage:getValueFromText");
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQJsonManage_getValueFromText'", nullptr);
-            return 0;
-        }
-        cocos2d::Value ret = cobj->getValueFromText(arg0);
-        ccvalue_to_luaval(tolua_S, ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQJsonManage:getValueFromText",argc, 1);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_getValueFromText'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQJsonManage_text_array'.",&tolua_err);
 #endif
 
     return 0;
@@ -1460,12 +1661,13 @@ int lua_register_zq_ZQJsonManage(lua_State* tolua_S)
     tolua_cclass(tolua_S,"ZQJsonManage","zq.ZQJsonManage","",nullptr);
 
     tolua_beginmodule(tolua_S,"ZQJsonManage");
-        tolua_function(tolua_S,"getValueFromFile",lua_zq_ZQJsonManage_getValueFromFile);
-        tolua_function(tolua_S,"getDictFromText",lua_zq_ZQJsonManage_getDictFromText);
-        tolua_function(tolua_S,"getDictFromFile",lua_zq_ZQJsonManage_getDictFromFile);
-        tolua_function(tolua_S,"getArrayFromText",lua_zq_ZQJsonManage_getArrayFromText);
-        tolua_function(tolua_S,"getArrayFromFile",lua_zq_ZQJsonManage_getArrayFromFile);
-        tolua_function(tolua_S,"getValueFromText",lua_zq_ZQJsonManage_getValueFromText);
+        tolua_function(tolua_S,"clear",lua_zq_ZQJsonManage_clear);
+        tolua_function(tolua_S,"cache",lua_zq_ZQJsonManage_cache);
+        tolua_function(tolua_S,"load_array",lua_zq_ZQJsonManage_load_array);
+        tolua_function(tolua_S,"text_dict",lua_zq_ZQJsonManage_text_dict);
+        tolua_function(tolua_S,"exist",lua_zq_ZQJsonManage_exist);
+        tolua_function(tolua_S,"load_dict",lua_zq_ZQJsonManage_load_dict);
+        tolua_function(tolua_S,"text_array",lua_zq_ZQJsonManage_text_array);
         tolua_function(tolua_S,"getInstance", lua_zq_ZQJsonManage_getInstance);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(zq::ZQJsonManage).name();
@@ -1474,7 +1676,7 @@ int lua_register_zq_ZQJsonManage(lua_State* tolua_S)
     return 1;
 }
 
-int lua_zq_ZQPlistManage_getValueFromFile(lua_State* tolua_S)
+int lua_zq_ZQPlistManage_alias(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQPlistManage* cobj = nullptr;
@@ -1494,37 +1696,40 @@ int lua_zq_ZQPlistManage_getValueFromFile(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_getValueFromFile'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_alias'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 2) 
     {
-        std::string arg0;
+        cocos2d::Value arg0;
+        std::string arg1;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:getValueFromFile");
+        ok &= luaval_to_ccvalue(tolua_S, 2, &arg0, "zq.ZQPlistManage:alias");
+
+        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQPlistManage:alias");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_getValueFromFile'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_alias'", nullptr);
             return 0;
         }
-        cocos2d::Value ret = cobj->getValueFromFile(arg0);
-        ccvalue_to_luaval(tolua_S, ret);
+        cobj->alias(arg0, arg1);
+        lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:getValueFromFile",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:alias",argc, 2);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_getValueFromFile'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_alias'.",&tolua_err);
 #endif
 
     return 0;
 }
-int lua_zq_ZQPlistManage_getDictFromText(lua_State* tolua_S)
+int lua_zq_ZQPlistManage_clear(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQPlistManage* cobj = nullptr;
@@ -1544,37 +1749,48 @@ int lua_zq_ZQPlistManage_getDictFromText(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_getDictFromText'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_clear'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_clear'", nullptr);
+            return 0;
+        }
+        cobj->clear();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
     if (argc == 1) 
     {
         std::string arg0;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:getDictFromText");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:clear");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_getDictFromText'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_clear'", nullptr);
             return 0;
         }
-        cocos2d::ValueMap ret = cobj->getDictFromText(arg0);
-        ccvaluemap_to_luaval(tolua_S, ret);
+        cobj->clear(arg0);
+        lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:getDictFromText",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:clear",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_getDictFromText'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_clear'.",&tolua_err);
 #endif
 
     return 0;
 }
-int lua_zq_ZQPlistManage_getDictFromFile(lua_State* tolua_S)
+int lua_zq_ZQPlistManage_cache(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQPlistManage* cobj = nullptr;
@@ -1594,7 +1810,7 @@ int lua_zq_ZQPlistManage_getDictFromFile(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_getDictFromFile'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_cache'", nullptr);
         return 0;
     }
 #endif
@@ -1604,27 +1820,27 @@ int lua_zq_ZQPlistManage_getDictFromFile(lua_State* tolua_S)
     {
         std::string arg0;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:getDictFromFile");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:cache");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_getDictFromFile'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_cache'", nullptr);
             return 0;
         }
-        cocos2d::ValueMap ret = cobj->getDictFromFile(arg0);
-        ccvaluemap_to_luaval(tolua_S, ret);
+        bool ret = cobj->cache(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:getDictFromFile",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:cache",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_getDictFromFile'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_cache'.",&tolua_err);
 #endif
 
     return 0;
 }
-int lua_zq_ZQPlistManage_getArrayFromText(lua_State* tolua_S)
+int lua_zq_ZQPlistManage_load_array(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQPlistManage* cobj = nullptr;
@@ -1644,7 +1860,7 @@ int lua_zq_ZQPlistManage_getArrayFromText(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_getArrayFromText'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_load_array'", nullptr);
         return 0;
     }
 #endif
@@ -1654,27 +1870,27 @@ int lua_zq_ZQPlistManage_getArrayFromText(lua_State* tolua_S)
     {
         std::string arg0;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:getArrayFromText");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:load_array");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_getArrayFromText'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_load_array'", nullptr);
             return 0;
         }
-        cocos2d::ValueVector ret = cobj->getArrayFromText(arg0);
+        const cocos2d::ValueVector& ret = cobj->load_array(arg0);
         ccvaluevector_to_luaval(tolua_S, ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:getArrayFromText",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:load_array",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_getArrayFromText'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_load_array'.",&tolua_err);
 #endif
 
     return 0;
 }
-int lua_zq_ZQPlistManage_getArrayFromFile(lua_State* tolua_S)
+int lua_zq_ZQPlistManage_read_text(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQPlistManage* cobj = nullptr;
@@ -1694,7 +1910,7 @@ int lua_zq_ZQPlistManage_getArrayFromFile(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_getArrayFromFile'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_read_text'", nullptr);
         return 0;
     }
 #endif
@@ -1704,72 +1920,272 @@ int lua_zq_ZQPlistManage_getArrayFromFile(lua_State* tolua_S)
     {
         std::string arg0;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:getArrayFromFile");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:read_text");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_getArrayFromFile'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_read_text'", nullptr);
             return 0;
         }
-        cocos2d::ValueVector ret = cobj->getArrayFromFile(arg0);
-        ccvaluevector_to_luaval(tolua_S, ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:getArrayFromFile",argc, 1);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_getArrayFromFile'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_zq_ZQPlistManage_getValueFromText(lua_State* tolua_S)
-{
-    int argc = 0;
-    zq::ZQPlistManage* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"zq.ZQPlistManage",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (zq::ZQPlistManage*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_getValueFromText'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
-    {
-        std::string arg0;
-
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:getValueFromText");
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_getValueFromText'", nullptr);
-            return 0;
-        }
-        cocos2d::Value ret = cobj->getValueFromText(arg0);
+        cocos2d::Value ret = cobj->read_text(arg0);
         ccvalue_to_luaval(tolua_S, ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:getValueFromText",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:read_text",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_getValueFromText'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_read_text'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQPlistManage_text_dict(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQPlistManage* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQPlistManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQPlistManage*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_text_dict'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:text_dict");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_text_dict'", nullptr);
+            return 0;
+        }
+        cocos2d::ValueMap ret = cobj->text_dict(arg0);
+        ccvaluemap_to_luaval(tolua_S, ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:text_dict",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_text_dict'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQPlistManage_exist(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQPlistManage* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQPlistManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQPlistManage*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_exist'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:exist");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_exist'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->exist(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:exist",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_exist'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQPlistManage_load_dict(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQPlistManage* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQPlistManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQPlistManage*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_load_dict'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:load_dict");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_load_dict'", nullptr);
+            return 0;
+        }
+        const cocos2d::ValueMap& ret = cobj->load_dict(arg0);
+        ccvaluemap_to_luaval(tolua_S, ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:load_dict",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_load_dict'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQPlistManage_read_file(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQPlistManage* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQPlistManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQPlistManage*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_read_file'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:read_file");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_read_file'", nullptr);
+            return 0;
+        }
+        const cocos2d::Value& ret = cobj->read_file(arg0);
+        ccvalue_to_luaval(tolua_S, ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:read_file",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_read_file'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQPlistManage_text_array(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQPlistManage* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQPlistManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQPlistManage*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQPlistManage_text_array'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQPlistManage:text_array");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQPlistManage_text_array'", nullptr);
+            return 0;
+        }
+        cocos2d::ValueVector ret = cobj->text_array(arg0);
+        ccvaluevector_to_luaval(tolua_S, ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQPlistManage:text_array",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQPlistManage_text_array'.",&tolua_err);
 #endif
 
     return 0;
@@ -1820,12 +2236,16 @@ int lua_register_zq_ZQPlistManage(lua_State* tolua_S)
     tolua_cclass(tolua_S,"ZQPlistManage","zq.ZQPlistManage","",nullptr);
 
     tolua_beginmodule(tolua_S,"ZQPlistManage");
-        tolua_function(tolua_S,"getValueFromFile",lua_zq_ZQPlistManage_getValueFromFile);
-        tolua_function(tolua_S,"getDictFromText",lua_zq_ZQPlistManage_getDictFromText);
-        tolua_function(tolua_S,"getDictFromFile",lua_zq_ZQPlistManage_getDictFromFile);
-        tolua_function(tolua_S,"getArrayFromText",lua_zq_ZQPlistManage_getArrayFromText);
-        tolua_function(tolua_S,"getArrayFromFile",lua_zq_ZQPlistManage_getArrayFromFile);
-        tolua_function(tolua_S,"getValueFromText",lua_zq_ZQPlistManage_getValueFromText);
+        tolua_function(tolua_S,"alias",lua_zq_ZQPlistManage_alias);
+        tolua_function(tolua_S,"clear",lua_zq_ZQPlistManage_clear);
+        tolua_function(tolua_S,"cache",lua_zq_ZQPlistManage_cache);
+        tolua_function(tolua_S,"load_array",lua_zq_ZQPlistManage_load_array);
+        tolua_function(tolua_S,"read_text",lua_zq_ZQPlistManage_read_text);
+        tolua_function(tolua_S,"text_dict",lua_zq_ZQPlistManage_text_dict);
+        tolua_function(tolua_S,"exist",lua_zq_ZQPlistManage_exist);
+        tolua_function(tolua_S,"load_dict",lua_zq_ZQPlistManage_load_dict);
+        tolua_function(tolua_S,"read_file",lua_zq_ZQPlistManage_read_file);
+        tolua_function(tolua_S,"text_array",lua_zq_ZQPlistManage_text_array);
         tolua_function(tolua_S,"getInstance", lua_zq_ZQPlistManage_getInstance);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(zq::ZQPlistManage).name();
@@ -1834,7 +2254,7 @@ int lua_register_zq_ZQPlistManage(lua_State* tolua_S)
     return 1;
 }
 
-int lua_zq_ZQImageManage_loadImage(lua_State* tolua_S)
+int lua_zq_ZQImageManage_load_image(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQImageManage* cobj = nullptr;
@@ -1854,7 +2274,7 @@ int lua_zq_ZQImageManage_loadImage(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQImageManage_loadImage'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQImageManage_load_image'", nullptr);
         return 0;
     }
 #endif
@@ -1864,13 +2284,13 @@ int lua_zq_ZQImageManage_loadImage(lua_State* tolua_S)
     {
         std::string arg0;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQImageManage:loadImage");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQImageManage:load_image");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageManage_loadImage'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageManage_load_image'", nullptr);
             return 0;
         }
-        cocos2d::SpriteFrame* ret = cobj->loadImage(arg0);
+        cocos2d::SpriteFrame* ret = cobj->load_image(arg0);
         object_to_luaval<cocos2d::SpriteFrame>(tolua_S, "cc.SpriteFrame",(cocos2d::SpriteFrame*)ret);
         return 1;
     }
@@ -1879,29 +2299,29 @@ int lua_zq_ZQImageManage_loadImage(lua_State* tolua_S)
         std::string arg0;
         std::string arg1;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQImageManage:loadImage");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQImageManage:load_image");
 
-        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQImageManage:loadImage");
+        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQImageManage:load_image");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageManage_loadImage'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageManage_load_image'", nullptr);
             return 0;
         }
-        cocos2d::SpriteFrame* ret = cobj->loadImage(arg0, arg1);
+        cocos2d::SpriteFrame* ret = cobj->load_image(arg0, arg1);
         object_to_luaval<cocos2d::SpriteFrame>(tolua_S, "cc.SpriteFrame",(cocos2d::SpriteFrame*)ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQImageManage:loadImage",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQImageManage:load_image",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQImageManage_loadImage'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQImageManage_load_image'.",&tolua_err);
 #endif
 
     return 0;
 }
-int lua_zq_ZQImageManage_loadFrame(lua_State* tolua_S)
+int lua_zq_ZQImageManage_exist(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQImageManage* cobj = nullptr;
@@ -1921,7 +2341,7 @@ int lua_zq_ZQImageManage_loadFrame(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQImageManage_loadFrame'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQImageManage_exist'", nullptr);
         return 0;
     }
 #endif
@@ -1932,24 +2352,77 @@ int lua_zq_ZQImageManage_loadFrame(lua_State* tolua_S)
         std::string arg0;
         std::string arg1;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQImageManage:loadFrame");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQImageManage:exist");
 
-        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQImageManage:loadFrame");
+        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQImageManage:exist");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageManage_loadFrame'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageManage_exist'", nullptr);
             return 0;
         }
-        cocos2d::SpriteFrame* ret = cobj->loadFrame(arg0, arg1);
-        object_to_luaval<cocos2d::SpriteFrame>(tolua_S, "cc.SpriteFrame",(cocos2d::SpriteFrame*)ret);
+        bool ret = cobj->exist(arg0, arg1);
+        tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQImageManage:loadFrame",argc, 2);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQImageManage:exist",argc, 2);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQImageManage_loadFrame'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQImageManage_exist'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQImageManage_load_frame(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQImageManage* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQImageManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQImageManage*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQImageManage_load_frame'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 2) 
+    {
+        std::string arg0;
+        std::string arg1;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQImageManage:load_frame");
+
+        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQImageManage:load_frame");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageManage_load_frame'", nullptr);
+            return 0;
+        }
+        cocos2d::SpriteFrame* ret = cobj->load_frame(arg0, arg1);
+        object_to_luaval<cocos2d::SpriteFrame>(tolua_S, "cc.SpriteFrame",(cocos2d::SpriteFrame*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQImageManage:load_frame",argc, 2);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQImageManage_load_frame'.",&tolua_err);
 #endif
 
     return 0;
@@ -2000,8 +2473,9 @@ int lua_register_zq_ZQImageManage(lua_State* tolua_S)
     tolua_cclass(tolua_S,"ZQImageManage","zq.ZQImageManage","",nullptr);
 
     tolua_beginmodule(tolua_S,"ZQImageManage");
-        tolua_function(tolua_S,"loadImage",lua_zq_ZQImageManage_loadImage);
-        tolua_function(tolua_S,"loadFrame",lua_zq_ZQImageManage_loadFrame);
+        tolua_function(tolua_S,"load_image",lua_zq_ZQImageManage_load_image);
+        tolua_function(tolua_S,"exist",lua_zq_ZQImageManage_exist);
+        tolua_function(tolua_S,"load_frame",lua_zq_ZQImageManage_load_frame);
         tolua_function(tolua_S,"getInstance", lua_zq_ZQImageManage_getInstance);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(zq::ZQImageManage).name();

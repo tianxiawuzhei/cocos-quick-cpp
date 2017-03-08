@@ -81,7 +81,7 @@ void ZQLogger::rename(std::string &file)
     }
     
     auto fileManage = ZQFileManage::getInstance();
-    auto dirPath = fileManage->getDirPath(this->_path);
+    auto dirPath = fileManage->dirname_of_path(this->_path, true);
     auto newFile = dirPath + file;
     fileManage->renameFile(this->_path, newFile);
     this->_path = newFile;
