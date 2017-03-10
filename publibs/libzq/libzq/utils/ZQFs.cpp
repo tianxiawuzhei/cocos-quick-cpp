@@ -10,6 +10,7 @@
 #include "ZQFs.h"
 #include <unistd.h>
 #include <sys/stat.h>
+#include <fstream>
 
 using namespace zq;
 
@@ -86,4 +87,52 @@ bool fs::rename(const std::string &path_old, const std::string &path_new)
         return false;
     
     return !::rename(path_old.c_str(), path_new.c_str());
+}
+
+bool fs::copy(const std::string &path_old, const std::string &path_new)
+{
+    if (fs::is_file(path_old))
+    {
+        auto folder = fs::dirname(path_new);
+        if (folder.empty())
+            return false;
+        
+        if (!fs::create(folder))
+            return false;
+        
+        std::ifstream in(path_old, std::ios_base::binary);
+        if (!in)
+            return false;
+        
+        std::ofstream out(path_new, std::ios_base::binary);
+        if (!out)
+            return false;
+        
+        out << in.rdbuf();
+        out.close();
+        in.close();
+    }
+    else if (fs::is_dir(path_old, true))
+    {
+        if (!fs::create(path_new))
+            return false;
+        
+        auto size = path_old.size();
+        auto success = true;
+        
+        fs::visit(path_old, [size, &success, path_new] (const std::string &name, bool &stop) {
+            auto sub = name.substr(size, name.size() - size);
+            
+            if (fs::is_file(name))
+                success = fs::copy(name, path_new + sub);
+            else
+                success = fs::create(path_new + sub, 0, false);
+            
+            stop = !success;
+        });
+        
+        return success;
+    }
+    
+    return false;
 }
