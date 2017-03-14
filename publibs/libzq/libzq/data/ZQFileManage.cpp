@@ -13,9 +13,20 @@
 #include "utils/ZQStringUtils.h"
 #include "net/ZQHTTPService.h"
 #include "tool/ZQMD5.h"
+#include "log/ZQLogger.h"
 
-using namespace cocos2d;
 using namespace zq;
+
+namespace
+{
+    template <typename ...Args>
+    inline void ResLog(const char *fmt, Args... args)
+    {
+#if COCOS2D_DEBUG
+        ZQLogD(fmt, args...);
+#endif
+    }
+}
 
 std::string ZQFileManage::_url_res;
 std::string ZQFileManage::_url_code;
@@ -51,6 +62,7 @@ std::string ZQFileManage::load_file(const std::string &filename)
     
     if (!url.empty())
     {
+        ZQLogD("FileManage load file url: %s", url.c_str());
         HTTPService::getInstance()->download(url, loc);
         if (ZQFileManage::file_exist(loc))
         {
@@ -109,7 +121,7 @@ std::string ZQFileManage::getStringFromFile(const std::string &filename)
     return  _fileUtils->getStringFromFile(filename);
 }
 
-Data ZQFileManage::getDataFromFile(const std::string &filename)
+cocos2d::Data ZQFileManage::getDataFromFile(const std::string &filename)
 {
     return _fileUtils->getDataFromFile(filename);
 }
@@ -127,11 +139,6 @@ void ZQFileManage::addSearchPath(const std::string &path, const bool front)
 std::string ZQFileManage::getWritablePath()
 {
     return _fileUtils->getWritablePath();
-}
-
-std::string ZQFileManage::getFileExtension(const std::string &filePath) const
-{
-    return _fileUtils->getFileExtension(filePath);
 }
 
 bool ZQFileManage::createDirectory(const std::string &filePath)
@@ -159,13 +166,30 @@ long ZQFileManage::getFileSize(const std::string &filepath)
     return _fileUtils->getFileSize(filepath);
 }
 
-
 void ZQFileManage::prepare()
 {
     auto dir_cache = ZQFileManage::cache_path();
     auto dir_temp = ZQFileManage::temp_path();
     auto dir_log = ZQFileManage::log_path();
     
+    ZQFileManage::create_folder(dir_cache);
+    ZQFileManage::create_folder(dir_temp);
+    ZQFileManage::create_folder(dir_log);
+    
+    ResLog("FileManage cache dir: %s", dir_cache.c_str());
+    ResLog("FileManage temp dir: %s", dir_temp.c_str());
+    ResLog("FileManage log dir: %s", dir_log.c_str());
+    
+}
+
+void ZQFileManage::set_url_for_res(const std::string &url)
+{
+    ZQFileManage::_url_res = url;
+}
+
+void ZQFileManage::set_url_for_code(const std::string &url)
+{
+    ZQFileManage::_url_code = url;
 }
 
 std::string ZQFileManage::url_for_res()
@@ -193,7 +217,7 @@ std::string ZQFileManage::url_for_file(const std::string &filename)
     
     if (!url.empty())
     {
-        url += url + filename + StringUtils::format("%d", time(nullptr)/1800);
+        url += filename + StringUtils::format("?%d", time(nullptr)/1800);
     }
     
     return url;

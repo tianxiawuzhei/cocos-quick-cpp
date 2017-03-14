@@ -10,12 +10,17 @@
 #include "ZQDeviceInfo.h"
 #include <thread>
 #include "platform/CCPlatformConfig.h"
+#include "platform/mac/ZQDeviceInfoMac.h"
 
 using namespace zq;
 
 ZQDeviceInfo* ZQDeviceInfo::getInstance()
 {
-    return nullptr;
+#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+//    return ZQLoggerIOS::getInstance();
+#elif CC_TARGET_PLATFORM == CC_PLATFORM_MAC
+    return ZQDeviceInfoMac::getInstance();
+#endif
 }
 
 unsigned int ZQDeviceInfo::memory_all()

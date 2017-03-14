@@ -31,13 +31,12 @@ ZQLogger::ZQLogger():_file(nullptr)
     this->_debug = false;
 #endif
     
-    auto fileManage = ZQFileManage::getInstance();
-    auto logDir = fileManage->log_path();
-    fileManage->createDirectory(logDir);
-    auto logFile = logDir + "temp.log";
+    auto log_dir = ZQFileManage::log_path();
+    ZQFileManage::create_folder(log_dir);
+    auto log_file = log_dir + "temp.log";
     
-    this->_path = logFile;
-    this->_file = fopen(logFile.c_str(), "a+");
+    this->_path = log_file;
+    this->_file = fopen(log_file.c_str(), "a+");
 }
 
 ZQLogger::~ZQLogger()

@@ -844,7 +844,7 @@ std::string FileUtils::fullPathForFilename(const std::string &filename) const
     }
 
     // The file wasn't found, return empty string.
-    return "";
+    return filename;
 }
 
 std::string FileUtils::fullPathFromRelativeFile(const std::string &filename, const std::string &relativeFile)
@@ -1006,6 +1006,24 @@ std::string FileUtils::getFullPathForDirectoryAndFilename(const std::string& dir
     return ret;
 }
 
+std::string FileUtils::searchFullPathForFilename(const std::string &filename) const
+{
+    if (isAbsolutePath(filename))
+    {
+        return filename;
+    }
+    
+    std::string path = this->fullPathForFilename(filename);
+    if (0 == path.compare(filename))
+    {
+        return "";
+    }
+    else
+    {
+        return path;
+    }
+}
+
 bool FileUtils::isFileExist(const std::string& filename) const
 {
     if (isAbsolutePath(filename))
@@ -1014,7 +1032,7 @@ bool FileUtils::isFileExist(const std::string& filename) const
     }
     else
     {
-        std::string fullpath = fullPathForFilename(filename);
+        std::string fullpath = searchFullPathForFilename(filename);
         if (fullpath.empty())
             return false;
         else

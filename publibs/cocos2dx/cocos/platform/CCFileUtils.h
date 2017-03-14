@@ -394,7 +394,7 @@ public:
      *  @return True if the file exists, false if not.
      */
     virtual bool isFileExist(const std::string& filename) const;
-
+    virtual std::string searchFullPathForFilename(const std::string& filename) const;
     /**
     *  Gets filename extension is a suffix (separated from the base filename by a dot) in lower case.
     *  Examples of filename extensions are .png, .jpeg, .exe, .dmg and .txt.

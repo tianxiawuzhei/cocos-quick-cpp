@@ -66,14 +66,6 @@ namespace zq
         virtual std::string getWritablePath();
 
         /**
-        *  Gets filename extension is a suffix (separated from the base filename by a dot) in lower case.
-        *  Examples of filename extensions are .png, .jpeg, .exe, .dmg and .txt.
-        *  @param filePath The path of the file, it could be a relative or absolute path.
-        *  @return suffix for filename in lower case or empty if a dot not found.
-        */
-        virtual std::string getFileExtension(const std::string& filePath) const;
-
-        /**
         *  Creates a directory.
         *
         *  @param dirPath The path of the directory, it must be an absolute path.
@@ -119,8 +111,8 @@ namespace zq
         void prepare();
         
     public:
-        static std::string set_url_for_res(const std::string &url);
-        static std::string set_url_for_code(const std::string &url);
+        static void set_url_for_res(const std::string &url);
+        static void set_url_for_code(const std::string &url);
         
         static std::string url_for_res();
         static std::string url_for_code();

@@ -23,6 +23,7 @@
 #include "core/ZQAppEvent.h"
 #include "core/ZQAppCenter.h"
 #include "launch/ZQLaunchScene.h"
+#include "data/ZQFileManage.h"
 
 using namespace CocosDenshion;
 
@@ -97,6 +98,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     LuaStack* stack = engine->getLuaStack();
 //    stack->setXXTEAKeyAndSign("2dxLua", "XXTEA");
     
+    zq::ZQFileManage::set_url_for_res("http://debug.mmm.io/cn/");
     
     StartupCall *call = StartupCall::create(this);
     call->startup();

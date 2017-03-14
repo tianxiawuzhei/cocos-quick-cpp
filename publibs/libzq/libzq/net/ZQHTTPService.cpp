@@ -16,6 +16,7 @@
 #include "data/ZQJsonManage.h"
 #include "data/ZQFileManage.h"
 #include "core/ZQRunLoop.h"
+#include "log/ZQLogger.h"
 #include "curl/curl.h"
 
 using namespace zq;
@@ -618,7 +619,13 @@ void HTTPTask::writeFile()
 
 void HTTPTask::renameFile()
 {
+    if (this->_tmp.empty() || this->_loc.empty() || !ZQFileManage::file_exist(this->_tmp))
+        return;
     
+    ZQFileManage::rename_file(this->_tmp, this->_loc);
+    
+    if (!this->_md5.empty() && ZQFileManage::file_exist(this->_loc, this->_md5, true))
+        ZQLogE("HTTPTask write file md5 error: %s, %s, %s", this->_url.c_str(), this->_loc.c_str(), this->_md5.c_str());
 }
 
 void HTTPTask::clearBuffer()

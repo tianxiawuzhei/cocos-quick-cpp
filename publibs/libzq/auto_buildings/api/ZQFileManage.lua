@@ -21,14 +21,12 @@
 -- @return string#string ret (return value: string)
         
 --------------------------------
--- Renames a file under the given directory.<br>
--- param oldfullpath  The current fullpath of the file. Includes path and name.<br>
--- param newfullpath  The new fullpath of the file. Includes path and name.<br>
--- return True if the file have been renamed successfully, false if not.
--- @function [parent=#ZQFileManage] renameFile 
+-- Removes a directory.<br>
+-- param dirPath  The full path of the directory, it must be an absolute path.<br>
+-- return True if the directory have been removed successfully, false if not.
+-- @function [parent=#ZQFileManage] removeDirectory 
 -- @param self
--- @param #string oldfullpath
--- @param #string newfullpath
+-- @param #string dirPath
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
@@ -36,16 +34,6 @@
 -- @function [parent=#ZQFileManage] prepare 
 -- @param self
 -- @return ZQFileManage#ZQFileManage self (return value: zq.ZQFileManage)
-        
---------------------------------
--- Gets filename extension is a suffix (separated from the base filename by a dot) in lower case.<br>
--- Examples of filename extensions are .png, .jpeg, .exe, .dmg and .txt.<br>
--- param filePath The path of the file, it could be a relative or absolute path.<br>
--- return suffix for filename in lower case or empty if a dot not found.
--- @function [parent=#ZQFileManage] getFileExtension 
--- @param self
--- @param #string filePath
--- @return string#string ret (return value: string)
         
 --------------------------------
 -- Retrieve the file size.<br>
@@ -67,20 +55,22 @@
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
+-- Renames a file under the given directory.<br>
+-- param oldfullpath  The current fullpath of the file. Includes path and name.<br>
+-- param newfullpath  The new fullpath of the file. Includes path and name.<br>
+-- return True if the file have been renamed successfully, false if not.
+-- @function [parent=#ZQFileManage] renameFile 
+-- @param self
+-- @param #string oldfullpath
+-- @param #string newfullpath
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
 -- Gets string from a file.
 -- @function [parent=#ZQFileManage] getStringFromFile 
 -- @param self
 -- @param #string filename
 -- @return string#string ret (return value: string)
-        
---------------------------------
--- Removes a directory.<br>
--- param dirPath  The full path of the directory, it must be an absolute path.<br>
--- return True if the directory have been removed successfully, false if not.
--- @function [parent=#ZQFileManage] removeDirectory 
--- @param self
--- @param #string dirPath
--- @return bool#bool ret (return value: bool)
         
 --------------------------------
 -- Add search path.<br>
@@ -90,6 +80,13 @@
 -- @param #string path
 -- @param #bool front
 -- @return ZQFileManage#ZQFileManage self (return value: zq.ZQFileManage)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] load_disk 
+-- @param self
+-- @param #string filename
+-- @return string#string ret (return value: string)
         
 --------------------------------
 -- Creates a directory.<br>
@@ -102,7 +99,7 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQFileManage] file_path 
+-- @function [parent=#ZQFileManage] load_file 
 -- @param self
 -- @param #string filename
 -- @return string#string ret (return value: string)
@@ -118,7 +115,7 @@
 -- 
 -- @function [parent=#ZQFileManage] url_for_file 
 -- @param self
--- @param #string file
+-- @param #string filename
 -- @return string#string ret (return value: string)
         
 --------------------------------
@@ -134,6 +131,8 @@
 -- @function [parent=#ZQFileManage] file_exist 
 -- @param self
 -- @param #string path
+-- @param #string md5
+-- @param #bool remove_if_fail
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
@@ -157,8 +156,10 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQFileManage] log_path 
+-- @function [parent=#ZQFileManage] dirname_of_path 
 -- @param self
+-- @param #string path
+-- @param #bool with_slash
 -- @return string#string ret (return value: string)
         
 --------------------------------
@@ -192,11 +193,10 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQFileManage] dirname_of_path 
+-- @function [parent=#ZQFileManage] set_url_for_res 
 -- @param self
--- @param #string path
--- @param #bool with_slash
--- @return string#string ret (return value: string)
+-- @param #string url
+-- @return ZQFileManage#ZQFileManage self (return value: zq.ZQFileManage)
         
 --------------------------------
 -- 
@@ -204,6 +204,12 @@
 -- @param self
 -- @param #string path
 -- @param #bool with_dot
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] log_path 
+-- @param self
 -- @return string#string ret (return value: string)
         
 --------------------------------
@@ -249,5 +255,12 @@
 -- @param self
 -- @param #string path
 -- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] set_url_for_code 
+-- @param self
+-- @param #string url
+-- @return ZQFileManage#ZQFileManage self (return value: zq.ZQFileManage)
         
 return nil

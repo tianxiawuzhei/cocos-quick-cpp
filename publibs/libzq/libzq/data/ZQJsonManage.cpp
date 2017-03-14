@@ -193,7 +193,7 @@ const cocos2d::Value& ZQJsonManage::read_file(const std::string &filename)
     if (this->_cache.find(filename) != this->_cache.end())
         return this->_cache[filename];
     
-    auto text = ZQFileManage::getInstance()->getStringFromFile(filename);
+    auto text = ZQFileManage::getInstance()->file_string(filename);
     
     auto data = this->read_text(text);
     if (!data.isNull())

@@ -57,7 +57,7 @@ bool fs::create(const std::string &dir, std::uint16_t mode, bool recursive)
             if (!dirname.empty())
                 success = fs::create(dirname, mode, recursive);
             
-            return !::mkdir(dirname.c_str(), mode) && success ? true : false;
+            return !::mkdir(dir.c_str(), mode) && success ? true : false;
             
         }
         else
@@ -83,7 +83,7 @@ bool fs::remove(const std::string &path)
         dirent *cur = nullptr;
         
         if (!dir)
-            return false;
+            return true;
         
         auto ok = true;
         auto sep = fs::separator();

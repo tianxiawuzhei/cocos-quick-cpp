@@ -27,7 +27,7 @@ cocos2d::SpriteFrame* ZQImageManage::load_image(const std::string &path, const s
     auto texture = cocos2d::Director::getInstance()->getTextureCache()->getTextureForKey(cache_key);
     if (!texture)
     {
-        auto data = ZQFileManage::getInstance()->getDataFromFile(path);
+        auto data = ZQFileManage::getInstance()->file_data(path);
         if (data.isNull())
         {
             ZQLogE("loadImage: image file not found : %s ", path.c_str());
