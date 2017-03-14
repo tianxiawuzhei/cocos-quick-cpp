@@ -27,8 +27,8 @@
 
 
 --------------------------------------------------------
--- the zq ZQImageManage
--- @field [parent=#zq] ZQImageManage#ZQImageManage ZQImageManage preloaded module
+-- the zq ZQImageLoader
+-- @field [parent=#zq] ZQImageLoader#ZQImageLoader ZQImageLoader preloaded module
 
 
 --------------------------------------------------------

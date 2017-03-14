@@ -10,7 +10,7 @@
 #include "ZQCCBILoader.h"
 #include "data/ZQFileManage.h"
 #include "data/ZQPlistManage.h"
-#include "data/ZQImageManage.h"
+#include "data/ZQImageLoader.h"
 
 using namespace zq;
 
@@ -83,12 +83,12 @@ bool ZQCCBILoader::load(const std::string &ccbi, bool cache)
     {
         if (cache)
         {
-            if (!ZQImageManage::getInstance()->load_image(front + name, name))
+            if (!ZQImageLoader::getInstance()->load_image(front + name, name))
                 ret = false;
         }
         else
         {
-            if (ZQFileManage::getInstance()->getStringFromFile(front+name).empty())
+            if (ZQFileManage::getInstance()->file_string(front+name).empty())
                 ret = false;
         }
     }

@@ -7,21 +7,20 @@
 *
 ***********************************************/
 
-#include "ZQImageManage.h"
+#include "ZQImageLoader.h"
 #include "data/ZQFileManage.h"
 #include "data/ZQPlistManage.h"
 #include "log/ZQLogger.h"
 
-
 using namespace zq;
 
-ZQImageManage* ZQImageManage::getInstance()
+ZQImageLoader* ZQImageLoader::getInstance()
 {
-    static ZQImageManage instance;
+    static ZQImageLoader instance;
     return &instance;
 }
 
-cocos2d::SpriteFrame* ZQImageManage::load_image(const std::string &path, const std::string &key)
+cocos2d::SpriteFrame* ZQImageLoader::load_image(const std::string &path, const std::string &key)
 {
     const std::string &cache_key = key.empty() ? path : key;
     auto texture = cocos2d::Director::getInstance()->getTextureCache()->getTextureForKey(cache_key);
@@ -62,7 +61,7 @@ cocos2d::SpriteFrame* ZQImageManage::load_image(const std::string &path, const s
     return cocos2d::SpriteFrame::createWithTexture(texture, cocos2d::Rect(0, 0, size.width, size.height));
 }
 
-cocos2d::SpriteFrame* ZQImageManage::load_frame(const std::string &plist, const std::string &frame)
+cocos2d::SpriteFrame* ZQImageLoader::load_frame(const std::string &plist, const std::string &frame)
 {
     auto spriteFrame = cocos2d::SpriteFrameCache::getInstance()->getSpriteFrameByName(frame);
     if (spriteFrame)
@@ -109,7 +108,7 @@ cocos2d::SpriteFrame* ZQImageManage::load_frame(const std::string &plist, const 
 }
 
 
-bool ZQImageManage::exist(const std::string &plist, const std::string &frame)
+bool ZQImageLoader::exist(const std::string &plist, const std::string &frame)
 {
     return true;
 }

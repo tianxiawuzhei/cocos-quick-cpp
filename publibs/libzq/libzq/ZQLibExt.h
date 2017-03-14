@@ -18,7 +18,7 @@
 #include "data/ZQFileManage.h"
 #include "data/ZQJsonManage.h"
 #include "data/ZQPlistManage.h"
-#include "data/ZQImageManage.h"
+#include "data/ZQImageLoader.h"
 
 #include "draw/ZQCustomAction.h"
 
