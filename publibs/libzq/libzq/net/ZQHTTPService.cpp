@@ -483,7 +483,7 @@ void HTTPTask::setUrl(const std::string &url)
 void HTTPTask::setLoc(const std::string &loc)
 {
     this->_loc = loc;
-    this->_tmp = ZQFileManage::getInstance()->tempDir() + ZQFileManage::basename_of_path(loc);
+    this->_tmp = ZQFileManage::temp_path() + ZQFileManage::basename_of_path(loc);
 }
 
 void HTTPTask::setMD5(const std::string &md5)
@@ -609,7 +609,7 @@ void HTTPTask::writeFile()
     if (!this->success() || this->_tmp.empty() || this->_loc.empty() || this->_buffer.empty() || this->_suspend)
         return;
     
-    if (ZQFileManage::getInstance()->appendFile(this->_tmp, &this->_buffer[0], (uint32_t)this->_buffer.size()))
+    if (ZQFileManage::append_file(this->_tmp, &this->_buffer[0], (uint32_t)this->_buffer.size()))
     {
         this->_buffer.clear();
     }

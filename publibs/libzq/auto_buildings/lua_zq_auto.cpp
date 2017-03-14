@@ -413,7 +413,7 @@ int lua_zq_ZQFileManage_isFileExist(lua_State* tolua_S)
 
     return 0;
 }
-int lua_zq_ZQFileManage_appendFile(lua_State* tolua_S)
+int lua_zq_ZQFileManage_file_string(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQFileManage* cobj = nullptr;
@@ -433,39 +433,32 @@ int lua_zq_ZQFileManage_appendFile(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQFileManage_appendFile'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQFileManage_file_string'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 3) 
+    if (argc == 1) 
     {
         std::string arg0;
-        const unsigned char* arg1;
-        unsigned int arg2;
 
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:appendFile");
-
-        #pragma warning NO CONVERSION TO NATIVE FOR unsigned char*
-		ok = false;
-
-        ok &= luaval_to_uint32(tolua_S, 4,&arg2, "zq.ZQFileManage:appendFile");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:file_string");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_appendFile'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_file_string'", nullptr);
             return 0;
         }
-        bool ret = cobj->appendFile(arg0, arg1, arg2);
-        tolua_pushboolean(tolua_S,(bool)ret);
+        std::string ret = cobj->file_string(arg0);
+        tolua_pushcppstring(tolua_S,ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQFileManage:appendFile",argc, 3);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQFileManage:file_string",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_appendFile'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_file_string'.",&tolua_err);
 #endif
 
     return 0;
@@ -523,7 +516,7 @@ int lua_zq_ZQFileManage_renameFile(lua_State* tolua_S)
 
     return 0;
 }
-int lua_zq_ZQFileManage_getStringFromFile(lua_State* tolua_S)
+int lua_zq_ZQFileManage_prepare(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQFileManage* cobj = nullptr;
@@ -543,32 +536,29 @@ int lua_zq_ZQFileManage_getStringFromFile(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQFileManage_getStringFromFile'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQFileManage_prepare'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 0) 
     {
-        std::string arg0;
-
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:getStringFromFile");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_getStringFromFile'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_prepare'", nullptr);
             return 0;
         }
-        std::string ret = cobj->getStringFromFile(arg0);
-        tolua_pushcppstring(tolua_S,ret);
+        cobj->prepare();
+        lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQFileManage:getStringFromFile",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQFileManage:prepare",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_getStringFromFile'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_prepare'.",&tolua_err);
 #endif
 
     return 0;
@@ -723,7 +713,7 @@ int lua_zq_ZQFileManage_removeFile(lua_State* tolua_S)
 
     return 0;
 }
-int lua_zq_ZQFileManage_logDir(lua_State* tolua_S)
+int lua_zq_ZQFileManage_getStringFromFile(lua_State* tolua_S)
 {
     int argc = 0;
     zq::ZQFileManage* cobj = nullptr;
@@ -743,29 +733,32 @@ int lua_zq_ZQFileManage_logDir(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQFileManage_logDir'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQFileManage_getStringFromFile'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 1) 
     {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:getStringFromFile");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_logDir'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_getStringFromFile'", nullptr);
             return 0;
         }
-        std::string ret = cobj->logDir();
+        std::string ret = cobj->getStringFromFile(arg0);
         tolua_pushcppstring(tolua_S,ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQFileManage:logDir",argc, 0);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQFileManage:getStringFromFile",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_logDir'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_getStringFromFile'.",&tolua_err);
 #endif
 
     return 0;
@@ -816,53 +809,6 @@ int lua_zq_ZQFileManage_removeDirectory(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_removeDirectory'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_zq_ZQFileManage_tempDir(lua_State* tolua_S)
-{
-    int argc = 0;
-    zq::ZQFileManage* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (zq::ZQFileManage*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQFileManage_tempDir'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_tempDir'", nullptr);
-            return 0;
-        }
-        std::string ret = cobj->tempDir();
-        tolua_pushcppstring(tolua_S,ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQFileManage:tempDir",argc, 0);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_tempDir'.",&tolua_err);
 #endif
 
     return 0;
@@ -984,6 +930,56 @@ int lua_zq_ZQFileManage_createDirectory(lua_State* tolua_S)
 
     return 0;
 }
+int lua_zq_ZQFileManage_file_path(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQFileManage* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQFileManage*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQFileManage_file_path'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:file_path");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_file_path'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->file_path(arg0);
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQFileManage:file_path",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_file_path'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_zq_ZQFileManage_getWritablePath(lua_State* tolua_S)
 {
     int argc = 0;
@@ -1031,7 +1027,7 @@ int lua_zq_ZQFileManage_getWritablePath(lua_State* tolua_S)
 
     return 0;
 }
-int lua_zq_ZQFileManage_dirname_of_path(lua_State* tolua_S)
+int lua_zq_ZQFileManage_url_for_file(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -1049,36 +1045,321 @@ int lua_zq_ZQFileManage_dirname_of_path(lua_State* tolua_S)
     if (argc == 1)
     {
         std::string arg0;
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:dirname_of_path");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:url_for_file");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_dirname_of_path'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_url_for_file'", nullptr);
             return 0;
         }
-        std::string ret = zq::ZQFileManage::dirname_of_path(arg0);
+        std::string ret = zq::ZQFileManage::url_for_file(arg0);
         tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:url_for_file",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_url_for_file'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_dir_exist(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:dir_exist");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_dir_exist'", nullptr);
+            return 0;
+        }
+        bool ret = zq::ZQFileManage::dir_exist(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
     if (argc == 2)
     {
         std::string arg0;
         bool arg1;
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:dirname_of_path");
-        ok &= luaval_to_boolean(tolua_S, 3,&arg1, "zq.ZQFileManage:dirname_of_path");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:dir_exist");
+        ok &= luaval_to_boolean(tolua_S, 3,&arg1, "zq.ZQFileManage:dir_exist");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_dirname_of_path'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_dir_exist'", nullptr);
             return 0;
         }
-        std::string ret = zq::ZQFileManage::dirname_of_path(arg0, arg1);
-        tolua_pushcppstring(tolua_S,ret);
+        bool ret = zq::ZQFileManage::dir_exist(arg0, arg1);
+        tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:dirname_of_path",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:dir_exist",argc, 1);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_dirname_of_path'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_dir_exist'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_file_exist(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:file_exist");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_file_exist'", nullptr);
+            return 0;
+        }
+        bool ret = zq::ZQFileManage::file_exist(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:file_exist",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_file_exist'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_create_folder(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:create_folder");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_create_folder'", nullptr);
+            return 0;
+        }
+        bool ret = zq::ZQFileManage::create_folder(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:create_folder",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_create_folder'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_getInstance(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_getInstance'", nullptr);
+            return 0;
+        }
+        zq::ZQFileManage* ret = zq::ZQFileManage::getInstance();
+        object_to_luaval<zq::ZQFileManage>(tolua_S, "zq.ZQFileManage",(zq::ZQFileManage*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:getInstance",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_getInstance'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_url_for_res(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_url_for_res'", nullptr);
+            return 0;
+        }
+        std::string ret = zq::ZQFileManage::url_for_res();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:url_for_res",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_url_for_res'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_log_path(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_log_path'", nullptr);
+            return 0;
+        }
+        std::string ret = zq::ZQFileManage::log_path();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:log_path",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_log_path'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_url_for_code(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_url_for_code'", nullptr);
+            return 0;
+        }
+        std::string ret = zq::ZQFileManage::url_for_code();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:url_for_code",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_url_for_code'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_append_file(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 3)
+    {
+        std::string arg0;
+        const unsigned char* arg1;
+        unsigned int arg2;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:append_file");
+        #pragma warning NO CONVERSION TO NATIVE FOR unsigned char*
+		ok = false;
+        ok &= luaval_to_uint32(tolua_S, 4,&arg2, "zq.ZQFileManage:append_file");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_append_file'", nullptr);
+            return 0;
+        }
+        bool ret = zq::ZQFileManage::append_file(arg0, arg1, arg2);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:append_file",argc, 3);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_append_file'.",&tolua_err);
 #endif
     return 0;
 }
@@ -1133,6 +1414,91 @@ int lua_zq_ZQFileManage_basename_of_path(lua_State* tolua_S)
 #endif
     return 0;
 }
+int lua_zq_ZQFileManage_temp_path(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_temp_path'", nullptr);
+            return 0;
+        }
+        std::string ret = zq::ZQFileManage::temp_path();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:temp_path",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_temp_path'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_dirname_of_path(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:dirname_of_path");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_dirname_of_path'", nullptr);
+            return 0;
+        }
+        std::string ret = zq::ZQFileManage::dirname_of_path(arg0);
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    if (argc == 2)
+    {
+        std::string arg0;
+        bool arg1;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:dirname_of_path");
+        ok &= luaval_to_boolean(tolua_S, 3,&arg1, "zq.ZQFileManage:dirname_of_path");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_dirname_of_path'", nullptr);
+            return 0;
+        }
+        std::string ret = zq::ZQFileManage::dirname_of_path(arg0, arg1);
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:dirname_of_path",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_dirname_of_path'.",&tolua_err);
+#endif
+    return 0;
+}
 int lua_zq_ZQFileManage_extname_of_path(lua_State* tolua_S)
 {
     int argc = 0;
@@ -1184,7 +1550,48 @@ int lua_zq_ZQFileManage_extname_of_path(lua_State* tolua_S)
 #endif
     return 0;
 }
-int lua_zq_ZQFileManage_getInstance(lua_State* tolua_S)
+int lua_zq_ZQFileManage_write_file(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 3)
+    {
+        std::string arg0;
+        const unsigned char* arg1;
+        unsigned int arg2;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:write_file");
+        #pragma warning NO CONVERSION TO NATIVE FOR unsigned char*
+		ok = false;
+        ok &= luaval_to_uint32(tolua_S, 4,&arg2, "zq.ZQFileManage:write_file");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_write_file'", nullptr);
+            return 0;
+        }
+        bool ret = zq::ZQFileManage::write_file(arg0, arg1, arg2);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:write_file",argc, 3);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_write_file'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_cache_path(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -1203,18 +1610,164 @@ int lua_zq_ZQFileManage_getInstance(lua_State* tolua_S)
     {
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_getInstance'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_cache_path'", nullptr);
             return 0;
         }
-        zq::ZQFileManage* ret = zq::ZQFileManage::getInstance();
-        object_to_luaval<zq::ZQFileManage>(tolua_S, "zq.ZQFileManage",(zq::ZQFileManage*)ret);
+        std::string ret = zq::ZQFileManage::cache_path();
+        tolua_pushcppstring(tolua_S,ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:getInstance",argc, 0);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:cache_path",argc, 0);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_getInstance'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_cache_path'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_file_size(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:file_size");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_file_size'", nullptr);
+            return 0;
+        }
+        unsigned int ret = zq::ZQFileManage::file_size(arg0);
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:file_size",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_file_size'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_rename_file(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 2)
+    {
+        std::string arg0;
+        std::string arg1;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:rename_file");
+        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQFileManage:rename_file");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_rename_file'", nullptr);
+            return 0;
+        }
+        bool ret = zq::ZQFileManage::rename_file(arg0, arg1);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:rename_file",argc, 2);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_rename_file'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_rebuild_folder(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:rebuild_folder");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_rebuild_folder'", nullptr);
+            return 0;
+        }
+        bool ret = zq::ZQFileManage::rebuild_folder(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:rebuild_folder",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_rebuild_folder'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQFileManage_remove_file(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQFileManage",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQFileManage:remove_file");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQFileManage_remove_file'", nullptr);
+            return 0;
+        }
+        bool ret = zq::ZQFileManage::remove_file(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQFileManage:remove_file",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQFileManage_remove_file'.",&tolua_err);
 #endif
     return 0;
 }
@@ -1231,22 +1784,37 @@ int lua_register_zq_ZQFileManage(lua_State* tolua_S)
 
     tolua_beginmodule(tolua_S,"ZQFileManage");
         tolua_function(tolua_S,"isFileExist",lua_zq_ZQFileManage_isFileExist);
-        tolua_function(tolua_S,"appendFile",lua_zq_ZQFileManage_appendFile);
+        tolua_function(tolua_S,"file_string",lua_zq_ZQFileManage_file_string);
         tolua_function(tolua_S,"renameFile",lua_zq_ZQFileManage_renameFile);
-        tolua_function(tolua_S,"getStringFromFile",lua_zq_ZQFileManage_getStringFromFile);
+        tolua_function(tolua_S,"prepare",lua_zq_ZQFileManage_prepare);
         tolua_function(tolua_S,"getFileExtension",lua_zq_ZQFileManage_getFileExtension);
         tolua_function(tolua_S,"getFileSize",lua_zq_ZQFileManage_getFileSize);
         tolua_function(tolua_S,"removeFile",lua_zq_ZQFileManage_removeFile);
-        tolua_function(tolua_S,"logDir",lua_zq_ZQFileManage_logDir);
+        tolua_function(tolua_S,"getStringFromFile",lua_zq_ZQFileManage_getStringFromFile);
         tolua_function(tolua_S,"removeDirectory",lua_zq_ZQFileManage_removeDirectory);
-        tolua_function(tolua_S,"tempDir",lua_zq_ZQFileManage_tempDir);
         tolua_function(tolua_S,"addSearchPath",lua_zq_ZQFileManage_addSearchPath);
         tolua_function(tolua_S,"createDirectory",lua_zq_ZQFileManage_createDirectory);
+        tolua_function(tolua_S,"file_path",lua_zq_ZQFileManage_file_path);
         tolua_function(tolua_S,"getWritablePath",lua_zq_ZQFileManage_getWritablePath);
-        tolua_function(tolua_S,"dirname_of_path", lua_zq_ZQFileManage_dirname_of_path);
-        tolua_function(tolua_S,"basename_of_path", lua_zq_ZQFileManage_basename_of_path);
-        tolua_function(tolua_S,"extname_of_path", lua_zq_ZQFileManage_extname_of_path);
+        tolua_function(tolua_S,"url_for_file", lua_zq_ZQFileManage_url_for_file);
+        tolua_function(tolua_S,"dir_exist", lua_zq_ZQFileManage_dir_exist);
+        tolua_function(tolua_S,"file_exist", lua_zq_ZQFileManage_file_exist);
+        tolua_function(tolua_S,"create_folder", lua_zq_ZQFileManage_create_folder);
         tolua_function(tolua_S,"getInstance", lua_zq_ZQFileManage_getInstance);
+        tolua_function(tolua_S,"url_for_res", lua_zq_ZQFileManage_url_for_res);
+        tolua_function(tolua_S,"log_path", lua_zq_ZQFileManage_log_path);
+        tolua_function(tolua_S,"url_for_code", lua_zq_ZQFileManage_url_for_code);
+        tolua_function(tolua_S,"append_file", lua_zq_ZQFileManage_append_file);
+        tolua_function(tolua_S,"basename_of_path", lua_zq_ZQFileManage_basename_of_path);
+        tolua_function(tolua_S,"temp_path", lua_zq_ZQFileManage_temp_path);
+        tolua_function(tolua_S,"dirname_of_path", lua_zq_ZQFileManage_dirname_of_path);
+        tolua_function(tolua_S,"extname_of_path", lua_zq_ZQFileManage_extname_of_path);
+        tolua_function(tolua_S,"write_file", lua_zq_ZQFileManage_write_file);
+        tolua_function(tolua_S,"cache_path", lua_zq_ZQFileManage_cache_path);
+        tolua_function(tolua_S,"file_size", lua_zq_ZQFileManage_file_size);
+        tolua_function(tolua_S,"rename_file", lua_zq_ZQFileManage_rename_file);
+        tolua_function(tolua_S,"rebuild_folder", lua_zq_ZQFileManage_rebuild_folder);
+        tolua_function(tolua_S,"remove_file", lua_zq_ZQFileManage_remove_file);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(zq::ZQFileManage).name();
     g_luaType[typeName] = "zq.ZQFileManage";

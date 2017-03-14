@@ -15,12 +15,10 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQFileManage] appendFile 
+-- @function [parent=#ZQFileManage] file_string 
 -- @param self
--- @param #string path
--- @param #unsigned char data
--- @param #unsigned int size
--- @return bool#bool ret (return value: bool)
+-- @param #string filename
+-- @return string#string ret (return value: string)
         
 --------------------------------
 -- Renames a file under the given directory.<br>
@@ -34,11 +32,10 @@
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
--- Gets string from a file.
--- @function [parent=#ZQFileManage] getStringFromFile 
+-- 
+-- @function [parent=#ZQFileManage] prepare 
 -- @param self
--- @param #string filename
--- @return string#string ret (return value: string)
+-- @return ZQFileManage#ZQFileManage self (return value: zq.ZQFileManage)
         
 --------------------------------
 -- Gets filename extension is a suffix (separated from the base filename by a dot) in lower case.<br>
@@ -70,9 +67,10 @@
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
--- 
--- @function [parent=#ZQFileManage] logDir 
+-- Gets string from a file.
+-- @function [parent=#ZQFileManage] getStringFromFile 
 -- @param self
+-- @param #string filename
 -- @return string#string ret (return value: string)
         
 --------------------------------
@@ -83,12 +81,6 @@
 -- @param self
 -- @param #string dirPath
 -- @return bool#bool ret (return value: bool)
-        
---------------------------------
--- 
--- @function [parent=#ZQFileManage] tempDir 
--- @param self
--- @return string#string ret (return value: string)
         
 --------------------------------
 -- Add search path.<br>
@@ -109,9 +101,92 @@
 -- @return bool#bool ret (return value: bool)
         
 --------------------------------
+-- 
+-- @function [parent=#ZQFileManage] file_path 
+-- @param self
+-- @param #string filename
+-- @return string#string ret (return value: string)
+        
+--------------------------------
 -- Gets the writable path.<br>
 -- return  The path that can be write/read a file in
 -- @function [parent=#ZQFileManage] getWritablePath 
+-- @param self
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] url_for_file 
+-- @param self
+-- @param #string file
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] dir_exist 
+-- @param self
+-- @param #string path
+-- @param #bool create
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] file_exist 
+-- @param self
+-- @param #string path
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] create_folder 
+-- @param self
+-- @param #string path
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] getInstance 
+-- @param self
+-- @return ZQFileManage#ZQFileManage ret (return value: zq.ZQFileManage)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] url_for_res 
+-- @param self
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] log_path 
+-- @param self
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] url_for_code 
+-- @param self
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] append_file 
+-- @param self
+-- @param #string path
+-- @param #unsigned char data
+-- @param #unsigned int size
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] basename_of_path 
+-- @param self
+-- @param #string path
+-- @param #bool with_ext
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] temp_path 
 -- @param self
 -- @return string#string ret (return value: string)
         
@@ -125,14 +200,6 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQFileManage] basename_of_path 
--- @param self
--- @param #string path
--- @param #bool with_ext
--- @return string#string ret (return value: string)
-        
---------------------------------
--- 
 -- @function [parent=#ZQFileManage] extname_of_path 
 -- @param self
 -- @param #string path
@@ -141,8 +208,46 @@
         
 --------------------------------
 -- 
--- @function [parent=#ZQFileManage] getInstance 
+-- @function [parent=#ZQFileManage] write_file 
 -- @param self
--- @return ZQFileManage#ZQFileManage ret (return value: zq.ZQFileManage)
+-- @param #string path
+-- @param #unsigned char data
+-- @param #unsigned int size
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] cache_path 
+-- @param self
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] file_size 
+-- @param self
+-- @param #string path
+-- @return unsigned int#unsigned int ret (return value: unsigned int)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] rename_file 
+-- @param self
+-- @param #string old_path
+-- @param #string new_path
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] rebuild_folder 
+-- @param self
+-- @param #string path
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQFileManage] remove_file 
+-- @param self
+-- @param #string path
+-- @return bool#bool ret (return value: bool)
         
 return nil

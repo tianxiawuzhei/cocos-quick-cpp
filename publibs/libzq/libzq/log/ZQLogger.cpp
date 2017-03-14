@@ -32,7 +32,7 @@ ZQLogger::ZQLogger():_file(nullptr)
 #endif
     
     auto fileManage = ZQFileManage::getInstance();
-    auto logDir = fileManage->logDir();
+    auto logDir = fileManage->log_path();
     fileManage->createDirectory(logDir);
     auto logFile = logDir + "temp.log";
     
