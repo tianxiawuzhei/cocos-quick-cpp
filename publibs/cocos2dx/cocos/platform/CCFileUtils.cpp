@@ -41,6 +41,9 @@ THE SOFTWARE.
 #endif
 #include <sys/stat.h>
 
+#include "data/ZQFileManage.h"
+
+
 NS_CC_BEGIN
 
 // Implement DictMaker
@@ -633,6 +636,9 @@ static Data getData(const std::string& filename, bool forString)
     {
         // Read the file from hardware
         std::string fullPath = fileutils->fullPathForFilename(filename);
+        if (fullPath.size() && fullPath[0] != '/')
+            return zq::ZQFileManage::getInstance()->file_data(fullPath);
+        
         FILE *fp = fopen(fileutils->getSuitableFOpen(fullPath).c_str(), mode);
         CC_BREAK_IF(!fp);
         fseek(fp,0,SEEK_END);

@@ -38,6 +38,8 @@ THE SOFTWARE.
 #include "platform/CCFileUtils.h"
 #include "platform/CCSAXParser.h"
 
+#include "data/ZQPlistManage.h"
+
 NS_CC_BEGIN
 
 static void addValueToDict(id nsKey, id nsValue, ValueMap& dict);
@@ -446,6 +448,9 @@ std::string FileUtilsApple::getFullPathForDirectoryAndFilename(const std::string
 ValueMap FileUtilsApple::getValueMapFromFile(const std::string& filename)
 {
     std::string fullPath = fullPathForFilename(filename);
+    if (fullPath.size() && fullPath[0] != '/')
+        return zq::ZQPlistManage::getInstance()->load_dict(fullPath);
+    
     NSString* path = [NSString stringWithUTF8String:fullPath.c_str()];
     NSDictionary* dict = [NSDictionary dictionaryWithContentsOfFile:path];
 
@@ -527,6 +532,10 @@ ValueVector FileUtilsApple::getValueVectorFromFile(const std::string& filename)
     //    pPath = [[NSBundle mainBundle] pathForResource:pPath ofType:pathExtension];
     //    fixing cannot read data using Array::createWithContentsOfFile
     std::string fullPath = fullPathForFilename(filename);
+    
+    if (fullPath.size() && fullPath[0] != '/')
+        return zq::ZQPlistManage::getInstance()->load_array(fullPath);
+    
     NSString* path = [NSString stringWithUTF8String:fullPath.c_str()];
     NSArray* array = [NSArray arrayWithContentsOfFile:path];
 
