@@ -110,7 +110,52 @@ cocos2d::SpriteFrame* ZQImageLoader::load_frame(const std::string &plist, const 
 
 bool ZQImageLoader::exist(const std::string &plist, const std::string &frame)
 {
+    if (!frame.empty())
+        return cocos2d::SpriteFrameCache::getInstance()->getSpriteFrameByName(frame);
+    
+    auto dict = ZQPlistManage::getInstance()->load_dict(plist);
+    if (dict.empty())
+        return false;
+    
+    auto &frames = dict["frames"].asValueMap();
+    for (auto &pair : frames)
+    {
+        if (!cocos2d::SpriteFrameCache::getInstance()->getSpriteFrameByName(pair.first))
+            return false;
+    }
     return true;
 }
 
+bool ZQImageLoader::cache(const std::string &plist)
+{
+    auto dict = ZQPlistManage::getInstance()->load_dict(plist);
+    if (dict.empty())
+    {
+        return false;
+    }
+    
+    auto &meta = dict["metadata"].asValueMap();
+    auto image = meta["realTextureFileName"].asString();
+    auto front = ZQFileManage::dirname_of_path(plist, true);
+    
+    auto frame = this->load_image(front + image);
+    
+    cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithDictionary(dict, frame->getTexture());
+    
+    return true;
+}
+
+void ZQImageLoader::clear(const std::string &plist, const std::string &frame)
+{
+    if (!frame.empty())
+    {
+        cocos2d::SpriteFrameCache::getInstance()->removeSpriteFrameByName(frame);
+    }
+    else
+    {
+        cocos2d::AnimationCache::destroyInstance();
+        cocos2d::SpriteFrameCache::getInstance()->removeUnusedSpriteFrames();
+        cocos2d::Director::getInstance()->getTextureCache()->removeUnusedTextures();
+    }
+}
 

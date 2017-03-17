@@ -118,11 +118,12 @@ public:
     // get timeline duration
     float getSequenceDuration(const char* pSequenceName);
     
+    CCBSequence* getSequence(int nSequenceId);
 private:
     const cocos2d::Value& getBaseValue(cocos2d::Node *pNode, const std::string& propName);
     Ref* getObject(cocos2d::Node *pNode, const std::string& propName);
     
-    CCBSequence* getSequence(int nSequenceId);
+    
     cocos2d::ActionInterval* getAction(CCBKeyframe *pKeyframe0, CCBKeyframe *pKeyframe1, const std::string& propName, cocos2d::Node *pNode);
     void setAnimatedProperty(const std::string& propName,cocos2d::Node *pNode, const cocos2d::Value& value, Ref* obj, float fTweenDuraion);
     void setFirstFrame(cocos2d::Node *pNode, CCBSequenceProperty *pSeqProp, float fTweenDuration);

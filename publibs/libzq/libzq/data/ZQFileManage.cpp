@@ -348,24 +348,8 @@ std::string ZQFileManage::dirname_of_path(const std::string &path, bool with_sla
 
 std::string ZQFileManage::extname_of_path(const std::string &path, bool with_dot)
 {
-    std::string file_ext;
-    size_t dot_pos = path.find_last_of('.');
-    size_t last_separator_pos = path.find_last_of("/\\");
-    if (dot_pos != std::string::npos)
-    {
-        if (last_separator_pos != std::string::npos)
-        {
-            if (dot_pos < last_separator_pos)
-            {
-                return "";
-            }
-        }
-        
-        file_ext = path.substr(dot_pos);
-        std::transform(file_ext.begin(), file_ext.end(), file_ext.begin(), ::tolower);
-    }
-    
-    return "";
+    auto ext = fs::extname(path);
+    return with_dot || ext.empty() ? ext : ext.substr(1);
 }
 
 std::string ZQFileManage::basename_of_path(const std::string &path, bool with_ext)

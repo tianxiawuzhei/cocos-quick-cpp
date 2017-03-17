@@ -804,7 +804,7 @@ CCBKeyframe* CCBReader::readKeyframe(PropertyType type)
             // Load the sprite sheet only if it is not loaded            
             if (_loadedSpriteSheets.find(spriteSheet) == _loadedSpriteSheets.end())
             {
-                frameCache->addSpriteFramesWithFile(spriteSheet);
+//                frameCache->addSpriteFramesWithFile(spriteSheet);
                 _loadedSpriteSheets.insert(spriteSheet);
             }
             

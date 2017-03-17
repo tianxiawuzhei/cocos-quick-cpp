@@ -19,6 +19,7 @@
 #include "data/ZQJsonManage.h"
 #include "data/ZQPlistManage.h"
 #include "data/ZQImageLoader.h"
+#include "data/ZQCCBILoader.h"
 
 #include "draw/ZQCustomAction.h"
 

@@ -18,7 +18,8 @@ namespace {
     
     void parseDict(const rapidxml::xml_node<> *node, cocos2d::ValueMap &dict)
     {
-        while (node) {
+        while (node)
+        {
             auto key_node = node;
             auto val_node = key_node->next_sibling();
             
@@ -29,33 +30,33 @@ namespace {
             {
                 cocos2d::ValueMap map;
                 parseDict(val_node->first_node(), map);
-                dict[key_name] = std::move(map);
+                dict[key_node->value()] = std::move(map);
             }
             else if (val_name == "array")
             {
                 cocos2d::ValueVector vect;
                 parseArray(node->first_node(), vect);
-                dict[key_name] = std::move(vect);
+                dict[key_node->value()] = std::move(vect);
             }
             else if (val_name == "string")
             {
-                dict[key_name] = std::move(cocos2d::Value(val_node->value()));
+                dict[key_node->value()] = std::move(cocos2d::Value(val_node->value()));
             }
             else if (val_name == "integer")
             {
-                dict[key_name] = cocos2d::Value(atoi(val_node->value()));
+                dict[key_node->value()] = cocos2d::Value(atoi(val_node->value()));
             }
             else if (val_name == "real")
             {
-                dict[key_name] = cocos2d::Value(atof(val_node->value()));
+                dict[key_node->value()] = cocos2d::Value(atof(val_node->value()));
             }
             else if (val_name == "false")
             {
-                dict[key_name] = cocos2d::Value(false);
+                dict[key_node->value()] = cocos2d::Value(false);
             }
             else if (val_name == "true")
             {
-                dict[key_name] = cocos2d::Value(true);
+                dict[key_node->value()] = cocos2d::Value(true);
             }
             
             node = val_node->next_sibling();

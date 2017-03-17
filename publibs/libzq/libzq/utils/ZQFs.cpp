@@ -59,7 +59,7 @@ std::string fs::extname(const std::string &path)
     std::string fname = fs::filename(path);
     std::string::size_type i = fname.find_last_of('.');
     if (i != 0 && i != std::string::npos)
-        fname.erase(0, i+1);
+        fname.erase(0, i);
     else
         fname.erase();
     

@@ -21,6 +21,19 @@
         
 --------------------------------
 -- 
+-- @function [parent=#ZQImageLoader] clear 
+-- @param self
+-- @return ZQImageLoader#ZQImageLoader self (return value: zq.ZQImageLoader)
+        
+--------------------------------
+-- 
+-- @function [parent=#ZQImageLoader] cache 
+-- @param self
+-- @param #string plist
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- 
 -- @function [parent=#ZQImageLoader] load_frame 
 -- @param self
 -- @param #string plist

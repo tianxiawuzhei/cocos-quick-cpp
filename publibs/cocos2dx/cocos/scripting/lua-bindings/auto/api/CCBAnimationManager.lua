@@ -14,6 +14,13 @@
         
 --------------------------------
 -- 
+-- @function [parent=#CCBAnimationManager] getSequence 
+-- @param self
+-- @param #int nSequenceId
+-- @return CCBSequence#CCBSequence ret (return value: cc.CCBSequence)
+        
+--------------------------------
+-- 
 -- @function [parent=#CCBAnimationManager] setAutoPlaySequenceId 
 -- @param self
 -- @param #int autoPlaySequenceId

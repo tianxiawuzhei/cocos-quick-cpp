@@ -3021,6 +3021,20 @@ int lua_zq_ZQImageLoader_exist(lua_State* tolua_S)
 #endif
 
     argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQImageLoader:exist");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageLoader_exist'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->exist(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
     if (argc == 2) 
     {
         std::string arg0;
@@ -3038,12 +3052,140 @@ int lua_zq_ZQImageLoader_exist(lua_State* tolua_S)
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQImageLoader:exist",argc, 2);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQImageLoader:exist",argc, 1);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQImageLoader_exist'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQImageLoader_clear(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQImageLoader* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQImageLoader",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQImageLoader*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQImageLoader_clear'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageLoader_clear'", nullptr);
+            return 0;
+        }
+        cobj->clear();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQImageLoader:clear");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageLoader_clear'", nullptr);
+            return 0;
+        }
+        cobj->clear(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    if (argc == 2) 
+    {
+        std::string arg0;
+        std::string arg1;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQImageLoader:clear");
+
+        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQImageLoader:clear");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageLoader_clear'", nullptr);
+            return 0;
+        }
+        cobj->clear(arg0, arg1);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQImageLoader:clear",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQImageLoader_clear'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQImageLoader_cache(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQImageLoader* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQImageLoader",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQImageLoader*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQImageLoader_cache'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQImageLoader:cache");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQImageLoader_cache'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->cache(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQImageLoader:cache",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQImageLoader_cache'.",&tolua_err);
 #endif
 
     return 0;
@@ -3149,12 +3291,273 @@ int lua_register_zq_ZQImageLoader(lua_State* tolua_S)
     tolua_beginmodule(tolua_S,"ZQImageLoader");
         tolua_function(tolua_S,"load_image",lua_zq_ZQImageLoader_load_image);
         tolua_function(tolua_S,"exist",lua_zq_ZQImageLoader_exist);
+        tolua_function(tolua_S,"clear",lua_zq_ZQImageLoader_clear);
+        tolua_function(tolua_S,"cache",lua_zq_ZQImageLoader_cache);
         tolua_function(tolua_S,"load_frame",lua_zq_ZQImageLoader_load_frame);
         tolua_function(tolua_S,"getInstance", lua_zq_ZQImageLoader_getInstance);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(zq::ZQImageLoader).name();
     g_luaType[typeName] = "zq.ZQImageLoader";
     g_typeCast["ZQImageLoader"] = "zq.ZQImageLoader";
+    return 1;
+}
+
+int lua_zq_ZQCCBILoader_load(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQCCBILoader* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQCCBILoader",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQCCBILoader*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQCCBILoader_load'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQCCBILoader:load");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQCCBILoader_load'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->load(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    if (argc == 2) 
+    {
+        std::string arg0;
+        bool arg1;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQCCBILoader:load");
+
+        ok &= luaval_to_boolean(tolua_S, 3,&arg1, "zq.ZQCCBILoader:load");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQCCBILoader_load'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->load(arg0, arg1);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQCCBILoader:load",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQCCBILoader_load'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQCCBILoader_clear(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQCCBILoader* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQCCBILoader",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQCCBILoader*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQCCBILoader_clear'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQCCBILoader_clear'", nullptr);
+            return 0;
+        }
+        cobj->clear();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQCCBILoader:clear",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQCCBILoader_clear'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQCCBILoader_readNodeGraphFromFile(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQCCBILoader* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQCCBILoader",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQCCBILoader*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQCCBILoader_readNodeGraphFromFile'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 2) 
+    {
+        std::string arg0;
+        cocosbuilder::CCBReader* arg1;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQCCBILoader:readNodeGraphFromFile");
+
+        ok &= luaval_to_object<cocosbuilder::CCBReader>(tolua_S, 3, "cc.CCBReader",&arg1, "zq.ZQCCBILoader:readNodeGraphFromFile");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQCCBILoader_readNodeGraphFromFile'", nullptr);
+            return 0;
+        }
+        cocos2d::Node* ret = cobj->readNodeGraphFromFile(arg0, arg1);
+        object_to_luaval<cocos2d::Node>(tolua_S, "cc.Node",(cocos2d::Node*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQCCBILoader:readNodeGraphFromFile",argc, 2);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQCCBILoader_readNodeGraphFromFile'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQCCBILoader_createCCBReader(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQCCBILoader",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQCCBILoader_createCCBReader'", nullptr);
+            return 0;
+        }
+        cocosbuilder::CCBReader* ret = zq::ZQCCBILoader::createCCBReader();
+        object_to_luaval<cocosbuilder::CCBReader>(tolua_S, "cc.CCBReader",(cocosbuilder::CCBReader*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQCCBILoader:createCCBReader",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQCCBILoader_createCCBReader'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_zq_ZQCCBILoader_getInstance(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQCCBILoader",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQCCBILoader_getInstance'", nullptr);
+            return 0;
+        }
+        zq::ZQCCBILoader* ret = zq::ZQCCBILoader::getInstance();
+        object_to_luaval<zq::ZQCCBILoader>(tolua_S, "zq.ZQCCBILoader",(zq::ZQCCBILoader*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQCCBILoader:getInstance",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQCCBILoader_getInstance'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua_zq_ZQCCBILoader_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (ZQCCBILoader)");
+    return 0;
+}
+
+int lua_register_zq_ZQCCBILoader(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"zq.ZQCCBILoader");
+    tolua_cclass(tolua_S,"ZQCCBILoader","zq.ZQCCBILoader","",nullptr);
+
+    tolua_beginmodule(tolua_S,"ZQCCBILoader");
+        tolua_function(tolua_S,"load",lua_zq_ZQCCBILoader_load);
+        tolua_function(tolua_S,"clear",lua_zq_ZQCCBILoader_clear);
+        tolua_function(tolua_S,"readNodeGraphFromFile",lua_zq_ZQCCBILoader_readNodeGraphFromFile);
+        tolua_function(tolua_S,"createCCBReader", lua_zq_ZQCCBILoader_createCCBReader);
+        tolua_function(tolua_S,"getInstance", lua_zq_ZQCCBILoader_getInstance);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(zq::ZQCCBILoader).name();
+    g_luaType[typeName] = "zq.ZQCCBILoader";
+    g_typeCast["ZQCCBILoader"] = "zq.ZQCCBILoader";
     return 1;
 }
 
@@ -7464,6 +7867,7 @@ TOLUA_API int register_all_zq(lua_State* tolua_S)
 	lua_register_zq_ZQAppEvent(tolua_S);
 	lua_register_zq_ZQJsonManage(tolua_S);
 	lua_register_zq_ZQImageLoader(tolua_S);
+	lua_register_zq_ZQCCBILoader(tolua_S);
 	lua_register_zq_ZQFileManage(tolua_S);
 	lua_register_zq_ZQPlistManage(tolua_S);
 

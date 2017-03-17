@@ -39,7 +39,6 @@
 		A271143A1E69926400DC7FBA /* ZQCCBILoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27114381E69926400DC7FBA /* ZQCCBILoader.cpp */; };
 		A271143C1E69926400DC7FBA /* ZQCCBILoader.h in Headers */ = {isa = PBXBuildFile; fileRef = A27114391E69926400DC7FBA /* ZQCCBILoader.h */; };
 		A271143D1E69926400DC7FBA /* ZQCCBILoader.h in Headers */ = {isa = PBXBuildFile; fileRef = A27114391E69926400DC7FBA /* ZQCCBILoader.h */; };
-		A27F2A4C1E6D4C090014FF07 /* ZQCCBILoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27114381E69926400DC7FBA /* ZQCCBILoader.cpp */; };
 		A27F2A531E7002010014FF07 /* ZQFs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27F2A511E7002010014FF07 /* ZQFs.cpp */; };
 		A27F2A541E7002010014FF07 /* ZQFs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27F2A511E7002010014FF07 /* ZQFs.cpp */; };
 		A27F2A551E7002010014FF07 /* ZQFs.h in Headers */ = {isa = PBXBuildFile; fileRef = A27F2A521E7002010014FF07 /* ZQFs.h */; };
@@ -103,6 +102,8 @@
 		A29A52311E6011CD0073A9C0 /* ZQHTTPService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A29A522B1E5FE1430073A9C0 /* ZQHTTPService.cpp */; };
 		A2CCE20C1E78133500425841 /* ZQImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2CCE20A1E78133500425841 /* ZQImageLoader.cpp */; };
 		A2CCE20D1E78133500425841 /* ZQImageLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CCE20B1E78133500425841 /* ZQImageLoader.h */; };
+		A2CCE20E1E781C0D00425841 /* ZQImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2CCE20A1E78133500425841 /* ZQImageLoader.cpp */; };
+		A2CCE2131E7A6AAB00425841 /* ZQCCBILoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27114381E69926400DC7FBA /* ZQCCBILoader.cpp */; };
 		A2CEFDDC1E55C0BF00934B41 /* ZQTextArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2CEFDD91E55C0BF00934B41 /* ZQTextArea.cpp */; };
 		A2CEFDDD1E55C0BF00934B41 /* ZQTextArea.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */; };
 		A2CEFDDE1E55C0BF00934B41 /* ZQTextArea.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CEFDDA1E55C0BF00934B41 /* ZQTextArea.h */; };
@@ -614,7 +615,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A27F2A4C1E6D4C090014FF07 /* ZQCCBILoader.cpp in Sources */,
+				A2CCE2131E7A6AAB00425841 /* ZQCCBILoader.cpp in Sources */,
+				A2CCE20E1E781C0D00425841 /* ZQImageLoader.cpp in Sources */,
 				A27F2A5A1E701EA60014FF07 /* ZQFs_unix.cpp in Sources */,
 				A29A521F1E5DB7260073A9C0 /* ZQRunLoop.cpp in Sources */,
 				A2CEFDDF1E55C5B300934B41 /* ZQTextArea.cpp in Sources */,

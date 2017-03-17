@@ -3,6 +3,657 @@
 #include "scripting/lua-bindings/manual/tolua_fix.h"
 #include "scripting/lua-bindings/manual/LuaBasicConversions.h"
 
+int lua_cocos2dx_cocosbuilder_CCBSequence_getCallbackChannel(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getCallbackChannel'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getCallbackChannel'", nullptr);
+            return 0;
+        }
+        cocosbuilder::CCBSequenceProperty* ret = cobj->getCallbackChannel();
+        object_to_luaval<cocosbuilder::CCBSequenceProperty>(tolua_S, "cc.CCBSequenceProperty",(cocosbuilder::CCBSequenceProperty*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:getCallbackChannel",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getCallbackChannel'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_getSoundChannel(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getSoundChannel'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getSoundChannel'", nullptr);
+            return 0;
+        }
+        cocosbuilder::CCBSequenceProperty* ret = cobj->getSoundChannel();
+        object_to_luaval<cocosbuilder::CCBSequenceProperty>(tolua_S, "cc.CCBSequenceProperty",(cocosbuilder::CCBSequenceProperty*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:getSoundChannel",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getSoundChannel'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_setSoundChannel(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setSoundChannel'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        cocosbuilder::CCBSequenceProperty* arg0;
+
+        ok &= luaval_to_object<cocosbuilder::CCBSequenceProperty>(tolua_S, 2, "cc.CCBSequenceProperty",&arg0, "cc.CCBSequence:setSoundChannel");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setSoundChannel'", nullptr);
+            return 0;
+        }
+        cobj->setSoundChannel(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:setSoundChannel",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setSoundChannel'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_setName(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setName'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        const char* arg0;
+
+        std::string arg0_tmp; ok &= luaval_to_std_string(tolua_S, 2, &arg0_tmp, "cc.CCBSequence:setName"); arg0 = arg0_tmp.c_str();
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setName'", nullptr);
+            return 0;
+        }
+        cobj->setName(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:setName",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setName'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_getName(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getName'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getName'", nullptr);
+            return 0;
+        }
+        const char* ret = cobj->getName();
+        tolua_pushstring(tolua_S,(const char*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:getName",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getName'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_getSequenceId(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getSequenceId'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getSequenceId'", nullptr);
+            return 0;
+        }
+        int ret = cobj->getSequenceId();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:getSequenceId",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getSequenceId'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_setCallbackChannel(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setCallbackChannel'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        cocosbuilder::CCBSequenceProperty* arg0;
+
+        ok &= luaval_to_object<cocosbuilder::CCBSequenceProperty>(tolua_S, 2, "cc.CCBSequenceProperty",&arg0, "cc.CCBSequence:setCallbackChannel");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setCallbackChannel'", nullptr);
+            return 0;
+        }
+        cobj->setCallbackChannel(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:setCallbackChannel",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setCallbackChannel'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_getDuration(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getDuration'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getDuration'", nullptr);
+            return 0;
+        }
+        double ret = cobj->getDuration();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:getDuration",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getDuration'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_getChainedSequenceId(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getChainedSequenceId'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getChainedSequenceId'", nullptr);
+            return 0;
+        }
+        int ret = cobj->getChainedSequenceId();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:getChainedSequenceId",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_getChainedSequenceId'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_setDuration(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setDuration'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        double arg0;
+
+        ok &= luaval_to_number(tolua_S, 2,&arg0, "cc.CCBSequence:setDuration");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setDuration'", nullptr);
+            return 0;
+        }
+        cobj->setDuration(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:setDuration",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setDuration'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_setChainedSequenceId(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setChainedSequenceId'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        int arg0;
+
+        ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "cc.CCBSequence:setChainedSequenceId");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setChainedSequenceId'", nullptr);
+            return 0;
+        }
+        cobj->setChainedSequenceId(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:setChainedSequenceId",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setChainedSequenceId'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_setSequenceId(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBSequence",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBSequence*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setSequenceId'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        int arg0;
+
+        ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "cc.CCBSequence:setSequenceId");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setSequenceId'", nullptr);
+            return 0;
+        }
+        cobj->setSequenceId(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:setSequenceId",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_setSequenceId'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBSequence_constructor(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBSequence* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBSequence_constructor'", nullptr);
+            return 0;
+        }
+        cobj = new cocosbuilder::CCBSequence();
+        cobj->autorelease();
+        int ID =  (int)cobj->_ID ;
+        int* luaID =  &cobj->_luaID ;
+        toluafix_pushusertype_ccobject(tolua_S, ID, luaID, (void*)cobj,"cc.CCBSequence");
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBSequence:CCBSequence",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBSequence_constructor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+
+static int lua_cocos2dx_cocosbuilder_CCBSequence_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (CCBSequence)");
+    return 0;
+}
+
+int lua_register_cocos2dx_cocosbuilder_CCBSequence(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"cc.CCBSequence");
+    tolua_cclass(tolua_S,"CCBSequence","cc.CCBSequence","cc.Ref",nullptr);
+
+    tolua_beginmodule(tolua_S,"CCBSequence");
+        tolua_function(tolua_S,"new",lua_cocos2dx_cocosbuilder_CCBSequence_constructor);
+        tolua_function(tolua_S,"getCallbackChannel",lua_cocos2dx_cocosbuilder_CCBSequence_getCallbackChannel);
+        tolua_function(tolua_S,"getSoundChannel",lua_cocos2dx_cocosbuilder_CCBSequence_getSoundChannel);
+        tolua_function(tolua_S,"setSoundChannel",lua_cocos2dx_cocosbuilder_CCBSequence_setSoundChannel);
+        tolua_function(tolua_S,"setName",lua_cocos2dx_cocosbuilder_CCBSequence_setName);
+        tolua_function(tolua_S,"getName",lua_cocos2dx_cocosbuilder_CCBSequence_getName);
+        tolua_function(tolua_S,"getSequenceId",lua_cocos2dx_cocosbuilder_CCBSequence_getSequenceId);
+        tolua_function(tolua_S,"setCallbackChannel",lua_cocos2dx_cocosbuilder_CCBSequence_setCallbackChannel);
+        tolua_function(tolua_S,"getDuration",lua_cocos2dx_cocosbuilder_CCBSequence_getDuration);
+        tolua_function(tolua_S,"getChainedSequenceId",lua_cocos2dx_cocosbuilder_CCBSequence_getChainedSequenceId);
+        tolua_function(tolua_S,"setDuration",lua_cocos2dx_cocosbuilder_CCBSequence_setDuration);
+        tolua_function(tolua_S,"setChainedSequenceId",lua_cocos2dx_cocosbuilder_CCBSequence_setChainedSequenceId);
+        tolua_function(tolua_S,"setSequenceId",lua_cocos2dx_cocosbuilder_CCBSequence_setSequenceId);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(cocosbuilder::CCBSequence).name();
+    g_luaType[typeName] = "cc.CCBSequence";
+    g_typeCast["CCBSequence"] = "cc.CCBSequence";
+    return 1;
+}
+
 int lua_cocos2dx_cocosbuilder_CCBAnimationManager_moveAnimationsFromNode(lua_State* tolua_S)
 {
     int argc = 0;
@@ -52,6 +703,56 @@ int lua_cocos2dx_cocosbuilder_CCBAnimationManager_moveAnimationsFromNode(lua_Sta
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBAnimationManager_moveAnimationsFromNode'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cocos2dx_cocosbuilder_CCBAnimationManager_getSequence(lua_State* tolua_S)
+{
+    int argc = 0;
+    cocosbuilder::CCBAnimationManager* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"cc.CCBAnimationManager",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (cocosbuilder::CCBAnimationManager*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cocos2dx_cocosbuilder_CCBAnimationManager_getSequence'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        int arg0;
+
+        ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "cc.CCBAnimationManager:getSequence");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cocos2dx_cocosbuilder_CCBAnimationManager_getSequence'", nullptr);
+            return 0;
+        }
+        cocosbuilder::CCBSequence* ret = cobj->getSequence(arg0);
+        object_to_luaval<cocosbuilder::CCBSequence>(tolua_S, "cc.CCBSequence",(cocosbuilder::CCBSequence*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "cc.CCBAnimationManager:getSequence",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_cocosbuilder_CCBAnimationManager_getSequence'.",&tolua_err);
 #endif
 
     return 0;
@@ -1830,6 +2531,7 @@ int lua_register_cocos2dx_cocosbuilder_CCBAnimationManager(lua_State* tolua_S)
     tolua_beginmodule(tolua_S,"CCBAnimationManager");
         tolua_function(tolua_S,"new",lua_cocos2dx_cocosbuilder_CCBAnimationManager_constructor);
         tolua_function(tolua_S,"moveAnimationsFromNode",lua_cocos2dx_cocosbuilder_CCBAnimationManager_moveAnimationsFromNode);
+        tolua_function(tolua_S,"getSequence",lua_cocos2dx_cocosbuilder_CCBAnimationManager_getSequence);
         tolua_function(tolua_S,"setAutoPlaySequenceId",lua_cocos2dx_cocosbuilder_CCBAnimationManager_setAutoPlaySequenceId);
         tolua_function(tolua_S,"getDocumentCallbackNames",lua_cocos2dx_cocosbuilder_CCBAnimationManager_getDocumentCallbackNames);
         tolua_function(tolua_S,"actionForSoundChannel",lua_cocos2dx_cocosbuilder_CCBAnimationManager_actionForSoundChannel);
@@ -2953,6 +3655,7 @@ TOLUA_API int register_all_cocos2dx_cocosbuilder(lua_State* tolua_S)
 	tolua_module(tolua_S,"cc",0);
 	tolua_beginmodule(tolua_S,"cc");
 
+	lua_register_cocos2dx_cocosbuilder_CCBSequence(tolua_S);
 	lua_register_cocos2dx_cocosbuilder_CCBAnimationManager(tolua_S);
 	lua_register_cocos2dx_cocosbuilder_CCBReader(tolua_S);
 

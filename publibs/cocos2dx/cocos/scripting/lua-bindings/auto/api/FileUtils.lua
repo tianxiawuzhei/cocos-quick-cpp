@@ -60,6 +60,13 @@
 -- @return FileUtils#FileUtils self (return value: cc.FileUtils)
         
 --------------------------------
+-- 
+-- @function [parent=#FileUtils] searchFullPathForFilename 
+-- @param self
+-- @param #string filename
+-- @return string#string ret (return value: string)
+        
+--------------------------------
 -- Removes a file.<br>
 -- param filepath The full path of the file, it must be an absolute path.<br>
 -- return True if the file have been removed successfully, false if not.

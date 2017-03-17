@@ -28,7 +28,11 @@ namespace zq
     protected:
         ZQCCBILoader() = default;
         ~ZQCCBILoader() = default;
+    
+    public:
+        static cocosbuilder::CCBReader* createCCBReader();
         
+        cocos2d::Node* readNodeGraphFromFile(const std::string &filename, cocosbuilder::CCBReader* pCCBReader);
     public:
         bool load(const std::string &ccbi, bool cache = false);
         

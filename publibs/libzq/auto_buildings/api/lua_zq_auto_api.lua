@@ -32,6 +32,11 @@
 
 
 --------------------------------------------------------
+-- the zq ZQCCBILoader
+-- @field [parent=#zq] ZQCCBILoader#ZQCCBILoader ZQCCBILoader preloaded module
+
+
+--------------------------------------------------------
 -- the zq ZQCustomAction
 -- @field [parent=#zq] ZQCustomAction#ZQCustomAction ZQCustomAction preloaded module
 

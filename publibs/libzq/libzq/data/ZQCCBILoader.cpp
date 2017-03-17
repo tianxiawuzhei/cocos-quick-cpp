@@ -20,6 +20,34 @@ ZQCCBILoader* ZQCCBILoader::getInstance()
     return &instance;
 }
 
+cocosbuilder::CCBReader* ZQCCBILoader::createCCBReader()
+{
+    cocosbuilder::NodeLoaderLibrary *ccNodeLoaderLibrary = cocosbuilder::NodeLoaderLibrary::getInstance();
+    cocosbuilder::CCBReader * pCCBReader = new (std::nothrow) cocosbuilder::CCBReader(ccNodeLoaderLibrary);
+    pCCBReader->autorelease();
+    
+    return pCCBReader;
+}
+
+cocos2d::Node* ZQCCBILoader::readNodeGraphFromFile(const std::string &ccbi, cocosbuilder::CCBReader *pCCBReader)
+{
+    if (nullptr == pCCBReader || ccbi.empty())
+    {
+        return nullptr;
+    }
+    
+    auto data = this->_cache[ccbi];
+    if (!data)
+    {
+        return nullptr;
+    }
+    
+    cocos2d::Node *pNode = nullptr;
+    pNode = pCCBReader->readNodeGraphFromData(data, nullptr, cocos2d::Director::getInstance()->getWinSize());
+    
+    return pNode;
+}
+
 bool ZQCCBILoader::load(const std::string &ccbi, bool cache)
 {
     auto result = this->list(ccbi);
@@ -32,7 +60,7 @@ bool ZQCCBILoader::load(const std::string &ccbi, bool cache)
     std::vector<std::string> store;
     
     auto ret = true;
-    auto front = ZQFileManage::dirname_of_path(ccbi);
+    auto front = ZQFileManage::dirname_of_path(ccbi, true);
     
     for (auto &name : result)
     {
@@ -42,7 +70,7 @@ bool ZQCCBILoader::load(const std::string &ccbi, bool cache)
             auto temp = ZQPlistManage::getInstance()->load_dict(front+name);
             if (!front.empty())
             {
-                
+                ZQPlistManage::getInstance()->alias(cocos2d::Value(temp), name);
             }
             
             if (!temp.empty())
@@ -88,7 +116,7 @@ bool ZQCCBILoader::load(const std::string &ccbi, bool cache)
         }
         else
         {
-            if (ZQFileManage::getInstance()->file_string(front+name).empty())
+            if (ZQFileManage::getInstance()->load_file(front+name).empty())
                 ret = false;
         }
     }
@@ -97,20 +125,25 @@ bool ZQCCBILoader::load(const std::string &ccbi, bool cache)
     {
         for (auto &name : plist)
         {
-            
+            if (!ZQImageLoader::getInstance()->cache(front + name))
+                ret = false;
         }
     }
     else
     {
-        
+        for (auto &name : store)
+        {
+            if (ZQFileManage::getInstance()->load_file(front+name).empty())
+                ret = false;
+        }
     }
 
-    return true;
+    return ret;
 }
 
 void ZQCCBILoader::clear()
 {
-    
+    this->_cache.clear();
 }
 
 std::vector<std::string> ZQCCBILoader::list(const std::string &ccbi)
@@ -118,7 +151,7 @@ std::vector<std::string> ZQCCBILoader::list(const std::string &ccbi)
     auto data = this->_cache[ccbi];
     if (!data)
     {
-        data = std::make_shared<cocos2d::Data>(ZQFileManage::getInstance()->getDataFromFile(ccbi));
+        data = std::make_shared<cocos2d::Data>(ZQFileManage::getInstance()->file_data(ccbi));
         if (data->getSize())
         {
             this->_cache[ccbi] = data;
@@ -136,6 +169,7 @@ std::vector<std::string> ZQCCBILoader::list(const std::string &ccbi)
 CCBIPrase::CCBIPrase()
 {
     this->_nodeLoaderLibrary = cocosbuilder::NodeLoaderLibrary::getInstance();
+    CC_SAFE_RETAIN(this->_nodeLoaderLibrary);
 }
 
 std::vector<std::string> CCBIPrase::read(std::shared_ptr<cocos2d::Data> data)
