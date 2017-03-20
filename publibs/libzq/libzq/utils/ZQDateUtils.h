@@ -10,21 +10,20 @@
 #define _ZQDATEUTILS_HPP_
 
 #include <string>
-namespace zq {
-
-class DateUtils
+namespace zq
 {
-protected:
-    DateUtils() = default;
-    virtual ~DateUtils() = default;
-    
-public:
-    static std::string date(std::string separator = "-", bool utc = false);
-    static std::string time(std::string separator = ":", bool utc = false, bool microsecond = false);
-    static double getMilliseconds();
-    
-};
-    
+    class DateUtils
+    {
+    protected:
+        DateUtils() = default;
+        virtual ~DateUtils() = default;
+        
+    public:
+        static std::string date(std::string separator = "-", bool utc = false);
+        static std::string time(std::string separator = ":", bool utc = false, bool microsecond = false);
+        static double getMilliseconds();
+        
+    };
     
 }
 

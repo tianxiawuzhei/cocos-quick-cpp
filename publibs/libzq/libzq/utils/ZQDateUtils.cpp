@@ -22,7 +22,7 @@
 using namespace zq;
 std::string DateUtils::date(std::string separator, bool utc)
 {
-    std::time_t time = std::time(NULL);
+    std::time_t time = std::time(nullptr);
     
     struct tm tm;
     
@@ -35,7 +35,7 @@ std::string DateUtils::date(std::string separator, bool utc)
         localtime_r(&time, &tm);
     }
     
-    auto year = tm.tm_year + 1;
+    auto year = tm.tm_year + 1900;
     auto month = tm.tm_mon + 1;
     auto day = tm.tm_mday;
     return StringUtils::format("%d%s%02d%s%02d", year, separator.c_str(), month, separator.c_str(), day);
