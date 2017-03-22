@@ -71,4 +71,9 @@
 -- @field [parent=#zq] ZQAppCenter#ZQAppCenter ZQAppCenter preloaded module
 
 
+--------------------------------------------------------
+-- the zq Locale
+-- @field [parent=#zq] Locale#Locale Locale preloaded module
+
+
 return nil

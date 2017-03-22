@@ -11,6 +11,7 @@
 #define __ZQImageManage_H__
 
 #include "cocos2d.h"
+
 namespace zq
 {
     class ZQImageLoader

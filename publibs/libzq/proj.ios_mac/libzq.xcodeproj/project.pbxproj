@@ -23,6 +23,16 @@
 		A26387711DE4640700A6D925 /* ZQLoggerIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = A263876F1DE4640700A6D925 /* ZQLoggerIOS.h */; };
 		A26387721DE4640700A6D925 /* ZQLoggerIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A26387701DE4640700A6D925 /* ZQLoggerIOS.mm */; };
 		A26387791DE4696400A6D925 /* ZQLoggerMac.h in Headers */ = {isa = PBXBuildFile; fileRef = A26387771DE4696400A6D925 /* ZQLoggerMac.h */; };
+		A266BDC51E7F7CDD000ADD46 /* ZQDataFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = A266BDC21E7F7CDD000ADD46 /* ZQDataFormat.h */; };
+		A266BDC61E7F7CDD000ADD46 /* ZQDataFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = A266BDC21E7F7CDD000ADD46 /* ZQDataFormat.h */; };
+		A266BDC71E7F7DD0000ADD46 /* ZQDataFormat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A266BDC11E7F7CDD000ADD46 /* ZQDataFormat.cpp */; };
+		A266BDC81E7F7E50000ADD46 /* ZQDataFormat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A266BDC11E7F7CDD000ADD46 /* ZQDataFormat.cpp */; };
+		A266BDD21E7FAE55000ADD46 /* ZQLocale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A266BDD01E7FAE11000ADD46 /* ZQLocale.cpp */; };
+		A266BDD31E7FAE5D000ADD46 /* ZQLocale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A266BDD01E7FAE11000ADD46 /* ZQLocale.cpp */; };
+		A266BDDA1E7FEEC2000ADD46 /* ZQUtf8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A266BDD81E7FEEC2000ADD46 /* ZQUtf8.cpp */; };
+		A266BDDB1E7FEEC2000ADD46 /* ZQUtf8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A266BDD81E7FEEC2000ADD46 /* ZQUtf8.cpp */; };
+		A266BDDC1E7FEEC2000ADD46 /* ZQUtf8.h in Headers */ = {isa = PBXBuildFile; fileRef = A266BDD91E7FEEC2000ADD46 /* ZQUtf8.h */; };
+		A266BDDD1E7FEEC2000ADD46 /* ZQUtf8.h in Headers */ = {isa = PBXBuildFile; fileRef = A266BDD91E7FEEC2000ADD46 /* ZQUtf8.h */; };
 		A26BAF591E10C63600D3972B /* lua_zq_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26BAF571E10C63600D3972B /* lua_zq_auto.cpp */; };
 		A26BAF5A1E10C63600D3972B /* lua_zq_auto.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A26BAF581E10C63600D3972B /* lua_zq_auto.hpp */; };
 		A26BAF5E1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26BAF5C1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.cpp */; };
@@ -144,6 +154,12 @@
 		A26387701DE4640700A6D925 /* ZQLoggerIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZQLoggerIOS.mm; sourceTree = "<group>"; };
 		A26387771DE4696400A6D925 /* ZQLoggerMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQLoggerMac.h; sourceTree = "<group>"; };
 		A26387781DE4696400A6D925 /* ZQLoggerMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZQLoggerMac.mm; sourceTree = "<group>"; };
+		A266BDC11E7F7CDD000ADD46 /* ZQDataFormat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQDataFormat.cpp; sourceTree = "<group>"; };
+		A266BDC21E7F7CDD000ADD46 /* ZQDataFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQDataFormat.h; sourceTree = "<group>"; };
+		A266BDD01E7FAE11000ADD46 /* ZQLocale.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ZQLocale.cpp; sourceTree = "<group>"; };
+		A266BDD11E7FAE11000ADD46 /* ZQLocale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZQLocale.h; sourceTree = "<group>"; };
+		A266BDD81E7FEEC2000ADD46 /* ZQUtf8.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQUtf8.cpp; sourceTree = "<group>"; };
+		A266BDD91E7FEEC2000ADD46 /* ZQUtf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQUtf8.h; sourceTree = "<group>"; };
 		A26BAF4F1E10C63600D3972B /* DateUtils.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DateUtils.lua; sourceTree = "<group>"; };
 		A26BAF501E10C63600D3972B /* lua_zq_auto_api.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lua_zq_auto_api.lua; sourceTree = "<group>"; };
 		A26BAF511E10C63600D3972B /* ZQCustomAction.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZQCustomAction.lua; sourceTree = "<group>"; };
@@ -235,6 +251,8 @@
 				A27F2A511E7002010014FF07 /* ZQFs.cpp */,
 				A27F2A521E7002010014FF07 /* ZQFs.h */,
 				A27F2A571E701EA60014FF07 /* ZQFs_unix.cpp */,
+				A266BDD81E7FEEC2000ADD46 /* ZQUtf8.cpp */,
+				A266BDD91E7FEEC2000ADD46 /* ZQUtf8.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -278,6 +296,7 @@
 		A222FEAC1DC0A0B9009F3A9A /* libzq */ = {
 			isa = PBXGroup;
 			children = (
+				A266BDCD1E7FAD25000ADD46 /* lang */,
 				A29A522A1E5FE1080073A9C0 /* net */,
 				A29A52231E5EBBAF0073A9C0 /* launch */,
 				A29A51F71E5C5D5B0073A9C0 /* core */,
@@ -382,6 +401,15 @@
 			path = log;
 			sourceTree = "<group>";
 		};
+		A266BDCD1E7FAD25000ADD46 /* lang */ = {
+			isa = PBXGroup;
+			children = (
+				A266BDD01E7FAE11000ADD46 /* ZQLocale.cpp */,
+				A266BDD11E7FAE11000ADD46 /* ZQLocale.h */,
+			);
+			path = lang;
+			sourceTree = "<group>";
+		};
 		A26BAF4D1E10C63600D3972B /* auto_buildings */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +490,8 @@
 				A2CEFDE81E56E20D00934B41 /* ZQDeviceInfo.h */,
 				A28FB8FF1E77BCB500DD61AF /* ZQMD5.cpp */,
 				A28FB9001E77BCB500DD61AF /* ZQMD5.h */,
+				A266BDC11E7F7CDD000ADD46 /* ZQDataFormat.cpp */,
+				A266BDC21E7F7CDD000ADD46 /* ZQDataFormat.h */,
 			);
 			path = tool;
 			sourceTree = "<group>";
@@ -493,6 +523,7 @@
 				A26BAF5A1E10C63600D3972B /* lua_zq_auto.hpp in Headers */,
 				A2F1CC1A1DE831BC00B7CB8D /* ZQStringUtils.h in Headers */,
 				A26CF98C1E0BA10E0026F5CB /* ZQCustomAction.h in Headers */,
+				A266BDDD1E7FEEC2000ADD46 /* ZQUtf8.h in Headers */,
 				A28486761E1DF6A700E39265 /* ZQTextUtilMac.h in Headers */,
 				A29A52081E5D2F190073A9C0 /* ZQAppEvent.h in Headers */,
 				A29A52281E5EBC000073A9C0 /* ZQLaunchScene.h in Headers */,
@@ -503,6 +534,7 @@
 				A29A52211E5DB7260073A9C0 /* ZQRunLoop.h in Headers */,
 				A25FE1B61DD5925100DB55E5 /* rapidxml.hpp in Headers */,
 				A25FE1B81DD5925100DB55E5 /* rapidxml_print.hpp in Headers */,
+				A266BDC61E7F7CDD000ADD46 /* ZQDataFormat.h in Headers */,
 				A28866C11E320F0E00A33402 /* ZQTextBox.h in Headers */,
 				A2F1CC151DE8314F00B7CB8D /* ZQJsonManage.h in Headers */,
 			);
@@ -512,6 +544,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A266BDC51E7F7CDD000ADD46 /* ZQDataFormat.h in Headers */,
 				A29A52091E5D2F190073A9C0 /* ZQAppEvent.h in Headers */,
 				A29A52291E5EBC000073A9C0 /* ZQLaunchScene.h in Headers */,
 				A28486771E1DF6A700E39265 /* ZQTextUtilMac.h in Headers */,
@@ -519,6 +552,7 @@
 				A2CEFDEC1E56E20D00934B41 /* ZQDeviceInfo.h in Headers */,
 				A29A52221E5DB7260073A9C0 /* ZQRunLoop.h in Headers */,
 				A28FB9031E77BCB500DD61AF /* ZQMD5.h in Headers */,
+				A266BDDC1E7FEEC2000ADD46 /* ZQUtf8.h in Headers */,
 				A28486711E1DEBF200E39265 /* ZQTextUtil.h in Headers */,
 				A29A52301E5FE1430073A9C0 /* ZQHTTPService.h in Headers */,
 				A2989A731DE6DF790073E4F0 /* rapidxml_iterators.hpp in Headers */,
@@ -615,6 +649,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A266BDD31E7FAE5D000ADD46 /* ZQLocale.cpp in Sources */,
+				A266BDDB1E7FEEC2000ADD46 /* ZQUtf8.cpp in Sources */,
+				A266BDC71E7F7DD0000ADD46 /* ZQDataFormat.cpp in Sources */,
 				A2CCE2131E7A6AAB00425841 /* ZQCCBILoader.cpp in Sources */,
 				A2CCE20E1E781C0D00425841 /* ZQImageLoader.cpp in Sources */,
 				A27F2A5A1E701EA60014FF07 /* ZQFs_unix.cpp in Sources */,
@@ -648,8 +685,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A266BDD21E7FAE55000ADD46 /* ZQLocale.cpp in Sources */,
+				A266BDC81E7F7E50000ADD46 /* ZQDataFormat.cpp in Sources */,
 				A29A52311E6011CD0073A9C0 /* ZQHTTPService.cpp in Sources */,
 				A2CEFDEA1E56E20D00934B41 /* ZQDeviceInfo.cpp in Sources */,
+				A266BDDA1E7FEEC2000ADD46 /* ZQUtf8.cpp in Sources */,
 				A29A52071E5D2F190073A9C0 /* ZQAppEvent.cpp in Sources */,
 				A2CEFDDC1E55C0BF00934B41 /* ZQTextArea.cpp in Sources */,
 				A25ADC4D1E544D9C00E181F9 /* ZQTextBox.cpp in Sources */,

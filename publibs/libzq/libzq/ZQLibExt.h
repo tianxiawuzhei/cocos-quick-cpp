@@ -31,4 +31,6 @@
 #include "core/ZQAppEvent.h"
 #include "core/ZQAppCenter.h"
 
+#include "lang/ZQLocale.h"
+
 #endif /* __ZQLIBEXT_H__ */

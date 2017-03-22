@@ -7849,6 +7849,179 @@ int lua_register_zq_ZQAppCenter(lua_State* tolua_S)
     g_typeCast["ZQAppCenter"] = "zq.ZQAppCenter";
     return 1;
 }
+
+int lua_zq_Locale_setup(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::Locale* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.Locale",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::Locale*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_Locale_setup'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.Locale:setup");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_Locale_setup'", nullptr);
+            return 0;
+        }
+        cobj->setup(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    if (argc == 2) 
+    {
+        std::string arg0;
+        bool arg1;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.Locale:setup");
+
+        ok &= luaval_to_boolean(tolua_S, 3,&arg1, "zq.Locale:setup");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_Locale_setup'", nullptr);
+            return 0;
+        }
+        cobj->setup(arg0, arg1);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.Locale:setup",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_Locale_setup'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_Locale_translate(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::Locale* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.Locale",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::Locale*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_Locale_translate'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.Locale:translate");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_Locale_translate'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->translate(arg0);
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.Locale:translate",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_Locale_translate'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_Locale_getInstance(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.Locale",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_Locale_getInstance'", nullptr);
+            return 0;
+        }
+        zq::Locale* ret = zq::Locale::getInstance();
+        object_to_luaval<zq::Locale>(tolua_S, "zq.Locale",(zq::Locale*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.Locale:getInstance",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_Locale_getInstance'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua_zq_Locale_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (Locale)");
+    return 0;
+}
+
+int lua_register_zq_Locale(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"zq.Locale");
+    tolua_cclass(tolua_S,"Locale","zq.Locale","",nullptr);
+
+    tolua_beginmodule(tolua_S,"Locale");
+        tolua_function(tolua_S,"setup",lua_zq_Locale_setup);
+        tolua_function(tolua_S,"translate",lua_zq_Locale_translate);
+        tolua_function(tolua_S,"getInstance", lua_zq_Locale_getInstance);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(zq::Locale).name();
+    g_luaType[typeName] = "zq.Locale";
+    g_typeCast["Locale"] = "zq.Locale";
+    return 1;
+}
 TOLUA_API int register_all_zq(lua_State* tolua_S)
 {
 	tolua_open(tolua_S);
@@ -7858,17 +8031,18 @@ TOLUA_API int register_all_zq(lua_State* tolua_S)
 
 	lua_register_zq_DateUtils(tolua_S);
 	lua_register_zq_ZQAppCenter(tolua_S);
-	lua_register_zq_ZQLogger(tolua_S);
 	lua_register_zq_ZQTextBox(tolua_S);
-	lua_register_zq_ZQTextUtil(tolua_S);
+	lua_register_zq_ZQJsonManage(tolua_S);
+	lua_register_zq_ZQLogger(tolua_S);
+	lua_register_zq_ZQFileManage(tolua_S);
 	lua_register_zq_ZQCustomAction(tolua_S);
-	lua_register_zq_ZQTextArea(tolua_S);
 	lua_register_zq_ZQScriptHandler(tolua_S);
 	lua_register_zq_ZQAppEvent(tolua_S);
-	lua_register_zq_ZQJsonManage(tolua_S);
-	lua_register_zq_ZQImageLoader(tolua_S);
 	lua_register_zq_ZQCCBILoader(tolua_S);
-	lua_register_zq_ZQFileManage(tolua_S);
+	lua_register_zq_Locale(tolua_S);
+	lua_register_zq_ZQTextArea(tolua_S);
+	lua_register_zq_ZQImageLoader(tolua_S);
+	lua_register_zq_ZQTextUtil(tolua_S);
 	lua_register_zq_ZQPlistManage(tolua_S);
 
 	tolua_endmodule(tolua_S);
