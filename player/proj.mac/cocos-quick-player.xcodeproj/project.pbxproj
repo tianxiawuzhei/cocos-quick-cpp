@@ -339,8 +339,8 @@
 		A245841F1DC336E800DAF5FF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A24584231DC336E800DAF5FF /* libzqIOS.a */,
 				A2989A861DE6DFAD0073E4F0 /* libzqMac.a */,
+				A24584231DC336E800DAF5FF /* libzqIOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";

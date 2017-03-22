@@ -28,7 +28,8 @@ namespace zq
         void show();
         
     private:
-        cocos2d::Size _window;
+        cocos2d::Size _screenSize;
+        cocos2d::Size _winSize;
         float _ratio;
     };
 }
