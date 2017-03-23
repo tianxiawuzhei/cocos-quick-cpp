@@ -24,6 +24,7 @@
 #include "core/ZQAppCenter.h"
 #include "launch/ZQLaunchScene.h"
 #include "data/ZQFileManage.h"
+#include "lualoader/ZQLuaLoader.h"
 
 using namespace CocosDenshion;
 
@@ -96,6 +97,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     quick_module_register(L);
 
     LuaStack* stack = engine->getLuaStack();
+//    stack->addLuaLoader(zq_lua_loader);
 //    stack->setXXTEAKeyAndSign("2dxLua", "XXTEA");
     
     zq::ZQFileManage::set_url_for_res("http://debug.mmm.io/cn/");

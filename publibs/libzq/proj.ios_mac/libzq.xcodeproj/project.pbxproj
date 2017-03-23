@@ -33,6 +33,8 @@
 		A266BDDB1E7FEEC2000ADD46 /* ZQUtf8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A266BDD81E7FEEC2000ADD46 /* ZQUtf8.cpp */; };
 		A266BDDC1E7FEEC2000ADD46 /* ZQUtf8.h in Headers */ = {isa = PBXBuildFile; fileRef = A266BDD91E7FEEC2000ADD46 /* ZQUtf8.h */; };
 		A266BDDD1E7FEEC2000ADD46 /* ZQUtf8.h in Headers */ = {isa = PBXBuildFile; fileRef = A266BDD91E7FEEC2000ADD46 /* ZQUtf8.h */; };
+		A266BE031E82A848000ADD46 /* ZQLuaLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A266BE011E82A81F000ADD46 /* ZQLuaLoader.cpp */; };
+		A266BE041E82A84E000ADD46 /* ZQLuaLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A266BE011E82A81F000ADD46 /* ZQLuaLoader.cpp */; };
 		A26BAF591E10C63600D3972B /* lua_zq_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26BAF571E10C63600D3972B /* lua_zq_auto.cpp */; };
 		A26BAF5A1E10C63600D3972B /* lua_zq_auto.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A26BAF581E10C63600D3972B /* lua_zq_auto.hpp */; };
 		A26BAF5E1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26BAF5C1E10C6A600D3972B /* zq_custom_action_tolua_luabinding.cpp */; };
@@ -160,6 +162,8 @@
 		A266BDD11E7FAE11000ADD46 /* ZQLocale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZQLocale.h; sourceTree = "<group>"; };
 		A266BDD81E7FEEC2000ADD46 /* ZQUtf8.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQUtf8.cpp; sourceTree = "<group>"; };
 		A266BDD91E7FEEC2000ADD46 /* ZQUtf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQUtf8.h; sourceTree = "<group>"; };
+		A266BE011E82A81F000ADD46 /* ZQLuaLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ZQLuaLoader.cpp; sourceTree = "<group>"; };
+		A266BE021E82A81F000ADD46 /* ZQLuaLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZQLuaLoader.h; sourceTree = "<group>"; };
 		A26BAF4F1E10C63600D3972B /* DateUtils.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DateUtils.lua; sourceTree = "<group>"; };
 		A26BAF501E10C63600D3972B /* lua_zq_auto_api.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lua_zq_auto_api.lua; sourceTree = "<group>"; };
 		A26BAF511E10C63600D3972B /* ZQCustomAction.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZQCustomAction.lua; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 		A222FEAC1DC0A0B9009F3A9A /* libzq */ = {
 			isa = PBXGroup;
 			children = (
+				A266BE001E82A805000ADD46 /* lualoader */,
 				A266BDCD1E7FAD25000ADD46 /* lang */,
 				A29A522A1E5FE1080073A9C0 /* net */,
 				A29A52231E5EBBAF0073A9C0 /* launch */,
@@ -408,6 +413,15 @@
 				A266BDD11E7FAE11000ADD46 /* ZQLocale.h */,
 			);
 			path = lang;
+			sourceTree = "<group>";
+		};
+		A266BE001E82A805000ADD46 /* lualoader */ = {
+			isa = PBXGroup;
+			children = (
+				A266BE011E82A81F000ADD46 /* ZQLuaLoader.cpp */,
+				A266BE021E82A81F000ADD46 /* ZQLuaLoader.h */,
+			);
+			path = lualoader;
 			sourceTree = "<group>";
 		};
 		A26BAF4D1E10C63600D3972B /* auto_buildings */ = {
@@ -649,6 +663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A266BE041E82A84E000ADD46 /* ZQLuaLoader.cpp in Sources */,
 				A266BDD31E7FAE5D000ADD46 /* ZQLocale.cpp in Sources */,
 				A266BDDB1E7FEEC2000ADD46 /* ZQUtf8.cpp in Sources */,
 				A266BDC71E7F7DD0000ADD46 /* ZQDataFormat.cpp in Sources */,
@@ -685,6 +700,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A266BE031E82A848000ADD46 /* ZQLuaLoader.cpp in Sources */,
 				A266BDD21E7FAE55000ADD46 /* ZQLocale.cpp in Sources */,
 				A266BDC81E7F7E50000ADD46 /* ZQDataFormat.cpp in Sources */,
 				A29A52311E6011CD0073A9C0 /* ZQHTTPService.cpp in Sources */,
