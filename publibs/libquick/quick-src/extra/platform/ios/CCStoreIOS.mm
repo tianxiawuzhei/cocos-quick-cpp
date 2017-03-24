@@ -149,7 +149,7 @@ static const char* const SANDBOX_RECEIPT_VERIFY_URL = "https://sandbox.itunes.ap
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
-    Vector<StoreProduct*> ccproducts(response.products.count);
+    cocos2d::Vector<StoreProduct*> ccproducts(response.products.count);
     for (int i = 0; i < response.products.count; ++i)
     {
         // cache loaded product

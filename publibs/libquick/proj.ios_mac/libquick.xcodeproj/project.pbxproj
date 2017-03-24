@@ -75,12 +75,6 @@
 		A2DE5FA81D9A2E0300D69F39 /* CCStorePaymentTransactionWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F501D9A2E0300D69F39 /* CCStorePaymentTransactionWrapper.mm */; };
 		A2DE5FA91D9A2E0300D69F39 /* CCStoreReceiptVerifyRequestIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F521D9A2E0300D69F39 /* CCStoreReceiptVerifyRequestIOS.mm */; };
 		A2DE5FAE1D9A2E0300D69F39 /* OpenUDIDIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F5E1D9A2E0300D69F39 /* OpenUDIDIOS.m */; };
-		A2DE5FAF1D9A2E0300D69F39 /* CCNetworkIOSMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F601D9A2E0300D69F39 /* CCNetworkIOSMac.mm */; };
-		A2DE5FB01D9A2E0300D69F39 /* ReachabilityIOSMac.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F621D9A2E0300D69F39 /* ReachabilityIOSMac.m */; };
-		A2DE5FB11D9A2E0300D69F39 /* CCCryptoMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F641D9A2E0300D69F39 /* CCCryptoMac.mm */; };
-		A2DE5FB21D9A2E0300D69F39 /* CCNative.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F651D9A2E0300D69F39 /* CCNative.mm */; };
-		A2DE5FB31D9A2E0300D69F39 /* CCNativeMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F671D9A2E0300D69F39 /* CCNativeMac.mm */; };
-		A2DE5FB41D9A2E0300D69F39 /* OpenUDIDMac.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F6A1D9A2E0300D69F39 /* OpenUDIDMac.m */; };
 		A2DE5FBA1D9A2E0300D69F39 /* CCStorePaymentTransaction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F751D9A2E0300D69F39 /* CCStorePaymentTransaction.cpp */; };
 		A2DE5FBB1D9A2E0300D69F39 /* CCStoreProduct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F781D9A2E0300D69F39 /* CCStoreProduct.cpp */; };
 		A2DE5FD91D9A364C00D69F39 /* CCExposureFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EC31D9A2E0300D69F39 /* CCExposureFilter.cpp */; };
@@ -987,7 +981,6 @@
 				A2DE5D881D9A2B8800D69F39 /* debugger.c in Sources */,
 				A2DE5F7E1D9A2E0300D69F39 /* CCCrypto.cpp in Sources */,
 				A2DE5F831D9A2E0300D69F39 /* CCCustomFilter.cpp in Sources */,
-				A2DE5FB31D9A2E0300D69F39 /* CCNativeMac.mm in Sources */,
 				A2DE5F921D9A2E0300D69F39 /* ccFilterShaders.cpp in Sources */,
 				A2DE5D891D9A2B8800D69F39 /* lfs.c in Sources */,
 				A2DE5F911D9A2E0300D69F39 /* CCFilteredSprite.cpp in Sources */,
@@ -998,17 +991,12 @@
 				A2DE5D8A1D9A2B8800D69F39 /* lpack.c in Sources */,
 				A2DE5FA91D9A2E0300D69F39 /* CCStoreReceiptVerifyRequestIOS.mm in Sources */,
 				A27E5AE41DB5C6F000E2B142 /* LuaTouchEventManager.cpp in Sources */,
-				A2DE5FB01D9A2E0300D69F39 /* ReachabilityIOSMac.m in Sources */,
 				A2DE5F801D9A2E0300D69F39 /* CCBlurFilter.cpp in Sources */,
-				A2DE5FB21D9A2E0300D69F39 /* CCNative.mm in Sources */,
 				A2DE60391D9A382800D69F39 /* LuaNodeManager.cpp in Sources */,
 				A2DE5D861D9A2B8800D69F39 /* lua_cjson.c in Sources */,
 				A2DE5F931D9A2E0300D69F39 /* FilterShaders.cpp in Sources */,
-				A2DE5FAF1D9A2E0300D69F39 /* CCNetworkIOSMac.mm in Sources */,
 				A2DE5FBA1D9A2E0300D69F39 /* CCStorePaymentTransaction.cpp in Sources */,
 				A2DE5FBB1D9A2E0300D69F39 /* CCStoreProduct.cpp in Sources */,
-				A2DE5FB41D9A2E0300D69F39 /* OpenUDIDMac.m in Sources */,
-				A2DE5FB11D9A2E0300D69F39 /* CCCryptoMac.mm in Sources */,
 				A2DE5F961D9A2E0300D69F39 /* HelperFunc_luabinding.cpp in Sources */,
 				A2DE5F8B1D9A2E0300D69F39 /* CCMaskFilter.cpp in Sources */,
 				A2DE5F811D9A2E0300D69F39 /* CCBrightnessFilter.cpp in Sources */,
@@ -1130,7 +1118,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx10.11;
@@ -1169,7 +1157,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx10.11;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../quick-src/extra $(SRCROOT)/../quick-src/lua_extensions $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/extensions $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external";
@@ -1182,8 +1170,9 @@
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos9.2;
+				SDKROOT = iphoneos10.0;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../quick-src/extra $(SRCROOT)/../quick-src/lua_extensions $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/extensions $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/external/curl/include/ios";
 			};
 			name = Debug;
 		};
@@ -1192,8 +1181,9 @@
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos9.2;
+				SDKROOT = iphoneos10.0;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../quick-src/extra $(SRCROOT)/../quick-src/lua_extensions $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/extensions $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/external/curl/include/ios";
 			};
 			name = Release;
 		};

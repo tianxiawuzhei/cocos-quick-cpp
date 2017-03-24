@@ -1,27 +1,27 @@
 
-#import <StoreKit/StoreKit.h>
+
 
 #include "store/CCStore.h"
 #include "store/CCStoreProductsRequestDelegate.h"
-
-USING_NS_CC_EXTRA;
+#import <StoreKit/StoreKit.h>
+//USING_NS_CC_EXTRA;
 
 class CCStoreReceiptVerifyRequestIOS;
 
 @interface StoreIOS : NSObject < SKPaymentTransactionObserver, SKProductsRequestDelegate >
 {
-    CCStoreIsSandbox isSandbox_;
-    CCStoreReceiptVerifyMode receiptVerifyMode_;
+    cocos2d::extra::CCStoreIsSandbox isSandbox_;
+    cocos2d::extra::CCStoreReceiptVerifyMode receiptVerifyMode_;
     NSString *receiptVerifyServerUrl_;
 
-    StoreTransactionObserver *transactionObserver_;
-    StoreProductsRequestDelegate *productRequestDelegate_;
+    cocos2d::extra::StoreTransactionObserver *transactionObserver_;
+    cocos2d::extra::StoreProductsRequestDelegate *productRequestDelegate_;
     NSMutableDictionary *loadedProducts_;
     SKProductsRequest *productRequest_;
 }
 
-@property (nonatomic, assign) CCStoreIsSandbox isSandbox;
-@property (nonatomic, assign) CCStoreReceiptVerifyMode receiptVerifyMode;
+@property (nonatomic, assign) cocos2d::extra::CCStoreIsSandbox isSandbox;
+@property (nonatomic, assign) cocos2d::extra::CCStoreReceiptVerifyMode receiptVerifyMode;
 @property (nonatomic, retain) NSString *receiptVerifyServerUrl;
 
 #pragma mark -
@@ -30,7 +30,7 @@ class CCStoreReceiptVerifyRequestIOS;
 + (StoreIOS *)sharedStore;
 + (void)purgeSharedStore;
 - (id)init;
-- (void)postInitWithTransactionObserver:(StoreTransactionObserver *)observer;
+- (void)postInitWithTransactionObserver:(cocos2d::extra::StoreTransactionObserver *)observer;
 
 #pragma mark -
 #pragma mark Making a Purchase
@@ -43,7 +43,7 @@ class CCStoreReceiptVerifyRequestIOS;
 #pragma mark -
 #pragma mark Retrieving Product Information
 
-- (void)requestProductData:(NSSet *)productsId andDelegate:(StoreProductsRequestDelegate *)delegate;
+- (void)requestProductData:(NSSet *)productsId andDelegate:(cocos2d::extra::StoreProductsRequestDelegate *)delegate;
 - (void)cancelRequestProductData;
 - (BOOL)isProductLoaded:(NSString *)productId;
 - (SKProduct *)getProduct:(NSString *)productId;
@@ -72,7 +72,7 @@ class CCStoreReceiptVerifyRequestIOS;
 #pragma mark -
 #pragma mark helper
 
-- (StorePaymentTransaction *)createStorePaymentTransaction:(SKPaymentTransaction *)transaction
+- (cocos2d::extra::StorePaymentTransaction *)createStorePaymentTransaction:(SKPaymentTransaction *)transaction
                                         andReceiptVerifyStatus:(int)receiptVerifyStatus;
 
 @end

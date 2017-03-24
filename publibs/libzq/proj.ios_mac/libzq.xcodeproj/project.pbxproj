@@ -844,7 +844,7 @@
 				PRODUCT_MODULE_NAME = zqIOS;
 				PRODUCT_NAME = zqIOS;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external/curl/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external/curl/include/mac";
 			};
 			name = Debug;
 		};
@@ -856,7 +856,7 @@
 				PRODUCT_MODULE_NAME = zqIOS;
 				PRODUCT_NAME = zqIOS;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external/curl/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../libzq $(SRCROOT)/../libzq/libs $(SRCROOT)/../../cocos2dx/external $(SRCROOT)/../../cocos2dx/cocos $(SRCROOT)/../../cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../cocos2dx/external/lua/tolua $(SRCROOT)/../../cocos2dx/external/lua/luajit/include $(SRCROOT)/../../cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../cocos2dx/external/curl/include/mac";
 			};
 			name = Release;
 		};

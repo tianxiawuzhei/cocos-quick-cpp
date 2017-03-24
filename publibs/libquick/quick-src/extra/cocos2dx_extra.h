@@ -6,7 +6,7 @@
 #include <string>
 
 using namespace std;
-using namespace cocos2d;
+//using namespace cocos2d;
 
 #define NS_CC_EXTRA_BEGIN namespace cocos2d { namespace extra {
 #define NS_CC_EXTRA_END   }}
