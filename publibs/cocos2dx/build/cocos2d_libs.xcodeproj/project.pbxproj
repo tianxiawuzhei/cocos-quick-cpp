@@ -6741,6 +6741,7 @@
 		A07A4D641783777C0073F6A7 /* libcocos2d iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libcocos2d iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E749F51BA8FD7F001A8332 /* UIEditBoxImpl-common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "UIEditBoxImpl-common.cpp"; sourceTree = "<group>"; };
 		A0E749F61BA8FD7F001A8332 /* UIEditBoxImpl-common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIEditBoxImpl-common.h"; sourceTree = "<group>"; };
+		A27566721E89007A00CB1BB8 /* libzqIOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzqIOS.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/zq_test-hcqembijzawfjpgafiwprnrhrkct/Build/Products/Debug-iphonesimulator/libzqIOS.a"; sourceTree = "<group>"; };
 		B20564AA1A6E5744001C1B6E /* ccShader_PositionColorTextureAsPointsize.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ccShader_PositionColorTextureAsPointsize.vert; sourceTree = "<group>"; };
 		B217703B1977ECB4009EE11B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		B217703D1977ECC1009EE11B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -7803,6 +7804,7 @@
 		1551A341158F2AB200E66CFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A27566721E89007A00CB1BB8 /* libzqIOS.a */,
 				2905E9CC1ACD3D8C00092DD2 /* libz.a */,
 				292F1A661A524F2700E479F8 /* libssl.dylib */,
 				B217704C1977ED8B009EE11B /* libsqlite3.dylib */,
