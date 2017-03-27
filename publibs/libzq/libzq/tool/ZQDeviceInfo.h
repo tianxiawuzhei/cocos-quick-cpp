@@ -30,6 +30,7 @@ namespace zq
         virtual bool os_is_mac();
         virtual bool os_is_ios();
         virtual bool os_is_android();
+        virtual bool os_is_mobile();
         
         virtual int cpu_core();
         virtual float cpu_usage() = 0;
@@ -41,6 +42,7 @@ namespace zq
         virtual std::string device_telecom()  = 0;
         virtual std::string device_hardware() = 0;
         virtual std::string device_network()  = 0;
+        virtual std::string device_os_version() = 0;
 
         virtual std::string bundle_id() = 0;
         virtual std::string bundle_name() = 0;

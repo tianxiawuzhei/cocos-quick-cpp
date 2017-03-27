@@ -35,7 +35,6 @@
 		A2DE5F7C1D9A2E0300D69F39 /* HelperFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EA91D9A2E0300D69F39 /* HelperFunc.cpp */; };
 		A2DE5F7D1D9A2E0300D69F39 /* libbase64.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EAE1D9A2E0300D69F39 /* libbase64.c */; };
 		A2DE5F7E1D9A2E0300D69F39 /* CCCrypto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EB01D9A2E0300D69F39 /* CCCrypto.cpp */; };
-		A2DE5F7F1D9A2E0300D69F39 /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EB31D9A2E0300D69F39 /* md5.c */; };
 		A2DE5F801D9A2E0300D69F39 /* CCBlurFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EB91D9A2E0300D69F39 /* CCBlurFilter.cpp */; };
 		A2DE5F811D9A2E0300D69F39 /* CCBrightnessFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EBB1D9A2E0300D69F39 /* CCBrightnessFilter.cpp */; };
 		A2DE5F821D9A2E0300D69F39 /* CCContrastFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5EBD1D9A2E0300D69F39 /* CCContrastFilter.cpp */; };
@@ -956,7 +955,6 @@
 				A2DE5F981D9A2E0300D69F39 /* lua_cocos2dx_extension_nanovg_auto.cpp in Sources */,
 				A2DE5F9A1D9A2E0300D69F39 /* NVGDrawNode.cpp in Sources */,
 				A2DE5F841D9A2E0300D69F39 /* CCDropShadowFilter.cpp in Sources */,
-				A2DE5F7F1D9A2E0300D69F39 /* md5.c in Sources */,
 				A2DE5F821D9A2E0300D69F39 /* CCContrastFilter.cpp in Sources */,
 				A2DE5FA71D9A2E0300D69F39 /* CCStoreIOS.mm in Sources */,
 				A2DE5F7D1D9A2E0300D69F39 /* libbase64.c in Sources */,
