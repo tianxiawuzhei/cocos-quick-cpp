@@ -8,14 +8,15 @@
 ***********************************************/
 
 #include "ZQTextUtil.h"
-#include "ZQTextUtilMac.h"
+#include "platform/mac/ZQTextUtilMac.h"
+#include "platform/ios/ZQTextUtilIOS.h"
 
 using namespace zq;
 
 ZQTextUtil* ZQTextUtil::getInstance()
 {
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-    return ZQTextUtilMac::getInstance();
+    return ZQTextUtilIOS::getInstance();
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_MAC
     return ZQTextUtilMac::getInstance();
 #endif

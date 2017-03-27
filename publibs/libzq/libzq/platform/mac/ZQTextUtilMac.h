@@ -14,7 +14,6 @@
 
 namespace zq
 {
-    
     class ZQTextUtilMac : public ZQTextUtil
     {
     public:

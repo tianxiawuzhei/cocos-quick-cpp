@@ -18,8 +18,8 @@
 		A27566211E88E50300CB1BB8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A27566201E88E50300CB1BB8 /* SystemConfiguration.framework */; };
 		A27566251E88E59300CB1BB8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A27566241E88E59300CB1BB8 /* CoreTelephony.framework */; };
 		A27566261E88E66A00CB1BB8 /* libluacocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A22BDC671E83F18E0094891D /* libluacocos2d iOS.a */; };
-		A27566701E89000E00CB1BB8 /* libzqIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A27566671E88EE2F00CB1BB8 /* libzqIOS.a */; };
 		A27566711E89004800CB1BB8 /* liblibquickios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A275665C1E88EE2700CB1BB8 /* liblibquickios.a */; };
+		A27566741E8902E800CB1BB8 /* libzqIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A27566671E88EE2F00CB1BB8 /* libzqIOS.a */; };
 		A2BDB1971E83F03100617F76 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2BDB1921E83F03100617F76 /* AppController.mm */; };
 		A2BDB1981E83F03100617F76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BDB1931E83F03100617F76 /* main.m */; };
 		A2BDB1991E83F03100617F76 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2BDB1961E83F03100617F76 /* RootViewController.mm */; };
@@ -140,19 +140,19 @@
 			remoteGlobalIDString = A222FE881DC08CE8009F3A9A;
 			remoteInfo = libzqIOS;
 		};
-		A275666C1E88FFF800CB1BB8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A275665F1E88EE2F00CB1BB8 /* libzq.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A222FE871DC08CE8009F3A9A;
-			remoteInfo = libzqIOS;
-		};
 		A275666E1E88FFFE00CB1BB8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A27566561E88EE2700CB1BB8 /* libquick.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = A2DE5C411D9A2AF800D69F39;
 			remoteInfo = libquickios;
+		};
+		A27566751E89035900CB1BB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A275665F1E88EE2F00CB1BB8 /* libzq.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A222FE871DC08CE8009F3A9A;
+			remoteInfo = libzqIOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -224,8 +224,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A27566741E8902E800CB1BB8 /* libzqIOS.a in Frameworks */,
 				A27566711E89004800CB1BB8 /* liblibquickios.a in Frameworks */,
-				A27566701E89000E00CB1BB8 /* libzqIOS.a in Frameworks */,
 				A27566261E88E66A00CB1BB8 /* libluacocos2d iOS.a in Frameworks */,
 				A27566251E88E59300CB1BB8 /* CoreTelephony.framework in Frameworks */,
 				A27566211E88E50300CB1BB8 /* SystemConfiguration.framework in Frameworks */,
@@ -410,10 +410,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				A27566761E89035900CB1BB8 /* PBXTargetDependency */,
 				A275662D1E88E6F500CB1BB8 /* PBXTargetDependency */,
 				A27566291E88E6ED00CB1BB8 /* PBXTargetDependency */,
 				A275666F1E88FFFE00CB1BB8 /* PBXTargetDependency */,
-				A275666D1E88FFF800CB1BB8 /* PBXTargetDependency */,
 			);
 			name = zq_test;
 			productName = zq_test;
@@ -611,15 +611,15 @@
 			name = "libcocos2d iOS";
 			targetProxy = A275662C1E88E6F500CB1BB8 /* PBXContainerItemProxy */;
 		};
-		A275666D1E88FFF800CB1BB8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libzqIOS;
-			targetProxy = A275666C1E88FFF800CB1BB8 /* PBXContainerItemProxy */;
-		};
 		A275666F1E88FFFE00CB1BB8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = libquickios;
 			targetProxy = A275666E1E88FFFE00CB1BB8 /* PBXContainerItemProxy */;
+		};
+		A27566761E89035900CB1BB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libzqIOS;
+			targetProxy = A27566751E89035900CB1BB8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -648,7 +648,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos10.0;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../publibs/cocos2dx $(SRCROOT)/../../publibs/cocos2dx/cocos/audio/include $(SRCROOT)/../../publibs/cocos2dx/cocos $(SRCROOT)/../../publibs/cocos2dx/extensions $(SRCROOT)/../../publibs/cocos2dx/external $(SRCROOT)/../../publibs/cocos2dx/external/chipmunk/include/chipmunk $(SRCROOT)/../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../publibs/cocos2dx/tools/simulator/libsimulator/lib $(SRCROOT)/../../publibs/cocos2dx/tools/simulator/libsimulator/lib/protobuf-lite";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../publibs/cocos2dx $(SRCROOT)/../../publibs/cocos2dx/cocos/audio/include $(SRCROOT)/../../publibs/cocos2dx/cocos $(SRCROOT)/../../publibs/cocos2dx/extensions $(SRCROOT)/../../publibs/cocos2dx/external $(SRCROOT)/../../publibs/cocos2dx/external/chipmunk/include/chipmunk $(SRCROOT)/../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../publibs/cocos2dx/cocos $(SRCROOT)/../../publibs/cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../publibs/libquick/quick-src $(SRCROOT)/../../publibs/libquick/quick-src/extra $(SRCROOT)/../../publibs/libzq $(SRCROOT)/../../publibs/libzq/libzq";
 			};
 			name = Debug;
 		};
@@ -671,7 +671,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos10.0;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../publibs/cocos2dx $(SRCROOT)/../../publibs/cocos2dx/cocos/audio/include $(SRCROOT)/../../publibs/cocos2dx/cocos $(SRCROOT)/../../publibs/cocos2dx/extensions $(SRCROOT)/../../publibs/cocos2dx/external $(SRCROOT)/../../publibs/cocos2dx/external/chipmunk/include/chipmunk $(SRCROOT)/../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../publibs/cocos2dx/tools/simulator/libsimulator/lib $(SRCROOT)/../../publibs/cocos2dx/tools/simulator/libsimulator/lib/protobuf-lite";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../publibs/cocos2dx $(SRCROOT)/../../publibs/cocos2dx/cocos/audio/include $(SRCROOT)/../../publibs/cocos2dx/cocos $(SRCROOT)/../../publibs/cocos2dx/extensions $(SRCROOT)/../../publibs/cocos2dx/external $(SRCROOT)/../../publibs/cocos2dx/external/chipmunk/include/chipmunk $(SRCROOT)/../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../publibs/cocos2dx/cocos $(SRCROOT)/../../publibs/cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../publibs/libquick/quick-src $(SRCROOT)/../../publibs/libquick/quick-src/extra $(SRCROOT)/../../publibs/libzq $(SRCROOT)/../../publibs/libzq/libzq";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
