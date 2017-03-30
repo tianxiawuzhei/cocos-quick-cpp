@@ -24,6 +24,7 @@
 #include "tool/ZQDeviceInfo.h"
 #include "utils/ZQStringUtils.h"
 #include "log/ZQLogger.h"
+#include "lualoader/ZQLuaLoader.h"
 
 
 using namespace CocosDenshion;
@@ -93,6 +94,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto engine = LuaEngine::getInstance();
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     lua_State* L = engine->getLuaStack()->getLuaState();
+    engine->addLuaLoader(zq_lua_loader);
+    
     lua_module_register(L);
     quick_module_register(L);
 

@@ -8,7 +8,8 @@
 ***********************************************/
 
 #include "ZQTextArea.h"
-#include "ZQTextAreaMac.h"
+#include "platform/ios/ZQTextAreaIOS.h"
+#include "platform/mac/ZQTextAreaMac.h"
 
 using namespace zq;
 
@@ -22,14 +23,18 @@ ZQTextArea::ZQTextArea()
 
 ZQTextArea* ZQTextArea::create(const cocos2d::Size &size)
 {
-    auto view = ZQTextAreaMac::create();
-    if (view)
+#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+    auto node = ZQTextAreaIOS::create();
+#elif CC_TARGET_PLATFORM == CC_PLATFORM_MAC
+    auto node = ZQTextAreaMac::create();
+#endif
+    
+    if (node)
     {
-        view->setContentSize(size);
+        node->setContentSize(size);
     }
     
-    return view;
-}
+    return node;}
 
 void ZQTextArea::setMaxLength(int length)
 {

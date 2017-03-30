@@ -7,12 +7,17 @@
 *
 ***********************************************/
 #include "ZQTextBox.h"
-#include "ZQTextBoxMac.h"
+#include "platform/mac/ZQTextBoxMac.h"
+#include "platform/ios/ZQTextBoxIOS.h"
 
 using namespace zq;
 ZQTextBox* ZQTextBox::create(const cocos2d::Size &size)
 {
+#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+    auto node = ZQTextBoxIOS::create();
+#elif CC_TARGET_PLATFORM == CC_PLATFORM_MAC
     auto node = ZQTextBoxMac::create();
+#endif
     if (node)
     {
         node->setContentSize(size);

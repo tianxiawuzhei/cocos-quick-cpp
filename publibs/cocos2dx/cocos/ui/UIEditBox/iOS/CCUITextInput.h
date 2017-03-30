@@ -25,6 +25,7 @@
 #ifndef cocos2d_libs_CCUITextInput_h
 #define cocos2d_libs_CCUITextInput_h
 
+#import <UIKit/UIKit.h>
 static const int CC_EDIT_BOX_PADDING = 5;
 
 /**

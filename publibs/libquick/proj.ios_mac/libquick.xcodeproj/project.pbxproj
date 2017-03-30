@@ -20,6 +20,8 @@
 		A24952641D9A7623001E033F /* LuaEventNode.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602E1D9A382800D69F39 /* LuaEventNode.h */; };
 		A24952651D9A7623001E033F /* LuaNodeManager.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60301D9A382800D69F39 /* LuaNodeManager.h */; };
 		A24952671D9A7623001E033F /* LuaTouchTargetNode.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60341D9A382800D69F39 /* LuaTouchTargetNode.h */; };
+		A27566851E8BD8B400CB1BB8 /* CCNetworkIOSMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F601D9A2E0300D69F39 /* CCNetworkIOSMac.mm */; };
+		A27566861E8BD8B400CB1BB8 /* ReachabilityIOSMac.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5F621D9A2E0300D69F39 /* ReachabilityIOSMac.m */; };
 		A27E5AE41DB5C6F000E2B142 /* LuaTouchEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27E5AE21DB5C6F000E2B142 /* LuaTouchEventManager.cpp */; };
 		A27E5AE51DB5C6F000E2B142 /* LuaTouchEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27E5AE21DB5C6F000E2B142 /* LuaTouchEventManager.cpp */; };
 		A2DE5D851D9A2B8800D69F39 /* fpconv.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D281D9A2B8700D69F39 /* fpconv.c */; };
@@ -945,6 +947,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A27566851E8BD8B400CB1BB8 /* CCNetworkIOSMac.mm in Sources */,
+				A27566861E8BD8B400CB1BB8 /* ReachabilityIOSMac.m in Sources */,
 				A24952631D9A7623001E033F /* lua_cocos2dx_quick_manual.hpp in Sources */,
 				A24952641D9A7623001E033F /* LuaEventNode.h in Sources */,
 				A24952651D9A7623001E033F /* LuaNodeManager.h in Sources */,
