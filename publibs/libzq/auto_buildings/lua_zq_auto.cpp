@@ -8022,6 +8022,1365 @@ int lua_register_zq_Locale(lua_State* tolua_S)
     g_typeCast["Locale"] = "zq.Locale";
     return 1;
 }
+
+int lua_zq_ZQDeviceInfo_cpu_usage(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_cpu_usage'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_cpu_usage'", nullptr);
+            return 0;
+        }
+        double ret = cobj->cpu_usage();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:cpu_usage",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_cpu_usage'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_device_uuid(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_device_uuid'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_device_uuid'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->device_uuid();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:device_uuid",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_device_uuid'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_os_is_android(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_os_is_android'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_os_is_android'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->os_is_android();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:os_is_android",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_os_is_android'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_memory_all(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_memory_all'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_memory_all'", nullptr);
+            return 0;
+        }
+        unsigned int ret = cobj->memory_all();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:memory_all",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_memory_all'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_version_cpp(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_version_cpp'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_version_cpp'", nullptr);
+            return 0;
+        }
+        int ret = cobj->version_cpp();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:version_cpp",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_version_cpp'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_os_is_ios(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_os_is_ios'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_os_is_ios'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->os_is_ios();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:os_is_ios",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_os_is_ios'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_device_network(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_device_network'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_device_network'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->device_network();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:device_network",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_device_network'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_cpu_core(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_cpu_core'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_cpu_core'", nullptr);
+            return 0;
+        }
+        int ret = cobj->cpu_core();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:cpu_core",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_cpu_core'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_bundle_id(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_bundle_id'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_bundle_id'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->bundle_id();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:bundle_id",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_bundle_id'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_device_hardware(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_device_hardware'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_device_hardware'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->device_hardware();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:device_hardware",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_device_hardware'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_uuid(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_uuid'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_uuid'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->uuid();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:uuid",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_uuid'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_vibrate(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_vibrate'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_vibrate'", nullptr);
+            return 0;
+        }
+        cobj->vibrate();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:vibrate",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_vibrate'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_clipboard(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_clipboard'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQDeviceInfo:clipboard");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_clipboard'", nullptr);
+            return 0;
+        }
+        cobj->clipboard(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:clipboard",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_clipboard'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_bundle_name(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_bundle_name'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_bundle_name'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->bundle_name();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:bundle_name",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_bundle_name'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_memory_used(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_memory_used'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_memory_used'", nullptr);
+            return 0;
+        }
+        unsigned int ret = cobj->memory_used();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:memory_used",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_memory_used'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_memory_free(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_memory_free'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_memory_free'", nullptr);
+            return 0;
+        }
+        unsigned int ret = cobj->memory_free();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:memory_free",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_memory_free'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_os_is_mobile(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_os_is_mobile'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_os_is_mobile'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->os_is_mobile();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:os_is_mobile",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_os_is_mobile'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_browser_useragent(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_browser_useragent'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_browser_useragent'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->browser_useragent();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:browser_useragent",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_browser_useragent'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_keyboard_exist(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_keyboard_exist'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_keyboard_exist'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->keyboard_exist();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:keyboard_exist",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_keyboard_exist'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_device_telecom(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_device_telecom'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_device_telecom'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->device_telecom();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:device_telecom",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_device_telecom'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_os_is_mac(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_os_is_mac'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_os_is_mac'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->os_is_mac();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:os_is_mac",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_os_is_mac'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_open_browser(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_open_browser'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQDeviceInfo:open_browser");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_open_browser'", nullptr);
+            return 0;
+        }
+        bool ret = cobj->open_browser(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:open_browser",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_open_browser'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_quit_game(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_quit_game'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_quit_game'", nullptr);
+            return 0;
+        }
+        cobj->quit_game();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:quit_game",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_quit_game'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_keyboard_close(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_keyboard_close'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_keyboard_close'", nullptr);
+            return 0;
+        }
+        cobj->keyboard_close();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:keyboard_close",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_keyboard_close'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_device_os_version(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_device_os_version'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_device_os_version'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->device_os_version();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:device_os_version",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_device_os_version'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_version_short(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_version_short'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_version_short'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->version_short();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:version_short",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_version_short'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_keep_awake(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQDeviceInfo* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQDeviceInfo*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQDeviceInfo_keep_awake'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        bool arg0;
+
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "zq.ZQDeviceInfo:keep_awake");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_keep_awake'", nullptr);
+            return 0;
+        }
+        cobj->keep_awake(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQDeviceInfo:keep_awake",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_keep_awake'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_zq_ZQDeviceInfo_getInstance(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"zq.ZQDeviceInfo",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQDeviceInfo_getInstance'", nullptr);
+            return 0;
+        }
+        zq::ZQDeviceInfo* ret = zq::ZQDeviceInfo::getInstance();
+        object_to_luaval<zq::ZQDeviceInfo>(tolua_S, "zq.ZQDeviceInfo",(zq::ZQDeviceInfo*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "zq.ZQDeviceInfo:getInstance",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQDeviceInfo_getInstance'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua_zq_ZQDeviceInfo_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (ZQDeviceInfo)");
+    return 0;
+}
+
+int lua_register_zq_ZQDeviceInfo(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"zq.ZQDeviceInfo");
+    tolua_cclass(tolua_S,"ZQDeviceInfo","zq.ZQDeviceInfo","",nullptr);
+
+    tolua_beginmodule(tolua_S,"ZQDeviceInfo");
+        tolua_function(tolua_S,"cpu_usage",lua_zq_ZQDeviceInfo_cpu_usage);
+        tolua_function(tolua_S,"device_uuid",lua_zq_ZQDeviceInfo_device_uuid);
+        tolua_function(tolua_S,"os_is_android",lua_zq_ZQDeviceInfo_os_is_android);
+        tolua_function(tolua_S,"memory_all",lua_zq_ZQDeviceInfo_memory_all);
+        tolua_function(tolua_S,"version_cpp",lua_zq_ZQDeviceInfo_version_cpp);
+        tolua_function(tolua_S,"os_is_ios",lua_zq_ZQDeviceInfo_os_is_ios);
+        tolua_function(tolua_S,"device_network",lua_zq_ZQDeviceInfo_device_network);
+        tolua_function(tolua_S,"cpu_core",lua_zq_ZQDeviceInfo_cpu_core);
+        tolua_function(tolua_S,"bundle_id",lua_zq_ZQDeviceInfo_bundle_id);
+        tolua_function(tolua_S,"device_hardware",lua_zq_ZQDeviceInfo_device_hardware);
+        tolua_function(tolua_S,"uuid",lua_zq_ZQDeviceInfo_uuid);
+        tolua_function(tolua_S,"vibrate",lua_zq_ZQDeviceInfo_vibrate);
+        tolua_function(tolua_S,"clipboard",lua_zq_ZQDeviceInfo_clipboard);
+        tolua_function(tolua_S,"bundle_name",lua_zq_ZQDeviceInfo_bundle_name);
+        tolua_function(tolua_S,"memory_used",lua_zq_ZQDeviceInfo_memory_used);
+        tolua_function(tolua_S,"memory_free",lua_zq_ZQDeviceInfo_memory_free);
+        tolua_function(tolua_S,"os_is_mobile",lua_zq_ZQDeviceInfo_os_is_mobile);
+        tolua_function(tolua_S,"browser_useragent",lua_zq_ZQDeviceInfo_browser_useragent);
+        tolua_function(tolua_S,"keyboard_exist",lua_zq_ZQDeviceInfo_keyboard_exist);
+        tolua_function(tolua_S,"device_telecom",lua_zq_ZQDeviceInfo_device_telecom);
+        tolua_function(tolua_S,"os_is_mac",lua_zq_ZQDeviceInfo_os_is_mac);
+        tolua_function(tolua_S,"open_browser",lua_zq_ZQDeviceInfo_open_browser);
+        tolua_function(tolua_S,"quit_game",lua_zq_ZQDeviceInfo_quit_game);
+        tolua_function(tolua_S,"keyboard_close",lua_zq_ZQDeviceInfo_keyboard_close);
+        tolua_function(tolua_S,"device_os_version",lua_zq_ZQDeviceInfo_device_os_version);
+        tolua_function(tolua_S,"version_short",lua_zq_ZQDeviceInfo_version_short);
+        tolua_function(tolua_S,"keep_awake",lua_zq_ZQDeviceInfo_keep_awake);
+        tolua_function(tolua_S,"getInstance", lua_zq_ZQDeviceInfo_getInstance);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(zq::ZQDeviceInfo).name();
+    g_luaType[typeName] = "zq.ZQDeviceInfo";
+    g_typeCast["ZQDeviceInfo"] = "zq.ZQDeviceInfo";
+    return 1;
+}
 TOLUA_API int register_all_zq(lua_State* tolua_S)
 {
 	tolua_open(tolua_S);
@@ -8039,6 +9398,7 @@ TOLUA_API int register_all_zq(lua_State* tolua_S)
 	lua_register_zq_ZQScriptHandler(tolua_S);
 	lua_register_zq_ZQAppEvent(tolua_S);
 	lua_register_zq_ZQCCBILoader(tolua_S);
+	lua_register_zq_ZQDeviceInfo(tolua_S);
 	lua_register_zq_Locale(tolua_S);
 	lua_register_zq_ZQTextArea(tolua_S);
 	lua_register_zq_ZQImageLoader(tolua_S);

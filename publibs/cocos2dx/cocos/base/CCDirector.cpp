@@ -1365,6 +1365,16 @@ void Director::setEventDispatcher(EventDispatcher* dispatcher)
     }
 }
 
+long Director::getDrawnVertices() const
+{
+    return _renderer->getDrawnVertices();
+}
+
+long Director::getDrawnBatches() const
+{
+    return _renderer->getDrawnBatches();
+}
+
 /***************************************************
 * implementation of DisplayLinkDirector
 **************************************************/

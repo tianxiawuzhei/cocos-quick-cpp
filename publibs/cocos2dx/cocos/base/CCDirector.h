@@ -437,6 +437,9 @@ public:
      * @since v3.0
      */
     Renderer* getRenderer() const { return _renderer; }
+    
+    long getDrawnVertices() const;
+    long getDrawnBatches() const;
 
     /** Returns the Console associated with this director.
      * @since v3.0

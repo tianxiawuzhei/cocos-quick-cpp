@@ -93,7 +93,7 @@ bool ZQTextUtilIOS::renderByArray(cocos2d::Sprite *sprite, const cocos2d::ValueV
             auto text     = unit["_text"].asString();
             auto font     = unit["_font"].asString();
             auto color    = unit["_color"].asValueMap();
-            auto stroke   = unit["_stroke"].asValueMap();
+            auto stroke   = unit["_stroke_color"].asValueMap();
             auto stroke_w = unit["_stroke_width"].asFloat();
             
             auto size  = unit["_size"].asDouble();

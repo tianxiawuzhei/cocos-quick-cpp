@@ -33,4 +33,6 @@
 
 #include "lang/ZQLocale.h"
 
+#include "tool/ZQDeviceInfo.h"
+
 #endif /* __ZQLIBEXT_H__ */

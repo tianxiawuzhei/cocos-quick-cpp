@@ -12,6 +12,12 @@
 -- @return Director#Director self (return value: cc.Director)
         
 --------------------------------
+-- 
+-- @function [parent=#Director] getDrawnVertices 
+-- @param self
+-- @return long#long ret (return value: long)
+        
+--------------------------------
 --  Sets the EventDispatcher associated with this director.<br>
 -- since v3.0<br>
 -- js NA
@@ -463,6 +469,12 @@
 -- @function [parent=#Director] getEventDispatcher 
 -- @param self
 -- @return EventDispatcher#EventDispatcher ret (return value: cc.EventDispatcher)
+        
+--------------------------------
+-- 
+-- @function [parent=#Director] getDrawnBatches 
+-- @param self
+-- @return long#long ret (return value: long)
         
 --------------------------------
 --  Replaces the running scene with a new one. The running scene is terminated.<br>

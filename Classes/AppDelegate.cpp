@@ -107,6 +107,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     //register_custom_function(stack->getLuaState());
     
     ZQFileManage::set_url_for_code("http://172.26.167.82:8089/");
+    ZQFileManage::set_url_for_res("http://debug.mmm.io/cn/");
     
 #if COCOS2D_DEBUG
     bool clean = true;

@@ -76,4 +76,9 @@
 -- @field [parent=#zq] Locale#Locale Locale preloaded module
 
 
+--------------------------------------------------------
+-- the zq ZQDeviceInfo
+-- @field [parent=#zq] ZQDeviceInfo#ZQDeviceInfo ZQDeviceInfo preloaded module
+
+
 return nil
