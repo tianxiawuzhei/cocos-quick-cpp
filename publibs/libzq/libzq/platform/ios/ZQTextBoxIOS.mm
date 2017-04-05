@@ -15,6 +15,7 @@
 #import <UIKit/UIKit.h>
 #import "ui/UIEditBox/iOS/CCUITextInput.h"
 #import "ui/UIEditBox/iOS/UITextView+CCUITextInput.h"
+#import "platform/ios/CCEAGLView-ios.h"
 
 using namespace zq;
 
@@ -127,6 +128,7 @@ static UIFont* constructFont(const char *fontName, float fontSize, CGRect frame)
 
 ZQTextBoxIOS::ZQTextBoxIOS()
 :_view(nullptr)
+,_adjustHeight(0.0)
 {
     this->_view = [[UITextField alloc] init];
     this->_view_delegate = [[ZQTextBoxDelegateIOS alloc]init];
@@ -134,10 +136,13 @@ ZQTextBoxIOS::ZQTextBoxIOS()
     
     [(UITextField*)this->_view setBackgroundColor:[UIColor clearColor]];
     [(UITextField*)this->_view ccui_setTextColor:[UIColor whiteColor]];
-
+    [(UITextField*)this->_view setReturnKeyType:UIReturnKeyDone];
+    [(UITextField*)this->_view setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+    
     [(UITextField*)this->_view setDelegate:(ZQTextBoxDelegateIOS*)this->_view_delegate];
-    [(UITextField*)this->_view setAlignment:NSTextAlignmentLeft];
+    [(UITextField*)this->_view setTextAlignment:NSTextAlignmentLeft];
     [(UITextField*)this->_view setHidden:NO];
+    
 }
 
 ZQTextBoxIOS::~ZQTextBoxIOS()
@@ -201,19 +206,39 @@ void ZQTextBoxIOS::setMaxLength(int length)
 //    [((UITextField*)this->_view) ccui_setMaxLength:length];
 }
 
+void ZQTextBoxIOS::setKeyboardDefault()
+{
+    [((UITextField*)this->_view) setKeyboardType:UIKeyboardTypeDefault];
+}
+
+void ZQTextBoxIOS::setKeyboardURL()
+{
+    [((UITextField*)this->_view) setKeyboardType:UIKeyboardTypeURL];
+}
+
+void ZQTextBoxIOS::setKeyboardNumber()
+{
+    [(UITextField*)this->_view setKeyboardType:UIKeyboardTypeDecimalPad];
+}
+
+void ZQTextBoxIOS::setKeyboardEmail()
+{
+    [(UITextField*)this->_view setKeyboardType:UIKeyboardTypeEmailAddress];
+}
+
 void ZQTextBoxIOS::setAlignmentLeft()
 {
-    [(UITextField*)this->_view setAlignment:NSTextAlignmentLeft];
+    [(UITextField*)this->_view setTextAlignment:NSTextAlignmentLeft];
 }
 
 void ZQTextBoxIOS::setAlignmentCenter()
 {
-    [(UITextField*)this->_view setAlignment:NSTextAlignmentCenter];
+    [(UITextField*)this->_view setTextAlignment:NSTextAlignmentCenter];
 }
 
 void ZQTextBoxIOS::setAlignmentRight()
 {
-    [(UITextField*)this->_view setAlignment:NSTextAlignmentRight];
+    [(UITextField*)this->_view setTextAlignment:NSTextAlignmentRight];
 }
 
 void ZQTextBoxIOS::focus()
@@ -225,13 +250,14 @@ void ZQTextBoxIOS::update()
 {
     auto rect = cocos2d::ui::Helper::convertBoundingBoxToScreen(this);
     cocos2d::GLView* eglView = cocos2d::Director::getInstance()->getOpenGLView();
-    auto viewPortRect = eglView->getViewPortRect();
-    // Coordinate System on OSX has its origin at the lower left corner.
-    //    https://developer.apple.com/library/ios/documentation/General/Conceptual/Devpedia-CocoaApp/CoordinateSystem.html
-    auto screenPosY = viewPortRect.size.height - rect.origin.y - rect.size.height;
-    [(UITextField*)this->_view setFrame:CGRectMake(rect.origin.x,
-                                     screenPosY,
-                                     rect.size.width, rect.size.height)];
+    CCEAGLView *eaglview = (CCEAGLView*) eglView->getEAGLView();
+    
+    float factor = eaglview.contentScaleFactor;
+    
+    [(UITextField*)this->_view setFrame:CGRectMake(rect.origin.x / factor,
+                                                   rect.origin.y / factor,
+                                                   rect.size.width / factor,
+                                                   rect.size.height / factor)];
 }
 
 std::string ZQTextBoxIOS::getString()
@@ -270,3 +296,48 @@ void ZQTextBoxIOS::setOpacity(GLubyte opacity)
     ZQTextBox::setOpacity(opacity);
     [(UITextField*)this->_view setAlpha:opacity/255];
 }
+
+void ZQTextBoxIOS::keyboardWillShow(cocos2d::IMEKeyboardNotificationInfo& info)
+{
+    if (current_delegate_ != this->_view_delegate)
+    {
+        return;
+    }
+    
+    cocos2d::Size contentSize = this->getContentSize();
+    cocos2d::Rect rect = cocos2d::Rect(0, 0, contentSize.width, contentSize.height);
+    
+    cocos2d::Rect rectTracked = RectApplyTransform(rect, this->getNodeToWorldTransform());
+    // some adjustment for margin between the keyboard and the edit box.
+    rectTracked.origin.y -= 4;
+    
+    // if the keyboard area doesn't intersect with the tracking node area, nothing needs to be done.
+    if (!rectTracked.intersectsRect(info.end))
+    {
+        CCLOG("needn't to adjust view layout.");
+        return;
+    }
+    
+    // assume keyboard at the bottom of screen, calculate the vertical adjustment.
+    _adjustHeight = info.end.getMaxY() - rectTracked.getMinY();
+    // CCLOG("CCEditBox:needAdjustVerticalPosition(%f)", _adjustHeight);
+    
+    auto view = cocos2d::Director::getInstance()->getOpenGLView();
+    CCEAGLView *eaglview = (CCEAGLView *)view->getEAGLView();
+    
+    [eaglview doAnimationWhenKeyboardMoveWithDuration:info.duration distance:this->_adjustHeight];
+}
+
+void ZQTextBoxIOS::keyboardWillHide(cocos2d::IMEKeyboardNotificationInfo& info)
+{
+    if (current_delegate_ != this->_view_delegate)
+    {
+        return;
+    }
+    
+    auto view = cocos2d::Director::getInstance()->getOpenGLView();
+    CCEAGLView *eaglview = (CCEAGLView *)view->getEAGLView();
+    
+    [eaglview doAnimationWhenKeyboardMoveWithDuration:info.duration distance:-this->_adjustHeight];
+}
+

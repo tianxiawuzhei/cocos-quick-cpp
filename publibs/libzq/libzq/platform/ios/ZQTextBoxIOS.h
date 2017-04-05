@@ -30,10 +30,10 @@ namespace zq
         virtual void setPlaceholderFontColor(const cocos2d::Color4B &color);
         virtual void setPlaceHolder(const std::string &text);
         
-        virtual void setKeyboardDefault() {};
-        virtual void setKeyboardURL() {}
-        virtual void setKeyboardNumber() {}
-        virtual void setKeyboardEmail() {}
+        virtual void setKeyboardDefault();
+        virtual void setKeyboardURL();
+        virtual void setKeyboardNumber();
+        virtual void setKeyboardEmail();
         
         virtual void setAlignmentLeft();
         virtual void setAlignmentCenter();
@@ -55,10 +55,14 @@ namespace zq
         virtual void setOpacity(GLubyte opacity);
         virtual void setParent(cocos2d::Node *parent);
         
+    public:
+        virtual void keyboardWillShow(cocos2d::IMEKeyboardNotificationInfo& info);
         
+        virtual void keyboardWillHide(cocos2d::IMEKeyboardNotificationInfo& info);
     private:
         void* _view;
         void* _view_delegate;
+        float _adjustHeight;
     
     };
 }
