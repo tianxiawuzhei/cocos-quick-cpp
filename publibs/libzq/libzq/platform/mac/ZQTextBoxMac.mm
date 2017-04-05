@@ -210,6 +210,9 @@ void ZQTextBoxMac::focus()
 
 void ZQTextBoxMac::update()
 {
+    if (!this->isRunning())
+        return;
+    
     auto rect = cocos2d::ui::Helper::convertBoundingBoxToScreen(this);
     cocos2d::GLView* eglView = cocos2d::Director::getInstance()->getOpenGLView();
     auto viewPortRect = eglView->getViewPortRect();

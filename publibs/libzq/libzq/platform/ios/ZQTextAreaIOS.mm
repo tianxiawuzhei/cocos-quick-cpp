@@ -228,6 +228,9 @@ void ZQTextAreaIOS::focus()
 
 void ZQTextAreaIOS::update()
 {
+    if (!this->isRunning())
+        return;
+    
     auto rect = cocos2d::ui::Helper::convertBoundingBoxToScreen(this);
     cocos2d::GLView* eglView = cocos2d::Director::getInstance()->getOpenGLView();
     CCEAGLView *eaglview = (CCEAGLView*) eglView->getEAGLView();
