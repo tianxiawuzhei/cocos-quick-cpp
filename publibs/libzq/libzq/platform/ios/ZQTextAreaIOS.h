@@ -56,6 +56,10 @@ namespace zq
         virtual void setOpacity(GLubyte opacity);
         virtual void setParent(cocos2d::Node *parent);
         
+    public:
+        virtual void keyboardWillShow(cocos2d::IMEKeyboardNotificationInfo& info);
+        
+        virtual void keyboardWillHide(cocos2d::IMEKeyboardNotificationInfo& info);
     private:
         void* _view;
         void* _view_delegate;

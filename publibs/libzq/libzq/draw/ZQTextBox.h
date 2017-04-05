@@ -68,9 +68,9 @@ namespace zq
         virtual void onEnter();
     
     public:
-        virtual void keyboardWillShow(cocos2d::IMEKeyboardNotificationInfo& info){};
+        virtual void keyboardWillShow(cocos2d::IMEKeyboardNotificationInfo& info){}
         
-        virtual void keyboardWillHide(cocos2d::IMEKeyboardNotificationInfo& info){};
+        virtual void keyboardWillHide(cocos2d::IMEKeyboardNotificationInfo& info){}
       
     protected:
         std::string _fontName;
