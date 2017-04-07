@@ -57,7 +57,6 @@ namespace zq
         virtual void setOpacity(GLubyte opacity);
         virtual void setParent(cocos2d::Node *parent);
         
-        
     private:
         void* _view;
         void* _view_delegate;
