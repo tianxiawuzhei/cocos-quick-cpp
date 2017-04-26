@@ -62,13 +62,20 @@ std::string ZQFileManage::load_file(const std::string &filename)
     
     if (!url.empty())
     {
-        ZQLogD("FileManage load file url: %s", url.c_str());
         HTTPService::getInstance()->download(url, loc);
         if (ZQFileManage::file_exist(loc))
         {
+            ZQLogD("FileManage load file url: %s", url.c_str());
             return loc;
         }
+        else
+        {
+            ZQLogE("download file not found: %s", filename.c_str());
+            ZQFileManage:remove_file(loc);
+        }
     }
+    
+    ZQLogE("load file not found: %s", filename.c_str());
     
     return "";
 }
