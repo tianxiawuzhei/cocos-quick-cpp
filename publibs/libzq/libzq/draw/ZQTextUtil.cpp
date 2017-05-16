@@ -10,6 +10,7 @@
 #include "ZQTextUtil.h"
 #include "platform/mac/ZQTextUtilMac.h"
 #include "platform/ios/ZQTextUtilIOS.h"
+#include "platform/and/ZQTextUtilAnd.h"
 
 using namespace zq;
 
@@ -19,15 +20,7 @@ ZQTextUtil* ZQTextUtil::getInstance()
     return ZQTextUtilIOS::getInstance();
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_MAC
     return ZQTextUtilMac::getInstance();
+#elif CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+    return ZQTextUtilAnd::getInstance();
 #endif
-}
-
-float ZQTextUtil::widthByFont(const std::string &text, const std::string &font_name, float font_size)
-{
-    return this->sizeByFont(text, font_name, font_size).width;
-}
-
-float ZQTextUtil::heigthByFont(const std::string &text, const std::string &font_name, float font_size)
-{
-    return this->sizeByFont(text, font_name, font_size).height;
 }

@@ -7,7 +7,7 @@
 //
 #pragma once
 
-#include "ZQTextBox.h"
+#include "draw/ZQTextBox.h"
 #include "cocos2d.h"
 
 namespace zq

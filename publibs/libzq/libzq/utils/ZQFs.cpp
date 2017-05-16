@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <fstream>
+#include <algorithm>
 
 using namespace zq;
 

@@ -172,12 +172,6 @@ void ZQTextAreaIOS::setString(const std::string &text)
     [((UITextView*)this->_view) ccui_setText:[NSString stringWithUTF8String:text.c_str()]];
 }
 
-void ZQTextAreaIOS::setFontSize(float font_size)
-{
-    this->_font_size = font_size;
-    this->update();
-}
-
 void ZQTextAreaIOS::setFontColor(const cocos2d::Color3B &color)
 {
     [(UITextView*)this->_view ccui_setTextColor:[UIColor colorWithRed:color.r / 255.0

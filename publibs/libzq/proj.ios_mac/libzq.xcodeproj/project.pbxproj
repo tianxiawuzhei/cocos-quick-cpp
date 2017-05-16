@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		A22105741DDED8CC0075B8F5 /* ZQStringUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A22105721DDED8CC0075B8F5 /* ZQStringUtils.cpp */; };
 		A239097F1DCCA0BB003DA6C3 /* ZQFileManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A239097D1DCCA0BB003DA6C3 /* ZQFileManage.cpp */; };
+		A247A2BD1EB0BEBD00C52281 /* ZQDeviceInfoAnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A247A2B31EB0BEBD00C52281 /* ZQDeviceInfoAnd.cpp */; };
+		A247A2BE1EB0BEBD00C52281 /* ZQDeviceInfoAnd.h in Headers */ = {isa = PBXBuildFile; fileRef = A247A2B41EB0BEBD00C52281 /* ZQDeviceInfoAnd.h */; };
+		A247A2BF1EB0BEBD00C52281 /* ZQLoggerAnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A247A2B51EB0BEBD00C52281 /* ZQLoggerAnd.cpp */; };
+		A247A2C01EB0BEBD00C52281 /* ZQLoggerAnd.h in Headers */ = {isa = PBXBuildFile; fileRef = A247A2B61EB0BEBD00C52281 /* ZQLoggerAnd.h */; };
+		A247A2C11EB0BEBD00C52281 /* ZQTextAreaAnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A247A2B71EB0BEBD00C52281 /* ZQTextAreaAnd.cpp */; };
+		A247A2C21EB0BEBD00C52281 /* ZQTextAreaAnd.h in Headers */ = {isa = PBXBuildFile; fileRef = A247A2B81EB0BEBD00C52281 /* ZQTextAreaAnd.h */; };
+		A247A2C31EB0BEBD00C52281 /* ZQTextBoxAnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A247A2B91EB0BEBD00C52281 /* ZQTextBoxAnd.cpp */; };
+		A247A2C41EB0BEBD00C52281 /* ZQTextBoxAnd.h in Headers */ = {isa = PBXBuildFile; fileRef = A247A2BA1EB0BEBD00C52281 /* ZQTextBoxAnd.h */; };
+		A247A2C91EB0BF7200C52281 /* ZQTextUtilAnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A247A2C71EB0BF7200C52281 /* ZQTextUtilAnd.cpp */; };
+		A247A2CA1EB0BF7200C52281 /* ZQTextUtilAnd.h in Headers */ = {isa = PBXBuildFile; fileRef = A247A2C81EB0BF7200C52281 /* ZQTextUtilAnd.h */; };
 		A24EEF051E84E92E004FC918 /* ZQDeviceInfoIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = A24EEF031E84E92E004FC918 /* ZQDeviceInfoIOS.h */; };
 		A24EEF061E84E92E004FC918 /* ZQDeviceInfoIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A24EEF041E84E92E004FC918 /* ZQDeviceInfoIOS.mm */; };
 		A24EEF141E850277004FC918 /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = A24EEF121E850241004FC918 /* UIDeviceHardware.m */; };
@@ -152,6 +162,16 @@
 		A22105721DDED8CC0075B8F5 /* ZQStringUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQStringUtils.cpp; sourceTree = "<group>"; };
 		A222FE881DC08CE8009F3A9A /* libzqIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzqIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A239097D1DCCA0BB003DA6C3 /* ZQFileManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQFileManage.cpp; sourceTree = "<group>"; };
+		A247A2B31EB0BEBD00C52281 /* ZQDeviceInfoAnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQDeviceInfoAnd.cpp; sourceTree = "<group>"; };
+		A247A2B41EB0BEBD00C52281 /* ZQDeviceInfoAnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQDeviceInfoAnd.h; sourceTree = "<group>"; };
+		A247A2B51EB0BEBD00C52281 /* ZQLoggerAnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQLoggerAnd.cpp; sourceTree = "<group>"; };
+		A247A2B61EB0BEBD00C52281 /* ZQLoggerAnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQLoggerAnd.h; sourceTree = "<group>"; };
+		A247A2B71EB0BEBD00C52281 /* ZQTextAreaAnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQTextAreaAnd.cpp; sourceTree = "<group>"; };
+		A247A2B81EB0BEBD00C52281 /* ZQTextAreaAnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextAreaAnd.h; sourceTree = "<group>"; };
+		A247A2B91EB0BEBD00C52281 /* ZQTextBoxAnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQTextBoxAnd.cpp; sourceTree = "<group>"; };
+		A247A2BA1EB0BEBD00C52281 /* ZQTextBoxAnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextBoxAnd.h; sourceTree = "<group>"; };
+		A247A2C71EB0BF7200C52281 /* ZQTextUtilAnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZQTextUtilAnd.cpp; sourceTree = "<group>"; };
+		A247A2C81EB0BF7200C52281 /* ZQTextUtilAnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTextUtilAnd.h; sourceTree = "<group>"; };
 		A24EEF031E84E92E004FC918 /* ZQDeviceInfoIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQDeviceInfoIOS.h; sourceTree = "<group>"; };
 		A24EEF041E84E92E004FC918 /* ZQDeviceInfoIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZQDeviceInfoIOS.mm; sourceTree = "<group>"; };
 		A24EEF111E850241004FC918 /* UIDeviceHardware.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIDeviceHardware.h; sourceTree = "<group>"; };
@@ -358,6 +378,23 @@
 			path = draw;
 			sourceTree = "<group>";
 		};
+		A247A2B21EB0BE2B00C52281 /* and */ = {
+			isa = PBXGroup;
+			children = (
+				A247A2C71EB0BF7200C52281 /* ZQTextUtilAnd.cpp */,
+				A247A2C81EB0BF7200C52281 /* ZQTextUtilAnd.h */,
+				A247A2B31EB0BEBD00C52281 /* ZQDeviceInfoAnd.cpp */,
+				A247A2B41EB0BEBD00C52281 /* ZQDeviceInfoAnd.h */,
+				A247A2B51EB0BEBD00C52281 /* ZQLoggerAnd.cpp */,
+				A247A2B61EB0BEBD00C52281 /* ZQLoggerAnd.h */,
+				A247A2B71EB0BEBD00C52281 /* ZQTextAreaAnd.cpp */,
+				A247A2B81EB0BEBD00C52281 /* ZQTextAreaAnd.h */,
+				A247A2B91EB0BEBD00C52281 /* ZQTextBoxAnd.cpp */,
+				A247A2BA1EB0BEBD00C52281 /* ZQTextBoxAnd.h */,
+			);
+			path = and;
+			sourceTree = "<group>";
+		};
 		A24EEF0D1E850241004FC918 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,18 +417,11 @@
 		A25339F31DD96B8200E0D086 /* platform */ = {
 			isa = PBXGroup;
 			children = (
-				A25339F41DD96B8200E0D086 /* android */,
+				A247A2B21EB0BE2B00C52281 /* and */,
 				A25339F51DD96B8200E0D086 /* ios */,
 				A25339F61DD96B8200E0D086 /* mac */,
 			);
 			path = platform;
-			sourceTree = "<group>";
-		};
-		A25339F41DD96B8200E0D086 /* android */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = android;
 			sourceTree = "<group>";
 		};
 		A25339F51DD96B8200E0D086 /* ios */ = {
@@ -627,7 +657,10 @@
 				A266BDC51E7F7CDD000ADD46 /* ZQDataFormat.h in Headers */,
 				A29A52091E5D2F190073A9C0 /* ZQAppEvent.h in Headers */,
 				A29A52291E5EBC000073A9C0 /* ZQLaunchScene.h in Headers */,
+				A247A2C01EB0BEBD00C52281 /* ZQLoggerAnd.h in Headers */,
 				A28486771E1DF6A700E39265 /* ZQTextUtilMac.h in Headers */,
+				A247A2C21EB0BEBD00C52281 /* ZQTextAreaAnd.h in Headers */,
+				A247A2CA1EB0BF7200C52281 /* ZQTextUtilAnd.h in Headers */,
 				A29A52151E5D51D50073A9C0 /* zq_scriptHandler_tolua_luabinding.h in Headers */,
 				A2CEFDEC1E56E20D00934B41 /* ZQDeviceInfo.h in Headers */,
 				A29A52221E5DB7260073A9C0 /* ZQRunLoop.h in Headers */,
@@ -641,12 +674,14 @@
 				A29A52031E5C5E470073A9C0 /* ZQScriptHandler.h in Headers */,
 				A271143C1E69926400DC7FBA /* ZQCCBILoader.h in Headers */,
 				A2CEFDE31E55CEDB00934B41 /* ZQTextAreaMac.h in Headers */,
+				A247A2BE1EB0BEBD00C52281 /* ZQDeviceInfoAnd.h in Headers */,
 				A25ADC451E517D7300E181F9 /* ZQTextBoxMac.h in Headers */,
 				A29A521B1E5DB0D10073A9C0 /* ZQAppCenter.h in Headers */,
 				A2989A781DE6DF790073E4F0 /* ZQLoggerIOS.h in Headers */,
 				A2989A7A1DE6DF790073E4F0 /* ZQLoggerMac.h in Headers */,
 				A2CEFDDE1E55C0BF00934B41 /* ZQTextArea.h in Headers */,
 				A26CF98D1E0BA10E0026F5CB /* ZQCustomAction.h in Headers */,
+				A247A2C41EB0BEBD00C52281 /* ZQTextBoxAnd.h in Headers */,
 				A2989A7C1DE6DF790073E4F0 /* rapidxml.hpp in Headers */,
 				A28866C21E320F0E00A33402 /* ZQTextBox.h in Headers */,
 				A2989A7E1DE6DF790073E4F0 /* rapidxml_print.hpp in Headers */,
@@ -784,6 +819,7 @@
 				A25ADC4D1E544D9C00E181F9 /* ZQTextBox.cpp in Sources */,
 				A28486791E1E187100E39265 /* ZQTextUtilMac.mm in Sources */,
 				A28486781E1E186000E39265 /* ZQPlistManage.h in Sources */,
+				A247A2C91EB0BF7200C52281 /* ZQTextUtilAnd.cpp in Sources */,
 				A2CCE20C1E78133500425841 /* ZQImageLoader.cpp in Sources */,
 				A26BAF661E110A1100D3972B /* zq_sprite_draw_tolua_manual.cpp in Sources */,
 				A27F2A591E701EA60014FF07 /* ZQFs_unix.cpp in Sources */,
@@ -794,6 +830,8 @@
 				A29A52191E5DB0D10073A9C0 /* ZQAppCenter.cpp in Sources */,
 				A2CEFDE51E55CEDB00934B41 /* ZQTextAreaMac.mm in Sources */,
 				A29A52201E5DB7260073A9C0 /* ZQRunLoop.cpp in Sources */,
+				A247A2BD1EB0BEBD00C52281 /* ZQDeviceInfoAnd.cpp in Sources */,
+				A247A2C11EB0BEBD00C52281 /* ZQTextAreaAnd.cpp in Sources */,
 				A2989A691DE6DF790073E4F0 /* ZQDateUtils.cpp in Sources */,
 				A26CF98B1E0BA10E0026F5CB /* ZQCustomAction.cpp in Sources */,
 				A2989A6B1DE6DF790073E4F0 /* ZQLoggerMac.mm in Sources */,
@@ -808,6 +846,8 @@
 				A2989A6F1DE6DF790073E4F0 /* ZQPlistManage.cpp in Sources */,
 				A29A52271E5EBC000073A9C0 /* ZQLaunchScene.cpp in Sources */,
 				A271143A1E69926400DC7FBA /* ZQCCBILoader.cpp in Sources */,
+				A247A2C31EB0BEBD00C52281 /* ZQTextBoxAnd.cpp in Sources */,
+				A247A2BF1EB0BEBD00C52281 /* ZQLoggerAnd.cpp in Sources */,
 				A2989A701DE6DF790073E4F0 /* ZQJsonManage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

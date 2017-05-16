@@ -11,6 +11,15 @@
         
 --------------------------------
 -- 
+-- @function [parent=#ZQTextUtil] heightByFont 
+-- @param self
+-- @param #string text
+-- @param #string font_name
+-- @param #float font_size
+-- @return float#float ret (return value: float)
+        
+--------------------------------
+-- 
 -- @function [parent=#ZQTextUtil] widthByFont 
 -- @param self
 -- @param #string text
@@ -36,15 +45,6 @@
 -- @param #int width
 -- @param #int height
 -- @return bool#bool ret (return value: bool)
-        
---------------------------------
--- 
--- @function [parent=#ZQTextUtil] heigthByFont 
--- @param self
--- @param #string text
--- @param #string font_name
--- @param #float font_size
--- @return float#float ret (return value: float)
         
 --------------------------------
 -- 

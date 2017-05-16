@@ -10,6 +10,7 @@
 #include "ZQTextArea.h"
 #include "platform/ios/ZQTextAreaIOS.h"
 #include "platform/mac/ZQTextAreaMac.h"
+#include "platform/and/ZQTextAreaAnd.h"
 
 using namespace zq;
 
@@ -27,6 +28,8 @@ ZQTextArea* ZQTextArea::create(const cocos2d::Size &size)
     auto node = ZQTextAreaIOS::create();
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_MAC
     auto node = ZQTextAreaMac::create();
+#elif CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+    auto node =  ZQTextAreaAnd::create();
 #endif
     
     if (node)

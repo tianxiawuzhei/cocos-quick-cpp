@@ -3751,6 +3751,62 @@ int lua_zq_ZQTextUtil_standardFontName(lua_State* tolua_S)
 
     return 0;
 }
+int lua_zq_ZQTextUtil_heightByFont(lua_State* tolua_S)
+{
+    int argc = 0;
+    zq::ZQTextUtil* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextUtil",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (zq::ZQTextUtil*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextUtil_heightByFont'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 3) 
+    {
+        std::string arg0;
+        std::string arg1;
+        double arg2;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQTextUtil:heightByFont");
+
+        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQTextUtil:heightByFont");
+
+        ok &= luaval_to_number(tolua_S, 4,&arg2, "zq.ZQTextUtil:heightByFont");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextUtil_heightByFont'", nullptr);
+            return 0;
+        }
+        double ret = cobj->heightByFont(arg0, arg1, arg2);
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextUtil:heightByFont",argc, 3);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextUtil_heightByFont'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_zq_ZQTextUtil_widthByFont(lua_State* tolua_S)
 {
     int argc = 0;
@@ -3922,62 +3978,6 @@ int lua_zq_ZQTextUtil_renderByArray(lua_State* tolua_S)
 
     return 0;
 }
-int lua_zq_ZQTextUtil_heigthByFont(lua_State* tolua_S)
-{
-    int argc = 0;
-    zq::ZQTextUtil* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"zq.ZQTextUtil",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (zq::ZQTextUtil*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_zq_ZQTextUtil_heigthByFont'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 3) 
-    {
-        std::string arg0;
-        std::string arg1;
-        double arg2;
-
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "zq.ZQTextUtil:heigthByFont");
-
-        ok &= luaval_to_std_string(tolua_S, 3,&arg1, "zq.ZQTextUtil:heigthByFont");
-
-        ok &= luaval_to_number(tolua_S, 4,&arg2, "zq.ZQTextUtil:heigthByFont");
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_zq_ZQTextUtil_heigthByFont'", nullptr);
-            return 0;
-        }
-        double ret = cobj->heigthByFont(arg0, arg1, arg2);
-        tolua_pushnumber(tolua_S,(lua_Number)ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "zq.ZQTextUtil:heigthByFont",argc, 3);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_zq_ZQTextUtil_heigthByFont'.",&tolua_err);
-#endif
-
-    return 0;
-}
 int lua_zq_ZQTextUtil_renderByString(lua_State* tolua_S)
 {
     int argc = 0;
@@ -4084,10 +4084,10 @@ int lua_register_zq_ZQTextUtil(lua_State* tolua_S)
 
     tolua_beginmodule(tolua_S,"ZQTextUtil");
         tolua_function(tolua_S,"standardFontName",lua_zq_ZQTextUtil_standardFontName);
+        tolua_function(tolua_S,"heightByFont",lua_zq_ZQTextUtil_heightByFont);
         tolua_function(tolua_S,"widthByFont",lua_zq_ZQTextUtil_widthByFont);
         tolua_function(tolua_S,"sizeByFont",lua_zq_ZQTextUtil_sizeByFont);
         tolua_function(tolua_S,"renderByArray",lua_zq_ZQTextUtil_renderByArray);
-        tolua_function(tolua_S,"heigthByFont",lua_zq_ZQTextUtil_heigthByFont);
         tolua_function(tolua_S,"renderByString",lua_zq_ZQTextUtil_renderByString);
         tolua_function(tolua_S,"getInstance", lua_zq_ZQTextUtil_getInstance);
     tolua_endmodule(tolua_S);

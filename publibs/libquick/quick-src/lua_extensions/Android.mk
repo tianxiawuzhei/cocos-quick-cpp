@@ -27,7 +27,8 @@ LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/ \
                            $(LOCAL_PATH)/debugger \
                            $(LOCAL_PATH)/filesystem \
                            $(LOCAL_PATH)/lpack \
-                           $(LOCAL_PATH)/lsqlite3
+                           $(LOCAL_PATH)/lsqlite3 \
+                           $(LOCAL_PATH)/..
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/ \
                     $(LOCAL_PATH)/cjson \
@@ -36,8 +37,8 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/ \
                     $(LOCAL_PATH)/filesystem \
                     $(LOCAL_PATH)/lpack \
                     $(LOCAL_PATH)/lsqlite3 \
-                    $(COCOS2DX_ROOT)/cocos \
-                    $(COCOS2DX_ROOT)/external/lua/luajit/include
+                    $(LOCAL_PATH)/../../../cocos2dx/cocos \
+                    $(LOCAL_PATH)/../../../cocos2dx/external/lua/luajit/include
 
 
 

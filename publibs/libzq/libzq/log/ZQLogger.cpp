@@ -10,6 +10,7 @@
 #include "utils/ZQDateUtils.h"
 #include "platform/ios/ZQLoggerIOS.h"
 #include "platform/mac/ZQLoggerMac.h"
+#include "platform/and/ZQLoggerAnd.h"
 #include "cocos2d.h"
 #include "data/ZQFileManage.h"
 using namespace zq;
@@ -20,6 +21,8 @@ ZQLogger* ZQLogger::getInstance()
     return ZQLoggerIOS::getInstance();
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_MAC
     return ZQLoggerMac::getInstance();
+#elif CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+    return ZQLoggerAnd::getInstance();
 #endif
 }
 

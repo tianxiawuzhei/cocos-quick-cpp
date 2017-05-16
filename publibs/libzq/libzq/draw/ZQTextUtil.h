@@ -29,9 +29,9 @@ public:
     
     virtual cocos2d::Size sizeByFont(const std::string &text, const std::string &font_name, float font_size) = 0;
     
-     float widthByFont(const std::string &text, const std::string &font_name, float font_size);
+    virtual float widthByFont(const std::string &text, const std::string &font_name, float font_size) = 0;
     
-     float heigthByFont(const std::string &text, const std::string &font_name, float font_size);
+    virtual float heightByFont(const std::string &text, const std::string &font_name, float font_size) = 0;
     
     virtual bool renderByArray(cocos2d::Sprite *sprite, const cocos2d::ValueVector &lines, int width, int height) = 0;
     virtual bool renderByString(cocos2d::Sprite *sprite, const std::string &info, int width, int height) = 0;

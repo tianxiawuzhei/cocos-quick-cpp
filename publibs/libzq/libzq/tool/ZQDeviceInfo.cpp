@@ -12,6 +12,7 @@
 #include "platform/CCPlatformConfig.h"
 #include "platform/mac/ZQDeviceInfoMac.h"
 #include "platform/ios/ZQDeviceInfoIOS.h"
+#include "platform/and/ZQDeviceInfoAnd.h"
 
 using namespace zq;
 
@@ -21,6 +22,8 @@ ZQDeviceInfo* ZQDeviceInfo::getInstance()
     return ZQDeviceInfoIOS::getInstance();
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_MAC
     return ZQDeviceInfoMac::getInstance();
+#elif CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+    return ZQDeviceInfoAnd::getInstance();
 #endif
 }
 

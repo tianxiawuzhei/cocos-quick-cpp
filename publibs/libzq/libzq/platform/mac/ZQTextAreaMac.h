@@ -9,7 +9,7 @@
 #ifndef _ZQTEXTAREAMAC_H_
 #define _ZQTEXTAREAMAC_H_
 
-#include "ZQTextArea.h"
+#include "draw/ZQTextArea.h"
 #include "cocos2d.h"
 
 namespace zq

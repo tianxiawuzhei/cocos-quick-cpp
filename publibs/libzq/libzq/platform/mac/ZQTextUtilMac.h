@@ -10,7 +10,7 @@
 #ifndef __ZQTEXTUTILMAC_H__
 #define __ZQTEXTUTILMAC_H__
 
-#include "ZQTextUtil.h"
+#include "draw/ZQTextUtil.h"
 
 namespace zq
 {

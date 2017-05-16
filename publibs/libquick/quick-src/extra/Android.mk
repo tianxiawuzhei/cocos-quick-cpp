@@ -40,7 +40,7 @@ LOCAL_SRC_FILES += \
     $(LOCAL_PATH)/filters/filters/CCTestFilter.cpp \
     $(LOCAL_PATH)/filters/filters/CCCustomFilter.cpp \
     $(LOCAL_PATH)/filters/nodes/CCFilteredSprite.cpp \
-    $(LOCAL_PATH)/filters/shaders/ccFilterShaders.cpp 
+    $(LOCAL_PATH)/filters/shaders/ccFilterShaders.cpp
 
 #nanovg
 LOCAL_SRC_FILES += \
@@ -54,17 +54,17 @@ LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH) \
                            $(LOCAL_PATH)/luabinding
 
 LOCAL_C_INCLUDES := $(LOCAL_EXPORT_C_INCLUDES) \
-                    $(COCOS2DX_ROOT)/cocos \
-                    $(COCOS2DX_ROOT)/external/lua/luajit/include \
-                    $(COCOS2DX_ROOT)/external/lua/tolua \
-                    $(COCOS2DX_ROOT)/external \
-                    $(COCOS2DX_ROOT)/cocos/scripting/lua-bindings/manual
+                    $(LOCAL_PATH)/../../../cocos2dx/cocos \
+                    $(LOCAL_PATH)/../../../cocos2dx/external/lua/luajit/include \
+                    $(LOCAL_PATH)/../../../cocos2dx/external/lua/tolua \
+                    $(LOCAL_PATH)/../../../cocos2dx/external \
+                    $(LOCAL_PATH)/../../../cocos2dx/cocos/scripting/lua-bindings/manual \
+                    $(LOCAL_PATH)/../../../cocos2dx/extensions
 
 #filters
-LOCAL_C_INCLUDES += $(COCOS2DX_ROOT)/extensions
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../cocos2dx/extensions
 
-
-
+LOCAL_CFLAGS := -Wno-psabi -DUSE_FILE32API -DCC_LUA_ENGINE_ENABLED=1
 
 
 include $(BUILD_STATIC_LIBRARY)

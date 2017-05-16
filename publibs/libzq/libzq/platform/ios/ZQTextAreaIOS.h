@@ -7,7 +7,7 @@
 //
 #pragma once
 
-#include "ZQTextArea.h"
+#include "draw/ZQTextArea.h"
 #include "cocos2d.h"
 
 namespace zq
@@ -23,7 +23,6 @@ namespace zq
         
     public:
         virtual void setFont(const std::string &font_name, float font_size);
-        virtual void setFontSize(float font_size);
         virtual void setFontColor(const cocos2d::Color3B &color);
         virtual void setString(const std::string &text);
         

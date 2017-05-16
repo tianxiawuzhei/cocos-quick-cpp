@@ -23,6 +23,16 @@ std::string ZQTextUtilIOS::standardFontName()
     return [[[UIFont boldSystemFontOfSize:23.0] fontName] UTF8String];
 }
 
+float ZQTextUtilIOS::widthByFont(const std::string &text, const std::string &font_name, float font_size)
+{
+    return this->sizeByFont(text, font_name, font_size).width;
+}
+
+float ZQTextUtilIOS::heigthByFont(const std::string &text, const std::string &font_name, float font_size)
+{
+    return this->sizeByFont(text, font_name, font_size).height;
+}
+
 cocos2d::Size ZQTextUtilIOS::sizeByFont(const std::string &text, const std::string &font_name, float font_size)
 {
     NSString *str = [NSString stringWithUTF8String:text.c_str()];

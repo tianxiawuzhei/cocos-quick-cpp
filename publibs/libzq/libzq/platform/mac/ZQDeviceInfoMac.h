@@ -10,7 +10,7 @@
 #ifndef __ZQDEVICEINFOMAC_H__
 #define __ZQDEVICEINFOMAC_H__
 
-#include "ZQDeviceInfo.h"
+#include "tool/ZQDeviceInfo.h"
 
 namespace zq
 {

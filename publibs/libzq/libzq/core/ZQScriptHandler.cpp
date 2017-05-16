@@ -7,7 +7,7 @@
 *
 ***********************************************/
 #include "ZQScriptHandler.h"
-#include "ZQLogger.h"
+#include "log/ZQLogger.h"
 
 using namespace zq;
 
